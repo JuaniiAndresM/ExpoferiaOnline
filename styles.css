@@ -1,18 +1,94 @@
 body{
-    background-image: url(img/Fondo.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-color: #0080b3;
 }
+#indexBody{
+    background: #0080b3;
+}
+.navbar a {
+    color: white;
+}
+.navbar a:hover{
+    color: rgb(235, 235, 235);
+}
+
+
+#Columna{
+    background: #008cc5;
+}
+.gridLogin{
+    padding-top: 10%;
+    display: grid;
+}
+.gridTop{
+    margin-top: 2%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100%;
+}
+.gridIndex{
+    margin-top: 1%;
+    margin-bottom: 1%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100%;
+}
+#Columna1{
+    margin-left: 10%;
+    text-align: left;
+}
+#Columna2{
+    margin-right: 10%;
+    text-align: right;
+}
+#Video{
+    margin-left: 2%;
+    background: black;
+    width: 100%;
+    height: 100%;
+}
+
+#botonBlanco{
+    margin-top: 15%;
+    background-color:transparent;
+    border-color: white;
+}
+#Login{
+    justify-self: center;
+    background: #008cc5;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-right: 5%;
+    padding-left: 5%;
+    border-radius: 5%;
+}
+#Footer{
+    text-align: center;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    position: relative;
+    background-color: #303030;
+    color:white;
+    padding-bottom:1%;
+    padding-top: 1%;
+    line-height:10px;
+}
+#LogoFooter{
+    margin-top: 6%;
+    width: 80%;
+}
+#TextoBlanco{
+    color:white;
+}
+
 #Logo{
     display: block;
     margin: auto;
     width: 40%;
 }
 .custom{
-    background-color: #008cc5;
+    background-color: #303030;
 }
 .navbar-brand {
-    height: 5%;
     overflow: visible;
 }
 #div1{
