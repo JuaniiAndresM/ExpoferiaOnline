@@ -1,96 +1,115 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #2d466e;
+}
 body{
-    background-color: #0080b3;
+    background-color: #2d466e;
 }
-#indexBody{
-    background: #0080b3;
+li,a, button{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color:white;
+    text-decoration: none;
 }
-.navbar a {
-    color: white;
+.logo{
+    width: 350px;
+    cursor: pointer;
 }
-.navbar a:hover{
-    color: rgb(235, 235, 235);
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
 }
-
-
-#Columna{
-    background: #008cc5;
+.nav-links{
+    list-style: none;
 }
-.gridLogin{
-    padding-top: 10%;
-    display: grid;
+.nav-links li{
+    display: inline-block;
+    padding: 0px 20px;
 }
-.gridTop{
-    margin-top: 2%;
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 100%;
+.nav-links li a{
+    transition: all 0.3s ease 0s;
 }
-.gridIndex{
-    margin-top: 1%;
-    margin-bottom: 1%;
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 100%;
+.nav-links li a:hover{
+    text-decoration: none;
+    color: rgb(163, 163, 163);
 }
-#Columna1{
-    margin-left: 10%;
-    text-align: left;
-}
-#Columna2{
-    margin-right: 10%;
-    text-align: right;
-}
-#Video{
-    margin-left: 2%;
-    background: black;
-    width: 100%;
-    height: 100%;
+button{
+    padding: 9px 25px;
+    background-color: rgba(0, 136, 196, 1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
 }
 
-#botonBlanco{
-    margin-top: 15%;
-    background-color:transparent;
-    border-color: white;
+button:hover{
+    background-color: rgba(0, 136, 196, 0.8);
 }
-#Login{
-    justify-self: center;
-    background: #008cc5;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    padding-right: 5%;
-    padding-left: 5%;
-    border-radius: 5%;
+.Login{
+    display: flex;
 }
-#Footer{
+.LoginFrame{
     text-align: center;
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
-    position: relative;
-    background-color: #303030;
+    margin: 10% auto;
+}
+.Login a{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color:#0099ff;
+    text-decoration: none;
+}
+.Login p{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
     color:white;
-    padding-bottom:1%;
-    padding-top: 1%;
-    line-height:10px;
+    text-decoration: none;
 }
-#LogoFooter{
-    margin-top: 6%;
-    width: 80%;
-}
-#TextoBlanco{
+.Login label{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
     color:white;
-}
+    text-decoration: none;
 
-#Logo{
-    display: block;
-    margin: auto;
-    width: 40%;
 }
-.custom{
-    background-color: #303030;
+.Contacto{
+    margin-left: 20%;
+    margin-right: 20%;
+    display: flex;
 }
-.navbar-brand {
-    overflow: visible;
+.ContactoFrame{
+    background-color: #2d466e;
+    margin: 2% auto;
 }
-#div1{
-    margin-top: 80%;
+.Contacto a{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color:#0099ff;
+    text-decoration: none;
+}
+.Contacto p{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color:white;
+    text-decoration: none;
+}
+.Contacto label{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    color:white;
+    text-decoration: none;
+
+}
+#Titulo{
+    color:white;
 }
