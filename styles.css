@@ -57,31 +57,51 @@ button:hover{
 
 /*Login CSS*/
 .Login{
-    display: flex;
+    margin-right: 2%;
+    background-color: white;
+    border-radius: 30px;
+}
+.Linea1Login{
+    margin-left: 30%;
+    margin-right: 30%;
+    background-color: #ffcb00;
+    border-radius: 30px;
+}
+.Linea2Login{
+    margin-right: 2%;
+    background-color: #008ac4;
+    border-radius: 30px;
+}
+.Linea3Login{
+    margin-right: 2%;
+    background-color: #5aac29;
+    border-radius: 30px;
 }
 .LoginFrame{
-    text-align: center;
-    margin: 10% auto;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-top: 4%;
+    padding-bottom: 4%;
 }
 .Login a{
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 14px;
     color:#0099ff;
     text-decoration: none;
 }
 .Login p{
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
-    font-size: 16px;
-    color:white;
+    font-size: 14px;
+    color:black;
     text-decoration: none;
 }
 .Login label{
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     font-size: 13px;
-    color:white;
+    color:black;
     text-decoration: none;
 
 }
