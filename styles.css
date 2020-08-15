@@ -55,6 +55,48 @@ button:hover{
 }
 
 
+/*Index*/
+.gridIndex{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.live-iframe{
+    background-color: white;
+    border-radius: 30px;
+}
+.Live{
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; 
+    height: 0;
+}
+.Live iframe{
+    padding: 2%;
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+}
+.Linea1Live{
+    margin-right: 10%;
+    margin-left: 4%;
+    background-color: #ffcb00;
+    border-radius: 30px;
+}
+.Linea2Live{
+    margin-right: 2%;
+    background-color: #008ac4;
+    border-radius: 30px;
+}
+.Linea3Live{
+    margin-right: 2%;
+    background-color: #5aac29;
+    border-radius: 30px;
+}
+
+
 /*Login CSS*/
 .Login{
     margin-right: 2%;
