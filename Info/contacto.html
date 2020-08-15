@@ -18,30 +18,32 @@
 <body onload="hfindex()">
   <div id="header"></div>
 
-  <div class="Contacto">
-    <div class="ContactoFrame">
-        <h2 id="Titulo">Contacto</h2>
-        <p>Si eres profesor o alumno y quieres pedir una cuenta para agregar tu proyecto a nuestra pagina, tan solo completa el siguiente formulario, y te enviaremos los datos de la cuenta.</p>
-
-        <form action="/ExpoferiaOnline/index.html">
+    <div class="Linea1">
+      <div class="Linea2">
+        <div class="Linea3">
+          <div class="Contacto">
+        <div class="ContactoFrame">
+          <h2>Contacto:</h2>
+          <hr>
+          <a>Si eres alumno o profesor y quieres tener tu proyecto en nuestra pagina, tan solo completa el siguiente formulario con los datos requeridos, y te enviaremos los datos de la cuenta.</a>
+          <form action="/ExpoferiaOnline/index.html">
             <div class="form-group">
-            <label for="uname">Nombre:</label>
-            <input type="text" class="form-control" id="user" placeholder="Ingrese Nombre" name="user">
-            </div>
-            <div class="form-group">
-            <label for="uname">Grupo:</label>
-            <input type="text" class="form-control" id="grupo" placeholder="Ingrese Grupo" name="grupo">
+              <label for="uname">Nombre:</label>
+              <input type="text" class="form-control" id="nombre" placeholder="Ingrese Usuario" name="nombre">
             </div>
             <div class="form-group">
               <label for="uname">Email:</label>
               <input type="text" class="form-control" id="email" placeholder="Ingrese Email" name="email">
-              </div>
+            </div>
             <div class="form-group">
-              <label for="comment">Comment:</label>
-              <textarea class="form-control" rows="5" id="comment" placeholder="Ingrese su Comentario." name="text"></textarea>
+              <label for="comment">Comentario:</label>
+              <textarea class="form-control" rows="5" placeholder="Ingrese Comentario" id="comment"></textarea>
             </div>
             <a class="BotonLogin" type="submit"><button>Enviar</button></a>
-        </form>
+          </form>
+        </div>
+      </div>
+    </div>
     </div>
   </div>
 </body>
