@@ -90,6 +90,14 @@ button:hover{
     color:#0099ff;
     text-decoration: none;
 }
+.Login h2{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    color:black;
+    text-decoration: none;
+    background-color: transparent;
+}
 .Login p{
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
