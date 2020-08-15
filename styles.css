@@ -3,7 +3,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: #2d466e;
 }
 body{
     background-color: #2d466e;
@@ -89,38 +88,63 @@ button:hover{
 
 
 /*Contacto CSS*/
-.Contacto{
+.Linea1{
     margin-left: 20%;
     margin-right: 20%;
-    display: flex;
+    background-color: #ffcb00;
+    border-radius: 30px;
 }
-.ContactoFrame{
-    background-color: #2d466e;
-    margin: 2% auto;
+.Linea2{
+    margin-right: 2%;
+    background-color: #008ac4;
+    border-radius: 30px;
+}
+.Linea3{
+    margin-right: 2%;
+    background-color: #5aac29;
+    border-radius: 30px;
+}
+.Contacto{
+    margin-right: 2%;
+    background-color: white;
+    border-radius: 30px;
 }
 .Contacto a{
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
-    font-size: 16px;
-    color:#0099ff;
+    font-size: 14px;
+    color:black;
     text-decoration: none;
+}
+.Contacto h2{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    color:black;
+    text-decoration: none;
+    background-color: transparent;
 }
 .Contacto p{
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     font-size: 16px;
-    color:white;
+    color:black;
     text-decoration: none;
 }
 .Contacto label{
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     font-size: 13px;
-    color:white;
+    color:black;
     text-decoration: none;
 
 }
-
+.ContactoFrame{
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
 
 /*Proyectos CSS*/
 .gridProyectos{
@@ -141,6 +165,7 @@ button:hover{
     margin-left: 10%;
     border-radius: 50px;;
 }
+
 
 /*Letras y Titulos*/
 #Titulo{
