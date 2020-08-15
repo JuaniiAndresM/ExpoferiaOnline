@@ -1,3 +1,4 @@
+/*General CSS*/
 *{
     box-sizing: border-box;
     margin: 0;
@@ -7,6 +8,9 @@
 body{
     background-color: #2d466e;
 }
+
+
+/*Header y Botones CSS*/
 li,a, button{
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
@@ -50,6 +54,9 @@ button{
 button:hover{
     background-color: rgba(0, 136, 196, 0.8);
 }
+
+
+/*Login CSS*/
 .Login{
     display: flex;
 }
@@ -79,6 +86,9 @@ button:hover{
     text-decoration: none;
 
 }
+
+
+/*Contacto CSS*/
 .Contacto{
     margin-left: 20%;
     margin-right: 20%;
@@ -110,6 +120,47 @@ button:hover{
     text-decoration: none;
 
 }
+
+
+/*Proyectos CSS*/
+.gridProyectos{
+    display:grid;
+    grid-template-columns: 50% 50%;
+}
+.Tabla1{
+    text-align: center;
+    background-color: #355485;
+    margin-right: 10%;
+    margin-left: 40%;
+    border-radius: 50px;
+}
+.Tabla2{
+    text-align: center;
+    background-color: #355485;
+    margin-right: 40%;
+    margin-left: 10%;
+    border-radius: 50px;;
+}
+
+/*Letras y Titulos*/
 #Titulo{
     color:white;
+}
+#TituloProyectos{
+    color:white;
+    text-align: center;
+}
+#TituloTablaProyectos{
+    color:white;
+    text-align: center;
+    font-size: 25px;
+}
+.card{
+    margin: 2%;
+    border-radius: 50px;
+    color:white;
+    border: none;
+}
+.card a{
+    color:black;
 }
