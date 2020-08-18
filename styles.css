@@ -139,7 +139,7 @@ button{
     padding: 9px 25px;
     background-color: rgba(0, 136, 196, 1);
     border: none;
-    border-radius: 50px;
+    border-radius: 20px;
     width: 100%;
     margin: 1%;
     cursor: pointer;
@@ -593,6 +593,7 @@ button:hover{
 #TituloProyectos{
     color:white;
     text-align: center;
+    margin: 0px 0px 23px;
 }
 #TituloTablaProyectos{
     color:black;
