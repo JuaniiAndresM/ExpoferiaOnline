@@ -131,7 +131,7 @@ button{
     padding: 9px 25px;
     background-color: rgba(0, 136, 196, 1);
     border: none;
-    border-radius: 50px;
+    border-radius: 20px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
 }
@@ -333,6 +333,8 @@ button:hover{
 .Linea1EditarProyecto{
     margin-left: 20%;
     margin-right: 20%;
+    margin-top: 2%;
+    margin-bottom: 3%;
     background-color: #ffcb00;
     border-radius: 30px;
 }
@@ -555,7 +557,7 @@ button:hover{
     margin-bottom: 1%;
     background-color: rgba(0, 136, 196, 1);
     border: none;
-    border-radius: 50px;
+    border-radius: 20px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
 }
@@ -720,6 +722,27 @@ button:hover{
     .MobileView{
         margin: 2%;
     }
+    .Linea1Panel{
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+    .PanelFrame{
+        text-align: center;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+    .Linea1EditarProyecto{
+        margin-left: 10%;
+        margin-right: 10%;
+        background-color: #ffcb00;
+        border-radius: 30px;
+    }
+    .EditarProyecto{
+        margin-right: 2%;
+        margin-bottom: 3%;
+        background-color: white;
+        border-radius: 30px;
+    }
 }
 @media screen and (max-width: 700px) {
     .PlanillaFrame{
@@ -810,7 +833,7 @@ button:hover{
         padding: 9px 25px;
         background-color: rgba(0, 136, 196, 1);
         border: none;
-        border-radius: 50px;
+        border-radius: 20px;
         cursor: pointer;
         transition: all 0.3s ease 0s;
     }
@@ -828,5 +851,30 @@ button:hover{
     }
     .BotonLogin{
         display:none;
+    }
+    .Linea1Panel{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .PanelFrame{
+        text-align: center;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    .Linea1EditarProyecto{
+        margin-left: 5%;
+        margin-right: 5%;
+        background-color: #ffcb00;
+        border-radius: 30px;
+    }
+    .EditarProyecto{
+        margin-right: 2%;
+        margin-bottom: 3%;
+        background-color: white;
+        border-radius: 30px;
+    }
+    .EditarProyectoFrame{
+        display: grid;
+        grid-template-columns: 100%;
     }
 }
