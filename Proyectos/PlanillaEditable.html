@@ -11,6 +11,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="/ExpoferiaOnline/js/function.js"></script>
   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="/ExpoferiaOnline/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
@@ -32,16 +33,30 @@
                     <div class="Foto"></div>
                 </div>
                 <div class="CentralPlanilla">
-                    <h2>Nombre del Proyecto:</h2>
+                    <h2>Nuevo Proyecto:</h2>
                     <hr>
-                    <a>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio voluptates aut quam ullam vel. Ratione est quisquam veniam voluptatum nemo laudantium quo numquam ut? Modi neque quia sunt mollitia saepe hic odit temporibus possimus nisi, magnam obcaecati voluptatibus iste qui tempore reprehenderit quo eligendi? Provident doloremque accusantium id ipsa error deleniti debitis odio possimus quam temporibus ipsum culpa assumenda, qui fugit eligendi blanditiis labore adipisci quaerat cupiditate nemo. Dolorem aliquid tempore repellendus cumque libero eum inventore porro neque quisquam, deleniti modi esse harum necessitatibus veritatis adipisci excepturi cum et suscipit iste ipsum magnam optio, quam exercitationem. Vero consequatur repellat optio! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque natus placeat iure blanditiis quisquam repellendus! Itaque in quas quisquam culpa inventore! Nostrum velit soluta mollitia cupiditate quam aliquam exercitationem enim voluptatibus fuga est nulla eos, doloribus non corrupti pariatur reprehenderit, tempora quisquam, laboriosam fugiat minima? Explicabo, quia saepe libero corporis quibusdam, sint rerum placeat sequi repellat ducimus et deserunt odit, quos minus nobis modi voluptates officiis earum nisi ab amet. Facilis magnam eveniet, harum quidem assumenda delectus consequuntur necessitatibus. Natus consectetur cupiditate laboriosam incidunt, facere dicta ut officia iusto corrupti, omnis quae nesciunt nulla obcaecati? Fuga officia fugit ad incidunt!</a>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="user" placeholder="Nombre del Proyecto" name="nombre_proyecto">
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <textarea class="form-control" rows="5" placeholder="Descripción corta del Proyecto" id="descripcionCorta_Proyecto"></textarea>
+                    </div>
                     <div class="Video">
-                        <h2>Video:</h2>
-                        <hr>
-                        <div>
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/XYZ123" frameborder="0" allowfullscreen></iframe>
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+                            <label class="custom-control-label" for="customCheck">Importar Video</label>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="user" placeholder="URL del Video [YouTube]" name="nombre_proyecto">
                         </div>
                     </div>
+                    <div class="form-group">
+                        <textarea class="form-control" rows="5" placeholder="Descripción del Proyecto" id="descripcionLarga_Proyecto"></textarea>
+                    </div>
+                    <a class="BotonLogin2" href="/ExpoferiaOnline/index.html"><button><i class="fa">&#xf14a;</i> Aprovar Proyecto</button></a>
+                    <a class="BotonLogin2" href="/ExpoferiaOnline/index.html"><button><i class="fa">&#xf0c7;</i> Guardar Cambios</button></a>
                 </div>
                 <div class="BannerPlanilla">
                     <h2>Banner:</h2>
