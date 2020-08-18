@@ -104,6 +104,9 @@ footer hr{
 .footerLogo{
     text-align:center;
 }
+.footerLogo p{
+    font-size: 10px;
+}
 .footerNosotros{
     text-align: left;
     margin-left: 10%;
@@ -131,6 +134,17 @@ button{
     cursor: pointer;
     transition: all 0.3s ease 0s;
 }
+.botonPanel{
+    padding: 9px 25px;
+    background-color: rgba(0, 136, 196, 1);
+    border: none;
+    border-radius: 50px;
+    width: 100%;
+    margin: 1%;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
 
 button:hover{
     background-color: rgba(0, 136, 196, 0.8);
@@ -261,6 +275,7 @@ button:hover{
 }
 .Contacto{
     margin-right: 2%;
+    margin-bottom: 3%;
     background-color: white;
     border-radius: 30px;
 }
@@ -301,7 +316,45 @@ button:hover{
     padding-bottom: 4%;
 }
 
-
+/*Panel CSS*/
+.PanelPerfil{
+    margin: auto;
+    background-color: grey;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+}
+.Linea1Panel{
+    margin-top: 3%;
+    margin-bottom: 3%;
+    margin-left: 35%;
+    margin-right: 35%;
+    background-color: #ffcb00;
+    border-radius: 30px;
+}
+.Linea2Panel{
+    margin-right: 2%;
+    background-color: #008ac4;
+    border-radius: 30px;
+}
+.Linea3Panel{
+    margin-right: 2%;
+    background-color: #5aac29;
+    border-radius: 30px;
+}
+.Panel{
+    margin-right: 2%;
+    margin-bottom: 3%;
+    background-color: white;
+    border-radius: 30px;
+}
+.PanelFrame{
+    text-align: center;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
 /*Planilla CSS*/
 .Linea1Planilla{
     margin-left: 2%;
@@ -398,6 +451,7 @@ button:hover{
 .gridProyectos{
     display:grid;
     grid-template-columns: 50% 50%;
+    margin-bottom: 3%;
 }
 .Proyecto{
     margin-right: 1%;
