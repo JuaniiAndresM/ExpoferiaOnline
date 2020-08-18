@@ -6,6 +6,7 @@
 }
 body{
     background-color: #2d466e;
+    font-family: 'Montserrat', sans-serif;
 }
 
 
@@ -358,7 +359,7 @@ button:hover{
     padding-bottom: 3%;
 }
 .Linea1Proyecto{
-    margin-left: 40%;
+    margin-left: 20%;
     margin-right: 2%;
     background-color: #ffcb00;
     border-radius: 30px;
@@ -375,7 +376,7 @@ button:hover{
 }
 .Linea1Proyecto2{
     margin-left: 2%;
-    margin-right: 40%;
+    margin-right: 20%;
     background-color: #ffcb00;
     border-radius: 30px;
 }
@@ -403,6 +404,24 @@ button:hover{
 .BotonProyecto:hover{
     background-color: rgba(0, 136, 196, 0.8);
 }
+.listFoto{
+    background-color: grey;
+    width: 100px;
+    float:left;
+    height: 100px;
+    margin: 3%;
+}
+.listProyecto{
+    text-align: left;
+}
+.listProyecto h2{
+    font-weight: 500;
+    font-size: 25px;
+}
+.listProyecto p{
+    font-weight: 500;
+    font-size: 15px;
+}
 
 
 /*Letras y Titulos*/
@@ -416,7 +435,7 @@ button:hover{
 #TituloTablaProyectos{
     color:black;
     text-align: center;
-    font-size: 19px;
+    font-size: 25px;
 }
 .card{
     margin: 2%;
@@ -436,25 +455,27 @@ button:hover{
         row-gap: 2%;
     }
     .Linea1Proyecto{
-        margin-left: 20%;
+        margin-left: 5%;
         margin-right: 2%;
         background-color: #ffcb00;
         border-radius: 30px;
     }
     .Linea1Proyecto2{
         margin-left: 2%;
-        margin-right: 20%;
+        margin-right: 5%;
         background-color: #ffcb00;
         border-radius: 30px;
     }
     #TituloTablaProyectos{
         font-size: 15px;
     }
-    header a {
-        float: none;
-        display: block;
-        text-align: left;
-      }
+    header a{
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        color:white;
+        text-decoration: none;
+    }
       
       .nav-links li {
         display: table;
@@ -504,20 +525,26 @@ button:hover{
         grid-template-columns: 100%;
         row-gap: 1%;
     }
+    .listProyecto h2{
+        font-size: 20px;
+    }
+    .listFoto{
+        float: none;
+    }
     .Linea1Proyecto{
-        margin-left: 10%;
-        margin-right: 10%;
+        margin-left: 2%;
+        margin-right: 2%;
         background-color: #ffcb00;
         border-radius: 30px;
     }
     .Linea1Proyecto2{
-        margin-left: 10%;
-        margin-right: 10%;
+        margin-left: 2%;
+        margin-right: 2%;
         background-color: #ffcb00;
         border-radius: 30px;
     }
     #TituloTablaProyectos{
-        font-size: 20px;
+        font-size: 25px;
     }
     .nav-mobile{
         justify-content: center;
@@ -528,7 +555,15 @@ button:hover{
         padding: 10px;
     }
     .nav-links2 a{
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
         font-size: 13px;
+        color:white;
+        text-decoration: none;
+    }
+    .nav-links2 a:hover{
+        text-decoration: none;
+        color: rgb(163, 163, 163);
     }
     button{
         font-size: 13px;
