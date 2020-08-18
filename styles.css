@@ -10,7 +10,7 @@ body{
 }
 
 
-/*Header y Botones CSS*/
+/*Header*/
 li,a, button{
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
@@ -23,6 +23,7 @@ li,a, button{
     cursor: pointer;
 }
 header{
+    background-color: #283c5c;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -44,6 +45,7 @@ header{
 }
 .text{
     padding: 5%;
+    margin-bottom: 5%;
 }
 .index-frame a{
     padding: 4%;
@@ -73,6 +75,54 @@ header{
     display: inline-block;
     padding: 0px 20px;
 }
+
+
+/*Footer*/
+footer{
+    background-color: #283c5c;
+    display: grid;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    bottom: 0%;
+    grid-template-columns: 33% 33% 33%;
+    justify-content: center;
+    align-items: center;
+}
+footer p{
+    color: white;
+    font-size: 15px;
+}
+footer h2{
+    color:white;
+    font-size: 20px;
+}
+footer hr{
+    background-color:white;
+    margin-right: 20%;
+    margin-left: 20%;
+}
+.footerLogo{
+    text-align:center;
+}
+.footerNosotros{
+    text-align: left;
+    margin-left: 10%;
+}
+.footerContacto{
+    text-align: right;
+    margin-right: 10%;
+}
+.footerLogoMobile{
+    display: none;
+}
+.footerNosotrosMobile{
+    display: none;
+}
+.footerContactoMobile{
+    display: none;
+}
+
+/*Botones*/
 button{
     padding: 9px 25px;
     background-color: rgba(0, 136, 196, 1);
@@ -137,6 +187,8 @@ button:hover{
     border-radius: 30px;
 }
 .Linea1Login{
+    margin-top: 3%;
+    margin-bottom: 6%;
     margin-left: 30%;
     margin-right: 30%;
     background-color: #ffcb00;
@@ -353,6 +405,7 @@ button:hover{
     border-radius: 30px;
 }
 .Tabla{
+    padding: 5%;
     text-align: center;
     margin-left: 5%;
     margin-right: 5%;
@@ -399,6 +452,9 @@ button:hover{
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
+}
+#LineaMobileProyecto{
+    display: none;
 }
 
 .BotonProyecto:hover{
@@ -454,6 +510,32 @@ button:hover{
         grid-template-columns: 100%;
         row-gap: 2%;
     }
+    footer{
+        grid-template-columns: 100%;
+    }
+    .footerContacto{
+        display: none;
+    }
+    .footerLogo{
+        display:none;
+    }
+    .footerNosotros{
+        display:none;
+    }
+    .footerContactoMobile{
+        text-align: center;
+        display: block;
+    }
+    .footerLogoMobile{
+        text-align: center;
+        margin-bottom: 5%;
+        display:block;
+    }
+    .footerNosotrosMobile{
+        margin-bottom: 5%;
+        text-align: center;
+        display:block;
+    }
     .Linea1Proyecto{
         margin-left: 5%;
         margin-right: 2%;
@@ -466,8 +548,30 @@ button:hover{
         background-color: #ffcb00;
         border-radius: 30px;
     }
+    .Linea1Login{
+        margin-left: 20%;
+        margin-right: 20%;
+        background-color: #ffcb00;
+        border-radius: 30px;
+    }
+    .LoginFrame{
+        margin-left: 20%;
+        margin-right: 20%;
+        padding-top: 4%;
+        padding-bottom: 4%;
+    }
+    .ContactoFrame{
+        margin-left: 20%;
+        margin-right: 20%;
+        padding-top: 4%;
+        padding-bottom: 4%;
+    }
+    .Linea1{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
     #TituloTablaProyectos{
-        font-size: 15px;
+        font-size: 20px;
     }
     header a{
         font-family: 'Montserrat', sans-serif;
@@ -520,20 +624,38 @@ button:hover{
         grid-template-columns: 100%;
         row-gap: 2%;
     }
+    .Linea1Login{
+        margin-left: 2%;
+        margin-right: 2%;
+        background-color: #ffcb00;
+        border-radius: 30px;
+    }
+    .LoginFrame{
+        margin-left: 20%;
+        margin-right: 20%;
+        padding-top: 4%;
+        padding-bottom: 4%;
+    }
     .gridProyectos{
         display:grid;
         grid-template-columns: 100%;
-        row-gap: 1%;
+        margin-bottom: 5%;
     }
     .listProyecto h2{
         font-size: 20px;
     }
+    #LineaMobileProyecto{
+        display: block;
+    }
     .listFoto{
+        padding-bottom: 20%;
+        margin: auto;
         float: none;
     }
     .Linea1Proyecto{
         margin-left: 2%;
         margin-right: 2%;
+        margin-bottom: 5%;
         background-color: #ffcb00;
         border-radius: 30px;
     }
@@ -547,6 +669,7 @@ button:hover{
         font-size: 25px;
     }
     .nav-mobile{
+        background-color: #283c5c;
         justify-content: center;
         display: flex;
     }
@@ -564,6 +687,16 @@ button:hover{
     .nav-links2 a:hover{
         text-decoration: none;
         color: rgb(163, 163, 163);
+    }
+    .ContactoFrame{
+        margin-left: 10%;
+        margin-right: 10%;
+        padding-top: 4%;
+        padding-bottom: 4%;
+    }
+    .Linea1{
+        margin-left: 2%;
+        margin-right: 2%;
     }
     button{
         font-size: 13px;
