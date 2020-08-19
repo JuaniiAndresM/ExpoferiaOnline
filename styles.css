@@ -5,6 +5,7 @@
     padding: 0;
 }
 body{
+    overflow-x: hidden;
     background-color: #2d466e;
     font-family: 'Montserrat', sans-serif;
 }
@@ -771,9 +772,6 @@ button:hover{
     }
 }
 @media screen and (max-width: 700px) {
-    body{
-        overflow-x: hidden;
-    }
     .logo{
         width: 250px;
         cursor: pointer;
@@ -785,7 +783,7 @@ button:hover{
         flex-direction: column;
         align-items: center;
         width: 50%;
-        height: 35vh;
+        height: 100%;
         right: 0;
         transform: translateX(100%);
         transition: transform 0.5s ease-in;
