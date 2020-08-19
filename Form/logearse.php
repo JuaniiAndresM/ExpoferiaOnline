@@ -1,5 +1,5 @@
 <?php
-include '../conexion.php';
+include 'conexion.php';
 if(isset($_POST['user']) && $_POST['contra']){
         $sql = "SELECT * FROM usuario WHERE Usuario = '".$_POST['user']."'";
         $result = $mysqli -> query($sql);
