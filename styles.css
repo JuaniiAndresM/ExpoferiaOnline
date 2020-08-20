@@ -505,7 +505,9 @@ button:hover {
   border-radius: 50px;
 }
 
-/*Proyectos CSS*/
+/*
+!Proyectos CSS
+*/
 .gridProyectos {
   display: grid;
   grid-template-columns: 50% 50%;
