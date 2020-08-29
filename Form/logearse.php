@@ -11,7 +11,12 @@ if(isset($_POST['user']) && $_POST['contra']){
                         session_start();
                         $_SESSION['Usuario']=$_POST['user'];
                         header('Location: ../index.html');
-                        }
+                        }else{ 
+                                echo "<script>
+                                alert('El usuario o la contraseña están mal!');
+                                window.location.href='../Form/login.html';
+                                </script>";    
+                }
                          }else{ 
                                 echo "<script>
                                 alert('El usuario o la contraseña están mal!');
