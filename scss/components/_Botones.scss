@@ -1,0 +1,23 @@
+button,
+BotonProyecto {
+  padding: 9px 25px;
+  background-color: rgba(0, 136, 196, 1);
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+
+  :hover {
+    background-color: rgba(0, 136, 196, 0.8);
+  }
+}
+.botonPanel {
+  padding: 9px 25px;
+  background-color: rgba(0, 136, 196, 1);
+  border: none;
+  border-radius: 20px;
+  width: 100%;
+  margin: 1%;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}

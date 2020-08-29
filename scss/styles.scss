@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  overflow-x: hidden;
+  background: url("/ExpoferiaOnline/img/Fondo.png") no-repeat center center
+    fixed;
+  background-color: #2d466e;
+  font-family: "Montserrat", sans-serif;
+}
+
+@import "components/Header";
+@import "components/Fuentes";
+@import "components/Index";
+@import "components/Botones";
+@import "components/DivDiseño";
+@import "components/Panel";
+@import "components/Proyecto";
+@import "components/BuscarProyecto";
+@import "components/EditarProyectos";
+@import "components/ProyectosLista";
+@import "components/Planilla";
+@import "components/PlanillaEditable";
+@import "components/Login";
+@import "components/Contacto";
+@import "components/Admin";
+@import "components/Footer";

@@ -22,7 +22,7 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" href="/ExpoferiaOnline/styles.css" />
+    <link rel="stylesheet" href="/ExpoferiaOnline/css/styles.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
       rel="stylesheet"
@@ -43,15 +43,17 @@
                 nuestra pagina, tan solo completa el siguiente formulario con
                 los datos requeridos, y te enviaremos los datos de la cuenta.</a
               >
+              <hr />
               <form action="/ExpoferiaOnline/index.html">
                 <div class="form-group">
-                  <label for="uname">Nombre:</label>
+                  <label for="uname">Nombre Completo:</label>
                   <input
                     type="text"
                     class="form-control"
                     id="nombre"
-                    placeholder="Ingrese Usuario"
+                    placeholder="Ingrese Nombre"
                     name="nombre"
+                    required
                   />
                 </div>
                 <div class="form-group">
@@ -62,6 +64,35 @@
                     id="email"
                     placeholder="Ingrese Email"
                     name="email"
+                    required
+                  />
+                </div>
+                <hr />
+                <a
+                  >Ingrese el nombre de usuario y la contraseña que desea para
+                  su cuenta.</a
+                >
+                <hr />
+                <div class="form-group">
+                  <label for="uname">Usuario:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nombre"
+                    placeholder="Ingrese Usuario"
+                    name="nombre"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="uname">Contraseña:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nombre"
+                    placeholder="Ingrese Contraseña"
+                    name="nombre"
+                    required
                   />
                 </div>
                 <div class="form-group">

@@ -1,0 +1,40 @@
+.Linea1EditarProyecto {
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 2%;
+  margin-bottom: 3%;
+  background-color: #ffcb00;
+  border-radius: 30px;
+}
+.EditarProyecto {
+  margin-right: 2%;
+  margin-bottom: 3%;
+  background-color: white;
+  border-radius: 30px;
+
+  li,
+  a,
+  button {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+  }
+}
+.EditarProyectoFrame {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  text-align: center;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-top: 4%;
+  padding-bottom: 4%;
+}
+.ProyectoLista {
+  margin: 3%;
+
+  li {
+    list-style: none;
+  }
+}

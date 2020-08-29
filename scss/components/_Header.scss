@@ -1,0 +1,62 @@
+header {
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10%;
+
+  li,
+  a,
+  button {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+  }
+  .logo {
+    width: 350px;
+    cursor: pointer;
+  }
+
+  .nav-links {
+    list-style: none;
+    margin: 16px 0px;
+
+    li {
+      display: inline-block;
+      padding: 0px 20px;
+
+      a {
+        transition: all 0.3s ease 0s;
+      }
+      a:hover {
+        text-decoration: none;
+        color: rgb(163, 163, 163);
+      }
+    }
+  }
+  .MobileBars {
+    display: none;
+    background-color: #283c5c;
+    padding: 20px;
+    color: white;
+
+    a:hover {
+      color: white;
+    }
+  }
+}
+.nav-mobile {
+  justify-content: center;
+  display: none;
+
+  .nav-links2 {
+    list-style: none;
+
+    li {
+      display: inline-block;
+      padding: 0px 20px;
+    }
+  }
+}

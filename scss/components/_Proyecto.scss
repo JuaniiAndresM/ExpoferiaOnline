@@ -1,0 +1,72 @@
+.gridProyectos {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin-bottom: 3%;
+}
+.Proyecto {
+  li,
+  a,
+  button {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+  }
+}
+.Linea1Proyecto {
+  margin-left: 20%;
+  margin-right: 2%;
+  background-color: #ffcb00;
+  border-radius: 30px;
+}
+.Linea1Proyecto2 {
+  margin-left: 2%;
+  margin-right: 20%;
+  background-color: #ffcb00;
+  border-radius: 30px;
+}
+.Tabla {
+  padding: 5%;
+  text-align: center;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding-bottom: 3%;
+}
+.BotonProyecto {
+  width: 100%;
+  margin-bottom: 1%;
+  color: white;
+  background-color: rgba(0, 136, 196, 1);
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+
+  :hover {
+    background-color: rgba(0, 136, 196, 0.8);
+  }
+}
+.listFoto {
+  background-color: grey;
+  width: 100px;
+  float: left;
+  height: 100px;
+  margin: 3%;
+}
+#LineaMobileProyecto {
+  display: none;
+}
+.listProyecto {
+  text-align: left;
+
+  h2 {
+    font-weight: 500;
+    font-size: 25px;
+  }
+
+  p {
+    font-weight: 500;
+    font-size: 15px;
+  }
+}

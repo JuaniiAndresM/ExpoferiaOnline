@@ -1,0 +1,54 @@
+footer {
+  background-color: #2c3138;
+  display: grid;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  bottom: 0%;
+  grid-template-columns: 33% 33% 33%;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    color: white;
+    font-size: 15px;
+  }
+
+  h2 {
+    color: white;
+    font-size: 20px;
+  }
+
+  hr {
+    background-color: white;
+    margin-right: 20%;
+    margin-left: 20%;
+  }
+  .logo {
+    width: 350px;
+    cursor: pointer;
+  }
+  .footerLogo {
+    text-align: center;
+
+    p {
+      font-size: 10px;
+    }
+  }
+  .footerNosotros {
+    text-align: left;
+    margin-left: 10%;
+  }
+  .footerContacto {
+    text-align: right;
+    margin-right: 10%;
+  }
+  .footerLogoMobile {
+    display: none;
+  }
+  .footerNosotrosMobile {
+    display: none;
+  }
+  .footerContactoMobile {
+    display: none;
+  }
+}

@@ -1,0 +1,25 @@
+.Linea1Admin {
+  margin-left: 20%;
+  margin-right: 20%;
+  background-color: #ffcb00;
+  border-radius: 30px;
+}
+.Admin {
+  text-align: center;
+  margin-right: 2%;
+  margin-bottom: 3%;
+  background-color: white;
+  border-radius: 30px;
+
+  .BotonesAdmin {
+  }
+}
+.listAdmin {
+  display: grid;
+  padding: 4%;
+  grid-template-columns: 15% 85%;
+  text-align: left;
+}
+.AdminIMG {
+  width: 90%;
+}
