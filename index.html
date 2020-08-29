@@ -14,10 +14,12 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
     <script src="/ExpoferiaOnline/js/function.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       var scroll = new SmoothScroll('a[href*="#"]');
     </script>
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -39,23 +41,21 @@
   <body onload="hfindex()">
     <div id="header"></div>
 
-    <div class="Index-Page">
+    <div class="Index-Page" data-aos="flip-right" data-aos-duration="1000">
       <img class="PageLogo" src="/ExpoferiaOnline/img/Logo.png" alt="Logo" />
       <p class="texto">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem,
-        reiciendis?
+        Bienvenido a la pagina oficial de la Expoferia Online.
       </p>
       <p class="texto2">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
-        ullam, natus consequatur atque repudiandae fugiat nulla nesciunt rem
-        delectus cum!
+        En esta pagina podrás ver los proyectos subidos por todos los grupos del
+        Liceo IEP.
       </p>
       <br /><br />
       <a class="ContinuarIndex" href="#Inicio">Comenzar</a><br />
       <i id="Flecha" style="font-size: 50px" class="fa">&#xf103;</i>
     </div>
 
-    <div id="Inicio">
+    <div id="Inicio" data-aos="fade-right" data-aos-duration="1000">
       <div class="Grid1">
         <div class="Linea1Live">
           <div class="Linea2Index">
@@ -63,13 +63,19 @@
               <div class="index-frame">
                 <div class="Livestream">
                   <iframe
+                    data-aos="fade-right"
+                    data-aos-duration="1000"
                     src="https://www.youtube.com/embed/LinkExpoferia"
                     frameborder="0"
                     allowfullscreen
                   ></iframe>
                 </div>
 
-                <div class="text2">
+                <div
+                  class="text2"
+                  data-aos="flip-right"
+                  data-aos-duration="1000"
+                >
                   <h2>Información de la Expoferia:</h2>
                   <hr />
                   <div class="DivRotate1">¿Qué son los Proyectos?</div>
@@ -77,7 +83,7 @@
                     ¿Por qué se trabaja con Proyectos?
                   </div>
                   <div class="DivRotate3">
-                    ¿Cuáles son las ventajas de los Proyectos?
+                    ¿Cuáles son las ventajas de trabajar con Proyectos?
                   </div>
                 </div>
               </div>
@@ -87,7 +93,7 @@
       </div>
     </div>
 
-    <div class="CardsIndex">
+    <div class="CardsIndex" data-aos="fade-left" data-aos-duration="2000">
       <div class="Carta">
         <div class="Linea1Card">
           <div class="Linea2">
@@ -117,7 +123,7 @@
           <div class="Linea2">
             <div class="Linea3">
               <div class="Cards">
-                <p>¿Cuáles son las ventajas de los Proyectos?</p>
+                <p>¿Cuáles son las ventajas de trabajar los Proyectos?</p>
               </div>
             </div>
           </div>
@@ -125,7 +131,7 @@
       </div>
     </div>
 
-    <div class="Grid1">
+    <div class="Grid1" data-aos="fade-right" data-aos-duration="1000">
       <div class="Linea1Live">
         <div class="Linea2Index">
           <div class="Linea3Index">
@@ -165,5 +171,9 @@
       </div>
     </div>
     <div id="footer"></div>
+
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
