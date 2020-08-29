@@ -96,6 +96,9 @@ header .MobileBars a:hover {
 .Index-Page .PageLogo {
   width: 650px;
 }
+.Index-Page #Flecha {
+  margin-top: 40px;
+}
 .Index-Page .ContinuarIndex {
   background-color: transparent;
   border: 1px solid white;
@@ -111,12 +114,42 @@ header .MobileBars a:hover {
   transition: all 0.3s ease 0s;
   text-decoration: none;
 }
+.Index-Page .ContinuarIndex:hover {
+  background-color: white;
+  color: #414141;
+}
 .Index-Page .texto {
   font-size: 20px;
 }
 .Index-Page .texto2 {
   color: white;
   text-decoration: none;
+}
+
+.CardsIndex {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.CardsIndex .Carta {
+  margin-left: 2%;
+  margin-right: 2%;
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.CardsIndex .Carta p {
+  font-size: 20px;
+}
+.CardsIndex .Linea1Card {
+  background-color: #ffcb00;
+  border-radius: 30px;
+}
+.CardsIndex .Cards {
+  margin-right: 2%;
+  background-color: white;
+  line-height: 300px;
+  height: 300px;
+  border-radius: 30px;
 }
 
 .index-frame {
@@ -194,8 +227,9 @@ header .MobileBars a:hover {
 }
 
 .text2 {
-  padding: 5%;
+  margin-top: 2%;
   margin-bottom: 5%;
+  margin-right: 2%;
 }
 .text2 .DivRotate1 {
   padding: 5%;
