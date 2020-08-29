@@ -27,3 +27,87 @@ body {
 @import "components/Contacto";
 @import "components/Admin";
 @import "components/Footer";
+
+@media screen and (max-width: 700px) {
+  header {
+    justify-content: center;
+    .nav-links {
+      display: none;
+    }
+    .BotonLogin {
+      display: none;
+    }
+    .MobileBars {
+      display: block;
+      background: transparent;
+    }
+    .logo {
+      width: 250px;
+      cursor: pointer;
+    }
+    .nav-mobile {
+      background-color: #283c5c;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 50%;
+      height: 100%;
+      right: 0;
+      transform: translateX(100%);
+      transition: transform 0.5s ease-in;
+    }
+    .MobileBars {
+      display: block;
+    }
+    .nav-active {
+      transform: translateX(0%);
+    }
+    .nav-mobile nav {
+      width: 90%;
+      height: 100%;
+      margin: 0;
+      position: fixed;
+    }
+    .BotonLogin2 {
+      display: none;
+    }
+    .nav-mobile ul li {
+      display: inline-block;
+      display: block;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    .nav-mobile li:hover {
+      background-color: #1e2c44;
+    }
+    .nav-links2 li {
+      display: inline-block;
+      padding: 0;
+      opacity: 1;
+    }
+  }
+  .Index-Page {
+    .PageLogo {
+      width: 300px;
+    }
+    .texto {
+      margin: 2%;
+    }
+    .texto2 {
+      color: white;
+      margin: 2%;
+      font-size: 10px;
+    }
+  }
+
+  @keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+}

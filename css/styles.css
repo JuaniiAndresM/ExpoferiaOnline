@@ -86,8 +86,8 @@ header .MobileBars a:hover {
 
 .Index-Page {
   width: 100%;
-  margin-top: 60%;
-  padding-bottom: 10%;
+  padding-top: 10%;
+  padding-bottom: 12%;
   color: white;
   position: relative;
   text-align: center;
@@ -96,8 +96,32 @@ header .MobileBars a:hover {
 .Index-Page .PageLogo {
   width: 650px;
 }
+.Index-Page .ContinuarIndex {
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 20px;
+  color: white;
+  width: 100%;
+  margin-top: 20%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 2%;
+  padding-right: 2%;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  text-decoration: none;
+}
+.Index-Page .texto {
+  font-size: 20px;
+}
+.Index-Page .texto2 {
+  color: white;
+  text-decoration: none;
+}
 
 .index-frame {
+  display: grid;
+  grid-template-columns: 50% 50%;
   text-align: center;
   margin-right: 1%;
   background-color: white;
@@ -110,8 +134,33 @@ header .MobileBars a:hover {
   text-decoration: none;
   background-color: transparent;
 }
+.index-frame .Livestream {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  position: relative;
+}
+.index-frame .Livestream iframe,
+.index-frame .Livestream object,
+.index-frame .Livestream embed {
+  border-radius: 30px;
+  padding: 2%;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
 
-.gridIndex {
+.index-frame2 {
+  margin-top: 2%;
+  text-align: center;
+  margin-right: 1%;
+  background-color: white;
+}
+
+.rid1 {
   display: grid;
   grid-template-columns: 50% 50%;
 }
@@ -142,6 +191,29 @@ header .MobileBars a:hover {
 .text {
   padding: 5%;
   margin-bottom: 5%;
+}
+
+.text2 {
+  padding: 5%;
+  margin-bottom: 5%;
+}
+.text2 .DivRotate1 {
+  padding: 5%;
+  background-color: #5aac29;
+  border-radius: 30px;
+  margin: 2%;
+}
+.text2 .DivRotate2 {
+  padding: 5%;
+  background-color: #008ac4;
+  border-radius: 30px;
+  margin: 2%;
+}
+.text2 .DivRotate3 {
+  padding: 5%;
+  background-color: #ffcb00;
+  border-radius: 30px;
+  margin: 2%;
 }
 
 button,
@@ -661,4 +733,87 @@ footer .footerNosotrosMobile {
 }
 footer .footerContactoMobile {
   display: none;
+}
+
+@media screen and (max-width: 700px) {
+  header {
+    justify-content: center;
+  }
+  header .nav-links {
+    display: none;
+  }
+  header .BotonLogin {
+    display: none;
+  }
+  header .MobileBars {
+    display: block;
+    background: transparent;
+  }
+  header .logo {
+    width: 250px;
+    cursor: pointer;
+  }
+  header .nav-mobile {
+    background-color: #283c5c;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    right: 0;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+  header .MobileBars {
+    display: block;
+  }
+  header .nav-active {
+    transform: translateX(0%);
+  }
+  header .nav-mobile nav {
+    width: 90%;
+    height: 100%;
+    margin: 0;
+    position: fixed;
+  }
+  header .BotonLogin2 {
+    display: none;
+  }
+  header .nav-mobile ul li {
+    display: inline-block;
+    display: block;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  header .nav-mobile li:hover {
+    background-color: #1e2c44;
+  }
+  header .nav-links2 li {
+    display: inline-block;
+    padding: 0;
+    opacity: 1;
+  }
+
+  .Index-Page .PageLogo {
+    width: 300px;
+  }
+  .Index-Page .texto {
+    margin: 2%;
+  }
+  .Index-Page .texto2 {
+    color: white;
+    margin: 2%;
+    font-size: 10px;
+  }
+
+  @keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
 }

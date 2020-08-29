@@ -1,7 +1,7 @@
 .Index-Page {
   width: 100%;
-  margin-top: 60%;
-  padding-bottom: 10%;
+  padding-top: 10%;
+  padding-bottom: 12%;
   color: white;
   position: relative;
   text-align: center;
@@ -10,9 +10,33 @@
   .PageLogo {
     width: 650px;
   }
+  .ContinuarIndex {
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 20px;
+    color: white;
+    width: 100%;
+    margin-top: 20%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 2%;
+    padding-right: 2%;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    text-decoration: none;
+  }
+  .texto {
+    font-size: 20px;
+  }
+  .texto2 {
+    color: white;
+    text-decoration: none;
+  }
 }
 
 .index-frame {
+  display: grid;
+  grid-template-columns: 50% 50%;
   text-align: center;
   margin-right: 1%;
   background-color: white;
@@ -25,9 +49,32 @@
     text-decoration: none;
     background-color: transparent;
   }
+  .Livestream {
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    position: relative;
+  }
+  .Livestream iframe,
+  .Livestream object,
+  .Livestream embed {
+    border-radius: 30px;
+    padding: 2%;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
 }
-
-.gridIndex {
+.index-frame2 {
+  margin-top: 2%;
+  text-align: center;
+  margin-right: 1%;
+  background-color: white;
+}
+.rid1 {
   display: grid;
   grid-template-columns: 50% 50%;
 }
@@ -55,4 +102,27 @@
 .text {
   padding: 5%;
   margin-bottom: 5%;
+}
+.text2 {
+  padding: 5%;
+  margin-bottom: 5%;
+
+  .DivRotate1 {
+    padding: 5%;
+    background-color: #5aac29;
+    border-radius: 30px;
+    margin: 2%;
+  }
+  .DivRotate2 {
+    padding: 5%;
+    background-color: #008ac4;
+    border-radius: 30px;
+    margin: 2%;
+  }
+  .DivRotate3 {
+    padding: 5%;
+    background-color: #ffcb00;
+    border-radius: 30px;
+    margin: 2%;
+  }
 }
