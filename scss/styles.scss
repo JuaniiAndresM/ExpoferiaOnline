@@ -34,7 +34,9 @@ body {
       display: none;
     }
     .BotonLogin {
-      display: none;
+      button {
+        display: none;
+      }
     }
     .MobileBars {
       display: block;
@@ -99,8 +101,29 @@ body {
     }
   }
   .index-frame {
-    display: grid;
-    grid-template-columns: 100%;
+    grid-template-columns: 1fr;
+  }
+  .index-frame2 {
+    p {
+      margin: 2%;
+    }
+    hr {
+      margin: 2%;
+    }
+  }
+  .CardsIndex {
+    grid-template-columns: 1fr;
+
+    .Carta {
+      margin-left: 1%;
+      margin-right: 1%;
+      text-align: center;
+      margin-top: 2%;
+      margin-bottom: 2%;
+      p {
+        font-size: 20px;
+      }
+    }
   }
 
   @keyframes navLinkFade {

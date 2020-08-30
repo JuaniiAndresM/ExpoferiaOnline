@@ -794,7 +794,7 @@ footer .footerContactoMobile {
   header .nav-links {
     display: none;
   }
-  header .BotonLogin {
+  header .BotonLogin button {
     display: none;
   }
   header .MobileBars {
@@ -859,8 +859,28 @@ footer .footerContactoMobile {
   }
 
   .index-frame {
-    display: grid;
-    grid-template-columns: 100%;
+    grid-template-columns: 1fr;
+  }
+
+  .index-frame2 p {
+    margin: 2%;
+  }
+  .index-frame2 hr {
+    margin: 2%;
+  }
+
+  .CardsIndex {
+    grid-template-columns: 1fr;
+  }
+  .CardsIndex .Carta {
+    margin-left: 1%;
+    margin-right: 1%;
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+  .CardsIndex .Carta p {
+    font-size: 20px;
   }
 
   @keyframes navLinkFade {
