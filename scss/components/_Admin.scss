@@ -1,4 +1,5 @@
 .Linea1Admin {
+  margin-top: 100px;
   margin-left: 20%;
   margin-right: 20%;
   background-color: #ffcb00;
@@ -6,12 +7,27 @@
 }
 .Admin {
   text-align: center;
+  padding-top: 2%;
+  padding-bottom: 2%;
   margin-right: 2%;
   margin-bottom: 3%;
   background-color: white;
   border-radius: 30px;
 
   .BotonesAdmin {
+    text-align: center;
+
+    button {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      color: white;
+      text-decoration: none;
+    }
+  }
+  hr {
+    margin-left: 2%;
+    margin-right: 2%;
   }
 }
 .listAdmin {
