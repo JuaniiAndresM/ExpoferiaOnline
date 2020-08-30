@@ -135,7 +135,7 @@ header .MobileBars a:hover {
   margin-right: 2%;
   text-align: center;
   margin-top: 15%;
-  margin-bottom: 5%;
+  margin-bottom: 15%;
 }
 .CardsIndex .Carta p {
   font-size: 20px;
@@ -840,6 +840,11 @@ footer .footerContactoMobile {
     color: white;
     margin: 2%;
     font-size: 10px;
+  }
+
+  .index-frame {
+    display: grid;
+    grid-template-columns: 100%;
   }
 
   @keyframes navLinkFade {

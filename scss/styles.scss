@@ -99,6 +99,10 @@ body {
       font-size: 10px;
     }
   }
+  .index-frame {
+    display: grid;
+    grid-template-columns: 100%;
+  }
 
   @keyframes navLinkFade {
     from {
