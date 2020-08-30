@@ -46,46 +46,45 @@ body {
       width: 250px;
       cursor: pointer;
     }
-    .nav-mobile {
-      background-color: #283c5c;
-      position: absolute;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 50%;
-      height: 100%;
-      right: 0;
-      transform: translateX(100%);
-      transition: transform 0.5s ease-in;
+  }
+  .nav-mobile {
+    z-index: 2;
+    position: absolute;
+    right: 0;
+    height: 80vh;
+    width: 50%;
+    top: 15vh;
+    background: url("/ExpoferiaOnline/img/Fondo.png") no-repeat center center
+      fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid white;
+    box-shadow: -7px 0px 16px 0px white;
+    transform: translateX(106%);
+    transition: transform 0.5s ease-in;
+    h2 {
+      color: white;
+      margin-bottom: 50px;
     }
-    .MobileBars {
-      display: block;
+    li {
+      a {
+        color: white;
+      }
     }
-    .nav-active {
-      transform: translateX(0%);
+
+    hr {
+      background-color: white;
     }
-    .nav-mobile nav {
-      width: 90%;
-      height: 100%;
-      margin: 0;
-      position: fixed;
+    .nav-links2 {
+      list-style: none;
     }
     .BotonLogin2 {
       display: none;
     }
-    .nav-mobile ul li {
-      display: inline-block;
-      display: block;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    }
-    .nav-mobile li:hover {
-      background-color: #1e2c44;
-    }
-    .nav-links2 li {
-      display: inline-block;
-      padding: 0;
-      opacity: 1;
-    }
+  }
+  .nav-active {
+    transform: translateX(0%);
   }
   .Index-Page {
     .PageLogo {
@@ -123,17 +122,6 @@ body {
       p {
         font-size: 20px;
       }
-    }
-  }
-
-  @keyframes navLinkFade {
-    from {
-      opacity: 0;
-      transform: translateX(50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0px);
     }
   }
 }
