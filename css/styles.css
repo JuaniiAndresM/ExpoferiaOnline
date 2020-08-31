@@ -851,6 +851,14 @@ BotonProyecto :hover {
   width: 90%;
 }
 
+#rechazar {
+  margin: 2%;
+  text-align: left;
+}
+#rechazar .Enviar {
+  margin-top: 1%;
+}
+
 footer {
   background-color: #2c3138;
   display: grid;
