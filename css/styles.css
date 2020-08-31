@@ -321,6 +321,7 @@ header .MobileBars a:hover {
   margin-right: 5%;
 }
 .index-frame2 .ImagenProyectos {
+  border-radius: 30px;
   margin: 2%;
   width: 100%;
   background-color: black;
