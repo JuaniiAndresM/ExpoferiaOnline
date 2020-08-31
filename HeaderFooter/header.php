@@ -43,10 +43,10 @@
     </ul>
   </nav>
   
-  <a class="BotonLogin" href="/ExpoferiaOnline/Form/login.html" style="<?php echo $buttonvisible ?>"
+  <a class="button" href="/ExpoferiaOnline/Form/login.html" style="<?php echo $buttonvisible ?>"
     ><button>Login</button></a
   >
-  <a class="BotonLogin" href="/ExpoferiaOnline/Form/CerrarSesion.php" style="<?php echo $buttonvisible1 ?>"
+  <a class="button" href="/ExpoferiaOnline/Form/CerrarSesion.php" style="<?php echo $buttonvisible1 ?>"
     ><button>Cerrar sesión</button></a
   >
   <div class="MobileBars">

@@ -56,23 +56,47 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   .Carta {
-    margin-left: 2%;
-    margin-right: 2%;
+    margin-left: 4%;
+    margin-right: 4%;
     text-align: center;
     margin-top: 15%;
     margin-bottom: 15%;
+
+    i {
+      padding-top: 5%;
+    }
+    h3 {
+      font-size: 25px;
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+    hr {
+      margin-left: 10%;
+      margin-right: 10%;
+    }
     p {
-      font-size: 20px;
+      padding-bottom: 5%;
+      margin-right: 10%;
+      margin-left: 10%;
     }
   }
   .Linea1Card {
     background-color: #ffcb00;
     border-radius: 30px;
   }
-  .Cards {
+  .Cards1 {
     margin-right: 2%;
     background-color: white;
-    height: 300px;
+    border-radius: 30px;
+  }
+  .Cards2 {
+    margin-right: 2%;
+    background-color: white;
+    border-radius: 30px;
+  }
+  .Cards3 {
+    margin-right: 2%;
+    background-color: white;
     border-radius: 30px;
   }
 }
@@ -187,11 +211,46 @@
   }
 }
 .index-frame2 {
-  text-align: center;
+  .Seccion1 {
+    display: grid;
+    grid-template-columns: 20% 80%;
+  }
+  .Seccion2 {
+    display: grid;
+    margin-right: 1%;
+    grid-template-columns: 80% 20%;
+  }
+  .Seccion2Mobile {
+    display: none;
+  }
+  .Seccion3 {
+    display: grid;
+    grid-template-columns: 20% 80%;
+  }
+  .SeccionTexto {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+  }
+  text-align: left;
   margin-right: 1%;
   background-color: white;
+  margin-bottom: 2%;
+  h2,
+  hr,
+  p {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .ImagenProyectos {
+    margin: 2%;
+    width: 100%;
+    background-color: black;
+  }
 }
-.rid1 {
+.grid1 {
   display: grid;
   grid-template-columns: 50% 50%;
 }

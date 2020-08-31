@@ -141,23 +141,46 @@ header .MobileBars a:hover {
   grid-template-columns: 1fr 1fr 1fr;
 }
 .CardsIndex .Carta {
-  margin-left: 2%;
-  margin-right: 2%;
+  margin-left: 4%;
+  margin-right: 4%;
   text-align: center;
   margin-top: 15%;
   margin-bottom: 15%;
 }
+.CardsIndex .Carta i {
+  padding-top: 5%;
+}
+.CardsIndex .Carta h3 {
+  font-size: 25px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.CardsIndex .Carta hr {
+  margin-left: 10%;
+  margin-right: 10%;
+}
 .CardsIndex .Carta p {
-  font-size: 20px;
+  padding-bottom: 5%;
+  margin-right: 10%;
+  margin-left: 10%;
 }
 .CardsIndex .Linea1Card {
   background-color: #ffcb00;
   border-radius: 30px;
 }
-.CardsIndex .Cards {
+.CardsIndex .Cards1 {
   margin-right: 2%;
   background-color: white;
-  height: 300px;
+  border-radius: 30px;
+}
+.CardsIndex .Cards2 {
+  margin-right: 2%;
+  background-color: white;
+  border-radius: 30px;
+}
+.CardsIndex .Cards3 {
+  margin-right: 2%;
+  background-color: white;
   border-radius: 30px;
 }
 
@@ -264,12 +287,46 @@ header .MobileBars a:hover {
 }
 
 .index-frame2 {
-  text-align: center;
+  text-align: left;
   margin-right: 1%;
   background-color: white;
+  margin-bottom: 2%;
+}
+.index-frame2 .Seccion1 {
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+.index-frame2 .Seccion2 {
+  display: grid;
+  margin-right: 1%;
+  grid-template-columns: 80% 20%;
+}
+.index-frame2 .Seccion2Mobile {
+  display: none;
+}
+.index-frame2 .Seccion3 {
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+.index-frame2 .SeccionTexto {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+.index-frame2 h2,
+.index-frame2 hr,
+.index-frame2 p {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.index-frame2 .ImagenProyectos {
+  margin: 2%;
+  width: 100%;
+  background-color: black;
 }
 
-.rid1 {
+.grid1 {
   display: grid;
   grid-template-columns: 50% 50%;
 }
@@ -925,7 +982,7 @@ footer .Facebook {
   header .nav-links {
     display: none;
   }
-  header .BotonLogin button {
+  header .button button {
     display: none;
   }
   header .MobileBars {
@@ -1023,6 +1080,27 @@ footer .Facebook {
     grid-template-rows: 1fr 1fr;
   }
 
+  .index-frame2 {
+    text-align: center;
+  }
+  .index-frame2 .Seccion1 {
+    margin-right: 4%;
+    grid-template-columns: 1fr;
+  }
+  .index-frame2 .Seccion2 {
+    margin-right: 4%;
+    grid-template-columns: 1fr;
+  }
+  .index-frame2 .Seccion2Mobile {
+    display: block;
+  }
+  .index-frame2 .Seccion2IMG {
+    display: none;
+  }
+  .index-frame2 .Seccion3 {
+    margin-right: 4%;
+    grid-template-columns: 1fr;
+  }
   .index-frame2 p {
     margin: 2%;
   }

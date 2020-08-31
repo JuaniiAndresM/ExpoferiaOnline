@@ -33,7 +33,7 @@ body {
     .nav-links {
       display: none;
     }
-    .BotonLogin {
+    .button {
       button {
         display: none;
       }
@@ -135,6 +135,25 @@ body {
     grid-template-rows: 1fr 1fr;
   }
   .index-frame2 {
+    text-align: center;
+    .Seccion1 {
+      margin-right: 4%;
+      grid-template-columns: 1fr;
+    }
+    .Seccion2 {
+      margin-right: 4%;
+      grid-template-columns: 1fr;
+    }
+    .Seccion2Mobile {
+      display: block;
+    }
+    .Seccion2IMG {
+      display: none;
+    }
+    .Seccion3 {
+      margin-right: 4%;
+      grid-template-columns: 1fr;
+    }
     p {
       margin: 2%;
     }
