@@ -79,7 +79,7 @@
 
 .index-frame {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 1fr 1fr;
   text-align: center;
   margin-right: 1%;
   background-color: white;
@@ -109,6 +109,81 @@
     position: absolute;
     top: 0;
     width: 100%;
+  }
+
+  .scene {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin: 2%;
+    gap: 2%;
+
+    .flip-card {
+      background-color: transparent;
+      perspective: 1000px;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front,
+    .flip-card-front2,
+    .flip-card-back,
+    .flip-card-back2 {
+      border-radius: 30px;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+
+    .flip-card-front {
+      display: flex;
+      font-size: 20px;
+      justify-content: center;
+      align-content: center;
+      flex-direction: column;
+      background-color: #5aac29;
+      color: white;
+    }
+    .flip-card-front2 {
+      display: flex;
+      font-size: 20px;
+      justify-content: center;
+      align-content: center;
+      flex-direction: column;
+      background-color: #008ac4;
+      color: white;
+    }
+
+    .flip-card-back {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      flex-direction: column;
+      background-color: #5aac29;
+      color: white;
+      transform: rotateY(180deg);
+    }
+    .flip-card-back2 {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      flex-direction: column;
+      background-color: #008ac4;
+      color: white;
+      transform: rotateY(180deg);
+    }
   }
 }
 .index-frame2 {
