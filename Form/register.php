@@ -38,7 +38,7 @@
             <div class="LoginFrame">
               <h2>Register:</h2>
               <hr />
-              <form action="registrarse.php" method="POST">
+              <form action="registrar.php" method="POST">
                 <div class="form-group">
                   <label for="uname">Usuario:</label>
                   <input
@@ -62,29 +62,60 @@
                   />
                 </div>
                 <div class="form-group">
-                  <label for="type">Tipo:</label><br>
-                  <div>
-                    <label for="type" id="rad">Profesor</label>
+                  <label for="nom">Nombre:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nombre"
+                    placeholder="Ingrese nombre"
+                    name="nombre"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="ape">Apellido:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="apellido"
+                    placeholder="Ingrese apellido"
+                    name="apellido"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="tlf">Telefono:</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="tel"
+                    placeholder="Ingrese numero de telefono"
+                    name="tel"
+                    required
+                  />
+                  <div class="form-group">
+                    <label for="mil">Mail:</label>
                     <input
-                      type="radio"
-                      class="form-algo"
-                      id="prof"
-                      name="tipo"
-                      required
-                    />
-                    <label for="type" id="rad">Administrador</label>
-                    <input
-                      type="radio"
-                      class="form-algo"
-                      id="admin"
-                      name="tipo"
+                      type="text"
+                      class="form-control"
+                      id="mail"
+                      placeholder="Ingrese mail"
+                      name="mail"
                       required
                     />
                   </div>
+                  <div class="form-group">
+                  <p style="color: red; display: none;" id="errorPwd">*El usuario ya exsiste</p>
+                </div>
+                <?php
+                  if(isset($_GET['eP'])){
+                      echo "<script>
+                      document.getElementById('errorPwd').style.display = 'block'; </script>";
+                  }
+                ?>
                 </div>
                 <a class="buttonLogin" type="submit"
-                  ><button>Registrarse</button></a
-                >
+                  ><button>Registrarse</button></a>
               </form>
             </div>
           </div>
