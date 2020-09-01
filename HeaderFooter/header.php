@@ -1,3 +1,4 @@
+<script src="/ExpoferiaOnline/js/menu.js"></script>
 <header>
   <a href="/ExpoferiaOnline/index.html"
     ><img class="logo" src="/ExpoferiaOnline/img/Logo.png" alt="Logo"
@@ -42,10 +43,10 @@
     </ul>
   </nav>
   
-  <a class="BotonLogin" href="/ExpoferiaOnline/Form/login.html" style="<?php echo $buttonvisible ?>"
+  <a class="button" href="/ExpoferiaOnline/Form/login.html" style="<?php echo $buttonvisible ?>"
     ><button>Login</button></a
   >
-  <a class="BotonLogin" href="/ExpoferiaOnline/Form/CerrarSesion.php" style="<?php echo $buttonvisible1 ?>"
+  <a class="button" href="/ExpoferiaOnline/Form/CerrarSesion.php" style="<?php echo $buttonvisible1 ?>"
     ><button>Cerrar sesión</button></a
   >
   <div class="MobileBars">
@@ -54,31 +55,48 @@
 </header>
 <div class="nav-mobile">
   <nav>
+    <h2>Menu:</h2>
     <ul class="nav-links2">
       <li>
         <a href="/ExpoferiaOnline/index.html"
           ><i class="fa">&#xf015;</i> Inicio</a
         >
+        <hr>
       </li>
       <li>
         <a href="/ExpoferiaOnline/Proyectos/BuscarProyectos.html"
           ><i class="fa">&#xf002;</i> Proyectos</a
         >
+        <hr>
       </li>
       <li>
         <a href="/ExpoferiaOnline/Info/informacion.html"
           ><i class="fa">&#xf05a;</i> Información</a
         >
+        <hr>
       </li>
       <li>
-        <a href="/ExpoferiaOnline/Proyectos/Panel.php"
+        <div style="<?php echo $buttonvisible2 ?>">
+      <a href="/ExpoferiaOnline/Proyectos/Panel.html"
           ><i class="fa">&#xf2bb;</i> Panel</a
         >
+        <hr>
+      </div>
       </li>
       <li>
-        <a href="/ExpoferiaOnline/Form/login.html"
-          ><i class="fa">&#xf138;</i> Login</a
-        >
+        <div style="<?php echo $buttonvisible ?>">
+          <a href="/ExpoferiaOnline/Form/login.html"
+            ><i class="fa">&#xf138;</i> Login</a   
+          >
+        </div>
+      </li>
+      <li>
+        <div style="<?php echo $buttonvisible1 ?>">
+        <hr>
+          <a href="/ExpoferiaOnline/Form/login.html"
+            ><i class="fa">&#xf137;</i> Cerrar Sesión</a
+          >
+        </div>
       </li>
     </ul>
     <br />
@@ -89,4 +107,3 @@
   >
 </div>
 <br />
-<script src="/ExpoferiaOnline/js/menu.js"></script>

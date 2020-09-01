@@ -13,6 +13,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="/ExpoferiaOnline/js/Texto.js"></script>
     <script src="/ExpoferiaOnline/js/function.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
@@ -42,17 +43,19 @@
     <div id="header"></div>
 
     <div class="Index-Page" data-aos="flip-right" data-aos-duration="1000">
-      <img class="PageLogo" src="/ExpoferiaOnline/img/Logo.png" alt="Logo" />
-      <p class="texto">
-        Bienvenido a la pagina oficial de la Expoferia Online.
-      </p>
-      <p class="texto2">
-        En esta pagina podrás ver los proyectos subidos por todos los grupos del
-        Liceo IEP.
-      </p>
-      <br /><br />
-      <a class="ContinuarIndex" href="#Inicio">Comenzar</a><br />
-      <i id="Flecha" style="font-size: 50px" class="fa">&#xf103;</i>
+      <div class="SubPage">
+        <img class="PageLogo" src="/ExpoferiaOnline/img/Logo.png" alt="Logo" />
+        <p class="texto">
+          Bienvenido a la pagina oficial de la Expoferia Online.
+        </p>
+        <p class="texto2">
+          En esta pagina podrás ver los proyectos subidos por todos los grupos
+          del Liceo IEP.
+        </p>
+        <br /><br />
+        <a class="ContinuarIndex" href="#Inicio">Comenzar</a><br />
+        <i id="Flecha" style="font-size: 50px" class="fa">&#xf103;</i>
+      </div>
     </div>
 
     <div id="Inicio" data-aos="fade-right" data-aos-duration="1000">
@@ -71,19 +74,53 @@
                   ></iframe>
                 </div>
 
-                <div
-                  class="text2"
-                  data-aos="flip-right"
-                  data-aos-duration="1000"
-                >
-                  <h2>Información de la Expoferia:</h2>
-                  <hr />
-                  <div class="DivRotate1">¿Qué son los Proyectos?</div>
-                  <div class="DivRotate2">
-                    ¿Por qué se trabaja con Proyectos?
+                <div class="scene">
+                  <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <p>¿Qué son los Proyectos?</p>
+                      </div>
+                      <div class="flip-card-back">
+                        <p>
+                          Lorem ipsum dolor sit amet consectetur, adipisicing
+                          elit. Explicabo, omnis. Porro soluta consequatur iure
+                          dolor eaque quos corrupti doloremque vero!
+                        </p>
+                      </div>
+                    </div>
                   </div>
-                  <div class="DivRotate3">
-                    ¿Cuáles son las ventajas de trabajar con Proyectos?
+
+                  <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front2">
+                        <p>¿Por qué se trabaja con Proyectos?</p>
+                      </div>
+                      <div class="flip-card-back2">
+                        <p>
+                          Lorem ipsum dolor sit amet consectetur, adipisicing
+                          elit. Optio, dicta laboriosam. Doloremque explicabo
+                          omnis consectetur. Saepe eum in officia assumenda qui
+                          ratione, necessitatibus dolorem impedit iusto
+                          suscipit? Dolore, fugit molestiae!
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <p>
+                          ¿Cuáles son las ventajas de trabajar los Proyectos?
+                        </p>
+                      </div>
+                      <div class="flip-card-back">
+                        <p>
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Consequatur, iusto.
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -92,14 +129,20 @@
         </div>
       </div>
     </div>
-
     <div class="CardsIndex" data-aos="fade-left" data-aos-duration="2000">
       <div class="Carta">
         <div class="Linea1Card">
           <div class="Linea2">
             <div class="Linea3">
-              <div class="Cards">
-                <p>¿Qué son los Proyectos?</p>
+              <div class="Cards1">
+                <i style="font-size: 80px" class="fa">&#xf02d;</i>
+                <h3>Lorem ipsum dolor sit amet.</h3>
+                <hr />
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Doloribus aliquam veritatis dolore veniam eligendi fugiat et
+                  labore nihil! Ducimus, reprehenderit?
+                </p>
               </div>
             </div>
           </div>
@@ -110,8 +153,15 @@
         <div class="Linea1Card">
           <div class="Linea2">
             <div class="Linea3">
-              <div class="Cards">
-                <p>¿Por qué se trabaja con Proyectos?</p>
+              <div class="Cards2">
+                <i style="font-size: 80px" class="fa">&#xf0c2;</i>
+                <h3>Lorem ipsum dolor sit amet.</h3>
+                <hr />
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Doloribus aliquam veritatis dolore veniam eligendi fugiat et
+                  labore nihil! Ducimus, reprehenderit?
+                </p>
               </div>
             </div>
           </div>
@@ -122,8 +172,15 @@
         <div class="Linea1Card">
           <div class="Linea2">
             <div class="Linea3">
-              <div class="Cards">
-                <p>¿Cuáles son las ventajas de trabajar los Proyectos?</p>
+              <div class="Cards3">
+                <i style="font-size: 80px" class="fa">&#xf085;</i>
+                <h3>Lorem ipsum dolor sit amet.</h3>
+                <hr />
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Doloribus aliquam veritatis dolore veniam eligendi fugiat et
+                  labore nihil! Ducimus, reprehenderit?
+                </p>
               </div>
             </div>
           </div>
@@ -136,35 +193,107 @@
         <div class="Linea2Index">
           <div class="Linea3Index">
             <div class="index-frame2">
-              <h2>Expoferia:</h2>
-              <hr />
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic,
-                soluta? Deserunt deleniti eveniet omnis qui ad reiciendis
-                pariatur explicabo veritatis cum commodi id odio labore
-                assumenda est, nesciunt impedit quaerat vel quibusdam enim
-                corrupti accusamus ratione fuga. Illo possimus cumque labore,
-                nobis obcaecati sit magni repellendus. Veritatis laudantium
-                delectus nobis explicabo reprehenderit temporibus. Minima autem
-                eum veniam numquam vitae, quam natus culpa fuga nemo quod
-                asperiores rerum odit corporis suscipit, officia dicta cum
-                commodi! Autem aperiam totam voluptas dolores magni! Doloremque
-                neque, molestiae aperiam modi magni esse officia similique, rem,
-                fuga cupiditate aut totam nobis ea reprehenderit id! Suscipit
-                quibusdam odit reprehenderit voluptatum est, quo iusto eius quis
-                commodi. Nemo nam atque ipsum libero maiores assumenda eveniet
-                vel omnis earum ratione dolorem debitis, laborum minima suscipit
-                aliquam impedit inventore consectetur numquam, voluptatum quasi
-                perspiciatis eos iusto! Iusto maiores tempore qui facere
-                possimus? Animi ipsam, rem minus ipsa impedit at quia quidem
-                quaerat, amet fuga dolorem culpa omnis laudantium dolor!
-                Reprehenderit suscipit laboriosam id velit? Perspiciatis in
-                culpa consequuntur corrupti quaerat esse minus, magni sint earum
-                tenetur. Numquam tenetur consequuntur accusantium officiis!
-                Repellendus consectetur reprehenderit assumenda dicta autem
-                quaerat, eum laboriosam numquam explicabo ab delectus corrupti
-                cupiditate impedit optio. Cupiditate, excepturi?
-              </p>
+              <div
+                class="Seccion1"
+                data-aos="flip-right"
+                data-aos-duration="1000"
+              >
+                <div>
+                  <img
+                    class="ImagenProyectos"
+                    src="/ExpoferiaOnline/img/Ejemplo.png"
+                  />
+                </div>
+                <div class="SeccionTexto">
+                  <h2>Proyectos:</h2>
+                  <hr />
+                  <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Vitae, ab, quia atque porro veniam non ipsa, quaerat eaque
+                    repudiandae autem tempora consequuntur fugit? Explicabo
+                    veritatis eum itaque labore nulla, iusto tempore earum
+                    fugiat ad perferendis doloremque eaque vero quidem facere
+                    doloribus. Unde maxime sit porro perferendis repellat, quae
+                    et facere maiores! Impedit earum eaque pariatur magnam? Quam
+                    repellat adipisci veniam consequuntur eius, explicabo
+                    commodi hic ut ipsum praesentium amet quaerat libero
+                    architecto magni ullam eaque aspernatur aperiam? Tempora,
+                    impedit illo exercitationem atque esse culpa voluptatum,
+                    deserunt consequuntur libero doloribus corrupti? Quas vero
+                    ad maxime corrupti quia dignissimos voluptatem dolor animi.
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="Seccion2"
+                data-aos="flip-left"
+                data-aos-duration="1000"
+              >
+                <div class="Seccion2Mobile">
+                  <img
+                    class="ImagenProyectos"
+                    src="/ExpoferiaOnline/img/Ejemplo.png"
+                  />
+                </div>
+                <div class="SeccionTexto">
+                  <h2>Proyectos:</h2>
+                  <hr />
+                  <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Vitae, ab, quia atque porro veniam non ipsa, quaerat eaque
+                    repudiandae autem tempora consequuntur fugit? Explicabo
+                    veritatis eum itaque labore nulla, iusto tempore earum
+                    fugiat ad perferendis doloremque eaque vero quidem facere
+                    doloribus. Unde maxime sit porro perferendis repellat, quae
+                    et facere maiores! Impedit earum eaque pariatur magnam? Quam
+                    repellat adipisci veniam consequuntur eius, explicabo
+                    commodi hic ut ipsum praesentium amet quaerat libero
+                    architecto magni ullam eaque aspernatur aperiam? Tempora,
+                    impedit illo exercitationem atque esse culpa voluptatum,
+                    deserunt consequuntur libero doloribus corrupti? Quas vero
+                    ad maxime corrupti quia dignissimos voluptatem dolor animi.
+                  </p>
+                </div>
+                <div class="Seccion2IMG">
+                  <img
+                    class="ImagenProyectos"
+                    src="/ExpoferiaOnline/img/Ejemplo.png"
+                  />
+                </div>
+              </div>
+
+              <div
+                class="Seccion3"
+                data-aos="flip-right"
+                data-aos-duration="1000"
+              >
+                <div>
+                  <img
+                    class="ImagenProyectos"
+                    src="/ExpoferiaOnline/img/Ejemplo.png"
+                  />
+                </div>
+                <div class="SeccionTexto">
+                  <h2>Proyectos:</h2>
+                  <hr />
+                  <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Vitae, ab, quia atque porro veniam non ipsa, quaerat eaque
+                    repudiandae autem tempora consequuntur fugit? Explicabo
+                    veritatis eum itaque labore nulla, iusto tempore earum
+                    fugiat ad perferendis doloremque eaque vero quidem facere
+                    doloribus. Unde maxime sit porro perferendis repellat, quae
+                    et facere maiores! Impedit earum eaque pariatur magnam? Quam
+                    repellat adipisci veniam consequuntur eius, explicabo
+                    commodi hic ut ipsum praesentium amet quaerat libero
+                    architecto magni ullam eaque aspernatur aperiam? Tempora,
+                    impedit illo exercitationem atque esse culpa voluptatum,
+                    deserunt consequuntur libero doloribus corrupti? Quas vero
+                    ad maxime corrupti quia dignissimos voluptatem dolor animi.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
