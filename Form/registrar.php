@@ -1,5 +1,5 @@
 <?php
-include '../conexion.php';
+include './conexion.php';
 session_start();
 if(isset($_POST['user']) && $_POST['contra']){
     // aquí pongo lo de mysql para verificar que no exista usuario y para guardar el nuevo usuario.
@@ -16,11 +16,10 @@ if(isset($_POST['user']) && $_POST['contra']){
         $contra = '"'.$mysqli->real_escape_string($_POST['contra']).'"';
 
         //MySqli Insert Query
-        $insert_row = $mysqli->query("INSERT INTO solicitudes_profesor  (Usuario, Password) VALUES($user, $contra)");
+        $insert_row = $mysqli->query("INSERT INTO solicitudes_profesor  (Usuario, Password) VALUES($usuario, $contra)");
 
         if($insert_row){
             print 'Ok, todo grabado : ' .$mysqli->insert_id .'<br />'; 
-            $_SESSION['usuario']=$_POST['usuario'];
             header('Location: ../index.html');
         }else{
             die('Error : ('. $mysqli->errno .') '. $mysqli->error);
