@@ -104,6 +104,15 @@
                       required
                     />
                   </div>
+                  <div class="form-group">
+                  <p style="color: red; display: none;" id="errorPwd">*El usuario ya exsiste</p>
+                </div>
+                <?php
+                  if(isset($_GET['eP'])){
+                      echo "<script>
+                      document.getElementById('errorPwd').style.display = 'block'; </script>";
+                  }
+                ?>
                 </div>
                 <a class="buttonLogin" type="submit"
                   ><button>Registrarse</button></a>

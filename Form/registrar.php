@@ -26,7 +26,7 @@ if(isset($_POST['user']) && $_POST['contra']){
             print 'Ok, todo grabado : ' .$mysqli->insert_id .'<br />'; 
             header('Location: ../index.html');
         }else{
-            die('Error : ('. $mysqli->errno .') '. $mysqli->error);
+            header('Location: ../Form/register.php?eP');
         }
     }
     
