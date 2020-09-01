@@ -30,17 +30,7 @@
   </head>
   <body onload="hfindex()">
 
-  <?php
-    include '..\Form\conexion.php';
-    $sql = "SELECT * FROM datosproyecto WHERE idproyecto = '1'";
-    $result = $mysqli -> query($sql);
-    $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
-
-    if(isset ($ss['Titulo'])){
-      echo "<script> document.getElementById(titulo).innerHTML = $ss['Titulo'] </script>" 
-    }
-
-  ?>
+  
     <div id="header"></div>
 
     <div class="Linea1Planilla">
@@ -56,25 +46,16 @@
                 <div class="Foto"></div>
               </div>
               <div class="CentralPlanilla">
-                <h2 id="titulo">Nombre del Proyecto:</h2>
+                <h2 id="titulo" style="word-wrap: break-word;">Nombre del Proyecto:</h2>
                 <hr />
-                <h4>Introduccion</h4>
-                <a
-                  >Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Optio voluptates aut quam ullam vel. Ratione est quisquam
-                  veniam voluptatum nemo laudantium quo numquam ut? Modi neque
-                  quia sunt mollitia saepe hic odit temporibus possimus nisi,
-                  magnam obcaecati voluptatibus iste qui tempore reprehenderit
-                  quo eligendi? Provident doloremque accusantium id ipsa error
-                  deleniti debitis odio possimus quam temporibus ipsum culpa
-                  assumenda.
-
-                  </a
-                >
+                <h4 >Introduccion:</h4>
+                <a id="intro" style="word-wrap: break-word;">
+                  
+                </a>
                 <br></br>
                 <h4>Descripcion:</h4>
-                <a
-                  >Admin qui fugit eligendi blanditiis labore adipisci
+                <a id="desc" style="word-wrap: break-word;">
+                  Admin qui fugit eligendi blanditiis labore adipisci
                   quaerat cupiditate nemo. Dolorem aliquid tempore repellendus
                   cumque libero eum inventore porro neque quisquam, deleniti
                   modi esse harum necessitatibus veritatis adipisci excepturi
@@ -92,16 +73,17 @@
                   quidem assumenda delectus consequuntur necessitatibus. Natus
                   consectetur cupiditate laboriosam incidunt, facere dicta ut
                   officia iusto corrupti, omnis quae nesciunt nulla obcaecati?
-                  Fuga officia fugit ad incidunt!</a
-                >
-                <div class="Video">
+                  Fuga officia fugit ad incidunt!
+                </a>
+                <div class="Video" id="divideo">
                   <h2>Video:</h2>
                   <hr />
                   <div>
                     <iframe
+                      id = "video"
                       width="560"
                       height="315"
-                      src="https://www.youtube.com/embed/XYZ123"
+                      src="https://www.youtube.com/embed/"
                       frameborder="0"
                       allowfullscreen
                     ></iframe>
@@ -130,11 +112,12 @@
                   </div>
                 </div>
               </div>
-              <div class="VideoMobile">
+              <div class="VideoMobile" id="divideo">
                 <iframe
+                  id="video"
                   width="560"
                   height="315"
-                  src="https://www.youtube.com/embed/XYZ123"
+                  src="https://www.youtube.com/embed/"
                   frameborder="0"
                   allowfullscreen
                 ></iframe>
@@ -144,6 +127,39 @@
         </div>
       </div>
     </div>
+    <?php
+    include '..\Form\conexion.php';
+    $sql = "SELECT * FROM datosproyecto WHERE idproyecto = '1'";
+    $result = $mysqli -> query($sql);
+    $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+    if(isset($ss['Titulo'],$ss['Introduccion'],$ss['Descripcion'])){
+      echo "<script> 
+      document.getElementById('titulo').innerHTML = '".$ss['Titulo']."';
+      document.getElementById('intro').innerHTML = '".$ss['Introduccion']."';
+      document.getElementById('desc').innerHTML = '".$ss['Descripcion']."';
+      </script>";
+    }
+    if(isset($ss['LinkVideo'])){
+      // Codigo para sacar la id del video de youtube, tuve que estudiar regex.
+      // por que? no se, motivo? ni idea
+      echo "<script>
+      var url = '".$ss['LinkVideo']."';
+      var regExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+      var match = url.match(regExp);
+      if (match && match[2].length == 11) {
+        document.getElementById('video').src = 'https://www.youtube.com/embed/'+match[2];
+      } else {
+        document.getElementById('divideo').style.visibility = 'hidden';
+      }
+      </script>";
+    }else{
+      echo "<script>
+      document.getElementById('divideo').style.visibility = 'hidden';
+      </script>";
+    }
+
+  ?>
     <div id="footer"></div>
   </body>
 </html>
