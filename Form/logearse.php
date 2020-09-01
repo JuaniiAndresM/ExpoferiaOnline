@@ -2,7 +2,7 @@
 include 'conexion.php';
 
 if(isset($_POST['user']) && $_POST['contra']){
-        $sql = "SELECT * FROM contacto WHERE Usuario = '".$_POST['user']."'";
+        $sql = "SELECT * FROM usuario WHERE Usuario = '".$_POST['user']."'";
         $result = $mysqli -> query($sql);
         $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
         if ($result) {

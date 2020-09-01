@@ -35,7 +35,7 @@
             }
             ?>  
 
-<a href="/ExpoferiaOnline/Proyectos/Panel.html" style="<?php echo $buttonvisible2 ?>"
+<a href="/ExpoferiaOnline/Proyectos/Panel.php" style="<?php echo $buttonvisible2 ?>"
           ><i class="fa">&#xf2bb;</i> Panel</a
         >
       </li>
@@ -71,7 +71,7 @@
         >
       </li>
       <li>
-        <a href="/ExpoferiaOnline/Proyectos/Panel.html"
+        <a href="/ExpoferiaOnline/Proyectos/Panel.php"
           ><i class="fa">&#xf2bb;</i> Panel</a
         >
       </li>

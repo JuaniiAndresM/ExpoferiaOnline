@@ -37,9 +37,13 @@
           <div class="Panel">
             <div class="PanelFrame">
               <div class="PanelPerfil"></div>
-              <p style="margin-top: 7px; margin-bottom: 5px">
-                Nombre de Usuario
-              </p>
+
+              <?php
+              session_start();
+        echo "<p style='margin-top:7px; margin-bottom:5px;' >
+        ". $_SESSION['Usuario']." 
+      </p>";
+        ?>
               <hr style="margin: 10px 0px" />
               <ul class="panelList">
                 <li>
