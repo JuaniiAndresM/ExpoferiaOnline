@@ -2,9 +2,8 @@
 include './conexion.php';
 session_start();
 if(isset($_POST['user']) && $_POST['contra']){
-    // aquí pongo lo de mysql para verificar que no exista usuario y para guardar el nuevo usuario.
-    
-    $sql = "SELECT Usuario FROM usuario WHERE usuario = ".$_POST['user'];
+
+    $sql = "SELECT Usuario FROM solicitudes_profesor WHERE usuario = ".$_POST['user'];
     $result = $mysqli -> query($sql);
     if ($result) {
       // es error, el profesor existe.
