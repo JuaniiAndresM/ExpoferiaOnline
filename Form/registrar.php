@@ -14,9 +14,13 @@ if(isset($_POST['user']) && $_POST['contra']){
         // aquí grabamos el nuevo profesor.
         $usuario = '"'.$mysqli->real_escape_string($_POST['user']).'"';
         $contra = '"'.$mysqli->real_escape_string($_POST['contra']).'"';
+        $telefono = '"'.$mysqli->real_escape_string($_POST['tel']).'"';
+        $email = '"'.$mysqli->real_escape_string($_POST['mail']).'"';
+        $nombre = '"'.$mysqli->real_escape_string($_POST['nombre']).'"';
+        $apellido = '"'.$mysqli->real_escape_string($_POST['apellido']).'"';
 
         //MySqli Insert Query
-        $insert_row = $mysqli->query("INSERT INTO solicitudes_profesor  (Usuario, Password) VALUES($usuario, $contra)");
+        $insert_row = $mysqli->query("INSERT INTO solicitudes_profesor  (Usuario, Password, Nombre, Apellido, Email, Telefono) VALUES($usuario, $contra, $nombre, $apellido, $email, $telefono)");
 
         if($insert_row){
             print 'Ok, todo grabado : ' .$mysqli->insert_id .'<br />'; 
