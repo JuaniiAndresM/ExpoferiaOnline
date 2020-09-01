@@ -29,6 +29,18 @@
     />
   </head>
   <body onload="hfindex()">
+
+  <?php
+    include '..\Form\conexion.php';
+    $sql = "SELECT * FROM datosproyecto WHERE idproyecto = '1'";
+    $result = $mysqli -> query($sql);
+    $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+    if(isset ($ss['Titulo'])){
+      echo "<script> document.getElementById(titulo).innerHTML = $ss['Titulo'] </script>" 
+    }
+
+  ?>
     <div id="header"></div>
 
     <div class="Linea1Planilla">
@@ -44,8 +56,9 @@
                 <div class="Foto"></div>
               </div>
               <div class="CentralPlanilla">
-                <h2>Nombre del Proyecto:</h2>
+                <h2 id="titulo">Nombre del Proyecto:</h2>
                 <hr />
+                <h4>Introduccion</h4>
                 <a
                   >Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Optio voluptates aut quam ullam vel. Ratione est quisquam
@@ -54,7 +67,14 @@
                   magnam obcaecati voluptatibus iste qui tempore reprehenderit
                   quo eligendi? Provident doloremque accusantium id ipsa error
                   deleniti debitis odio possimus quam temporibus ipsum culpa
-                  assumenda, qui fugit eligendi blanditiis labore adipisci
+                  assumenda.
+
+                  </a
+                >
+                <br></br>
+                <h4>Descripcion:</h4>
+                <a
+                  >Admin qui fugit eligendi blanditiis labore adipisci
                   quaerat cupiditate nemo. Dolorem aliquid tempore repellendus
                   cumque libero eum inventore porro neque quisquam, deleniti
                   modi esse harum necessitatibus veritatis adipisci excepturi
