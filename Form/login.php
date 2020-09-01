@@ -68,6 +68,16 @@
                     required
                   />
                 </div>
+                <div class="form-group">
+                  <p style="color: red; display: none;" id="errorPwd">*El usuario o la contraseña son incorrectos</p>
+                </div>
+                <?php
+                //Muestra el tag <p> de arriba si el usuario o la contraseña están mal (perdon agus)
+                  if(isset($_GET['eP'])){
+                      echo "<script>
+                      document.getElementById('errorPwd').style.display = 'block'; </script>";
+                  }
+                ?>
                 <a class="buttonLogin" type="submit"
                   ><button>Iniciar Sesión</button></a
                 >

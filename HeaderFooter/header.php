@@ -43,7 +43,7 @@
     </ul>
   </nav>
   
-  <a class="button" href="/ExpoferiaOnline/Form/login.html" style="<?php echo $buttonvisible ?>"
+  <a class="button" href="/ExpoferiaOnline/Form/login.php" style="<?php echo $buttonvisible ?>"
     ><button>Login</button></a
   >
   <a class="button" href="/ExpoferiaOnline/Form/CerrarSesion.php" style="<?php echo $buttonvisible1 ?>"
@@ -85,7 +85,7 @@
       </li>
       <li>
         <div style="<?php echo $buttonvisible ?>">
-          <a href="/ExpoferiaOnline/Form/login.html"
+          <a href="/ExpoferiaOnline/Form/login.php"
             ><i class="fa">&#xf138;</i> Login</a   
           >
         </div>
@@ -93,7 +93,7 @@
       <li>
         <div style="<?php echo $buttonvisible1 ?>">
         <hr>
-          <a href="/ExpoferiaOnline/Form/login.html"
+          <a href="/ExpoferiaOnline/Form/login.php"
             ><i class="fa">&#xf137;</i> Cerrar Sesión</a
           >
         </div>
@@ -102,7 +102,7 @@
     <br />
   </nav>
   <br />
-  <a class="BotonLogin2" href="/ExpoferiaOnline/Form/login.html"
+  <a class="BotonLogin2" href="/ExpoferiaOnline/Form/login.php"
     ><button>Login</button></a
   >
 </div>
