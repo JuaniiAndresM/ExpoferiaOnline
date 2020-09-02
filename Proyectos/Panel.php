@@ -90,7 +90,7 @@
                   >
                 </li>
                 <li>
-                  <a href="/ExpoferiaOnline/Proyectos/EditarProyectos.php" style="<?php echo $prof ?>"
+                  <a href="/ExpoferiaOnline/Proyectos/UnirseProyectos.html" style="<?php echo $prof ?>"
                     ><button class="botonPanel">
                       <i class="fa">&#xf0fe;</i> Unirse a Proyectos
                     </button></a
