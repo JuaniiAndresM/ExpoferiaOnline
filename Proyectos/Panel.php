@@ -55,10 +55,13 @@
                 echo "<script>
                 document.getElementById('fotousr').src = '../img/prof.png';
               </script>";
+              $admin = "display: none;";
               }elseif($ss['TipoUsuario']==2){
                 echo "<script>
                 document.getElementById('fotousr').src = '../img/user.png';
               </script>";
+              $prof = "display: none;";
+              $admin = "display: none;";
               }else{
                 echo "<script>
                 document.getElementById('fotousr').src = '../img/AdminIMG .png';
@@ -73,21 +76,21 @@
               <hr style="margin: 10px 0px" />
               <ul class="panelList">
                 <li>
-                  <a href="/ExpoferiaOnline/Proyectos/EditarProyectos.html"
+                  <a href="/ExpoferiaOnline/Proyectos/EditarProyectos.php" 
                     ><button class="botonPanel">
                       <i class="fa">&#xf044;</i> Editar Proyectos
                     </button></a
                   >
                 </li>
                 <li>
-                  <a href="/ExpoferiaOnline/Proyectos/EditarProyectos.html"
+                  <a href="/ExpoferiaOnline/Proyectos/EditarProyectos.php" style="<?php echo $prof ?>"
                     ><button class="botonPanel">
                       <i class="fa">&#xf013;</i> Gestionar Proyectos
                     </button></a
                   >
                 </li>
                 <li>
-                  <a href="/ExpoferiaOnline/Admin.html"
+                  <a href="/ExpoferiaOnline/Admin.html" style="<?php echo $admin ?>"
                     ><button class="botonPanel">
                       <i class="fa">&#xf0c0;</i> Administrar Usuarios
                     </button></a
