@@ -67,11 +67,9 @@
   margin-bottom: 1%;
 }
 .Banner {
-  background-color: grey;
-  width: 100%;
-  height: 600px;
-  padding: 2%;
-  margin-bottom: 1%;
+  .BannerIMG {
+    width: 100%;
+  }
 }
 
 .VideoMobile {

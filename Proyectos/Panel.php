@@ -90,6 +90,13 @@
                   >
                 </li>
                 <li>
+                  <a href="/ExpoferiaOnline/Proyectos/UnirseProyectos.html" style="<?php echo $prof ?>"
+                    ><button class="botonPanel">
+                      <i class="fa">&#xf055;</i> Unirse a Proyectos
+                    </button></a
+                  >
+                </li>
+                <li>
                   <a href="/ExpoferiaOnline/Admin.html" style="<?php echo $admin ?>"
                     ><button class="botonPanel">
                       <i class="fa">&#xf0c0;</i> Administrar Usuarios

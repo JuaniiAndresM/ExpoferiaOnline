@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no"
     />
-    <title>Proyectos | Expoferia Online</title>
+    <title>Unirse a Proyecto | Expoferia Online</title>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -31,7 +31,7 @@
   <body onload="hfindex()">
     <div id="header"></div>
     <div class="ProyectoLista">
-      <h2 id="TituloProyectos">Proyectos:</h2>
+      <h2 id="TituloProyectos">Unirse a Proyectos:</h2>
 
       <div class="gridProyectosLista">
         <div class="Linea1ProyectosLista">
@@ -40,7 +40,17 @@
               <div class="Proyecto">
                 <div class="Tabla">
                   <form action="/ExpoferiaOnline/index.html">
-                    <div class="listProyecto">
+                    <div class="listProyectoLista">
+                      <div class="checkForm">
+                        <label class="form-check-label" for="check1">
+                          <input
+                            type="checkbox"
+                            id="check1"
+                            name="option1"
+                            value="something"
+                          />
+                        </label>
+                      </div>
                       <div class="listFoto">
                         <img
                           class="FotoLista"
@@ -48,16 +58,14 @@
                         />
                       </div>
                       <hr id="LineaMobileProyecto" />
-                      <h2>Nombre del Proyecto</h2>
-                      <p><b>Grupo:</b> 2°Informatica.</p>
-                      <p>
-                        <b>Descripción:</b> Lorem ipsum dolor sit amet
-                        consectetur adipisicing elit. Ratione, rem.
-                      </p>
-                      <a href="/ExpoferiaOnline/Proyectos/Planilla.php"
-                        ><button class="BotonProyecto">Ver más</button></a
-                      >
-                      <hr />
+                      <div class="textoLista">
+                        <h2>Nombre del Proyecto</h2>
+                        <p><b>Grupo:</b> 2°Informatica.</p>
+                        <p>
+                          <b>Descripción:</b> Lorem ipsum dolor sit amet
+                          consectetur adipisicing elit. Ratione, rem.
+                        </p>
+                      </div>
                     </div>
                     <hr />
                     <div class="listProyectoLista">
