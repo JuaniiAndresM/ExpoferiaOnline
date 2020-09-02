@@ -77,7 +77,7 @@
       </li>
       <li>
         <div style="<?php echo $buttonvisible2 ?>">
-      <a href="/ExpoferiaOnline/Proyectos/Panel.html"
+      <a href="/ExpoferiaOnline/Proyectos/Panel.php"
           ><i class="fa">&#xf2bb;</i> Panel</a
         >
         <hr>
