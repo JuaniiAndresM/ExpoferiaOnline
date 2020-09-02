@@ -95,7 +95,20 @@
                     id="descripcionLarga_Proyecto"
                   ></textarea>
                 </div>
-                <a class="BotonLogin2" href="/ExpoferiaOnline/index.html"
+                <?php
+            include '..\Form\conexion.php';
+            session_start();
+            $sql = "SELECT TipoUsuario FROM usuario where usuario='". $_SESSION['Usuario']."'";
+            $result = $mysqli -> query($sql);
+            $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
+            if(isset($ss['TipoUsuario'])){ 
+              if($ss['TipoUsuario']==2){
+                $aprobar = "display: none;";
+              }
+              }
+              //cuando es alumno no muestra el boton de aprobar proyecto
+            ?>
+                <a class="BotonLogin2" href="/ExpoferiaOnline/index.html" style="<?php echo $aprobar ?>"
                   ><button style="margin-top: 5%;">
                     <i class="fa">&#xf14a;</i> Aprobar Proyecto
                   </button></a
