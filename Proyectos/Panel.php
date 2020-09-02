@@ -36,14 +36,40 @@
         <div class="Linea3">
           <div class="Panel">
             <div class="PanelFrame">
-              <div class="PanelPerfil"></div>
+              <div class="PanelPerfil">
+              <img id='fotousr' style='max-height:100%; max-width:100%; border-radius: 50px'>
+              </div>
 
-              <?php
-              session_start();
-        echo "<p style='margin-top:7px; margin-bottom:5px;' >
-        ". $_SESSION['Usuario']." 
-      </p>";
-        ?>
+            <?php
+            include '..\Form\conexion.php';
+            session_start();
+            $sql = "SELECT TipoUsuario FROM usuario where usuario='". $_SESSION['Usuario']."'";
+            $result = $mysqli -> query($sql);
+            $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
+            if(isset($ss['TipoUsuario'])){ 
+              if($ss['TipoUsuario']==0){
+                echo "<script>
+                document.getElementById('fotousr').src = '../img/admin.png';
+              </script>";
+              }elseif($ss['TipoUsuario']==1){
+                echo "<script>
+                document.getElementById('fotousr').src = '../img/prof.png';
+              </script>";
+              }elseif($ss['TipoUsuario']==2){
+                echo "<script>
+                document.getElementById('fotousr').src = '../img/user.png';
+              </script>";
+              }else{
+                echo "<script>
+                document.getElementById('fotousr').src = '../img/AdminIMG .png';
+              </script>";
+              }
+            }
+              
+              echo "<p style='margin-top:7px; margin-bottom:5px;' >
+              ". $_SESSION['Usuario']." 
+              </p>";
+            ?>
               <hr style="margin: 10px 0px" />
               <ul class="panelList">
                 <li>
