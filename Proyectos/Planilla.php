@@ -46,35 +46,13 @@
                 <div class="Foto"></div>
               </div>
               <div class="CentralPlanilla">
-                <h2 id="titulo" style="word-wrap: break-word;">Nombre del Proyecto:</h2>
+                <h2 id="titulo" style="word-wrap: break-word;"></h2>
                 <hr />
                 <h4 >Introduccion:</h4>
-                <a id="intro" style="word-wrap: break-word;">
-                  
-                </a>
+                <a id="intro" style="word-wrap: break-word;"></a>
                 <br></br>
                 <h4>Descripcion:</h4>
-                <a id="desc" style="word-wrap: break-word;">
-                  Admin qui fugit eligendi blanditiis labore adipisci
-                  quaerat cupiditate nemo. Dolorem aliquid tempore repellendus
-                  cumque libero eum inventore porro neque quisquam, deleniti
-                  modi esse harum necessitatibus veritatis adipisci excepturi
-                  cum et suscipit iste ipsum magnam optio, quam exercitationem.
-                  Vero consequatur repellat optio! Lorem ipsum dolor sit, amet
-                  consectetur adipisicing elit. Doloremque natus placeat iure
-                  blanditiis quisquam repellendus! Itaque in quas quisquam culpa
-                  inventore! Nostrum velit soluta mollitia cupiditate quam
-                  aliquam exercitationem enim voluptatibus fuga est nulla eos,
-                  doloribus non corrupti pariatur reprehenderit, tempora
-                  quisquam, laboriosam fugiat minima? Explicabo, quia saepe
-                  libero corporis quibusdam, sint rerum placeat sequi repellat
-                  ducimus et deserunt odit, quos minus nobis modi voluptates
-                  officiis earum nisi ab amet. Facilis magnam eveniet, harum
-                  quidem assumenda delectus consequuntur necessitatibus. Natus
-                  consectetur cupiditate laboriosam incidunt, facere dicta ut
-                  officia iusto corrupti, omnis quae nesciunt nulla obcaecati?
-                  Fuga officia fugit ad incidunt!
-                </a>
+                <a id="desc" style="word-wrap: break-word;"></a>
                 <div class="Video" id="divideo">
                   <h2>Video:</h2>
                   <hr />
