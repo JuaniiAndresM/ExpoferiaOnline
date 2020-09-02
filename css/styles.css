@@ -1146,3 +1146,8 @@ footer .Facebook {
     margin-right: 2%;
   }
 }
+.radio-opt {
+  width: 5px;
+  height: 20%;
+  margin: 20px;
+}
