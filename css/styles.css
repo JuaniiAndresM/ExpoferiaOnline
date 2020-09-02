@@ -709,17 +709,15 @@ BotonProyecto :hover {
 }
 
 .Foto {
-  background-color: grey;
+  background-image: url('../img/Fondo.png');
   width: 100%;
-  height: 200px;
   padding: 2%;
   margin-bottom: 1%;
 }
 
 .Banner {
-  background-color: grey;
+  background-image: url('../img/Fondo.png');
   width: 100%;
-  height: 600px;
   padding: 2%;
   margin-bottom: 1%;
 }

@@ -41,9 +41,9 @@
               <div class="ImagenesPlanilla">
                 <h2>Fotos:</h2>
                 <hr />
-                <div class="Foto"></div>
-                <div class="Foto"></div>
-                <div class="Foto"></div>
+                <div class="Foto"><img id='foto1' style='max-height:100%; max-width:100%; '></div>
+                <div class="Foto"><img id='foto2' style='max-height:100%; max-width:100%; '></div>
+                <div class="Foto"><img id='foto3' style='max-height:100%; max-width:100%; '></div>
               </div>
               <div class="CentralPlanilla">
                 <h2 id="titulo" style="word-wrap: break-word;"></h2>
@@ -71,7 +71,7 @@
               <div class="BannerPlanilla">
                 <h2>Banner:</h2>
                 <hr />
-                <div class="Banner"></div>
+                <div class="Banner"><img id='banner' style='max-height:100%; max-width:100%;'></div>
               </div>
             </div>
             <div class="MobileView">
@@ -136,7 +136,31 @@
       document.getElementById('divideo').style.visibility = 'hidden';
       </script>";
     }
+    if(isset($ss['Banner'])){
+      echo "<script>
+      document.getElementById('banner').src = '../img/".$ss['Banner']."';
+      </script>";
+    }
+    //Estuve como 3 horas para hacer esto, carga las imagenes, pero no se como.
+    //NO BORRAR
+    $column = array();
+    $cont = 1;
+    $sqlimg = "SELECT * FROM imagenes WHERE idproyecto = '".$ss['idProyecto']."'";
+    $resultimg = $mysqli -> query($sqlimg);
+    while($ssimg = mysqli_fetch_array($resultimg, MYSQLI_ASSOC)){
+      $column[] = $ssimg['url'];
+    }
+    $arr_length = count($column);
+    if(isset($column)){
+      for ($i = 0; $i < $arr_length ; $i++) {
+        echo "<script>
+        document.getElementById('foto".$cont."').src = '../img/".$column[$i]."';
+        </script>";
+        $cont = $cont + 1;
+      }
+    }
 
+    
   ?>
     <div id="footer"></div>
   </body>
