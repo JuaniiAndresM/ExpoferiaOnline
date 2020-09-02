@@ -28,6 +28,37 @@
       rel="stylesheet"
     />
   </head>
+
+  <?php
+  include '..\Form\conexion.php';
+  session_start();
+  $sql = "SELECT TipoUsuario FROM usuario where usuario='". $_SESSION['Usuario']."'";
+  $result = $mysqli -> query($sql);
+  $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
+  if(isset($ss['TipoUsuario'])){ 
+    if($ss['TipoUsuario']==2){
+      $aprobar = "display: none;";
+    }
+    }
+    //cuando es alumno no muestra el boton de aprobar proyecto
+
+    $sql1 = "SELECT idProyecto FROM datosproyectos WHERE Alumno='".$_SESSION['idUsuario']."'";
+    $idp = $mysqli->query($sql1);
+
+    $sql2 = "SELECT Titulo FROM datosproyecto WHERE id = $idp ";
+    $nombre_proyecto = $mysqli->query($sql2);
+
+    $sql3 = "SELECT Introduccion FROM datosproyecto WHERE id = $idp ";
+    $introduccion = $mysqli->query($sql3);
+
+    $sql4 = "SELECT Descripcion FROM datosproyecto WHERE id = $idp ";
+    $descripcion = $mysqli->query($sql4);
+
+    $sql5 = "SELECT LinkVideo FROM datosproyecto WHERE id = $idp ";
+    $link = $mysqli->query($sql5);
+  ?>
+
+  
   <body onload="hfindex()">
     <div id="header"></div>
 
@@ -46,68 +77,52 @@
               <div class="CentralPlanilla">
                 <h2>Nuevo Proyecto:</h2>
                 <hr />
+
                 <div class="form-group">
                   <input
                     type="text"
                     class="form-control"
                     id="user"
-                    placeholder="Nombre del Proyecto"
+                    placeholder= "Nombre de Proyecto"
                     name="nombre_proyecto"
+                    value= "<?php echo $nombre_proyecto;?>"
                   />
                 </div>
                 <hr />
-                <div class="form-group">
-                  <textarea
-                    class="form-control"
-                    rows="5"
-                    placeholder="Descripción corta del Proyecto"
-                    id="descripcionCorta_Proyecto"
-                  ></textarea>
-                </div>
-                <div class="Video">
-                  <div class="custom-control custom-checkbox mb-3">
-                    <input
-                      type="checkbox"
-                      class="custom-control-input"
-                      id="customCheck"
-                      name="example1"
-                    />
-                    <label class="custom-control-label" for="customCheck"
-                      >Importar Video</label
-                    >
-                  </div>
 
-                  <div class="form-group">
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="user"
-                      placeholder="URL del Video [YouTube]"
-                      name="nombre_proyecto"
-                    />
-                  </div>
-                </div>
+
                 <div class="form-group">
                   <textarea
                     class="form-control"
                     rows="5"
-                    placeholder="Descripción del Proyecto"
-                    id="descripcionLarga_Proyecto"
+                    placeholder="Introduccion"
+                    id="descripcionCorta_Proyecto"
+                    value= "<?php echo $introduccion;?>"
                   ></textarea>
                 </div>
-                <?php
-            include '..\Form\conexion.php';
-            session_start();
-            $sql = "SELECT TipoUsuario FROM usuario where usuario='". $_SESSION['Usuario']."'";
-            $result = $mysqli -> query($sql);
-            $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
-            if(isset($ss['TipoUsuario'])){ 
-              if($ss['TipoUsuario']==2){
-                $aprobar = "display: none;";
-              }
-              }
-              //cuando es alumno no muestra el boton de aprobar proyecto
-            ?>
+
+                <div class="custom-control custom-checkbox mb-3">
+                    <input type="checkbox"class="custom-control-input" data-toggle="collapse" data-target="#demo" id="customCheck" name="example1"/>
+                    <label class="custom-control-label" for="customCheck" >Importar Video</label >
+                  </div>
+                  <div id="demo" class="collapse">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="user" placeholder="URL del Video [YouTube]" name="nombre_proyecto" value= "<?php echo $link;?>" />
+                  </div>
+                  
+                </div>
+                
+                <div class="form-group">
+                  <textarea
+                    class="form-control"
+                    rows="5"
+                    placeholder="Descripcion"
+                    id="descripcionLarga_Proyecto"
+                    value= "<?php echo $descripcion;?>"
+                  ></textarea>
+                </div>
+                
+           
                 <a class="BotonLogin2" href="/ExpoferiaOnline/index.html" style="<?php echo $aprobar ?>"
                   ><button style="margin-top: 5%;">
                     <i class="fa">&#xf14a;</i> Aprobar Proyecto
