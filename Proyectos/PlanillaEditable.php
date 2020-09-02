@@ -122,23 +122,28 @@
                   ></textarea>
                 </div>
                 
-           
+                <form action="/ExpoferiaOnline/index.html" >
                 <a class="BotonLogin2" href="/ExpoferiaOnline/index.html" style="<?php echo $aprobar ?>"
                   ><button style="margin-top: 5%;">
                     <i class="fa">&#xf14a;</i> Aprobar Proyecto
                   </button></a
                 >
                 <a class="BotonLogin2" href="/ExpoferiaOnline/index.html"
-                  ><button style="margin-top: 5%;">
+                  ><button style="margin-top: 5%;" name="submit" type="submit">
                     <i class="fa">&#xf0c7;</i> Guardar Cambios
                   </button></a
                 >
               </div>
-              <div class="BannerPlanilla">
+              <div class="BannerPlanillaEditable">
                 <h2>Banner:</h2>
                 <hr />
-                <div class="Banner"></div>
+                <div class="BannerEditable">
+ 
+                <label for="file-upload" class="BotonSubir"><i class="fa">&#xf03e;</i> Subir Imagen</label>
+                  <input type="file" id="file-upload" />
+                </div>
               </div>
+  </form>
             </div>
             <div class="MobileView">
               <div class="ImagenesPlanillaMobile">

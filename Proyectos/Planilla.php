@@ -71,7 +71,9 @@
               <div class="BannerPlanilla">
                 <h2>Banner:</h2>
                 <hr />
-                <div class="Banner"></div>
+                <div class="Banner">
+                  <img class="BannerIMG" src="/ExpoferiaOnline/img/Banner.png">
+                </div>
               </div>
             </div>
             <div class="MobileView">
