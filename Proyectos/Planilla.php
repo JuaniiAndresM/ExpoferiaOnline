@@ -38,43 +38,37 @@
         <div class="Linea3">
           <div class="Planilla">
             <div class="PlanillaFrame">
-              <div class="ImagenesPlanilla">
+              <div id='ImagenesPlanilla' class="ImagenesPlanilla">
                 <h2>Fotos:</h2>
                 <hr />
-                <div class="Foto"></div>
-                <div class="Foto"></div>
-                <div class="Foto"></div>
+                <div class="Foto" ><img id='foto1' style='max-height:100%; max-width:100%; '></div>
+                <div class="Foto"><img id='foto2' style='max-height:100%; max-width:100%; '></div>
+                <div class="Foto" id='divputo' ><img id='foto3' style='max-height:100%; max-width:100%; '></div>
+                <script>
+                  
+                  function addElement () { 
+                    // crea un nuevo div 
+                    // y añade contenido 
+                    var newDiv = document.createElement("BUTTON"); 
+                    var newContent = document.createTextNode("+ imagenes"); 
+                    newDiv.appendChild(newContent); //añade texto al div creado. 
+
+                    // añade el elemento creado y su contenido al DOM 
+                    var currentDiv = document.getElementById("foto3");
+                    var currentDiv1 = document.getElementById("ImagenesPlanilla"); 
+                    currentDiv1.insertBefore(newDiv, currentDiv.nextSibling); 
+                  }
+
+                </script>
               </div>
               <div class="CentralPlanilla">
-                <h2 id="titulo" style="word-wrap: break-word;">Nombre del Proyecto:</h2>
+                <h2 id="titulo" style="word-wrap: break-word;"></h2>
                 <hr />
                 <h4 >Introduccion:</h4>
-                <a id="intro" style="word-wrap: break-word;">
-                  
-                </a>
+                <a id="intro" style="word-wrap: break-word;"></a>
                 <br></br>
                 <h4>Descripcion:</h4>
-                <a id="desc" style="word-wrap: break-word;">
-                  Admin qui fugit eligendi blanditiis labore adipisci
-                  quaerat cupiditate nemo. Dolorem aliquid tempore repellendus
-                  cumque libero eum inventore porro neque quisquam, deleniti
-                  modi esse harum necessitatibus veritatis adipisci excepturi
-                  cum et suscipit iste ipsum magnam optio, quam exercitationem.
-                  Vero consequatur repellat optio! Lorem ipsum dolor sit, amet
-                  consectetur adipisicing elit. Doloremque natus placeat iure
-                  blanditiis quisquam repellendus! Itaque in quas quisquam culpa
-                  inventore! Nostrum velit soluta mollitia cupiditate quam
-                  aliquam exercitationem enim voluptatibus fuga est nulla eos,
-                  doloribus non corrupti pariatur reprehenderit, tempora
-                  quisquam, laboriosam fugiat minima? Explicabo, quia saepe
-                  libero corporis quibusdam, sint rerum placeat sequi repellat
-                  ducimus et deserunt odit, quos minus nobis modi voluptates
-                  officiis earum nisi ab amet. Facilis magnam eveniet, harum
-                  quidem assumenda delectus consequuntur necessitatibus. Natus
-                  consectetur cupiditate laboriosam incidunt, facere dicta ut
-                  officia iusto corrupti, omnis quae nesciunt nulla obcaecati?
-                  Fuga officia fugit ad incidunt!
-                </a>
+                <a id="desc" style="word-wrap: break-word;"></a>
                 <div class="Video" id="divideo">
                   <h2>Video:</h2>
                   <hr />
@@ -93,7 +87,7 @@
               <div class="BannerPlanilla">
                 <h2>Banner:</h2>
                 <hr />
-                <div class="Banner"></div>
+                <div class="Banner"><img id='banner' style='max-height:100%; max-width:100%;'></div>
               </div>
             </div>
             <div class="MobileView">
@@ -158,7 +152,48 @@
       document.getElementById('divideo').style.visibility = 'hidden';
       </script>";
     }
+    if(isset($ss['Banner'])){
+      echo "<script>
+      document.getElementById('banner').src = '../img/".$ss['Banner']."';
+      </script>";
+    }
+    //Estuve como 3 horas para hacer esto, carga las imagenes, pero no se como.
+    //NO BORRAR
+    $column = array();
+    $cont = 1;
+    $sqlimg = "SELECT * FROM imagenes WHERE idproyecto = '".$ss['idProyecto']."'";
+    $resultimg = $mysqli -> query($sqlimg);
+    while($ssimg = mysqli_fetch_array($resultimg, MYSQLI_ASSOC)){
+      $column[] = $ssimg['url'];
+    }
+    $arr_length = count($column);
+    if(isset($column)){
+      if($arr_length < 4){
+        for ($i = 0; $i < $arr_length ; $i++) {
+          echo "<script>
+          document.getElementById('foto".$cont."').src = '../img/".$column[$i]."';
+          </script>";
+          $cont = $cont + 1;
+        }
+    }else{
+      for ($i = 0; $i < 2 ; $i++) {
+        echo "<script>
+        document.getElementById('foto".$cont."').src = '../img/".$column[$i]."';
+        </script>";
+        $cont = $cont + 1;
+      }
+      echo "<script>
+      addElement();
+      document.getElementById('divputo').style.visibility = 'hidden';
+    
+       </script>";
 
+      }
+      
+    }
+    
+
+   
   ?>
     <div id="footer"></div>
   </body>

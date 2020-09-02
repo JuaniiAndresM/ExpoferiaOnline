@@ -48,11 +48,10 @@
   }
 }
 .listFoto {
-  background-color: grey;
-  width: 100px;
-  float: left;
-  height: 100px;
-  margin: 3%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
 }
 #LineaMobileProyecto {
   display: none;
