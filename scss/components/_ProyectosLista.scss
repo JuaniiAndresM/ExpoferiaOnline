@@ -1,20 +1,37 @@
-.listProyectoLista {
+.SelectoresGrid {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 50px;
+  background-color: #008ac4;
+  border-radius: 25px;
+
+  .Selectores {
+    margin: 2%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2%;
+    select {
+      border-radius: 25px;
+    }
+  }
+}
+
+.listGrid {
   display: grid;
-  grid-template-columns: 5% 20% 75%;
+  grid-template-columns: 20% 80%;
+  gap: 3%;
 
   .textoLista {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     text-align: left;
   }
   .FotoLista {
     margin: auto;
-    width: 100px;
-    height: 100px;
-  }
-  .checkForm {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
+    width: 100%;
+    padding: 10%;
   }
 }
 .ProyectoLista {
@@ -35,7 +52,7 @@
   padding-bottom: 3%;
 }
 .Linea1Proyecto {
-  margin-left: 20%;
+  margin-left: 10%;
   margin-right: 2%;
   background-color: #ffcb00;
   border-radius: 30px;
