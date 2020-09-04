@@ -10,7 +10,7 @@ if(isset($_POST['user']) && $_POST['contra']){
                         if($ss['Password']==$_POST['contra']){
                         session_start();
                         $_SESSION['Usuario']=$_POST['user'];
-                        header('Location: ../index.html');
+                        header('Location: ../proyectos/panel.php');
                         }else{ 
                                 header('Location: ../Form/login.php?eP');
                 }

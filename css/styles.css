@@ -743,13 +743,18 @@ BotonProyecto :hover {
 }
 
 .Foto {
-  background-color: grey;
+  background-image: url('../img/Fondo.png');
   width: 100%;
-  height: 200px;
   padding: 2%;
   margin-bottom: 1%;
 }
 
+.Banner {
+  background-image: url('../img/Fondo.png');
+  width: 100%;
+  padding: 2%;
+  margin-bottom: 1%;
+ }
 .Banner .BannerIMG {
   width: 100%;
 }

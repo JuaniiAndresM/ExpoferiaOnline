@@ -38,12 +38,28 @@
         <div class="Linea3">
           <div class="Planilla">
             <div class="PlanillaFrame">
-              <div class="ImagenesPlanilla">
+              <div id='ImagenesPlanilla' class="ImagenesPlanilla">
                 <h2>Fotos:</h2>
                 <hr />
-                <div class="Foto"></div>
-                <div class="Foto"></div>
-                <div class="Foto"></div>
+                <div class="Foto" ><img id='foto1' style='max-height:100%; max-width:100%; '></div>
+                <div class="Foto"><img id='foto2' style='max-height:100%; max-width:100%; '></div>
+                <div class="Foto" id='divputo' ><img id='foto3' style='max-height:100%; max-width:100%; '></div>
+                <script>
+                  
+                  function addElement () { 
+                    // crea un nuevo div 
+                    // y añade contenido 
+                    var newDiv = document.createElement("BUTTON"); 
+                    var newContent = document.createTextNode("+ imagenes"); 
+                    newDiv.appendChild(newContent); //añade texto al div creado. 
+
+                    // añade el elemento creado y su contenido al DOM 
+                    var currentDiv = document.getElementById("foto3");
+                    var currentDiv1 = document.getElementById("ImagenesPlanilla"); 
+                    currentDiv1.insertBefore(newDiv, currentDiv.nextSibling); 
+                  }
+
+                </script>
               </div>
               <div class="CentralPlanilla">
                 <h2 id="titulo" style="word-wrap: break-word;"></h2>
@@ -71,9 +87,7 @@
               <div class="BannerPlanilla">
                 <h2>Banner:</h2>
                 <hr />
-                <div class="Banner">
-                  <img class="BannerIMG" src="/ExpoferiaOnline/img/Banner.png">
-                </div>
+                <div class="Banner"><img id='banner' style='max-height:100%; max-width:100%;'></div>
               </div>
             </div>
             <div class="MobileView">
@@ -138,7 +152,48 @@
       document.getElementById('divideo').style.visibility = 'hidden';
       </script>";
     }
+    if(isset($ss['Banner'])){
+      echo "<script>
+      document.getElementById('banner').src = '../img/".$ss['Banner']."';
+      </script>";
+    }
+    //Estuve como 3 horas para hacer esto, carga las imagenes, pero no se como.
+    //NO BORRAR
+    $column = array();
+    $cont = 1;
+    $sqlimg = "SELECT * FROM imagenes WHERE idproyecto = '".$ss['idProyecto']."'";
+    $resultimg = $mysqli -> query($sqlimg);
+    while($ssimg = mysqli_fetch_array($resultimg, MYSQLI_ASSOC)){
+      $column[] = $ssimg['url'];
+    }
+    $arr_length = count($column);
+    if(isset($column)){
+      if($arr_length < 4){
+        for ($i = 0; $i < $arr_length ; $i++) {
+          echo "<script>
+          document.getElementById('foto".$cont."').src = '../img/".$column[$i]."';
+          </script>";
+          $cont = $cont + 1;
+        }
+    }else{
+      for ($i = 0; $i < 2 ; $i++) {
+        echo "<script>
+        document.getElementById('foto".$cont."').src = '../img/".$column[$i]."';
+        </script>";
+        $cont = $cont + 1;
+      }
+      echo "<script>
+      addElement();
+      document.getElementById('divputo').style.visibility = 'hidden';
+    
+       </script>";
 
+      }
+      
+    }
+    
+
+   
   ?>
     <div id="footer"></div>
   </body>
