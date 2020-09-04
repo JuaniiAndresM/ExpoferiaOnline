@@ -310,6 +310,8 @@
 
     </script>
 
+    //No esta del todo bien todavia, asi que si se rompe la pagina es por esto pero no lo borren.
+    //NO BORRAR
 <?php
 include 'Form\conexion.php';
 $sql = "SELECT *FROM datosproyecto";
