@@ -67,30 +67,39 @@
                     required
                   />
                 </div>
-                <div class="form-group">
+                <div class="form-group" style="display: flex">
                   <label for="year">Año:</label>
                   <div class="radio-opt">
-                    <input
-                      type="radio"
-                      id="prim"
-                      name="year"
-                      required
-                    />
-                    <label for="prim">Primer Año</label>
-                    <input
-                      type="radio"
-                      id="seg"
-                      name="year"
-                      required
-                    />
-                    <label for="seg">Segundo Año</label>
-                    <input
-                      type="radio"
-                      id="terce"
-                      name="year"
-                      required
-                    />
-                    <label for="terce">Tercer Año</label>
+                    <label class="rad-opt-child" for="prim">
+                      <input type="radio" id="prim" name="year" required />
+                      <span class="radicon"></span>
+                      Primer Año
+                    </label>
+                    <label class="rad-opt-child" for="seg">
+                      <input type="radio" id="seg" name="year" required />
+                      <span class="radicon"></span>
+                      Segundo Año
+                    </label>
+                    <label class="rad-opt-child" for="terce">
+                      <input type="radio" id="terce" name="year" required />
+                      <span class="radicon"></span>
+                      Tercer Año
+                    </label>
+                  </div>
+                  <div class="select-opt">
+                    <div style="text-align: center">
+                      <label for="orient">Orientación:</label>
+                    </div>
+                    <div style="margin: 0 auto">
+                      <select name="orient" id="orient" class="form-control">
+                        <option value="" disabled selected hidden>
+                          Seleccione Orientación
+                        </option>
+                        <option value="admivo">Administrativo</option>
+                        <option value="deport">Deportivo</option>
+                        <option value="inform">Informático</option>
+                      </select>
+                    </div>
                   </div>
                 </div>
                 <hr />

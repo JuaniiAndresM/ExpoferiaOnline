@@ -502,7 +502,7 @@ BotonProyecto :hover {
 }
 
 .Linea1Proyecto {
-  margin-left: 20%;
+  margin-left: 10%;
   margin-right: 2%;
   background-color: #ffcb00;
   border-radius: 30px;
@@ -510,7 +510,7 @@ BotonProyecto :hover {
 
 .Linea1Proyecto2 {
   margin-left: 2%;
-  margin-right: 20%;
+  margin-right: 10%;
   background-color: #ffcb00;
   border-radius: 30px;
 }
@@ -610,23 +610,39 @@ BotonProyecto :hover {
   list-style: none;
 }
 
-.listProyectoLista {
-  display: grid;
-  grid-template-columns: 5% 20% 75%;
-}
-.listProyectoLista .textoLista {
-  text-align: left;
-}
-.listProyectoLista .FotoLista {
-  margin: auto;
-  width: 100px;
-  height: 100px;
-}
-.listProyectoLista .checkForm {
+.SelectoresGrid {
   display: flex;
   justify-content: center;
-  align-content: center;
   flex-direction: column;
+  height: 50px;
+  background-color: #008ac4;
+  border-radius: 25px;
+}
+.SelectoresGrid .Selectores {
+  margin: 2%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2%;
+}
+.SelectoresGrid .Selectores select {
+  border-radius: 25px;
+}
+
+.listGrid {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  gap: 3%;
+}
+.listGrid .textoLista {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: left;
+}
+.listGrid .FotoLista {
+  margin: auto;
+  width: 100%;
+  padding: 10%;
 }
 
 .ProyectoLista {
@@ -648,7 +664,7 @@ BotonProyecto :hover {
 }
 
 .Linea1Proyecto {
-  margin-left: 20%;
+  margin-left: 10%;
   margin-right: 2%;
   background-color: #ffcb00;
   border-radius: 30px;
@@ -792,6 +808,25 @@ BotonProyecto :hover {
   color: white;
   text-decoration: none;
   margin: 5%;
+}
+
+.listProyectoUnirse {
+  display: grid;
+  grid-template-columns: 5% 20% 75%;
+}
+.listProyectoUnirse .textoLista {
+  text-align: left;
+}
+.listProyectoUnirse .FotoLista {
+  margin: auto;
+  width: 100px;
+  height: 100px;
+}
+.listProyectoUnirse .checkForm {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
 }
 
 .Login {
