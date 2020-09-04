@@ -195,19 +195,20 @@
             <div class="index-frame2">
               <div
                 class="Seccion1"
+                id ="Seccion1"
                 data-aos="flip-right"
                 data-aos-duration="1000"
               >
                 <div>
                   <img
-                    class="ImagenProyectos"
-                    src="/ExpoferiaOnline/img/Ejemplo.png"
+                    class="ImagenProyectos" 
+                    id ="banner1" 
                   />
                 </div>
                 <div class="SeccionTexto">
-                  <h2>Proyectos:</h2>
+                  <h2 id = "titulo1" >Proyectos:</h2>
                   <hr />
-                  <p>
+                  <p id = "intro1" >
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                     Vitae, ab, quia atque porro veniam non ipsa, quaerat eaque
                     repudiandae autem tempora consequuntur fugit? Explicabo
@@ -227,19 +228,19 @@
 
               <div
                 class="Seccion2"
+                id ="Seccion2"
                 data-aos="flip-left"
                 data-aos-duration="1000"
               >
                 <div class="Seccion2Mobile">
-                  <img
+                  <img 
                     class="ImagenProyectos"
-                    src="/ExpoferiaOnline/img/Ejemplo.png"
                   />
                 </div>
                 <div class="SeccionTexto">
-                  <h2>Proyectos:</h2>
+                  <h2  id ="titulo2">Proyectos:</h2>
                   <hr />
-                  <p>
+                  <p id ="intro2" >
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                     Vitae, ab, quia atque porro veniam non ipsa, quaerat eaque
                     repudiandae autem tempora consequuntur fugit? Explicabo
@@ -257,27 +258,29 @@
                 </div>
                 <div class="Seccion2IMG">
                   <img
+                    id ="banner2"
                     class="ImagenProyectos"
-                    src="/ExpoferiaOnline/img/Ejemplo.png"
+                    
                   />
                 </div>
               </div>
 
               <div
                 class="Seccion3"
+                id ="Seccion3"
                 data-aos="flip-right"
                 data-aos-duration="1000"
               >
                 <div>
                   <img
                     class="ImagenProyectos"
-                    src="/ExpoferiaOnline/img/Ejemplo.png"
+                    id ="banner3"
                   />
                 </div>
                 <div class="SeccionTexto">
-                  <h2>Proyectos:</h2>
+                  <h2 id ="titulo3" >Proyectos:</h2>
                   <hr />
-                  <p>
+                  <p id ="intro3" >
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                     Vitae, ab, quia atque porro veniam non ipsa, quaerat eaque
                     repudiandae autem tempora consequuntur fugit? Explicabo
@@ -303,6 +306,104 @@
 
     <script>
       AOS.init();
+
+
     </script>
+
+<?php
+include 'Form\conexion.php';
+$sql = "SELECT *FROM datosproyecto";
+$result = $mysqli -> query($sql);
+while($sql = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+  $column[] = $sql['idProyecto'];
+}
+$arr_length = count($column);
+if($arr_length  >= 3){
+  $i = 1;
+  do{
+      $random = rand(1,$arr_length);
+        $sql = "SELECT * FROM datosproyecto WHERE idproyecto = '".$random."'";
+        $result = $mysqli -> query($sql);
+        $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+        echo "<script> 
+        document.getElementById('Seccion1').style.visibility = 'visible';
+        document.getElementById('Seccion2').style.visibility = 'visible';
+        document.getElementById('Seccion3').style.visibility = 'visible';
+        </script>";
+    
+        if(isset($ss['Titulo'],$ss['Introduccion'],$ss['Banner'])){
+          echo "<script> 
+          document.getElementById('titulo".$i."').innerHTML = '".$ss['Titulo']."';
+          document.getElementById('intro".$i."').innerHTML = '".$ss['Introduccion']."';
+          document.getElementById('banner".$i."').src = 'img/".$ss['Banner']."';
+          </script>";
+          $x++;
+          $i++;
+      }
+
+  }while($i <= 3);
+  
+
+}elseif($arr_length  == 2){
+  $i = 1;
+  do{
+    $random = rand ( 1, $arr_length );
+    $sql = "SELECT * FROM datosproyecto WHERE idproyecto = '".$random."'";
+    $result = $mysqli -> query($sql);
+    $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+    echo "<script> 
+    document.getElementById('Seccion1').style.visibility = 'visible';
+    document.getElementById('Seccion2').style.visibility = 'visible';
+    document.getElementById('Seccion3').style.visibility = 'hidden';
+    </script>";
+    if(isset($ss['Titulo'],$ss['Introduccion'],$ss['Banner'])){
+      echo "<script> 
+        document.getElementById('titulo".$i."').innerHTML = '".$ss['Titulo']."';
+        document.getElementById('intro".$i."').innerHTML = '".$ss['Introduccion']."';
+        document.getElementById('banner".$i."').src = 'img/".$ss['Banner']."';
+        </script>";
+  }
+  $i++;
+
+}while($i <= 2);
+
+}elseif($arr_length  == 1){
+  $i = 1;
+    do{
+      $random = rand ( 1, $arr_length );
+      $sql = "SELECT * FROM datosproyecto WHERE idproyecto = '".$random."'";
+      $result = $mysqli -> query($sql);
+      $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
+  
+      echo "<script> 
+      alert('".$arr_length."');
+      document.getElementById('Seccion1').style.visibility = 'visible';
+      document.getElementById('Seccion2').style.visibility = 'hidden';
+      document.getElementById('Seccion3').style.visibility = 'hidden';
+      </script>";
+      if(isset($ss['Titulo'],$ss['Introduccion'],$ss['Banner'])){
+        echo "<script> 
+        document.getElementById('titulo".$i."').innerHTML = '".$ss['Titulo']."';
+        document.getElementById('intro".$i."').innerHTML = '".$ss['Introduccion']."';
+        document.getElementById('banner".$i."').src = 'img/".$ss['Banner']."';
+        </script>";
+    }
+    $i++;
+  
+  }while($i == 1);
+}else{
+  echo "<script> 
+  document.getElementById('Seccion1').style.visibility = 'hidden';
+  document.getElementById('Seccion2').style.visibility = 'hidden';
+  document.getElementById('Seccion3').style.visibility = 'hidden';
+  </script>";
+}
+
+
+
+
+?>
   </body>
 </html>
