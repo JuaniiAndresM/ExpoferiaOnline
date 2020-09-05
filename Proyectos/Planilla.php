@@ -59,20 +59,52 @@
             <div class="imagenesSlide">
             <h2>Imagenes:</h2>
                   <hr />
-                <div class="mySlides">
-                  <img id ="foto1"  class="imagenPlanilla" style="width:100%">
-                  <div class="numbertext">1 / 3</div>
-                </div>
+                  <?php
+                    include '..\Form\conexion.php';
+                    $sql = "SELECT * FROM datosproyecto WHERE idproyecto = '1'";
+                    $result = $mysqli -> query($sql);
+                    $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
+                    $column = array();
+                    $cont = 1;
+                    $sqlimg = "SELECT * FROM imagenes WHERE idproyecto = '".$ss['idProyecto']."'";
+                    $resultimg = $mysqli -> query($sqlimg);
+                    while($ssimg = mysqli_fetch_array($resultimg, MYSQLI_ASSOC)){
+                      $column[] = $ssimg['url'];
+                    }
+                    $arr_length = count($column);
+                    if(isset($column)){
+                        for ($i = 0; $i < $arr_length ; $i++) {
+                          echo "
+                          <div class='mySlides'>
+                          <img id ='foto".$cont."'  class='imagenPlanilla' style='width:100%'>
+                          <div class='numbertext'>".$cont."/".$arr_length."</div>
+                          </div>
+                          <script>
+                          document.getElementById('foto".$cont."').src = '../img/".$column[$i]."';
 
-                <div class="mySlides">
-                  <img class="imagenPlanilla" id ="foto2"  style="width:100%">
-                  <div class="numbertext">2 / 3</div>
-                </div>
+                          <!-- Modal Agrandar Fotos -->
 
-                <div class="mySlides">
-                  <img class="imagenPlanilla" id ="foto3"  style="width:100%">
-                  <div class="numbertext">3 / 3</div>
-                </div>
+                          var modal = document.getElementById('myModal');
+
+                          var img = document.getElementById('foto".$cont."');
+
+                          var modalImg = document.getElementById('foto');
+                          img.onclick = function(){
+                            modal.style.display = 'block';
+                            modalImg.src = this.src;
+                          }
+                          var span = document.getElementsByClassName('close')[0];
+                    
+                          span.onclick = function() { 
+                            modal.style.display = 'none';
+                          }
+
+                          </script>";
+                          
+                          $cont = $cont + 1;
+                        }
+                    }
+                  ?>
                                  
                 <a class="prev" onclick="plusSlides(-1)" style="position: absolute;">❮</a>
                 <a class="next" onclick="plusSlides(1)" style="position: absolute;">❯</a>
@@ -211,7 +243,6 @@ function showSlides(n) {
     }
     $arr_length = count($column);
     if(isset($column)){
-      if($arr_length < 4){
         for ($i = 0; $i < $arr_length ; $i++) {
           echo "<script>
           document.getElementById('foto".$cont."').src = '../img/".$column[$i]."';
@@ -237,21 +268,6 @@ function showSlides(n) {
           
           $cont = $cont + 1;
         }
-    }else{
-      for ($i = 0; $i < 2 ; $i++) {
-        echo "<script>
-        document.getElementById('foto".$cont."').src = '../img/".$column[$i]."';
-        </script>";
-        $cont = $cont + 1;
-      }
-      echo "<script>
-      addElement();
-      document.getElementById('divputo').style.visibility = 'hidden';
-    
-       </script>";
-
-      }
-      
     }
     
   ?>
