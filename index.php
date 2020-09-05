@@ -208,7 +208,7 @@
                 <div class="SeccionTexto">
                   <h2 id = "titulo1" >Proyectos:</h2>
                   <hr />
-                  <p id = "intro1" >
+                  <p id = "intro1" style="word-wrap: break-word;">
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                     Vitae, ab, quia atque porro veniam non ipsa, quaerat eaque
                     repudiandae autem tempora consequuntur fugit? Explicabo
@@ -240,7 +240,7 @@
                 <div class="SeccionTexto">
                   <h2  id ="titulo2">Proyectos:</h2>
                   <hr />
-                  <p id ="intro2" >
+                  <p id ="intro2" style="word-wrap: break-word;">
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                     Vitae, ab, quia atque porro veniam non ipsa, quaerat eaque
                     repudiandae autem tempora consequuntur fugit? Explicabo
@@ -280,7 +280,7 @@
                 <div class="SeccionTexto">
                   <h2 id ="titulo3" >Proyectos:</h2>
                   <hr />
-                  <p id ="intro3" >
+                  <p id ="intro3" style="word-wrap: break-word;">
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                     Vitae, ab, quia atque porro veniam non ipsa, quaerat eaque
                     repudiandae autem tempora consequuntur fugit? Explicabo
