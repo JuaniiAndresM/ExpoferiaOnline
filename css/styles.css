@@ -759,6 +759,7 @@ BotonProyecto :hover {
 }
 
 .Banner {
+  cursor: pointer;
   background-image: url('../img/Fondo.png');
   width: 100%;
   padding: 2%;
@@ -787,6 +788,7 @@ BotonProyecto :hover {
 /* Slide de Imagenes */
 
 .imagenPlanilla{
+  cursor: pointer;
   vertical-align: middle;
   width:  50%;
   height: 55vh;
@@ -816,7 +818,7 @@ BotonProyecto :hover {
   top: 40%;
   width: auto;
   padding: 16px;
-  color: white;
+  color: gray !important;
   font-weight: bold;
   font-size: 20px;
   border-radius: 0 3px 3px 0;
