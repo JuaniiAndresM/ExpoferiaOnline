@@ -60,7 +60,7 @@
             <h2>Imagenes:</h2>
                   <hr />
                 <div class="mySlides">
-                  <img class="imagenPlanilla" id ="foto1" style="width:100%">
+                  <img id ="foto1"  class="imagenPlanilla" style="width:100%">
                   <div class="numbertext">1 / 3</div>
                 </div>
 
@@ -78,6 +78,14 @@
                 <a class="next" onclick="plusSlides(1)" style="position: absolute;">❯</a>
 
             </div>
+
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+              <span class="close">&times;</span>
+              <img class="modal-content" id="foto">
+              <div id="caption"></div>
+            </div>
+
             <div class="Video" id="divideo">
                   <h2>Video:</h2>
                   <hr />
@@ -151,9 +159,8 @@ function showSlides(n) {
       dots[i].className = dots[i].className.replace(" active", "");
   }
   slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-  captionText.innerHTML = dots[slideIndex-1].alt;
 }
+
     </script>
 
     <?php
@@ -161,6 +168,7 @@ function showSlides(n) {
     $sql = "SELECT * FROM datosproyecto WHERE idproyecto = '1'";
     $result = $mysqli -> query($sql);
     $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
 
     if(isset($ss['Titulo'],$ss['Introduccion'],$ss['Descripcion'])){
       echo "<script> 
@@ -207,7 +215,24 @@ function showSlides(n) {
         for ($i = 0; $i < $arr_length ; $i++) {
           echo "<script>
           document.getElementById('foto".$cont."').src = '../img/".$column[$i]."';
+
+          var modal = document.getElementById('myModal');
+
+          var img = document.getElementById('foto".$cont."');
+
+          var modalImg = document.getElementById('foto');
+          img.onclick = function(){
+            modal.style.display = 'block';
+            modalImg.src = this.src;
+          }
+          var span = document.getElementsByClassName('close')[0];
+    
+          span.onclick = function() { 
+            modal.style.display = 'none';
+          }
+
           </script>";
+          
           $cont = $cont + 1;
         }
     }else{
@@ -227,9 +252,8 @@ function showSlides(n) {
       
     }
     
-
-   
   ?>
+
     <div id="footer"></div>
   </body>
 </html>

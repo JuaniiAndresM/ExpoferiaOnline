@@ -720,6 +720,7 @@ button:hover {
     grid-template-columns: 70% 30%;
   }
   .ImagenesPlanilla {
+    cursor: pointer;
     display: none;
   }
   .Video {
