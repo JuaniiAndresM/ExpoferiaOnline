@@ -158,7 +158,7 @@ function showSlides(n) {
 
     <?php
     include '..\Form\conexion.php';
-    $sql = "SELECT * FROM datosproyecto WHERE idproyecto = '1'";
+    $sql = "SELECT * FROM datosproyecto WHERE idproyecto = ''";
     $result = $mysqli -> query($sql);
     $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
