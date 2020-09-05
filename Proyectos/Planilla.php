@@ -141,7 +141,7 @@
       var regExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
       var match = url.match(regExp);
       if (match && match[2].length == 11) {
-        document.getElementById('video').src = 'https://www.youtube.com/embed/'+match[2];
+        document.getElementById('video').src = 'https://www.youtube.com/embed/'+match[2]+'?&autoplay=1';
       } else {
         document.getElementById('divideo').style.visibility = 'hidden';
       }

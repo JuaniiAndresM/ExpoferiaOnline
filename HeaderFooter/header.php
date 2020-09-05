@@ -1,12 +1,12 @@
 <script src="/ExpoferiaOnline/js/menu.js"></script>
 <header>
-  <a href="/ExpoferiaOnline/index.html"
+  <a href="/ExpoferiaOnline/index.php"
     ><img class="logo" src="/ExpoferiaOnline/img/Logo.png" alt="Logo"
   /></a>
   <nav>
     <ul class="nav-links">
       <li>
-        <a href="/ExpoferiaOnline/index.html"
+        <a href="/ExpoferiaOnline/index.php"
           ><i class="fa">&#xf015;</i> Inicio</a
         >
       </li>
@@ -58,7 +58,7 @@
     <h2>Menu:</h2>
     <ul class="nav-links2">
       <li>
-        <a href="/ExpoferiaOnline/index.html"
+        <a href="/ExpoferiaOnline/index.php"
           ><i class="fa">&#xf015;</i> Inicio</a
         >
         <hr>
