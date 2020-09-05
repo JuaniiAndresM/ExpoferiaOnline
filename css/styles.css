@@ -729,7 +729,7 @@ BotonProyecto :hover {
 
 .PlanillaFrame {
   display: grid;
-  grid-template-columns: 20% 60% 20%;
+  grid-template-columns: 20% 75%;
   margin-left: 1%;
   margin-right: 1%;
   padding-top: 4%;
@@ -743,7 +743,7 @@ BotonProyecto :hover {
 }
 
 .Foto {
-  background-image: url('../img/Fondo.png');
+  margin-left: 5%;
   width: 100%;
   padding: 2%;
   margin-bottom: 1%;
