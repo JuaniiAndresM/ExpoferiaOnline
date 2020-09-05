@@ -95,9 +95,6 @@
                           }
                           var span = document.getElementsByClassName('close')[0];
                     
-                          span.onclick = function() { 
-                            modal.style.display = 'none';
-                          }
 
                           </script>";
                           
@@ -191,7 +188,9 @@ function showSlides(n) {
       dots[i].className = dots[i].className.replace(" active", "");
   }
   slides[slideIndex-1].style.display = "block";
+  
 }
+
 
     </script>
 
