@@ -310,8 +310,6 @@
 
     </script>
 
-    //No esta del todo bien todavia, asi que si se rompe la pagina es por esto pero no lo borren.
-    //NO BORRAR
 <?php
 include 'Form\conexion.php';
 $sql = "SELECT *FROM datosproyecto";
@@ -322,25 +320,11 @@ while($sql = mysqli_fetch_array($result, MYSQLI_ASSOC)){
 $arr_length = count($column);
 if($arr_length >= 3){
   $i = 1;
+  $arr = range(1,$arr_length);
+  shuffle($arr);
   $x = 0;
-  $c = 0;
-  $z = 0;
-  $repetido = array();
-  $x = 0;
-  for($j=1; $j<=$arr_length + 1; $j++){
-    array_push($repetido, $j);
-  }
   do{
-      $random = rand(1,$arr_length);
-      for($j=0; $j<=$arr_length; $j++){
-        if($repetido[$j]  == $random ){
-          $random = rand(1,$arr_length);
-        }else{
-          $repetido[$x] =  $random;
-          $x++;
-          $j = $arr_length;
-        }
-      }
+      $random = $arr[$x];
         $sql = "SELECT * FROM datosproyecto WHERE idproyecto = '".$random."'";
         $result = $mysqli -> query($sql);
         $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
