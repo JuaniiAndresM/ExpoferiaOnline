@@ -54,6 +54,7 @@
                         <option value="Diversificado">5°</option>
                         <option value="Diversificado">6°</option>
                       </select>
+
                       <select name="OrientacionSelect" class="custom-select">
                         <option value="Diversificado">Informatica</option>
                         <option value="Diversificado">Deportivo</option>
