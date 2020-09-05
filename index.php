@@ -306,10 +306,9 @@
 
     <script>
       AOS.init();
-
-
     </script>
 
+<!-- Carga de proyectos  -->
 <?php
 include 'Form\conexion.php';
 $sql = "SELECT *FROM datosproyecto";
@@ -402,9 +401,6 @@ if($arr_length >= 3){
   document.getElementById('Seccion3').style.visibility = 'hidden';
   </script>";
 }
-
-
-
 
 ?>
   </body>

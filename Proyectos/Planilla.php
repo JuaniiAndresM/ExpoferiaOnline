@@ -23,6 +23,7 @@
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="/ExpoferiaOnline/css/styles.css" />
+    <link rel="stylesheet" href="/ExpoferiaOnline/scss/styles.scss" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
       rel="stylesheet"
@@ -68,27 +69,42 @@
               </div>
               
             </div>
-            <div class="Foto" >
-            <img id='foto1' style='max-height:30%; max-width:30%; '>
-            <img id='foto2' style='max-height:30%; max-width:30%; '>
-            <img id='foto3' style='max-height:30%; max-width:30%; '>
+            <div class="container">
+                <div class="mySlides">
+                  <div class="numbertext">1 / 3</div>
+                  <img id ="foto1" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+                  <div class="numbertext">2 / 3</div>
+                  <img id ="foto2"  style="width:100%">
+                </div>
+
+                <div class="mySlides">
+                  <div class="numbertext">3 / 3</div>
+                  <img id ="foto3"  style="width:100%">
+                </div>
+                                 
+                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                <a class="next" onclick="plusSlides(1)">❯</a>
+
+                <div class="caption-container">
+                  <p id="caption"></p>
+                </div>
+
+                <div class="row">
+                  <div class="column">
+                    <img class="demo cursor" id ="foto1" style="width:100%" onclick="currentSlide(1)" >
+                  </div>
+                  <div class="column">
+                    <img class="demo cursor" id ="foto2" style="width:100%" onclick="currentSlide(2)" >
+                  </div>
+                  <div class="column">
+                    <img class="demo cursor" id ="foto3" style="width:100%" onclick="currentSlide(3)">
+                  </div>
+                </div>
             </div>
-                <script>
-                  
-                  function addElement () { 
-                    // crea un nuevo div 
-                    // y añade contenido 
-                    var newDiv = document.createElement("BUTTON"); 
-                    var newContent = document.createTextNode("+ imagenes"); 
-                    newDiv.appendChild(newContent); //añade texto al div creado. 
 
-                    // añade el elemento creado y su contenido al DOM 
-                    var currentDiv = document.getElementById("foto3");
-                    var currentDiv1 = document.getElementById("ImagenesPlanilla"); 
-                    currentDiv1.insertBefore(newDiv, currentDiv.nextSibling); 
-                  }
-
-                </script>
             <div class="MobileView">
               <div class="ImagenesPlanillaMobile">
                 <h2>Fotos:</h2>
@@ -120,6 +136,38 @@
         </div>
       </div>
     </div>
+
+    <script> 
+   var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+    </script>
+
     <?php
     include '..\Form\conexion.php';
     $sql = "SELECT * FROM datosproyecto WHERE idproyecto = '1'";
