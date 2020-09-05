@@ -381,7 +381,6 @@ if($arr_length >= 3){
       $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
   
       echo "<script> 
-      alert('".$arr_length."');
       document.getElementById('Seccion1').style.visibility = 'visible';
       document.getElementById('Seccion2').style.visibility = 'hidden';
       document.getElementById('Seccion3').style.visibility = 'hidden';
