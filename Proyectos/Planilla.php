@@ -45,7 +45,7 @@
                 <div class="Banner"><img id='banner' style='max-height:100%; max-width:100%;'></div>
               </div>
               <div class="CentralPlanilla">
-                <h2 id="titulo" style="word-wrap: break-word;"></h2>
+                <h2 id="titulo" style="word-wrap: break-word; font-weight: bolder;"></h2>
                 <hr />
                 <h4 >Introduccion:</h4>
                 <a id="intro" style="word-wrap: break-word;"></a>
@@ -79,7 +79,7 @@
 
             </div>
 
-            <!-- The Modal -->
+            <!-- Modal Agrandar Fotos -->
             <div id="myModal" class="modal">
               <span class="close">&times;</span>
               <img class="modal-content" id="foto">
@@ -215,6 +215,8 @@ function showSlides(n) {
         for ($i = 0; $i < $arr_length ; $i++) {
           echo "<script>
           document.getElementById('foto".$cont."').src = '../img/".$column[$i]."';
+
+          <!-- Modal Agrandar Fotos -->
 
           var modal = document.getElementById('myModal');
 

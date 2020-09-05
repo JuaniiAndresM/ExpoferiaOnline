@@ -683,6 +683,7 @@ BotonProyecto :hover {
   margin-top: 100px;
 }
 
+/* Planilla */
 .Planilla {
   margin-top: 100px;
   margin-right: 2%;
@@ -729,7 +730,7 @@ BotonProyecto :hover {
 
 .PlanillaFrame {
   display: grid;
-  grid-template-columns: 20% 75%;
+  grid-template-columns: 20% 80%;
   margin-left: 1%;
   margin-right: 1%;
   padding-top: 4%;
@@ -781,6 +782,88 @@ BotonProyecto :hover {
 .Video iframe {
   width: 100%;
   height: 60vh;
+}
+
+/* Slide de Imagenes */
+
+.imagenPlanilla{
+  vertical-align: middle;
+  width:  50%;
+  height: 55vh;
+  object-fit: cover;
+}
+
+.imagenesSlide {
+  position: relative;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.mySlides {
+  display: none;
+  text-align: center;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+.numbertext {
+  color: white;
+  background-color:rgba(0, 0, 0, 0.6);
+  font-weight: bolder;
+  font-size: 12px;
+  padding: 8px 12px;
+  top: 0;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
 }
 
 .BotonLogin2 button {
@@ -1222,6 +1305,7 @@ footer .Facebook {
 
 * {
   box-sizing: border-box;
+<<<<<<< HEAD
 }
 
 .imagenPlanilla{
@@ -1307,22 +1391,22 @@ footer .Facebook {
 
 
 
-/* The Modal (background) */
+
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  padding-top: 100px; 
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.9);
 }
 
-/* Modal Content (image) */
+
 .modal-content {
   margin: auto;
   display: block;
@@ -1330,7 +1414,7 @@ footer .Facebook {
   max-width: 700px;
 }
 
-/* Caption of Modal Image */
+
 #caption {
   margin: auto;
   display: block;
@@ -1342,7 +1426,6 @@ footer .Facebook {
   height: 150px;
 }
 
-/* Add Animation */
 .modal-content, #caption {  
   -webkit-animation-name: zoom;
   -webkit-animation-duration: 0.6s;
@@ -1360,7 +1443,7 @@ footer .Facebook {
   to {transform:scale(1)}
 }
 
-/* The Close Button */
+
 .close {
   position: absolute;
   top: 15px;
@@ -1378,9 +1461,9 @@ footer .Facebook {
   cursor: pointer;
 }
 
-/* 100% Image Width on Smaller Screens */
 @media only screen and (max-width: 700px){
   .modal-content {
     width: 100%;
   }
+>>>>>>> 912bfc8333eacd2f1a8b55e5516592f8abbe7def
 }
