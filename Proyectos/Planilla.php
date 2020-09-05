@@ -198,6 +198,23 @@ function showSlides(n) {
     if(isset($ss['Banner'])){
       echo "<script>
       document.getElementById('banner').src = '../img/".$ss['Banner']."';
+      <!-- Modal Agrandar Fotos -->
+
+          var modal = document.getElementById('myModal');
+
+          var img = document.getElementById('banner');
+
+          var modalImg = document.getElementById('foto');
+          img.onclick = function(){
+            modal.style.display = 'block';
+            modalImg.src = this.src;
+          }
+          var span = document.getElementsByClassName('close')[0];
+    
+          span.onclick = function() { 
+            modal.style.display = 'none';
+          }
+
       </script>";
     }
     //Estuve como 3 horas para hacer esto, carga las imagenes, pero no se como.
