@@ -122,13 +122,13 @@
                   ></textarea>
                 </div>
                 
-                <form action="/ExpoferiaOnline/index.html" >
-                <a class="BotonLogin2" href="/ExpoferiaOnline/index.html" style="<?php echo $aprobar ?>"
+                <form action="/ExpoferiaOnline/index.php" >
+                <a class="BotonLogin2" href="/ExpoferiaOnline/index.php" style="<?php echo $aprobar ?>"
                   ><button style="margin-top: 5%;">
                     <i class="fa">&#xf14a;</i> Aprobar Proyecto
                   </button></a
                 >
-                <a class="BotonLogin2" href="/ExpoferiaOnline/index.html"
+                <a class="BotonLogin2" href="/ExpoferiaOnline/index.php"
                   ><button style="margin-top: 5%;" name="submit" type="submit">
                     <i class="fa">&#xf0c7;</i> Guardar Cambios
                   </button></a

@@ -23,6 +23,7 @@
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="/ExpoferiaOnline/css/styles.css" />
+    <link rel="stylesheet" href="/ExpoferiaOnline/scss/styles.scss" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
       rel="stylesheet"
@@ -38,38 +39,83 @@
         <div class="Linea3">
           <div class="Planilla">
             <div class="PlanillaFrame">
-              <div id='ImagenesPlanilla' class="ImagenesPlanilla">
-                <h2>Fotos:</h2>
+            <div class="BannerPlanilla">
+                <h2>Banner:</h2>
                 <hr />
-                <div class="Foto" ><img id='foto1' style='max-height:100%; max-width:100%; '></div>
-                <div class="Foto"><img id='foto2' style='max-height:100%; max-width:100%; '></div>
-                <div class="Foto" id='divputo' ><img id='foto3' style='max-height:100%; max-width:100%; '></div>
-                <script>
-                  
-                  function addElement () { 
-                    // crea un nuevo div 
-                    // y añade contenido 
-                    var newDiv = document.createElement("BUTTON"); 
-                    var newContent = document.createTextNode("+ imagenes"); 
-                    newDiv.appendChild(newContent); //añade texto al div creado. 
-
-                    // añade el elemento creado y su contenido al DOM 
-                    var currentDiv = document.getElementById("foto3");
-                    var currentDiv1 = document.getElementById("ImagenesPlanilla"); 
-                    currentDiv1.insertBefore(newDiv, currentDiv.nextSibling); 
-                  }
-
-                </script>
+                <div class="Banner"><img id='banner' style='max-height:100%; max-width:100%;'></div>
               </div>
               <div class="CentralPlanilla">
-                <h2 id="titulo" style="word-wrap: break-word;"></h2>
+                <h2 id="titulo" style="word-wrap: break-word; font-weight: bolder;"></h2>
                 <hr />
                 <h4 >Introduccion:</h4>
                 <a id="intro" style="word-wrap: break-word;"></a>
                 <br></br>
                 <h4>Descripcion:</h4>
                 <a id="desc" style="word-wrap: break-word;"></a>
-                <div class="Video" id="divideo">
+              </div>
+              
+            </div>
+          <div class="ImgVidFrame">
+            <div class="imagenesSlide">
+            <h2>Imagenes:</h2>
+                  <hr />
+                  <?php
+                    include '..\Form\conexion.php';
+                    $sql = "SELECT * FROM datosproyecto WHERE idproyecto = '1'";
+                    $result = $mysqli -> query($sql);
+                    $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
+                    $column = array();
+                    $cont = 1;
+                    $sqlimg = "SELECT * FROM imagenes WHERE idproyecto = '".$ss['idProyecto']."'";
+                    $resultimg = $mysqli -> query($sqlimg);
+                    while($ssimg = mysqli_fetch_array($resultimg, MYSQLI_ASSOC)){
+                      $column[] = $ssimg['url'];
+                    }
+                    $arr_length = count($column);
+                    if(isset($column)){
+                        for ($i = 0; $i < $arr_length ; $i++) {
+                          echo "
+                          <div class='mySlides'>
+                          <img id ='foto".$cont."'  class='imagenPlanilla' style='width:100%'>
+                          <div class='numbertext'>".$cont."/".$arr_length."</div>
+                          </div>
+                          <script>
+                          document.getElementById('foto".$cont."').src = '../img/".$column[$i]."';
+
+                          <!-- Modal Agrandar Fotos -->
+
+                          var modal = document.getElementById('myModal');
+
+                          var img = document.getElementById('foto".$cont."');
+
+                          var modalImg = document.getElementById('foto');
+                          img.onclick = function(){
+                            modal.style.display = 'block';
+                            modalImg.src = this.src;
+                          }
+                          var span = document.getElementsByClassName('close')[0];
+                    
+
+                          </script>";
+                          
+                          $cont = $cont + 1;
+                        }
+                    }
+                  ?>
+                                 
+                <a class="prev" onclick="plusSlides(-1)" style="position: absolute;">❮</a>
+                <a class="next" onclick="plusSlides(1)" style="position: absolute;">❯</a>
+
+            </div>
+
+            <!-- Modal Agrandar Fotos -->
+            <div id="myModal" class="modal">
+              <span class="close">&times;</span>
+              <img class="modal-content" id="foto">
+              <div id="caption"></div>
+            </div>
+
+            <div class="Video" id="divideo">
                   <h2>Video:</h2>
                   <hr />
                   <div>
@@ -83,13 +129,7 @@
                     ></iframe>
                   </div>
                 </div>
-              </div>
-              <div class="BannerPlanilla">
-                <h2>Banner:</h2>
-                <hr />
-                <div class="Banner"><img id='banner' style='max-height:100%; max-width:100%;'></div>
-              </div>
-            </div>
+          </div>
             <div class="MobileView">
               <div class="ImagenesPlanillaMobile">
                 <h2>Fotos:</h2>
@@ -121,11 +161,45 @@
         </div>
       </div>
     </div>
+
+    <script> 
+   var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  
+}
+
+
+    </script>
+
     <?php
     include '..\Form\conexion.php';
     $sql = "SELECT * FROM datosproyecto WHERE idproyecto = '1'";
     $result = $mysqli -> query($sql);
     $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
 
     if(isset($ss['Titulo'],$ss['Introduccion'],$ss['Descripcion'])){
       echo "<script> 
@@ -142,7 +216,7 @@
       var regExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
       var match = url.match(regExp);
       if (match && match[2].length == 11) {
-        document.getElementById('video').src = 'https://www.youtube.com/embed/'+match[2];
+        document.getElementById('video').src = 'https://www.youtube.com/embed/'+match[2]+'?&autoplay=1';
       } else {
         document.getElementById('divideo').style.visibility = 'hidden';
       }
@@ -155,6 +229,23 @@
     if(isset($ss['Banner'])){
       echo "<script>
       document.getElementById('banner').src = '../img/".$ss['Banner']."';
+      <!-- Modal Agrandar Fotos -->
+
+          var modal = document.getElementById('myModal');
+
+          var img = document.getElementById('banner');
+
+          var modalImg = document.getElementById('foto');
+          img.onclick = function(){
+            modal.style.display = 'block';
+            modalImg.src = this.src;
+          }
+          var span = document.getElementsByClassName('close')[0];
+    
+          span.onclick = function() { 
+            modal.style.display = 'none';
+          }
+
       </script>";
     }
     //Estuve como 3 horas para hacer esto, carga las imagenes, pero no se como.
@@ -168,33 +259,35 @@
     }
     $arr_length = count($column);
     if(isset($column)){
-      if($arr_length < 4){
         for ($i = 0; $i < $arr_length ; $i++) {
           echo "<script>
           document.getElementById('foto".$cont."').src = '../img/".$column[$i]."';
+
+          <!-- Modal Agrandar Fotos -->
+
+          var modal = document.getElementById('myModal');
+
+          var img = document.getElementById('foto".$cont."');
+
+          var modalImg = document.getElementById('foto');
+          img.onclick = function(){
+            modal.style.display = 'block';
+            modalImg.src = this.src;
+          }
+          var span = document.getElementsByClassName('close')[0];
+    
+          span.onclick = function() { 
+            modal.style.display = 'none';
+          }
+
           </script>";
+          
           $cont = $cont + 1;
         }
-    }else{
-      for ($i = 0; $i < 2 ; $i++) {
-        echo "<script>
-        document.getElementById('foto".$cont."').src = '../img/".$column[$i]."';
-        </script>";
-        $cont = $cont + 1;
-      }
-      echo "<script>
-      addElement();
-      document.getElementById('divputo').style.visibility = 'hidden';
-    
-       </script>";
-
-      }
-      
     }
     
-
-   
   ?>
+
     <div id="footer"></div>
   </body>
 </html>
