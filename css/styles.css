@@ -6,7 +6,8 @@
 
 body {
   overflow-x: hidden;
-  background: url("/ExpoferiaOnline/img/Fondo.png") no-repeat center center fixed;
+  background: url("/ExpoferiaOnline/img/Fondo.png") no-repeat center center
+    fixed;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -760,11 +761,11 @@ BotonProyecto :hover {
 
 .Banner {
   cursor: pointer;
-  background-image: url('../img/Fondo.png');
+  background-image: url("../img/Fondo.png");
   width: 100%;
   padding: 2%;
   margin-bottom: 1%;
- }
+}
 .Banner .BannerIMG {
   width: 100%;
 }
@@ -787,10 +788,10 @@ BotonProyecto :hover {
 
 /* Slide de Imagenes */
 
-.imagenPlanilla{
+.imagenPlanilla {
   cursor: pointer;
   vertical-align: middle;
-  width:  50%;
+  width: 50%;
   height: 55vh;
   object-fit: cover;
 }
@@ -808,7 +809,6 @@ BotonProyecto :hover {
 .cursor {
   cursor: pointer;
 }
-
 
 .prev,
 .next {
@@ -830,16 +830,14 @@ BotonProyecto :hover {
   border-radius: 3px 0 0 3px;
 }
 
-
 .prev:hover,
 .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-
 .numbertext {
   color: white;
-  background-image: url('../img/Fondo.png');
+  background-image: url("../img/Fondo.png");
   font-weight: bolder;
   font-size: 12px;
   padding: 8px 12px;
@@ -857,7 +855,6 @@ BotonProyecto :hover {
   width: 16.66%;
 }
 
-
 .demo {
   opacity: 0.6;
 }
@@ -870,19 +867,18 @@ BotonProyecto :hover {
 /* Modal Planilla */
 
 .modal {
-  display: none; 
-  position: fixed; 
-  z-index: 1; 
-  padding-top: 100px; 
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
   left: 0;
   top: 0;
-  width: 100%; 
-  height: 100%; 
-  overflow: auto; 
-  background-color: rgb(0,0,0); 
-  background-color: rgba(0,0,0,0.9);
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
 }
-
 
 .modal-content {
   margin: auto;
@@ -890,7 +886,6 @@ BotonProyecto :hover {
   width: 80%;
   max-width: 700px;
 }
-
 
 #caption {
   margin: auto;
@@ -903,7 +898,8 @@ BotonProyecto :hover {
   height: 150px;
 }
 
-.modal-content, #caption {  
+.modal-content,
+#caption {
   -webkit-animation-name: zoom;
   -webkit-animation-duration: 0.6s;
   animation-name: zoom;
@@ -911,15 +907,22 @@ BotonProyecto :hover {
 }
 
 @-webkit-keyframes zoom {
-  from {-webkit-transform:scale(0)} 
-  to {-webkit-transform:scale(1)}
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
 }
 
 @keyframes zoom {
-  from {transform:scale(0)} 
-  to {transform:scale(1)}
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
 }
-
 
 .close {
   position: absolute;
@@ -938,7 +941,7 @@ BotonProyecto :hover {
   cursor: pointer;
 }
 
-@media only screen and (max-width: 700px){
+@media only screen and (max-width: 700px) {
   .modal-content {
     width: 100%;
   }
@@ -962,7 +965,7 @@ BotonProyecto :hover {
   flex-direction: column;
   background-color: grey;
 }
-.BannerPlanillaEditable .BannerEditable input[type=file] {
+.BannerPlanillaEditable .BannerEditable input[type="file"] {
   display: none;
 }
 .BannerPlanillaEditable .BannerEditable .BotonSubir {
@@ -1256,7 +1259,8 @@ footer .Facebook {
     height: 80vh;
     width: 50%;
     top: 15vh;
-    background: url("/ExpoferiaOnline/img/Fondo.png") no-repeat center center fixed;
+    background: url("/ExpoferiaOnline/img/Fondo.png") no-repeat center center
+      fixed;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1382,5 +1386,61 @@ footer .Facebook {
     margin-right: 2%;
   }
 }
-
-
+.radio-opt {
+  width: 40%;
+  margin-left: 10px;
+}
+.radlbl {
+  padding-right: 7%;
+}
+.select-opt {
+  position: relative;
+  width: 60%;
+}
+#orient {
+  margin: 0 auto;
+  width: 100%;
+}
+.rad-opt-child {
+  height: 20px;
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.rad-opt-child input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.rad-opt-child:hover input ~ .radicon {
+  background-color: #ccc;
+}
+.rad-opt-child input:checked ~ .radicon {
+  background-color: #0088c4;
+}
+.radicon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+.radicon:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.rad-opt-child input:checked ~ .radicon:after {
+  display: block;
+}
