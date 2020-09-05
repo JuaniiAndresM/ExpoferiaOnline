@@ -1,0 +1,19 @@
+.listProyectoUnirse {
+    display: grid;
+    grid-template-columns: 5% 20% 75%;
+  
+    .textoLista {
+      text-align: left;
+    }
+    .FotoLista {
+      margin: auto;
+      width: 100px;
+      height: 100px;
+    }
+    .checkForm {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      flex-direction: column;
+    }
+  }

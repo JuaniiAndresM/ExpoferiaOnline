@@ -26,7 +26,7 @@ if(isset($_POST['user']) && $_POST['contra']){
         }
         if($insert_row==true){
             print 'Ok, todo grabado : ' .$mysqli->insert_id .'<br />'; 
-            header('Location: ../index.html');
+            header('Location: ../index.php');
         }else{
            
         }

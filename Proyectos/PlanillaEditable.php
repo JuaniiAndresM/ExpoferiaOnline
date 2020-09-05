@@ -122,14 +122,24 @@
                   ></textarea>
                 </div>
                 
+<<<<<<< HEAD
 
                 <a class="BotonLogin2" href="/ExpoferiaOnline/index.html" style="<?php echo $aprobar ?>"
+=======
+                <form action="/ExpoferiaOnline/index.php" >
+                <a class="BotonLogin2" href="/ExpoferiaOnline/index.php" style="<?php echo $aprobar ?>"
+>>>>>>> 0a7d848901a47ace37adf711565e44ed6029cd76
                   ><button style="margin-top: 5%;">
                     <i class="fa">&#xf14a;</i> Aprobar Proyecto
                   </button></a
                 >
+<<<<<<< HEAD
                 <a class="BotonLogin2" href="/ExpoferiaOnline/index.html"
                   ><button onclick="myFunction()" style="margin-top: 5%;">
+=======
+                <a class="BotonLogin2" href="/ExpoferiaOnline/index.php"
+                  ><button style="margin-top: 5%;" name="submit" type="submit">
+>>>>>>> 0a7d848901a47ace37adf711565e44ed6029cd76
                     <i class="fa">&#xf0c7;</i> Guardar Cambios
                   </button></a
                 >
