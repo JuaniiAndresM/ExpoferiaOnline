@@ -52,7 +52,33 @@
                 <br></br>
                 <h4>Descripcion:</h4>
                 <a id="desc" style="word-wrap: break-word;"></a>
-                <div class="Video" id="divideo">
+              </div>
+              
+            </div>
+          <div class="ImgVidFrame">
+            <div class="imagenesSlide">
+            <h2>Imagenes:</h2>
+                  <hr />
+                <div class="mySlides">
+                  <img class="imagenPlanilla" id ="foto1" style="width:100%">
+                  <div class="numbertext">1 / 3</div>
+                </div>
+
+                <div class="mySlides">
+                  <img class="imagenPlanilla" id ="foto2"  style="width:100%">
+                  <div class="numbertext">2 / 3</div>
+                </div>
+
+                <div class="mySlides">
+                  <img class="imagenPlanilla" id ="foto3"  style="width:100%">
+                  <div class="numbertext">3 / 3</div>
+                </div>
+                                 
+                <a class="prev" onclick="plusSlides(-1)" style="position: absolute;">❮</a>
+                <a class="next" onclick="plusSlides(1)" style="position: absolute;">❯</a>
+
+            </div>
+            <div class="Video" id="divideo">
                   <h2>Video:</h2>
                   <hr />
                   <div>
@@ -66,45 +92,7 @@
                     ></iframe>
                   </div>
                 </div>
-              </div>
-              
-            </div>
-            <div class="container">
-                <div class="mySlides">
-                  <div class="numbertext">1 / 3</div>
-                  <img id ="foto1" style="width:100%">
-                </div>
-
-                <div class="mySlides">
-                  <div class="numbertext">2 / 3</div>
-                  <img id ="foto2"  style="width:100%">
-                </div>
-
-                <div class="mySlides">
-                  <div class="numbertext">3 / 3</div>
-                  <img id ="foto3"  style="width:100%">
-                </div>
-                                 
-                <a class="prev" onclick="plusSlides(-1)">❮</a>
-                <a class="next" onclick="plusSlides(1)">❯</a>
-
-                <div class="caption-container">
-                  <p id="caption"></p>
-                </div>
-
-                <div class="row">
-                  <div class="column">
-                    <img class="demo cursor" id ="foto1" style="width:100%" onclick="currentSlide(1)" >
-                  </div>
-                  <div class="column">
-                    <img class="demo cursor" id ="foto2" style="width:100%" onclick="currentSlide(2)" >
-                  </div>
-                  <div class="column">
-                    <img class="demo cursor" id ="foto3" style="width:100%" onclick="currentSlide(3)">
-                  </div>
-                </div>
-            </div>
-
+          </div>
             <div class="MobileView">
               <div class="ImagenesPlanillaMobile">
                 <h2>Fotos:</h2>
