@@ -38,28 +38,10 @@
         <div class="Linea3">
           <div class="Planilla">
             <div class="PlanillaFrame">
-              <div id='ImagenesPlanilla' class="ImagenesPlanilla">
-                <h2>Fotos:</h2>
+            <div class="BannerPlanilla">
+                <h2>Banner:</h2>
                 <hr />
-                <div class="Foto" ><img id='foto1' style='max-height:100%; max-width:100%; '></div>
-                <div class="Foto"><img id='foto2' style='max-height:100%; max-width:100%; '></div>
-                <div class="Foto" id='divputo' ><img id='foto3' style='max-height:100%; max-width:100%; '></div>
-                <script>
-                  
-                  function addElement () { 
-                    // crea un nuevo div 
-                    // y añade contenido 
-                    var newDiv = document.createElement("BUTTON"); 
-                    var newContent = document.createTextNode("+ imagenes"); 
-                    newDiv.appendChild(newContent); //añade texto al div creado. 
-
-                    // añade el elemento creado y su contenido al DOM 
-                    var currentDiv = document.getElementById("foto3");
-                    var currentDiv1 = document.getElementById("ImagenesPlanilla"); 
-                    currentDiv1.insertBefore(newDiv, currentDiv.nextSibling); 
-                  }
-
-                </script>
+                <div class="Banner"><img id='banner' style='max-height:100%; max-width:100%;'></div>
               </div>
               <div class="CentralPlanilla">
                 <h2 id="titulo" style="word-wrap: break-word;"></h2>
@@ -84,12 +66,29 @@
                   </div>
                 </div>
               </div>
-              <div class="BannerPlanilla">
-                <h2>Banner:</h2>
-                <hr />
-                <div class="Banner"><img id='banner' style='max-height:100%; max-width:100%;'></div>
-              </div>
+              
             </div>
+            <div class="Foto" >
+            <img id='foto1' style='max-height:30%; max-width:30%; '>
+            <img id='foto2' style='max-height:30%; max-width:30%; '>
+            <img id='foto3' style='max-height:30%; max-width:30%; '>
+            </div>
+                <script>
+                  
+                  function addElement () { 
+                    // crea un nuevo div 
+                    // y añade contenido 
+                    var newDiv = document.createElement("BUTTON"); 
+                    var newContent = document.createTextNode("+ imagenes"); 
+                    newDiv.appendChild(newContent); //añade texto al div creado. 
+
+                    // añade el elemento creado y su contenido al DOM 
+                    var currentDiv = document.getElementById("foto3");
+                    var currentDiv1 = document.getElementById("ImagenesPlanilla"); 
+                    currentDiv1.insertBefore(newDiv, currentDiv.nextSibling); 
+                  }
+
+                </script>
             <div class="MobileView">
               <div class="ImagenesPlanillaMobile">
                 <h2>Fotos:</h2>
