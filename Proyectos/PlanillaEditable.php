@@ -107,7 +107,7 @@
                   </div>
                   <div id="demo" class="collapse">
                   <div class="form-group">
-                    <input type="text" class="form-control" id="user" placeholder="URL del Video [YouTube]" name="nombre_proyecto" value= "<?php echo $link;?>" />
+                    <input type="text" class="form-control" id="link" placeholder="URL del Video [YouTube]" name="nombre_proyecto" value= "<?php echo $link;?>" />
                   </div>
                   
                 </div>
@@ -122,17 +122,31 @@
                   ></textarea>
                 </div>
                 
-                <form action="/ExpoferiaOnline/index.php" >
-                <a class="BotonLogin2" href="/ExpoferiaOnline/index.php" style="<?php echo $aprobar ?>"
+
+                <a class="BotonLogin2" href="/ExpoferiaOnline/index.html" style="<?php echo $aprobar ?>"
                   ><button style="margin-top: 5%;">
                     <i class="fa">&#xf14a;</i> Aprobar Proyecto
                   </button></a
                 >
-                <a class="BotonLogin2" href="/ExpoferiaOnline/index.php"
-                  ><button style="margin-top: 5%;" name="submit" type="submit">
+                <a class="BotonLogin2" href="/ExpoferiaOnline/index.html"
+                  ><button onclick="myFunction()" style="margin-top: 5%;">
                     <i class="fa">&#xf0c7;</i> Guardar Cambios
                   </button></a
                 >
+                <?php
+                function myFunction() {
+                  $nombre_proyecto = $_POST['user'];
+                  $introduccion =$_POST['descripcionCorta_Proyecto'];
+                  $link= $_POST['link'];
+                  $descripcion= $_POST['descripcionLarga_Proyecto'];
+
+                $sql = " UPDATE datosproyectos SET Titulo = '$nombre_proyecto' WHERE idproyecto = '$idp' ";
+                $sql = " UPDATE datosproyectos SET Introduccion = '$introduccion' WHERE idproyecto = '$idp' ";
+                $sql = " UPDATE datosproyectos SET LinkVideo = '$link' WHERE idproyecto = '$idp' ";
+                $sql = " UPDATE datosproyectos SET Descripcion = '$descripcion' WHERE idproyecto = '$idp' ";
+
+                ?>
+
               </div>
               <div class="BannerPlanillaEditable">
                 <h2>Banner:</h2>
@@ -140,11 +154,10 @@
                 <div class="BannerEditable">
  
                 <label for="file-upload" class="BotonSubir"><i class="fa">&#xf03e;</i> Subir Imagen</label>
-                  <input type="file" id="file-upload" />
+                  <input type="file" name="fileToUpload" id="fileToUpload" />
                 </div>
               </div>
-  </form>
-            </div>
+            </div>    
             <div class="MobileView">
               <div class="ImagenesPlanillaMobile">
                 <h2>Fotos:</h2>
@@ -177,4 +190,9 @@
     </div>
     <div id="footer"></div>
   </body>
+  <!-- <form action="uploadBanner.php" method="post" enctype="multipart/form-data">
+  name="submit" type="submit"-->
+
+  <!-- <form action="uploadIMG.php" method="post" enctype="multipart/form-data">
+  name="submit" type="submit"-->
 </html>

@@ -163,8 +163,9 @@
     </div>
 
     <script> 
-   var slideIndex = 1;
-showSlides(slideIndex);
+   var slideIndex = 0;
+   carousel();
+   showSlides(slideIndex);
 
 function plusSlides(n) {
   showSlides(slideIndex += n);
@@ -191,12 +192,24 @@ function showSlides(n) {
   
 }
 
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > x.length) {slideIndex = 1}
+  x[slideIndex-1].style.display = "block";
+  setTimeout(carousel, 8000); // Cambia la imagen cada 8 segundos
+}
+
 
     </script>
 
     <?php
     include '..\Form\conexion.php';
-    $sql = "SELECT * FROM datosproyecto WHERE idproyecto = '1'";
+    $sql = "SELECT * FROM datosproyecto WHERE idproyecto = ''";
     $result = $mysqli -> query($sql);
     $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
@@ -216,7 +229,7 @@ function showSlides(n) {
       var regExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
       var match = url.match(regExp);
       if (match && match[2].length == 11) {
-        document.getElementById('video').src = 'https://www.youtube.com/embed/'+match[2]+'?&autoplay=1';
+        document.getElementById('video').src = 'https://www.youtube.com/embed/'+match[2]+'?&autoplay=1&loop=1';
       } else {
         document.getElementById('divideo').style.visibility = 'hidden';
       }
