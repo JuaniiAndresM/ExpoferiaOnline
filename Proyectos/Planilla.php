@@ -209,7 +209,7 @@ function carousel() {
 
     <?php
     include '..\Form\conexion.php';
-    $sql = "SELECT * FROM datosproyecto WHERE idproyecto = ''";
+    $sql = "SELECT * FROM datosproyecto WHERE idproyecto = '1'";
     $result = $mysqli -> query($sql);
     $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
