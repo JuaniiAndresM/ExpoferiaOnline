@@ -45,12 +45,10 @@
                 <script>
                   function create () {
                   $.ajax({
-                    url:"/ExpoferiaOnline/Proyectos/ProyectosBE.php", 
+                    url:"ProyectosBE.php", 
                     type: "post", 
-                    dataType: 'json', data: {funcion: "crearmenu"}
+                    data: {funcion: "crearmenu"}
                     success:function(content){
-
-                    console.log(result);
                   }
                      });
                    }
