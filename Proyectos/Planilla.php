@@ -40,13 +40,12 @@
           <div class="Planilla">
             <div class="PlanillaFrame">
             <div class="BannerPlanilla">
-                <h2>Banner:</h2>
-                <hr />
-                <div class="Banner"><img id='banner' style='max-height:100%; max-width:100%;'></div>
-              </div>
-              <div class="CentralPlanilla">
                 <h2 id="titulo" style="word-wrap: break-word; font-weight: bolder;"></h2>
                 <hr />
+                  <div class="Banner"><img id='banner' style='max-height:100%; max-width:100%;'></div>
+                <hr />
+              </div>
+              <div class="CentralPlanilla">
                 <h4 >Introduccion:</h4>
                 <a id="intro" style="word-wrap: break-word;"></a>
                 <br></br>
