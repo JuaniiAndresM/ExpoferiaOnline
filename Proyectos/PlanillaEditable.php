@@ -12,7 +12,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="/ExpoferiaOnline/js/function.js"></script>
+    <script src="../functionproyecto.js"></script>
+   
 
     <link
       rel="stylesheet"
@@ -43,9 +44,10 @@
     //cuando es alumno no muestra el boton de aprobar proyecto
 
     $sql1 = "SELECT idProyecto FROM datosproyecto where Alumno= (SELECT idUsuario FROM usuario where usuario='". $_SESSION['Usuario']."')";
-    $idproyecto = $mysqli->query($sql1);
+  
+    $idp = $mysqli -> real_escape_string($sql1);
    
-    $sql2 = "SELECT Titulo FROM datosproyecto WHERE id ='".$idproyecto."' ";
+    $sql2 = "SELECT Titulo FROM datosproyecto WHERE id ='".$idp."' ";
     $nombre_proyecto = $mysqli->query($sql2);
 
     $sql3 = "SELECT Introduccion FROM datosproyecto WHERE  id ='".$idp."' ";

@@ -36,31 +36,8 @@
       <h2 id="TituloProyectos">Proyectos:</h2>
 
       <div class="gridProyectos">
-        <div class="Linea1Proyecto">
-          <div class="Linea2">
-            <div class="Linea3">
-              <div class="Proyecto">
-                <div class="Tabla">
-
-                <script>
-                  function create () {
-                  $.ajax({
-                    url:"ProyectosBE.php", 
-                    type: "post", 
-                    data: {funcion: "crearmenu"}
-                    success:function(content){
-                      $('.Tabla').html($content);
-                  }
-                     });
-                   }
-                <script>
-                      
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <script src="../js/functionproyecto.js"></script>
+               
     </div>
     <div id="footer"></div>
   </body>
