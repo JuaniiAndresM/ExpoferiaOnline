@@ -202,7 +202,7 @@
                 <div>
                   <img
                     class="ImagenProyectos" 
-                    id ="banner1" 
+                    id ="foto1" 
                   />
                 </div>
                 <div class="SeccionTexto">
@@ -258,7 +258,7 @@
                 </div>
                 <div class="Seccion2IMG">
                   <img
-                    id ="banner2"
+                    id ="foto2"
                     class="ImagenProyectos"
                     
                   />
@@ -274,7 +274,7 @@
                 <div>
                   <img
                     class="ImagenProyectos"
-                    id ="banner3"
+                    id ="foto3"
                   />
                 </div>
                 <div class="SeccionTexto">
@@ -334,11 +334,11 @@ if($arr_length >= 3){
         document.getElementById('Seccion3').style.visibility = 'visible';
         </script>";
     
-        if(isset($ss['Titulo'],$ss['Introduccion'],$ss['Banner'])){
+        if(isset($ss['Titulo'],$ss['Introduccion'],$ss['urlimportant'])){
           echo "<script> 
           document.getElementById('titulo".$i."').innerHTML = '".$ss['Titulo']."';
           document.getElementById('intro".$i."').innerHTML = '".$ss['Introduccion']."';
-          document.getElementById('banner".$i."').src = 'img/".$ss['Banner']."';
+          document.getElementById('foto".$i."').src = '../img/".$ss['urlimportant']."';
           </script>";
           $x++;
           $i++;

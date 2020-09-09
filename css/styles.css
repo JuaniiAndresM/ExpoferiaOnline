@@ -6,8 +6,7 @@
 
 body {
   overflow-x: hidden;
-  background: url("/ExpoferiaOnline/img/Fondo.png") no-repeat center center
-    fixed;
+  background: url("/ExpoferiaOnline/img/Fondo.png") no-repeat center center fixed;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -488,8 +487,8 @@ BotonProyecto :hover {
 
 .gridProyectos {
   display: grid;
-  grid-template-columns: 50% 50%;
-  margin-bottom: 3%;
+  margin: 0;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .Proyecto li,
@@ -503,15 +502,8 @@ BotonProyecto :hover {
 }
 
 .Linea1Proyecto {
-  margin-left: 10%;
-  margin-right: 2%;
-  background-color: #ffcb00;
-  border-radius: 30px;
-}
-
-.Linea1Proyecto2 {
-  margin-left: 2%;
-  margin-right: 10%;
+  margin-left: 1%;
+  margin-right: 1%;
   background-color: #ffcb00;
   border-radius: 30px;
 }
@@ -519,8 +511,8 @@ BotonProyecto :hover {
 .Tabla {
   padding: 5%;
   text-align: center;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 2%;
+  margin-right: 2%;
   padding-bottom: 3%;
 }
 
@@ -659,14 +651,14 @@ BotonProyecto :hover {
 .Tabla {
   padding: 5%;
   text-align: center;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 2%;
+  margin-right: 2%;
   padding-bottom: 3%;
 }
 
 .Linea1Proyecto {
-  margin-left: 10%;
-  margin-right: 2%;
+  margin-left: 5%;
+  margin-right: 5%;
   background-color: #ffcb00;
   border-radius: 30px;
 }
@@ -684,7 +676,6 @@ BotonProyecto :hover {
   margin-top: 100px;
 }
 
-/* Planilla */
 .Planilla {
   margin-top: 100px;
   margin-right: 2%;
@@ -731,15 +722,7 @@ BotonProyecto :hover {
 
 .PlanillaFrame {
   display: grid;
-  grid-template-columns: 20% 80%;
-  margin-left: 1%;
-  margin-right: 1%;
-  padding-top: 4%;
-  padding-bottom: 4%;
-}
-.ImgVidFrame {
-  display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 20% 60% 20%;
   margin-left: 1%;
   margin-right: 1%;
   padding-top: 4%;
@@ -753,19 +736,12 @@ BotonProyecto :hover {
 }
 
 .Foto {
-  margin-left: 5%;
+  background-color: grey;
   width: 100%;
   padding: 2%;
   margin-bottom: 1%;
 }
 
-.Banner {
-  cursor: pointer;
-  background-image: url("../img/Fondo.png");
-  width: 100%;
-  padding: 2%;
-  margin-bottom: 1%;
-}
 .Banner .BannerIMG {
   width: 100%;
 }
@@ -782,172 +758,8 @@ BotonProyecto :hover {
   display: block;
 }
 .Video iframe {
-  width: 100%;
-  height: 60vh;
+  border-radius: 50px;
 }
-
-/* Slide de Imagenes */
-
-.imagenPlanilla {
-  cursor: pointer;
-  vertical-align: middle;
-  width: 50%;
-  height: 55vh;
-  object-fit: cover;
-}
-
-.imagenesSlide {
-  position: relative;
-  margin-right: 5%;
-}
-
-.mySlides {
-  display: none;
-  text-align: center;
-}
-
-.cursor {
-  cursor: pointer;
-}
-
-.prev,
-.next {
-  cursor: pointer;
-  position: absolute;
-  top: 40%;
-  width: auto;
-  padding: 16px;
-  color: gray !important;
-  font-weight: bold;
-  font-size: 20px;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.numbertext {
-  color: white;
-  background-image: url("../img/Fondo.png");
-  font-weight: bolder;
-  font-size: 12px;
-  padding: 8px 12px;
-  top: 0;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.column {
-  float: left;
-  width: 16.66%;
-}
-
-.demo {
-  opacity: 0.6;
-}
-
-.active,
-.demo:hover {
-  opacity: 1;
-}
-
-/* Modal Planilla */
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  padding-top: 100px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.9);
-}
-
-.modal-content {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-}
-
-#caption {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-  text-align: center;
-  color: #ccc;
-  padding: 10px 0;
-  height: 150px;
-}
-
-.modal-content,
-#caption {
-  -webkit-animation-name: zoom;
-  -webkit-animation-duration: 0.6s;
-  animation-name: zoom;
-  animation-duration: 0.6s;
-}
-
-@-webkit-keyframes zoom {
-  from {
-    -webkit-transform: scale(0);
-  }
-  to {
-    -webkit-transform: scale(1);
-  }
-}
-
-@keyframes zoom {
-  from {
-    transform: scale(0);
-  }
-  to {
-    transform: scale(1);
-  }
-}
-
-.close {
-  position: absolute;
-  top: 15px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.close:hover,
-.close:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-@media only screen and (max-width: 700px) {
-  .modal-content {
-    width: 100%;
-  }
-}
-
-/* Fin Planilla */
 
 .BotonLogin2 button {
   font-family: "Montserrat", sans-serif;
@@ -965,7 +777,7 @@ BotonProyecto :hover {
   flex-direction: column;
   background-color: grey;
 }
-.BannerPlanillaEditable .BannerEditable input[type="file"] {
+.BannerPlanillaEditable .BannerEditable input[type=file] {
   display: none;
 }
 .BannerPlanillaEditable .BannerEditable .BotonSubir {
@@ -1259,8 +1071,7 @@ footer .Facebook {
     height: 80vh;
     width: 50%;
     top: 15vh;
-    background: url("/ExpoferiaOnline/img/Fondo.png") no-repeat center center
-      fixed;
+    background: url("/ExpoferiaOnline/img/Fondo.png") no-repeat center center fixed;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1385,62 +1196,4 @@ footer .Facebook {
     margin-left: 2%;
     margin-right: 2%;
   }
-}
-.radio-opt {
-  width: 40%;
-  margin-left: 10px;
-}
-.radlbl {
-  padding-right: 7%;
-}
-.select-opt {
-  position: relative;
-  width: 60%;
-}
-#orient {
-  margin: 0 auto;
-  width: 100%;
-}
-.rad-opt-child {
-  height: 20px;
-  display: block;
-  position: relative;
-  padding-left: 30px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 22px;
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-}
-.rad-opt-child input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-.rad-opt-child:hover input ~ .radicon {
-  background-color: #ccc;
-}
-.rad-opt-child input:checked ~ .radicon {
-  background-color: #0088c4;
-}
-.radicon {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 20px;
-  width: 20px;
-  background-color: #eee;
-  border-radius: 50%;
-}
-.radicon:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-.rad-opt-child input:checked ~ .radicon:after {
-  display: block;
 }
