@@ -42,19 +42,19 @@
     }
     //cuando es alumno no muestra el boton de aprobar proyecto
 
-    $sql1 = "SELECT idProyecto FROM datosproyectos WHERE Alumno='".$_SESSION['idUsuario']."'";
-    $idp = $mysqli->query($sql1);
-
-    $sql2 = "SELECT Titulo FROM datosproyecto WHERE id = $idp ";
+    $sql1 = "SELECT idProyecto FROM datosproyecto where Alumno= (SELECT idUsuario FROM usuario where usuario='". $_SESSION['Usuario']."')";
+    $idproyecto = $mysqli->query($sql1);
+   
+    $sql2 = "SELECT Titulo FROM datosproyecto WHERE id ='".$idproyecto."' ";
     $nombre_proyecto = $mysqli->query($sql2);
 
-    $sql3 = "SELECT Introduccion FROM datosproyecto WHERE id = $idp ";
+    $sql3 = "SELECT Introduccion FROM datosproyecto WHERE  id ='".$idp."' ";
     $introduccion = $mysqli->query($sql3);
 
-    $sql4 = "SELECT Descripcion FROM datosproyecto WHERE id = $idp ";
+    $sql4 = "SELECT Descripcion FROM datosproyecto WHERE  id ='".$idp."' ";
     $descripcion = $mysqli->query($sql4);
 
-    $sql5 = "SELECT LinkVideo FROM datosproyecto WHERE id = $idp ";
+    $sql5 = "SELECT LinkVideo FROM datosproyecto WHERE  id ='".$idp."' ";
     $link = $mysqli->query($sql5);
   ?>
 
@@ -144,6 +144,7 @@
                 $sql = " UPDATE datosproyectos SET Introduccion = '$introduccion' WHERE idproyecto = '$idp' ";
                 $sql = " UPDATE datosproyectos SET LinkVideo = '$link' WHERE idproyecto = '$idp' ";
                 $sql = " UPDATE datosproyectos SET Descripcion = '$descripcion' WHERE idproyecto = '$idp' ";
+                }
 
                 ?>
 

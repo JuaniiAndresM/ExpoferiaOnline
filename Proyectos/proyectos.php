@@ -49,6 +49,7 @@
                     type: "post", 
                     data: {funcion: "crearmenu"}
                     success:function(content){
+                      $('.Tabla').html($content);
                   }
                      });
                    }
@@ -59,8 +60,7 @@
             </div>
           </div>
         </div>
-
-        
+      </div>
     </div>
     <div id="footer"></div>
   </body>
