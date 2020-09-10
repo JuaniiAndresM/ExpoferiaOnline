@@ -1,15 +1,33 @@
 <?php
 include '..\Form\conexion.php';
 
-if(isset($_POST['create']) && !empty($_POST['create'])) {
-    $funcion = $_POST['create'];
-
-
-     $sql = "SELECT idProyecto, Titulo, Itroduccion FROM datosproyecto";
-     $result = $mysqli->query($sql);
-     $content = '';
+    $sql = "SELECT idProyecto, Titulo, Introduccion, ndolocal FROM datosproyecto order by ndolocal";
+    $results = $mysqli->query($sql);
+    $content = '';
+    $local = 0;
 
      while($row = $results->fetch_array()){
+
+        if(local != $row['ndolocal']){
+
+            if($local>0){
+                $content.=" </div>
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+                            </div> ";
+                        }
+
+            $content.="<div class='Linea1Proyecto'>
+                        <div class='Linea2'>
+                        <div class='Linea3'>
+                        <div class='Proyecto'>
+                        <div class='Tabla>";
+
+            $local = $row['ndolocal'];
+            }
+
         $content.= "<div class='listProyectoLista'>
                     <div class='listGrid'>
                         <div class='listFoto'>
@@ -18,18 +36,17 @@ if(isset($_POST['create']) && !empty($_POST['create'])) {
 
                     <div class='textoLista'>
                          <hr id='LineaMobileProyecto' />
-                         <h2><?php echo $row['Titulo'] ?></h2>
-                         <p><b>Grupo:</b> <?php echo $row['orientacion'] ?> </p>
+                         <h2>".$row['Titulo']."</h2>
+                         <p><b>Grupo:</b> ".$row['orientacion']." </p>
                          <p>
-                           <b>Descripción:</b> <?php echo $row['Introduccion'] ?></p>
+                           <b>Descripción:</b> ".$row['Introduccion']."</p>
                             </div>
                             </div>
                             <a><button class='BotonProyecto' data-idp='".$row['idProyecto']."'>Ver más</button></a
                             >
-                        </div>"
+                        </div>";
+
                         
      }
      echo $content;
-    }
-}
     ?>

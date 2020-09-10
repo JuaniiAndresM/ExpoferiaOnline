@@ -2,48 +2,38 @@
 include '..\Form\conexion.php';
 session_start();
 
-$sql = "SELECT idProyecto FROM datosproyecto where Alumno= (select idUsuario from usuario WHERE idUsuario='".$_SESSION['idUsuario']."')";
-$result = $mysqli -> query($sql);
+$sql = "SELECT idProyecto FROM datosproyecto where Alumno= (SELECT idUsuario FROM usuario where usuario='". $_SESSION['Usuario']."')";
+$idproyecto = $mysqli->query($sql);
 
-//$target_dir = "uploads/";
+$ruta = 'proyecto' .$idproyecto; 
+
+$target_dir = $ruta;
 //$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
-// Check if image file is a actual image or fake image
-if(isset($_POST["submit"])) {
-  $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-  if($check !== false) {
-    echo "File is an image - " . $check["mime"] . ".";
-    $uploadOk = 1;
-  } else {
-    echo "File is not an image.";
-    $uploadOk = 0;
-  }
-}
 
 // Check if file already exists
 if (file_exists($target_file)) {
-  echo "Sorry, file already exists.";
+  echo '<script language="javascript"> alert("La imagen ya existe.")</script>';
   $uploadOk = 0;
 }
 
 // Check file size
-if ($_FILES["fileToUpload"]["size"] > 500000) {
-  echo "Sorry, your file is too large.";
+if ($_FILES["fileToUpload"]["size"] > 3000000) {
+  echo '<script language="javascript"> alert("La imagen supera el peso maximo (3MB).")</script>';
   $uploadOk = 0;
 }
 
 // Allow certain file formats
-if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-&& $imageFileType != "gif" ) {
-  echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
+  echo '<script language="javascript"> alert("La imagen no cumple con la extension adecuada (JPG, PNG, JPEG).")</script>';
   $uploadOk = 0;
 }
 
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
-  echo "Sorry, your file was not uploaded.";
+  echo '<script language="javascript"> alert("La imagen no se pudo guardar". )</script>';
 // if everything is ok, try to upload file
 } else {
   if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
