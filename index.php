@@ -311,96 +311,110 @@
 <!-- Carga de proyectos  -->
 <?php
 include 'Form\conexion.php';
-$sql = "SELECT *FROM datosproyecto";
+$sql = "SELECT *FROM datosProyecto";
 $result = $mysqli -> query($sql);
-while($sql = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-  $column[] = $sql['idProyecto'];
-}
-$arr_length = count($column);
-if($arr_length >= 3){
-  $i = 1;
-  $arr = range(1,$arr_length);
-  shuffle($arr);
-  $x = 0;
-  do{
-      $random = $arr[$x];
-        $sql = "SELECT * FROM datosproyecto WHERE idproyecto = '".$random."'";
+if($sql = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+    while($sql = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+      $column[] = $sql['idProyecto'];
+    }
+    $arr_length = count($column);
+    if($arr_length >= 3){
+      $i = 1;
+      $arr = range(1,$arr_length);
+      shuffle($arr);
+      $x = 0;
+      do{
+          $random = $arr[$x];
+            $sql = "SELECT * FROM datosProyecto WHERE idProyecto = '".$random."'";
+            $result = $mysqli -> query($sql);
+            $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+            $sql = "SELECT * FROM imagenes WHERE idProyecto = '".$random."'";
+            $resultI = $mysqli -> query($sql);
+            $sI = mysqli_fetch_array($resultI, MYSQLI_ASSOC);
+
+            echo "<script> 
+            document.getElementById('Seccion1').style.visibility = 'visible';
+            document.getElementById('Seccion2').style.visibility = 'visible';
+            document.getElementById('Seccion3').style.visibility = 'visible';
+            </script>";
+        
+            if(isset($ss['Titulo'],$ss['Introduccion'],$sI['url'])){
+              echo "<script> 
+              document.getElementById('titulo".$i."').innerHTML = '".$ss['Titulo']."';
+              document.getElementById('intro".$i."').innerHTML = '".$ss['Introduccion']."';
+              document.getElementById('foto".$i."').src = '../img/'".$sI['url']."';
+              </script>";
+              $x++;
+              $i++;
+          }
+
+      }while($i <= 3);
+      
+
+    }elseif($arr_length  == 2){
+      $i = 1;
+      do{
+        $random = rand ( 1, $arr_length );
+        $sql = "SELECT * FROM datosProyecto WHERE idProyecto = '".$random."'";
         $result = $mysqli -> query($sql);
         $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+        $sql = "SELECT * FROM imagenes WHERE idProyecto = '".$random."'";
+        $resultI = $mysqli -> query($sql);
+        $sI = mysqli_fetch_array($resultI, MYSQLI_ASSOC);
 
         echo "<script> 
         document.getElementById('Seccion1').style.visibility = 'visible';
         document.getElementById('Seccion2').style.visibility = 'visible';
-        document.getElementById('Seccion3').style.visibility = 'visible';
+        document.getElementById('Seccion3').style.visibility = 'hidden';
         </script>";
-    
-        if(isset($ss['Titulo'],$ss['Introduccion'],$ss['urlimportant'])){
+        if(isset($ss['Titulo'],$ss['Introduccion'],$sI['url'])){
           echo "<script> 
-          document.getElementById('titulo".$i."').innerHTML = '".$ss['Titulo']."';
-          document.getElementById('intro".$i."').innerHTML = '".$ss['Introduccion']."';
-          document.getElementById('foto".$i."').src = '../img/".$ss['urlimportant']."';
-          </script>";
-          $x++;
-          $i++;
+            document.getElementById('titulo".$i."').innerHTML = '".$ss['Titulo']."';
+            document.getElementById('intro".$i."').innerHTML = '".$ss['Introduccion']."';
+            document.getElementById('foto".$i."').src = '../img/".$ss['url']."';
+            </script>";
       }
+      $i++;
 
-  }while($i <= 3);
-  
+    }while($i <= 2);
 
-}elseif($arr_length  == 2){
-  $i = 1;
-  do{
-    $random = rand ( 1, $arr_length );
-    $sql = "SELECT * FROM datosproyecto WHERE idproyecto = '".$random."'";
-    $result = $mysqli -> query($sql);
-    $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
+    }elseif($arr_length  == 1){
+      $i = 1;
+        do{
+          $random = rand ( 1, $arr_length );
+          $sql = "SELECT * FROM datosProyecto WHERE idProyecto = '".$random."'";
+          $result = $mysqli -> query($sql);
+          $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
-    echo "<script> 
-    document.getElementById('Seccion1').style.visibility = 'visible';
-    document.getElementById('Seccion2').style.visibility = 'visible';
-    document.getElementById('Seccion3').style.visibility = 'hidden';
-    </script>";
-    if(isset($ss['Titulo'],$ss['Introduccion'],$ss['Banner'])){
+          $sql = "SELECT * FROM imagenes WHERE idProyecto = '".$random."'";
+          $resultI = $mysqli -> query($sql);
+          $sI = mysqli_fetch_array($resultI, MYSQLI_ASSOC);
+      
+          echo "<script> 
+          document.getElementById('Seccion1').style.visibility = 'visible';
+          document.getElementById('Seccion2').style.visibility = 'hidden';
+          document.getElementById('Seccion3').style.visibility = 'hidden';
+          </script>";
+          if(isset($ss['Titulo'],$ss['Introduccion'],$sI['url'])){
+            echo "<script> 
+            document.getElementById('titulo".$i."').innerHTML = '".$ss['Titulo']."';
+            document.getElementById('intro".$i."').innerHTML = '".$ss['Introduccion']."';
+            document.getElementById('foto".$i."').src = '../img/".$sI['url']."';
+            </script>";
+        }
+        $i++;
+      
+      }while($i == 1);
+    }else{
       echo "<script> 
-        document.getElementById('titulo".$i."').innerHTML = '".$ss['Titulo']."';
-        document.getElementById('intro".$i."').innerHTML = '".$ss['Introduccion']."';
-        document.getElementById('banner".$i."').src = 'img/".$ss['Banner']."';
-        </script>";
-  }
-  $i++;
-
-}while($i <= 2);
-
-}elseif($arr_length  == 1){
-  $i = 1;
-    do{
-      $random = rand ( 1, $arr_length );
-      $sql = "SELECT * FROM datosproyecto WHERE idproyecto = '".$random."'";
-      $result = $mysqli -> query($sql);
-      $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
-  
-      echo "<script> 
-      document.getElementById('Seccion1').style.visibility = 'visible';
+      document.getElementById('Seccion1').style.visibility = 'hidden';
       document.getElementById('Seccion2').style.visibility = 'hidden';
       document.getElementById('Seccion3').style.visibility = 'hidden';
       </script>";
-      if(isset($ss['Titulo'],$ss['Introduccion'],$ss['Banner'])){
-        echo "<script> 
-        document.getElementById('titulo".$i."').innerHTML = '".$ss['Titulo']."';
-        document.getElementById('intro".$i."').innerHTML = '".$ss['Introduccion']."';
-        document.getElementById('banner".$i."').src = 'img/".$ss['Banner']."';
-        </script>";
     }
-    $i++;
-  
-  }while($i == 1);
-}else{
-  echo "<script> 
-  document.getElementById('Seccion1').style.visibility = 'hidden';
-  document.getElementById('Seccion2').style.visibility = 'hidden';
-  document.getElementById('Seccion3').style.visibility = 'hidden';
-  </script>";
-}
+  }
 
 ?>
   </body>
