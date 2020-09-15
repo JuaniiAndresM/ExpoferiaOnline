@@ -728,7 +728,13 @@ BotonProyecto :hover {
   padding-bottom: 4%;
 }
 
+.BannerPlanilla{
+  text-align: center;  
+}
+
 .CentralPlanilla {
+  display: grid;
+  grid-template-columns: 50% 50%;
   text-align: center;
   margin-left: 2%;
   margin-right: 2%;
@@ -744,6 +750,90 @@ BotonProyecto :hover {
 .Banner .BannerIMG {
   width: 100%;
 }
+
+/* Slide de Imagenes */
+
+.imagenPlanilla{
+  cursor: pointer;
+  vertical-align: middle;
+  width:  50%;
+  height: 55vh;
+  object-fit: cover;
+}
+
+.imagenesSlide {
+  position: relative;
+  text-align: initial;
+  margin-right: 5%;
+}
+
+.mySlides {
+  display: none;
+  text-align: center;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  color: gray !important;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+.numbertext {
+  color: white;
+  background-image: url('../img/Fondo.png');
+  font-weight: bolder;
+  font-size: 12px;
+  padding: 8px 12px;
+  top: 0;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
 
 .VideoMobile {
   display: none;
