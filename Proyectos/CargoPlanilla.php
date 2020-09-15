@@ -22,6 +22,9 @@
                   <p id='desc' style='word-wrap: break-word;'>".$ss['Descripcion']."</p>
                 </div>
               ";
+              
+
+              
             $content.="
             <div class = 'imagenesSlide'>
             <h2>Imagenes:</h2>";
@@ -33,15 +36,42 @@
         <div class='mySlides'>
             <img src='../img/".$ssimg['url']."' id ='foto".$cont."'  class='imagenPlanilla' style='width:100%'>
             <div class='numbertext'>".$cont."/".count($ssimg)."</div>
-        </div>";
-        $cont = $cont + 1;
+        </div>	
+
+        <script>
+        <!-- Modal Agrandar Fotos -->
+
+        var modal = document.getElementById('myModal');
+
+        var img = document.getElementById('foto".$cont."');
+
+        var modalImg = document.getElementById('foto');
+        img.onclick = function(){
+          modal.style.display = 'block';
+          modalImg.src = this.src;
+        }
+        var span = document.getElementsByClassName('close')[0];
   
-    }
-        $content.= "<a class='prev' onclick='plusSlides(-1)' style='position: absolute;'>❮</a>
-        <a class='next' onclick='plusSlides(1)' style='position: absolute;'>❯</a>
-        </div>
-        </div>";
+        </script>";
         
+            $cont = $cont + 1;    
+          }  
+          
+          $content.="<a class='prev' onclick='plusSlides(-1)' style='position: absolute;'>❮</a>
+          <a class='next' onclick='plusSlides(1)' style='position: absolute;'>❯</a>
+          </div> 
+
+          <div id='myModal' class='modal'>
+            <span class='close'>&times;</span>	              
+            <img class='modal-content' id='foto'>	            
+            <div id='caption'></div>	             
+          </div>	"           
+          
+          ;
+
+
+          
+    
     if(isset($ss['Banner'])){
       $content.= "<script>
       <!-- Modal Agrandar Fotos -->
