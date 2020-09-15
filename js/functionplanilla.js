@@ -4,14 +4,6 @@ $( document ).ready(function() {
         type: "post", 
         success:function(content){
           $('.Planilla').html(content);
-          var url = '".$ss['LinkVideo']."';
-            var regExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
-            var match = url.match(regExp);
-            if (match && match[2].length == 11) {
-                document.getElementById('video').src = 'https://www.youtube.com/embed/'+match[2]+'?&autoplay=1&loop=1';
-            } else {
-                document.getElementById('divideo').style.visibility = 'hidden';
-            }
       }
     });
     // MODAL que carga imagenes

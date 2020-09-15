@@ -1,6 +1,6 @@
 <?php
     include '..\Form\conexion.php';
-    $sql = "SELECT * FROM datosproyecto WHERE idproyecto = '1'";
+    $sql = "SELECT * FROM datosProyecto WHERE idProyecto = '1'";
     $result = $mysqli -> query($sql);
     $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
     $column = array();
@@ -9,7 +9,7 @@
     <hr /><a class='prev' onclick='plusSlides(-1)' style='position: absolute;'>❮</a>
   <a class='next' onclick='plusSlides(1)' style='position: absolute;'>❯</a>";
 
-    $sqlimg = "SELECT * FROM imagenes WHERE idproyecto = '".$ss['idProyecto']."'";
+    $sqlimg = "SELECT * FROM imagenes WHERE idProyecto = '".$ss['idProyecto']."'";
     $resultimg = $mysqli -> query($sqlimg);
     while($ssimg = mysqli_fetch_array($resultimg, MYSQLI_ASSOC)){
 
@@ -21,7 +21,7 @@
         $cont = $cont + 1;
   
     }
-    $sql = "SELECT * FROM datosproyecto WHERE idproyecto = '1'";
+    $sql = "SELECT * FROM datosProyecto WHERE idProyecto = '1'";
     $result = $mysqli -> query($sql);
     $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
@@ -49,17 +49,7 @@
                 </div>";
 
     }
-    if(isset($ss['LinkVideo'])){
-      // Codigo para sacar la id del video de youtube, tuve que estudiar regex.
-      // por que? no se, motivo? ni idea
-      echo "<script>
-      
-      </script>";
-    }else{
-      echo "<script>
-      document.getElementById('divideo').style.visibility = 'hidden';
-      </script>";
-    }
+
     if(isset($ss['Banner'])){
       echo "<script>
       document.getElementById('banner').src = '../img/".$ss['Banner']."';
@@ -82,11 +72,34 @@
 
       </script>";
     }
+
+    $sql = "SELECT * FROM videos WHERE idProyecto = '1'";
+    $result = $mysqli -> query($sql);
+    $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
+    if(isset($ss['url'])){
+      // Codigo para sacar la id del video de youtube, tuve que estudiar regex.
+      // por que? no se, motivo? ni idea
+      echo "<script>
+      var url = '".$ss['url']."';
+            var regExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+            var match = url.match(regExp);
+            if (match && match[2].length == 11) {
+                document.getElementById('video').src = 'https://www.youtube.com/embed/'+match[2]+'?&autoplay=1&loop=1';
+            } else {
+                document.getElementById('divideo').style.visibility = 'hidden';
+            }
+      </script>";
+    }else{
+      echo "<script>
+      document.getElementById('divideo').style.visibility = 'hidden';
+      </script>";
+    }
+    
     //Estuve como 3 horas para hacer esto, carga las imagenes, pero no se como.
     //NO BORRAR
     $column = array();
     $cont = 1;
-    $sqlimg = "SELECT * FROM imagenes WHERE idproyecto = '".$ss['idProyecto']."'";
+    $sqlimg = "SELECT * FROM imagenes WHERE idProyecto = '".$ss['idProyecto']."'";
     $resultimg = $mysqli -> query($sqlimg);
     while($ssimg = mysqli_fetch_array($resultimg, MYSQLI_ASSOC)){
       $column[] = $ssimg['url'];
