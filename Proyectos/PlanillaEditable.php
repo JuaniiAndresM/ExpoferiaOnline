@@ -155,9 +155,9 @@
                 <h2>Banner:</h2>
                 <hr />
                 <div class="BannerEditable">
- 
-                <label for="file-upload" class="BotonSubir"><i class="fa">&#xf03e;</i> Subir Imagen</label>
-                  <input type="file" name="fileToUpload" id="fileToUpload" />
+           
+                <input type="file" id="myfile" name="myfile">
+      
                 </div>
               </div>
             </div>    
