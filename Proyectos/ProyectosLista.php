@@ -78,85 +78,14 @@
                         <option value="">Orientacion</option>
                         <?
                           while($orientacionf = $orientacion->fetch_array()){
-                            echo "<option value='".$orientacionf['orientacion']."'>".$orientacionf['orientacion']."</option>";
+                            echo "<option value='".$orientacionf['Orientacion']."'>".$orientacionf['Orientacion']."</option>";
                           }
                         ?>
                       </select>
                       <button name="Filtro" typo="submit">Filtrar</button>
                       </div>
                       </form>
-
-                      
-                    </div>
-                  </div>
-                  <hr />
-                  <div class="listProyectoLista">
-                    <div class="listGrid">
-                      <div class="listFoto">
-                        <img
-                          class="FotoLista"
-                          src="/ExpoferiaOnline/img/user.png"
-                        />
-                      </div>
-                      <div class="textoLista">
-                        <hr id="LineaMobileProyecto" />
-                        <h2>Nombre del Proyecto</h2>
-                        <p><b>Grupo:</b> 2°Informatica.</p>
-                        <p>
-                          <b>Descripción:</b> Lorem ipsum dolor sit amet
-                          consectetur adipisicing elit. Ratione, rem.
-                        </p>
-                      </div>
-                    </div>
-                    <a href="/ExpoferiaOnline/Proyectos/Planilla.php"
-                      ><button class="BotonProyecto">Ver más</button></a
-                    >
-                  </div>
-                  <hr />
-                  <div class="listProyectoLista">
-                    <div class="listGrid">
-                      <div class="listFoto">
-                        <img
-                          class="FotoLista"
-                          src="/ExpoferiaOnline/img/user.png"
-                        />
-                      </div>
-                      <div class="textoLista">
-                        <hr id="LineaMobileProyecto" />
-                        <h2>Nombre del Proyecto</h2>
-                        <p><b>Grupo:</b> 2°Informatica.</p>
-                        <p>
-                          <b>Descripción:</b> Lorem ipsum dolor sit amet
-                          consectetur adipisicing elit. Ratione, rem.
-                        </p>
-                      </div>
-                    </div>
-                    <a href="/ExpoferiaOnline/Proyectos/Planilla.php"
-                      ><button class="BotonProyecto">Ver más</button></a
-                    >
-                  </div>
-                  <hr />
-                  <div class="listProyectoLista">
-                    <div class="listGrid">
-                      <div class="listFoto">
-                        <img
-                          class="FotoLista"
-                          src="/ExpoferiaOnline/img/user.png"
-                        />
-                      </div>
-                      <div class="textoLista">
-                        <hr id="LineaMobileProyecto" />
-                        <h2>Nombre del Proyecto</h2>
-                        <p><b>Grupo:</b> 2°Informatica.</p>
-                        <p>
-                          <b>Descripción:</b> Lorem ipsum dolor sit amet
-                          consectetur adipisicing elit. Ratione, rem.
-                        </p>
-                      </div>
-                    </div>
-                    <a href="/ExpoferiaOnline/Proyectos/Planilla.php"
-                      ><button class="BotonProyecto">Ver más</button></a
-                    >
+                      <script src="../js/functionfiltros.js"></script>
                   </div>
                   <hr />
                 </div>
