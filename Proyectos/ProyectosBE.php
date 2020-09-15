@@ -1,16 +1,16 @@
 <?php
 include '..\Form\conexion.php';
 
-    $sql = "SELECT idProyecto, Titulo, Introduccion, ndolocal FROM datosproyecto order by ndolocal";
+    $sql = "SELECT idProyecto, Titulo, Introduccion, ndolocal FROM datosProyecto order by ndolocal";
     $results = $mysqli->query($sql);
     $content = '';
-    $local = 0;
+    $numerolocal = 0;
 
      while($row = $results->fetch_array()){
 
-        if(local != $row['ndolocal']){
+        if( $numerolocal!= $row['ndolocal']){
 
-            if($local>0){
+            if($numerolocal>0){
                 $content.=" </div>
                             </div>
                             </div>
@@ -25,19 +25,19 @@ include '..\Form\conexion.php';
                         <div class='Proyecto'>
                         <div class='Tabla>";
 
-            $local = $row['ndolocal'];
+            $numerolocal = $row['ndolocal'];
             }
 
         $content.= "<div class='listProyectoLista'>
                     <div class='listGrid'>
                         <div class='listFoto'>
-                        <img class='FotoLista' src='".$row['LinkVideo']."'/>
+                        <img class='FotoLista' src='hola'/>
                     </div>
 
                     <div class='textoLista'>
                          <hr id='LineaMobileProyecto' />
                          <h2>".$row['Titulo']."</h2>
-                         <p><b>Grupo:</b> ".$row['orientacion']." </p>
+                         <p><b>Grupo:</b> ".$row['Orientacion']." </p>
                          <p>
                            <b>Descripción:</b> ".$row['Introduccion']."</p>
                             </div>

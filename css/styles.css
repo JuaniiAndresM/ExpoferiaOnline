@@ -661,6 +661,7 @@ BotonProyecto :hover {
   margin-right: 5%;
   background-color: #ffcb00;
   border-radius: 30px;
+  height: 100%;
 }
 
 .Linea1ProyectosLista {

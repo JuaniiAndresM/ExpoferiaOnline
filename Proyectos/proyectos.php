@@ -34,7 +34,6 @@
     <div id="header"></div>
     <div class="ProyectosDIV">
       <h2 id="TituloProyectos">Proyectos:</h2>
-
       <div class="gridProyectos">
       <script src="../js/functionproyecto.js"></script>
                
