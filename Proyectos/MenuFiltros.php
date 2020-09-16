@@ -1,16 +1,19 @@
 <?php
 include '..\Form\conexion.php';
+$nlocal = $_POST['numerolocal']; 
+$grado = $_POST['grado']; 
+$orientacion = $_POST['orientacion']; 
 
-    $sql = "SELECT idProyecto, Titulo, Introduccion, ndolocal FROM datosProyecto order by ndolocal";
+    $sql = "SELECT idProyecto, Titulo, Introduccion, ndolocal FROM datosproyecto WHERE ndolocal ='" $nlocal "' OR Year = ' " $grado "' OR Orientacion ='" $orientacion "' order by ndolocal";
     $results = $mysqli->query($sql);
     $content = '';
-    $numerolocal = 0;
+    $local = 0;
 
      while($row = $results->fetch_array()){
 
-        if( $numerolocal!= $row['ndolocal']){
+        if(local != $row['ndolocal']){
 
-            if($numerolocal>0){
+            if($local>0){
                 $content.=" </div>
                             </div>
                             </div>
@@ -25,19 +28,19 @@ include '..\Form\conexion.php';
                         <div class='Proyecto'>
                         <div class='Tabla>";
 
-            $numerolocal = $row['ndolocal'];
+            $local = $row['ndolocal'];
             }
 
         $content.= "<div class='listProyectoLista'>
                     <div class='listGrid'>
                         <div class='listFoto'>
-                        <img class='FotoLista' src='hola'/>
+                        <img class='FotoLista' src='".$row['LinkVideo']."'/>
                     </div>
 
                     <div class='textoLista'>
                          <hr id='LineaMobileProyecto' />
                          <h2>".$row['Titulo']."</h2>
-                         <p><b>Grupo:</b> ".$row['Orientacion']." </p>
+                         <p><b>Grupo:</b> ".$row['orientacion']." </p>
                          <p>
                            <b>Descripción:</b> ".$row['Introduccion']."</p>
                             </div>

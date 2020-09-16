@@ -43,21 +43,14 @@
     }
     //cuando es alumno no muestra el boton de aprobar proyecto
 
-    $sql1 = "SELECT idProyecto FROM datosproyecto where Alumno= (SELECT idUsuario FROM usuario where usuario='". $_SESSION['Usuario']."')";
-  
+    $sql1 = "SELECT idProyecto FROM datosProyecto where Alumno_Responsable= (SELECT idUsuario FROM usuario where usuario='". $_SESSION['Usuario']."')";
     $idp = $mysqli -> real_escape_string($sql1);
-   
-    $sql2 = "SELECT Titulo FROM datosproyecto WHERE id ='".$idp."' ";
-    $nombre_proyecto = $mysqli->query($sql2);
 
-    $sql3 = "SELECT Introduccion FROM datosproyecto WHERE  id ='".$idp."' ";
-    $introduccion = $mysqli->query($sql3);
+    $sql2 = "SELECT * FROM datosProyecto WHERE id ='". $idp."'";
+    $proyecto = $mysqli -> real_escape_string($sql2);
 
-    $sql4 = "SELECT Descripcion FROM datosproyecto WHERE  id ='".$idp."' ";
-    $descripcion = $mysqli->query($sql4);
-
-    $sql5 = "SELECT LinkVideo FROM datosproyecto WHERE  id ='".$idp."' ";
-    $link = $mysqli->query($sql5);
+    $sql3 = "SELECT * FROM videos WHERE idProyecto ='". $idp."'";
+    $video = $mysqli -> real_escape_string($sql3);
   ?>
 
   
@@ -87,7 +80,7 @@
                     id="user"
                     placeholder= "Nombre de Proyecto"
                     name="nombre_proyecto"
-                    value= "<?php echo $nombre_proyecto;?>"
+                    value= "<?php echo $proyecto['Titulo'];?>"
                   />
                 </div>
                 <hr />
@@ -99,7 +92,7 @@
                     rows="5"
                     placeholder="Introduccion"
                     id="descripcionCorta_Proyecto"
-                    value= "<?php echo $introduccion;?>"
+                    value= "<?php echo $proyecto['Introduccion'];?>"
                   ></textarea>
                 </div>
 
@@ -109,7 +102,7 @@
                   </div>
                   <div id="demo" class="collapse">
                   <div class="form-group">
-                    <input type="text" class="form-control" id="link" placeholder="URL del Video [YouTube]" name="nombre_proyecto" value= "<?php echo $link;?>" />
+                    <input type="text" class="form-control" id="link" placeholder="URL del Video [YouTube]" name="nombre_proyecto" value= "<?php echo $video['url'];?>" />
                   </div>
                   
                 </div>
@@ -120,7 +113,7 @@
                     rows="5"
                     placeholder="Descripcion"
                     id="descripcionLarga_Proyecto"
-                    value= "<?php echo $descripcion;?>"
+                    value= "<?php echo $proyecto['Descripcion'];?>"
                   ></textarea>
                 </div>
                 
@@ -155,9 +148,9 @@
                 <h2>Banner:</h2>
                 <hr />
                 <div class="BannerEditable">
- 
-                <label for="file-upload" class="BotonSubir"><i class="fa">&#xf03e;</i> Subir Imagen</label>
-                  <input type="file" name="fileToUpload" id="fileToUpload" />
+           
+                <input type="file" id="myfile" name="myfile">
+      
                 </div>
               </div>
             </div>    

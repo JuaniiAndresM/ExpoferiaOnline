@@ -28,6 +28,18 @@
       rel="stylesheet"
     />
   </head>
+
+  <?php
+  include '..\Form\conexion.php';
+  $sql = "SELECT * FROM datosproyectos";
+  $locales = $mysqli->query($sql);
+  $grado = $mysqli->query($sql);
+  $orientacion = $mysqli->query($sql);
+
+  
+
+  
+  ?>
   <body onload="hfindex()">
     <div id="header"></div>
     <div class="ProyectoLista">
@@ -40,101 +52,44 @@
               <div class="Proyecto">
                 <div class="Tabla">
                   <div class="SelectoresGrid">
-                    <div class="Selectores">
+                  
+                  <form method ="post">
+                  <div class="Selectores">
+
                       <select name="BachilleratoSelect" class="custom-select">
-                        <option value="Diversificado">
-                          Bachillerato Diversificado
-                        </option>
-                        <option value="Tecnologico">
-                          Bachillerato Tecnologico
-                        </option>
+                        <option value="">Local</option>
+                        <?
+                          while($numlocal = $locales->fetch_array()){
+                            echo "<option value='".$numlocal['ndolocal']."'>".$numlocal['ndolocal']."</option>";
+                          }
+                        ?>
                       </select>
+
                       <select name="GradoSelect" class="custom-select">
-                        <option value="Diversificado">4°</option>
-                        <option value="Diversificado">5°</option>
-                        <option value="Diversificado">6°</option>
+                        <option value="">Grado</option>
+                        <?
+                          while($gradof = $grado->fetch_array()){
+                            echo "<option value='".$gradof['Year']."'>".$gradof['Year']."</option>";
+                          }
+                        ?>
                       </select>
 
                       <select name="OrientacionSelect" class="custom-select">
-                        <option value="Diversificado">Informatica</option>
-                        <option value="Diversificado">Deportivo</option>
-                        <option value="Diversificado">Administración</option>
+                        <option value="">Orientacion</option>
+                        <?
+                          while($orientacionf = $orientacion->fetch_array()){
+                            echo "<option value='".$orientacionf['Orientacion']."'>".$orientacionf['Orientacion']."</option>";
+                          }
+                        ?>
                       </select>
-                    </div>
-                  </div>
-                  <hr />
-                  <div class="listProyectoLista">
-                    <div class="listGrid">
-                      <div class="listFoto">
-                        <img
-                          class="FotoLista"
-                          src="/ExpoferiaOnline/img/user.png"
-                        />
+                      <button name="Filtro" typo="submit">Filtrar</button>
                       </div>
-                      <div class="textoLista">
-                        <hr id="LineaMobileProyecto" />
-                        <h2>Nombre del Proyecto</h2>
-                        <p><b>Grupo:</b> 2°Informatica.</p>
-                        <p>
-                          <b>Descripción:</b> Lorem ipsum dolor sit amet
-                          consectetur adipisicing elit. Ratione, rem.
-                        </p>
-                      </div>
-                    </div>
-                    <a href="/ExpoferiaOnline/Proyectos/Planilla.php"
-                      ><button class="BotonProyecto">Ver más</button></a
-                    >
-                  </div>
-                  <hr />
-                  <div class="listProyectoLista">
-                    <div class="listGrid">
-                      <div class="listFoto">
-                        <img
-                          class="FotoLista"
-                          src="/ExpoferiaOnline/img/user.png"
-                        />
-                      </div>
-                      <div class="textoLista">
-                        <hr id="LineaMobileProyecto" />
-                        <h2>Nombre del Proyecto</h2>
-                        <p><b>Grupo:</b> 2°Informatica.</p>
-                        <p>
-                          <b>Descripción:</b> Lorem ipsum dolor sit amet
-                          consectetur adipisicing elit. Ratione, rem.
-                        </p>
-                      </div>
-                    </div>
-                    <a href="/ExpoferiaOnline/Proyectos/Planilla.php"
-                      ><button class="BotonProyecto">Ver más</button></a
-                    >
-                  </div>
-                  <hr />
-                  <div class="listProyectoLista">
-                    <div class="listGrid">
-                      <div class="listFoto">
-                        <img
-                          class="FotoLista"
-                          src="/ExpoferiaOnline/img/user.png"
-                        />
-                      </div>
-                      <div class="textoLista">
-                        <hr id="LineaMobileProyecto" />
-                        <h2>Nombre del Proyecto</h2>
-                        <p><b>Grupo:</b> 2°Informatica.</p>
-                        <p>
-                          <b>Descripción:</b> Lorem ipsum dolor sit amet
-                          consectetur adipisicing elit. Ratione, rem.
-                        </p>
-                      </div>
-                    </div>
-                    <a href="/ExpoferiaOnline/Proyectos/Planilla.php"
-                      ><button class="BotonProyecto">Ver más</button></a
-                    >
+                      </form>
+                      <script src="../js/functionfiltros.js"></script>
                   </div>
                   <hr />
                 </div>
               </div>
-            </div>
           </div>
         </div>
       </div>
