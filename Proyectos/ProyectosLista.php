@@ -32,7 +32,9 @@
   <?php
   include '..\Form\conexion.php';
   $sql = "SELECT * FROM datosproyectos";
-  $result = $mysqli->query($sql);
+  $locales = $mysqli->query($sql);
+  $grado = $mysqli->query($sql);
+  $orientacion = $mysqli->query($sql);
 
   ?>
   <body onload="hfindex()">
@@ -54,31 +56,32 @@
                       <select name="BachilleratoSelect" class="custom-select">
                         <option value="">Local</option>
                         <?
-                          while($numlocal =  mysqli_fetch_array($result, MYSQLI_ASSOC)){
-                            echo "<option value='".$numlocal['ndolocal']."'>".$numlocal['ndolocal']."</option>";
+                          while($numlocal =  $locales->fetch_array(MYSQLI_ASSOC)){
+                            echo '<option value="'.$numlocal['ndolocal'].'">'.$numlocal['ndolocal'].'</option>';
                           }
-                          $result->data_seek(1);
+                          
                         ?>
                       </select>
 
                       <select name="GradoSelect" class="custom-select">
                         <option value="">Grado</option>
                         <?
-                          while($gradof = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-                            echo "<option value='".$gradof['Year']."'>".$gradof['Year']."</option>";
+                          while($gradof = $grado->fetch_array(MYSQLI_ BOTH)){
+                            echo '<option value="'.$gradof['Year'].'">'.$gradof['Year'].'</option>';
                           }
-                          $result->data_seek(1);
+                     
                         ?>
                       </select>
 
                       <select name="OrientacionSelect" class="custom-select">
                         <option value="">Orientacion</option>
                         <?
-                          while($orientacionf = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+                          while($orientacionf = mysqli_fetch_array($orientacion, MYSQLI_ASSOC)){
                             echo "<option value='".$orientacionf['Orientacion']."'>".$orientacionf['Orientacion']."</option>";
                           }
                         ?>
                       </select>
+                      
                       <button name="Filtro" typo="submit">Filtrar</button>
                       </div>
                       </form>
