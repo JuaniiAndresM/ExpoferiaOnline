@@ -741,12 +741,20 @@ BotonProyecto :hover {
 }
 
 .Foto {
-  background-color: grey;
+  background-color: lightgrey;
   width: 100%;
   padding: 2%;
   margin-bottom: 1%;
 }
-
+.Foto label {
+  font-size: 13px;
+  color: white;
+  padding: 9px 25px;
+  background-color: rgba(0, 136, 196, 1);
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
 .Banner .BannerIMG {
   width: 100%;
 }
@@ -945,7 +953,7 @@ BotonProyecto :hover {
   justify-content: center;
   align-content: center;
   flex-direction: column;
-  background-color: grey;
+  background-color: lightgrey;
 }
 .BannerPlanillaEditable .BannerEditable input[type=file] {
   display: none;
