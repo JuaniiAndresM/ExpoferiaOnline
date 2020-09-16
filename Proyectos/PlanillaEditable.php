@@ -12,7 +12,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="../js/functionPlanillaEditable.js"></script>
     <script src="../js/function.js"></script>
    
 
@@ -47,11 +46,12 @@
     $sql1 = "SELECT idProyecto FROM datosProyecto where Alumno_Responsable= (SELECT idUsuario FROM usuario where usuario='". $_SESSION['Usuario']."')";
     $idp = $mysqli -> real_escape_string($sql1);
 
-    $sql2 = "SELECT * FROM datosProyecto WHERE id ='". $idp."'";
-    $proyecto = $mysqli -> real_escape_string($sql2);
-
-    $sql3 = "SELECT * FROM videos WHERE idProyecto ='". $idp."'";
-    $video = $mysqli -> real_escape_string($sql3);
+    $sql = "SELECT * FROM datosProyecto WHERE idProyecto ='".$idp."'";
+    $result = $mysqli->query($sql);
+    $aa = mysqli_fetch_array($result, MYSQLI_ASSOC);
+    $sql = "SELECT * FROM videos WHERE idProyecto ='".$idp."'";
+    $result = $mysqli->query($sql);
+    $vv = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
   ?>
 
@@ -64,7 +64,62 @@
         <div class="Linea3">
           <div class="Planilla">
             <div class="PlanillaFrame">
+            <div class="BannerPlanillaEditable">
+                <h2>Banner:</h2>
+                <hr />
+                <div class="BannerEditable">
+                <label for="myfile">Select a file:</label>
+                <input type="file" id="myfile" name="myfile">
+      
+                </div>
+           
+                <h2>Nuevo Proyecto:</h2>
+                <hr />
               
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="user"
+                    placeholder= "Nombre de Proyecto"
+                    name="nombre_proyecto"
+                    value="<?php echo $aa["Titulo"]; ?>">
+                  </div>
+                
+                <hr />
+
+
+                <div class="form-group">
+                  <textarea
+                    class="form-control"
+                    rows="5"
+                    placeholder="Introduccion"
+                    id="descripcionCorta_Proyecto">
+                    <?php echo $aa["Introduccion"]; ?>
+                  </textarea>
+                </div>
+
+                <div class="custom-control custom-checkbox mb-3">
+                    <input type="checkbox"class="custom-control-input" data-toggle="collapse" data-target="#demo" id="customCheck" name="example1"/>
+                    <label class="custom-control-label" for="customCheck" >Importar Video</label >
+                  </div>
+                  <div id="demo" class="collapse">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="link" placeholder="URL del Video [YouTube]" name="nombre_proyecto" value= "<?php echo $vv["url"]; ?>" />
+                  </div>
+                  
+                </div>
+                
+                <div class="form-group">
+                  <textarea
+                    class="form-control"
+                    rows="5"
+                    placeholder="Descripcion"
+                    id="descripcionLarga_Proyecto">
+                    <?php echo $aa["Descripcion"]; ?>
+                  </textarea>
+                </div>
+                
                 <a class="BotonLogin2" href="/ExpoferiaOnline/index.html" style="<?php echo $aprobar ?>"
                   ><button style="margin-top: 5%;">
                     <i class="fa">&#xf14a;</i> Aprobar Proyecto
@@ -75,6 +130,38 @@
                     <i class="fa">&#xf0c7;</i> Guardar Cambios
                   </button></a
                 >
+
+                <div class="ImagenesPlanilla">
+                <h2>Fotos:</h2>
+                <hr />
+                <div class="Foto">
+                  <input type="file" onchange="cambiar()" name="fileToUpload" id="fileToUpload" hidden="hidden" />
+                  <label for="fileToUpload">Seleccionar Imagen</label>
+                  <form action="uploadIMG.php" method="post" enctype="multipart/form-data">
+                    <label>
+                      <input type="submit" class="button" hidden="hidden">Enviar datos
+                    </label>
+                  </form>
+                </div>
+                <div class="Foto">
+                  <input type="file" onchange="cambiar()" name="fileToUpload" id="fileToUpload" hidden="hidden" />
+                  <label for="fileToUpload">Seleccionar Imagen</label>
+                  <form action="uploadIMGprincipal.php" method="post" enctype="multipart/form-data">
+                    <label>
+                      <input type="submit" class="button" hidden="hidden">Enviar datos
+                    </label>
+                  </form>
+                </div>
+                <div class="Foto">
+                  <input type="file" onchange="cambiar()" name="fileToUpload" id="fileToUpload" hidden="hidden" />
+                  <label for="fileToUpload">Seleccionar Imagen</label>
+                  <form action="uploadBanner.php" method="post" enctype="multipart/form-data">
+                    <label>
+                      <input type="submit" class="button" hidden="hidden">Enviar datos
+                    </label>
+                  </form>
+                </div>
+              </div>
                 <?php
                 function myFunction() {
                   $nombre_proyecto = $_POST['user'];
@@ -91,10 +178,7 @@
                 ?>
 
               </div>
-              <div class="BannerPlanillaEditable">
-                <h2>Banner:</h2>
-                <hr />
-                <div class="BannerEditable">
+            
                 </div>
               </div>
             </div>    
@@ -130,9 +214,4 @@
     </div>
     <div id="footer"></div>
   </body>
-  <!-- <form action="uploadBanner.php" method="post" enctype="multipart/form-data">
-  name="submit" type="submit"-->
-
-  <!-- <form action="uploadIMG.php" method="post" enctype="multipart/form-data">
-  name="submit" type="submit"-->
 </html>
