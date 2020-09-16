@@ -1,6 +1,4 @@
 $( document ).ready(function() {
- 
-  
         $.ajax({
           url:"ProyectosBE.php", 
           type: "post", 

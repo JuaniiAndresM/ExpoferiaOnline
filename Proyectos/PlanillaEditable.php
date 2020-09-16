@@ -67,28 +67,30 @@
                 <h2>Fotos:</h2>
                 <hr />
                 <div class="Foto">
+                  <input type="file" onchange="cambiar()" name="fileToUpload" id="fileToUpload" hidden="hidden" />
+                  <label for="fileToUpload">Seleccionar Imagen</label>
                   <form action="uploadIMG.php" method="post" enctype="multipart/form-data">
-                    <div class="button">
-                      <label for="fileToUpload"><i class="fas fa-cloud-upload-alt">&#xf03e;</i> Subir Imagen</label>
-                      <input type="file" accept="image/*" onchange="cambiar()" name="fileToUpload" id="fileToUpload" style="display: none;" />
-                    </div>
-                  <input type="submit" value="Enviar datos">
+                    <label>
+                      <input type="submit" class="button" hidden="hidden">Enviar datos
+                    </label>
                   </form>
                 </div>
                 <div class="Foto">
-                    <form action="uploadIMGprincipal.php" method="post" enctype="multipart/form-data">
-                      <label for="file-upload"><i class="fas fa-cloud-upload-alt">&#xf03e;</i> Subir Imagen Principal</label>
-                      <input type="file" onchange='cambiar()' name="fileToUpload" id="fileToUpload" style='display: none;' />
-                      <div id="info"></div>
-                      <input type="submit" value="Enviar datos">
-                    </form>  
+                  <input type="file" onchange="cambiar()" name="fileToUpload" id="fileToUpload" hidden="hidden" />
+                  <label for="fileToUpload">Seleccionar Imagen</label>
+                  <form action="uploadIMGprincipal.php" method="post" enctype="multipart/form-data">
+                    <label>
+                      <input type="submit" class="button" hidden="hidden">Enviar datos
+                    </label>
+                  </form>
                 </div>
                 <div class="Foto">
+                  <input type="file" onchange="cambiar()" name="fileToUpload" id="fileToUpload" hidden="hidden" />
+                  <label for="fileToUpload">Seleccionar Imagen</label>
                   <form action="uploadBanner.php" method="post" enctype="multipart/form-data">
-                    <label for="fileToUpload"><i class="fas fa-cloud-upload-alt">&#xf03e;</i> Subir Banner</label>
-                    <input type="file" onchange='cambiar()' name="fileToUpload" id="fileToUpload" style='display: none;' />
-                    <div id="info"></div>
-                    <input type="submit" value="Enviar datos">
+                    <label>
+                      <input type="submit" class="button" hidden="hidden">Enviar datos
+                    </label>
                   </form>
                 </div>
               </div>
