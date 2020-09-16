@@ -32,13 +32,8 @@
   <?php
   include '..\Form\conexion.php';
   $sql = "SELECT * FROM datosproyectos";
-  $locales = $mysqli->query($sql);
-  $grado = $mysqli->query($sql);
-  $orientacion = $mysqli->query($sql);
+  $result = $mysqli->query($sql);
 
-  
-
-  
   ?>
   <body onload="hfindex()">
     <div id="header"></div>
@@ -59,25 +54,27 @@
                       <select name="BachilleratoSelect" class="custom-select">
                         <option value="">Local</option>
                         <?
-                          while($numlocal = $locales->fetch_array()){
+                          while($numlocal =  mysqli_fetch_array($result, MYSQLI_ASSOC)){
                             echo "<option value='".$numlocal['ndolocal']."'>".$numlocal['ndolocal']."</option>";
                           }
+                          $result->data_seek(1);
                         ?>
                       </select>
 
                       <select name="GradoSelect" class="custom-select">
                         <option value="">Grado</option>
                         <?
-                          while($gradof = $grado->fetch_array()){
+                          while($gradof = mysqli_fetch_array($result, MYSQLI_ASSOC)){
                             echo "<option value='".$gradof['Year']."'>".$gradof['Year']."</option>";
                           }
+                          $result->data_seek(1);
                         ?>
                       </select>
 
                       <select name="OrientacionSelect" class="custom-select">
                         <option value="">Orientacion</option>
                         <?
-                          while($orientacionf = $orientacion->fetch_array()){
+                          while($orientacionf = mysqli_fetch_array($result, MYSQLI_ASSOC)){
                             echo "<option value='".$orientacionf['Orientacion']."'>".$orientacionf['Orientacion']."</option>";
                           }
                         ?>
