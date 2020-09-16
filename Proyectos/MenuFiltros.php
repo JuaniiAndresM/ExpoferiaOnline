@@ -1,7 +1,10 @@
 <?php
 include '..\Form\conexion.php';
+$nlocal = $_POST['numerolocal']; 
+$grado = $_POST['grado']; 
+$orientacion = $_POST['orientacion']; 
 
-    $sql = "SELECT idProyecto, Titulo, Introduccion, ndolocal FROM datosproyecto order by ndolocal";
+    $sql = "SELECT idProyecto, Titulo, Introduccion, ndolocal FROM datosproyecto WHERE ndolocal ='" $nlocal "' OR Year = ' " $grado "' OR Orientacion ='" $orientacion "' order by ndolocal";
     $results = $mysqli->query($sql);
     $content = '';
     $local = 0;
