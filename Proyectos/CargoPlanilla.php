@@ -8,20 +8,20 @@
     <hr /><a class='prev' onclick='plusSlides(-1)' style='position: absolute;'>❮</a>
   <a class='next' onclick='plusSlides(1)' style='position: absolute;'>0</a>";
 
-    $sqlimg = "SELECT * FROM imagenes WHERE idproyecto = '".$ss['idProyecto']."'";
+    $sqlimg = "SELECT * FROM imagenes WHERE idProyecto = '".$ss['idProyecto']."'";
     $resultimg = $mysqli -> query($sqlimg);
     while($ssimg = mysqli_fetch_array($resultimg, MYSQLI_ASSOC)){
 
         $content.= "
         <div class='mySlides'>
-            <img src='../img/".$ssimg['url']." id ='foto".$cont."'  class='imagenPlanilla' style='width:100%'>
-            <div class='numbertext'>".$cont."/".$arr_length."</div>
+        <img src='../img/".$ssimg['url']." id ='foto".$cont."'  class='imagenPlanilla' style='width:100%'>
+            
         </div>";
         $cont = $cont + 1;
    
     }
     // DEL PROFESOR. 
-    $sql = "SELECT * FROM datosproyecto WHERE idproyecto = '1'";
+    $sql = "SELECT * FROM datosProyecto WHERE idProyecto = '1'";
     $result = $mysqli -> query($sql);
     $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
@@ -44,11 +44,7 @@
                   <p id='desc' style='word-wrap: break-word;'>".$ss['Descripcion']."</p>
                 </div>
               </div>";
-            $content.=" <div class='Video' id='divideo' data-url=".$ss['url'].">
-                <h2>Video:</h2>
-                <hr />
-         
-                </div>";
+        
 
               
             $content.="
@@ -61,7 +57,8 @@
 
       $content.= "
       <div class='mySlides'>
-          <img src='../img/".$ssimg['url']."' id ='foto".$cont."' onclick='agrando(foto".$cont.")'  class='imagenPlanilla' style='width:100%'>
+          <img src='../img/".$ssimg['url']."' id ='foto".$cont."' onclick='agrando(".$cont.")'  class='imagenPlanilla' style='width:100%'>
+          
           <div class='numbertext'>".$cont."/".count($ssimg)."</div>
       </div>";
 
