@@ -67,3 +67,7 @@ function plusSlides(n) {
     x[slideIndex-1].style.display = "block";
     setTimeout(carousel, 8000); // Cambia la imagen cada 8 segundos
   }
+  function cambiar(){
+    var pdrs = document.getElementById('file-upload').files[0].name;
+    document.getElementById('info').innerHTML = pdrs;
+}

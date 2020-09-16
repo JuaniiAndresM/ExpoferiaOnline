@@ -66,9 +66,31 @@
               <div class="ImagenesPlanilla">
                 <h2>Fotos:</h2>
                 <hr />
-                <div class="Foto"></div>
-                <div class="Foto"></div>
-                <div class="Foto"></div>
+                <div class="Foto">
+                  <form action="uploadIMG.php" method="post" enctype="multipart/form-data">
+                    <div class="button">
+                      <label for="fileToUpload"><i class="fas fa-cloud-upload-alt">&#xf03e;</i> Subir Imagen</label>
+                      <input type="file" accept="image/*" onchange="cambiar()" name="fileToUpload" id="fileToUpload" style="display: none;" />
+                    </div>
+                  <input type="submit" value="Enviar datos">
+                  </form>
+                </div>
+                <div class="Foto">
+                    <form action="uploadIMGprincipal.php" method="post" enctype="multipart/form-data">
+                      <label for="file-upload"><i class="fas fa-cloud-upload-alt">&#xf03e;</i> Subir Imagen Principal</label>
+                      <input type="file" onchange='cambiar()' name="fileToUpload" id="fileToUpload" style='display: none;' />
+                      <div id="info"></div>
+                      <input type="submit" value="Enviar datos">
+                    </form>  
+                </div>
+                <div class="Foto">
+                  <form action="uploadBanner.php" method="post" enctype="multipart/form-data">
+                    <label for="fileToUpload"><i class="fas fa-cloud-upload-alt">&#xf03e;</i> Subir Banner</label>
+                    <input type="file" onchange='cambiar()' name="fileToUpload" id="fileToUpload" style='display: none;' />
+                    <div id="info"></div>
+                    <input type="submit" value="Enviar datos">
+                  </form>
+                </div>
               </div>
               <div class="CentralPlanilla">
                 <h2>Nuevo Proyecto:</h2>
@@ -149,9 +171,6 @@
                 <h2>Banner:</h2>
                 <hr />
                 <div class="BannerEditable">
-                <label for="myfile">Select a file:</label>
-                <input type="file" id="myfile" name="myfile">
-      
                 </div>
               </div>
             </div>    
