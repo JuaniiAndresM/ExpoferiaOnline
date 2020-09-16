@@ -95,9 +95,6 @@
                 <h2>Banner:</h2>
                 <hr />
                 <div class="BannerEditable">
-                <label for="myfile">Select a file:</label>
-                <input type="file" id="myfile" name="myfile">
-      
                 </div>
               </div>
             </div>    
