@@ -12,7 +12,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="../functionproyecto.js"></script>
+    <script src="../js/functionproyecto.js"></script>
+    <script src="../js/function.js"></script>
    
 
     <link
@@ -31,15 +32,15 @@
   </head>
 
   <?php
-  include '..\Form\conexion.php';
-  session_start();
-  $sql = "SELECT TipoUsuario FROM usuario where usuario='". $_SESSION['Usuario']."'";
-  $result = $mysqli -> query($sql);
-  $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
-  if(isset($ss['TipoUsuario'])){ 
-    if($ss['TipoUsuario']==2){
-      $aprobar = "display: none;";
-    }
+   session_start(); 
+  include '..\Form\conexion.php';  
+   $sql = "SELECT TipoUsuario FROM usuario where usuario='". $_SESSION['Usuario']."'";   
+   $result = $mysqli -> query($sql);   
+   $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);   
+   if(isset($ss['TipoUsuario'])){      
+     if($ss['TipoUsuario']==2){       
+       $aprobar = "display: none;";     
+      }     
     }
     //cuando es alumno no muestra el boton de aprobar proyecto
 
@@ -148,7 +149,7 @@
                 <h2>Banner:</h2>
                 <hr />
                 <div class="BannerEditable">
-           
+                <label for="myfile">Select a file:</label>
                 <input type="file" id="myfile" name="myfile">
       
                 </div>
