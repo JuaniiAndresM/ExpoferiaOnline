@@ -68,24 +68,6 @@
                   />
                 </div>
                 <div class="form-group" style="display: flex; padding-top:1rem">
-                  <label for="nrolocal">Local:</label>
-                  <div class="radio-opt">
-                    <label class="rad-opt-child" for="cicbas">
-                      <input type="radio" id="cicbas" name="nrolocal" required />
-                      <span class="radicon"></span>
-                      Ciclo Básico
-                    </label>
-                    <label class="rad-opt-child" for="divers">
-                      <input type="radio" id="divers" name="nrolocal" required />
-                      <span class="radicon"></span>
-                      Diversificado
-                    </label>
-                    <label class="rad-opt-child" for="tecno">
-                      <input type="radio" id="tecno" name="nrolocal" required />
-                      <span class="radicon"></span>
-                      Tecnológico
-                    </label>
-                  </div>
                   <label for="year">Año:</label>
                   <div class="radio-opt">
                     <label class="rad-opt-child" for="prim">
@@ -104,40 +86,43 @@
                       Tercer Año
                     </label>
                   </div>
-                </div>
-                <div class="form-group" style="display: flex">
-                  <div class="select-opt" style="padding: 1%">
+                  <div class="select-opt" style="width: 65%">
                     <div style="text-align: center">
                       <label for="orient">Orientación:</label>
                     </div>
                     <div style="margin: 0 auto">
-                      <select name="orient" id="orient" class="form-control">
+                      <select name="orient" id="orient" class="form-control" required>
                         <option value="" disabled selected hidden>Seleccione Orientación</option>
                         <option value="admivo">Administrativo</option>
+                        <option value="artist">Artístico</option>
+                        <option value="biolog">Biológico</option>
+                        <option value="cienti">Científico</option>
+                        <option value="cicbas">Ciclo Básico</option>
                         <option value="deport">Deportivo</option>
+                        <option value="expres">Expresión</option>
+                        <option value="humani">Humanístico</option>
                         <option value="inform">Informático</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="select-opt" style="padding: 1%">
-                    <div style="text-align: center">
-                      <label for="nomproy">Nombre del proyecto:</label>
-                    </div>
-                    <div style="margin: 0 auto">
-                      <select name="nomproy" id="nomproy" class="form-control">
-                        <option value="" disabled selected hidden>Seleccione Proyecto</option>
-                        <!-- <option value="proyecto01">proyectos traidos desde la BD</option> -->
+                        <option value="ingles">Inglés</option>
                       </select>
                     </div>
                   </div>
                 </div>
-                <div class="form-group" style="padding-bottom:2%">
-                  <div class="select-opt" style="width: 100%">
-                    <div style="text-align: center">
-                      <label for="profacargo">Profesor a Cargo:</label>
-                    </div>
+                <div class="form-group">
+                  <div class="select-opt" style="padding: 1%">
+                      <label for="nomproy">Nombre del proyecto:</label>
                     <div style="margin: 0 auto">
-                      <select name="profacargo" id="profacargo" class="form-control">
+                      <input type="text"
+                      class="form-control"
+                      id="nomproy"
+                      placeholder="Nombre del Proyecto"
+                      name="nomproy"
+                      required>
+                    </div>
+                  </div>
+                  <div class="select-opt" style="padding: 1%">
+                      <label for="profacargo">Profesor a Cargo:</label>
+                    <div style="margin: 0 auto">
+                      <select name="profacargo" id="profacargo" class="form-control" required>
                         <option value="" disabled selected hidden>Seleccione Profesor a Cargo</option>
                         <!-- <option value="profe01">profesores traidos desde la BD</option> -->
                       </select>
