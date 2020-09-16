@@ -1368,15 +1368,14 @@ footer .Facebook {
   }
 }
 .radio-opt {
-  width: 40%;
-  margin-left: 10px;  
+  margin-left: 10px;
+  width: 35%; 
 }
 .radlbl {
   padding-right: 7%;
 }
 .select-opt {
   position: relative;
-  width: 50%;
 }
 #orient {
   margin: 0 auto;
