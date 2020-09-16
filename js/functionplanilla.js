@@ -4,7 +4,7 @@ $( document ).ready(function() {
         type: "post", 
         success:function(content){
           $('.Planilla').html(content);
-          var url = '".$ss['LinkVideo']."';
+          var url = $().data('');'".$ss['LinkVideo']."';
             var regExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
             var match = url.match(regExp);
             if (match && match[2].length == 11) {

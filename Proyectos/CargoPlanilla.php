@@ -19,8 +19,9 @@
             <div class='numbertext'>".$cont."/".$arr_length."</div>
         </div>";
         $cont = $cont + 1;
-  
+   
     }
+    // DEL PROFESOR. 
     $sql = "SELECT * FROM datosproyecto WHERE idproyecto = '1'";
     $result = $mysqli -> query($sql);
     $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
@@ -42,7 +43,7 @@
               </div>
               
             </div>";
-            $content.=" <div class='Video' id='divideo'>
+            $content.=" <div class='Video' id='divideo' data-url=".$ss['url'].">
                 <h2>Video:</h2>
                 <hr />
          
