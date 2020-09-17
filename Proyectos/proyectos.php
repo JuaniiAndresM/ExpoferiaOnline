@@ -13,6 +13,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="/ExpoferiaOnline/js/function.js"></script>
+    <script src="../js/functionproyecto.js"></script>
 
     <link
       rel="stylesheet"
@@ -35,8 +36,8 @@
     <div class="ProyectosDIV">
       <h2 id="TituloProyectos">Proyectos:</h2>
       <div class="gridProyectos">
-      <script src="../js/functionproyecto.js"></script>
-               
+        
+      
     </div>
     <div id="footer"></div>
   </body>
