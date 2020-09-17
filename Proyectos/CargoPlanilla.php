@@ -1,8 +1,10 @@
 <?php
     include '..\Form\conexion.php';
-    
+    $sql = "SELECT * FROM datosProyecto WHERE idProyecto = '1'";
+    $result = $mysqli -> query($sql);
+    $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
     $cont = 1;
-    $content="";
+    $content= "";
     // DEL PROFESOR. 
     $sql = "SELECT * FROM datosProyecto WHERE idProyecto = '1'";
     $result = $mysqli -> query($sql);
@@ -25,8 +27,7 @@
                 <div class='Descripcion'>
                   <h4>Descripcion:</h4>
                   <p id='desc' style='word-wrap: break-word;'>".$ss['Descripcion']."</p>
-                </div>
-              </div>";
+                </div>";
         
 
               
@@ -34,7 +35,7 @@
             <div class = 'imagenesSlide'>
             <h2>Imagenes:</h2>";
     }
-    $sqlimg = "SELECT * FROM imagenes WHERE idProyecto = '".$ss['idProyecto']."'";
+    $sqlimg = "SELECT * FROM expoeduc_expoeduca.imagenes WHERE idProyecto = '".$ss['idProyecto']."'";
     $resultimg = $mysqli -> query($sqlimg);
     while($ssimg = mysqli_fetch_array($resultimg, MYSQLI_ASSOC)){
 
@@ -42,6 +43,7 @@
       <div class='mySlides'>
           <img src='../img/".$ssimg['url']."' id ='foto".$cont."' onclick='agrando(".$cont.")'  class='imagenPlanilla' style='width:100%'>
           
+          <div class='numbertext'>".$cont."/".mysqli_num_rows($resultimg)."</div>
       </div>";
 
       $cont = $cont + 1;    
@@ -50,48 +52,45 @@
     $content.="<a class='prev' onclick='plusSlides(-1)' style='position: absolute;'>❮</a>
     <a class='next' onclick='plusSlides(1)' style='position: absolute;'>❯</a>
     </div> 
-
-    <div id='myModal' class='modal'>
-      <span class='close'>&times;</span>	              
+    <div id='myModal' class='modal' >
+      <span class='close' onclick='cerrarModal()'>&times;</span>	              
       <img class='modal-content' id='foto'>	            
       <div id='caption'></div>	             
+    </div>
+    <script>
+    slides()
+    </script>
     </div>	";
 
-    $sql = "SELECT * FROM videos WHERE idProyecto = '".$ss['idProyecto']."'";
-    $result = $mysqli -> query($sql);
-    $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
-    if(isset($ss['url'])){
-      $content.= " 
-      <div class='Video' id='divideo'>
-        <h2>Video:</h2>
-        <hr />
-          <div>
-            <iframe
-              id = 'video'
-              width='560'
-              height='315'
-              src='https://www.youtube.com/embed/'
-              frameborder='0'
-              allowfullscreen></iframe>
-          </div>
-        </div>";
-      // Codigo para sacar la id del video de youtube, tuve que estudiar regex.
-      // por que? no se, motivo? ni idea
-      $content.= "<script>
-      var url = '".$ss['url']."';
-            var regExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
-            var match = url.match(regExp);
-            if (match && match[2].length == 11) {
-                document.getElementById('video').src = 'https://www.youtube.com/embed/'+match[2];
-            } else {
-                document.getElementById('divideo').style.visibility = 'hidden';
-            }
-      </script>";
-    }else{
-      $content.= "<script>
-      document.getElementById('divideo').style.visibility = 'hidden';
-      </script>";
-    }
-    
+    $sql = "SELECT url FROM expoeduc_expoeduca.videos WHERE idProyecto = '".$ss['idProyecto']."'";
+    $resultvid = $mysqli -> query($sql);
+    $cont = 1;
+    $content.= "<div class='VideoPlanilla'>
+                <h2>Video:</h2>
+                <hr />";
+      while($ssvid = mysqli_fetch_array($resultvid, MYSQLI_ASSOC)){
+        $content.= " 
+          <div class='VideoSlides' >
+              <div>
+                <iframe
+                  id = 'video".$cont."'
+                  width='560'
+                  height='315'
+                  src='https://www.youtube.com/embed/'
+                  frameborder='0'
+                  allowfullscreen></iframe>
+                  <div class='numbertextVid'>".$cont."/".mysqli_num_rows($resultvid)."</div>
+              </div>
+            </div>
+          <script>
+            getVideo('".$ssvid['url']."', ".$cont.")
+          </script>";
+          $cont = $cont + 1;
+      }
+    $content.="
+    <a class='prev' onclick='plusSlidesVid(-1)'>❮</a>
+    <a class='next' onclick='plusSlidesVid(1)'>❯</a>
+    <script>slidesVid()</script>
+    </div>";
     echo $content;
   ?>

@@ -43,15 +43,14 @@
     //cuando es alumno no muestra el boton de aprobar proyecto
 
     $sqlid = "SELECT idUsuario FROM usuario where usuario='". $_SESSION['Usuario']."'";
-    $id = $mysqli -> real_escape_string($sqlid);
-
-    $sql1 = "SELECT idProyecto FROM datosProyecto where Alumno_Responsable='".$id."'";
-    $idp = $mysqli -> real_escape_string($sql1);
+    $resultid = $mysqli -> query  ($sqlid);
+    $idp = mysqli_fetch_array($resultid, MYSQLI_ASSOC);
+    $idproyecto = $idp['idUsuario'];
 
     $sql = "SELECT * FROM datosProyecto WHERE idProyecto ='1'";
     $resultaa = $mysqli->query($sql);
     $aa =mysqli_fetch_array($resultaa, MYSQLI_ASSOC);
-    
+
     $sql = "SELECT * FROM videos WHERE idProyecto ='1'";
     $result = $mysqli->query($sql);
     $vv = mysqli_fetch_array($result, MYSQLI_ASSOC);
@@ -95,18 +94,19 @@
                     id="user"
                     placeholder= "Nombre de Proyecto"
                     name="nombre_proyecto"
-                    value="<?php echo $titulo ?>">
+                    value="<?php echo utf8_encode($titulo) ?>">
                   </div>
                 
                 <hr />
 
               
-                <div class="form-group">
+                <div class="form-group" >
                   <textarea
                     class="form-control"
                     rows="5"
                     placeholder="Introduccion"
-                    id="descripcionCorta_Proyecto"><?php echo $introduccion; ?>
+                    
+                    id="descripcionCorta_Proyecto"><?php echo utf8_encode($introduccion); ?>
                   </textarea>
                 </div>
 
@@ -116,7 +116,7 @@
                   </div>
                   <div id="demo" class="collapse">
                   <div class="form-group">
-                    <input type="text" class="form-control" id="link" placeholder="URL del Video [YouTube]" name="nombre_proyecto" value= "<?php echo $video; ?>" />
+                    <input type="text" class="form-control" id="link" placeholder="URL del Video [YouTube]" name="nombre_proyecto" value= "<?php echo utf8_encode($video); ?>" />
                   </div>
                   
                 </div>
@@ -126,7 +126,7 @@
                     class="form-control"
                     rows="5"
                     placeholder="Descripcion"
-                    id="descripcionLarga_Proyecto"><?php echo $descripcion; ?>
+                    id="descripcionLarga_Proyecto"><?php echo utf8_encode($descripcion); ?>
                   </textarea>
                 </div>
                 
@@ -146,7 +146,7 @@
                 <hr />
                 <div class="Foto">
                   <input type="file" onchange="cambiar()" name="fileToUpload" id="fileToUpload" hidden="hidden" />
-                  <label for="fileToUpload">Seleccionar Imagen</label>
+                  <label for="fileToUpload"><i class="fa">&#xf03e;</i> Seleccionar Imagen</label>
                   <form action="uploadIMG.php" method="post" enctype="multipart/form-data">
                     <label>
                       <input type="submit" class="button" hidden="hidden">Enviar datos
@@ -155,7 +155,7 @@
                 </div>
                 <div class="Foto">
                   <input type="file" onchange="cambiar()" name="fileToUpload" id="fileToUpload" hidden="hidden" />
-                  <label for="fileToUpload">Seleccionar Imagen</label>
+                  <label for="fileToUpload"><i class="fa">&#xf03e;</i> Seleccionar Imagen</label>
                   <form action="uploadIMGprincipal.php" method="post" enctype="multipart/form-data">
                     <label>
                       <input type="submit" class="button" hidden="hidden">Enviar datos
@@ -164,7 +164,7 @@
                 </div>
                 <div class="Foto">
                   <input type="file" onchange="cambiar()" name="fileToUpload" id="fileToUpload" hidden="hidden" />
-                  <label for="fileToUpload">Seleccionar Imagen</label>
+                  <label for="fileToUpload"><i class="fa">&#xf03e;</i> Seleccionar Imagen</label>
                   <form action="uploadBanner.php" method="post" enctype="multipart/form-data">
                     <label>
                       <input type="submit" class="button" hidden="hidden">Enviar datos

@@ -746,6 +746,15 @@ BotonProyecto :hover {
   padding: 2%;
   margin-bottom: 1%;
 }
+.Foto label {
+  padding: 9px 25px;
+  background-color: #0088c4;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: .25rem 0px;
+  color: white;
+}
 
 .Banner .BannerIMG {
   width: 100%;
@@ -805,6 +814,7 @@ BotonProyecto :hover {
 
 
 .numbertext {
+  text-align: center;
   color: white;
   background-image: url('../img/Fondo.png');
   font-weight: bolder;
@@ -812,6 +822,16 @@ BotonProyecto :hover {
   padding: 8px 12px;
   top: 0;
 }
+
+.numbertextVid {
+  text-align: center;
+  color: black;
+  font-weight: bolder;
+  font-size: 12px;
+  padding: 8px 12px;
+  top: 0;
+}
+
 
 .row:after {
   content: "";
@@ -832,6 +852,21 @@ BotonProyecto :hover {
 .active,
 .demo:hover {
   opacity: 1;
+}
+
+/*Video */
+.VideoPlanilla {
+  position: relative;
+  width: fit-content;
+  display: block;
+  margin-top: 2%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.VideoSlides{
+  display: block;
+  position: relative;
 }
 
 /* Modal Planilla */
