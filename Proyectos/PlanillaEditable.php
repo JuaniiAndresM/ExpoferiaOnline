@@ -42,15 +42,26 @@
     }
     //cuando es alumno no muestra el boton de aprobar proyecto
 
-    $sql1 = "SELECT idProyecto FROM datosProyecto where Alumno_Responsable= (SELECT idUsuario FROM usuario where usuario='". $_SESSION['Usuario']."')";
+    $sqlid = "SELECT idUsuario FROM usuario where usuario='". $_SESSION['Usuario']."'";
+    $id = $mysqli -> real_escape_string($sqlid);
+
+    $sql1 = "SELECT idProyecto FROM datosProyecto where Alumno_Responsable='".$id."'";
     $idp = $mysqli -> real_escape_string($sql1);
 
-    $sql = "SELECT * FROM datosProyecto WHERE idProyecto ='".$idp."'";
-    $result = $mysqli->query($sql);
-    $aa = mysqli_fetch_array($result, MYSQLI_ASSOC);
-    $sql = "SELECT * FROM videos WHERE idProyecto ='".$idp."'";
+    $sql = "SELECT * FROM datosProyecto WHERE idProyecto ='1'";
+    $resultaa = $mysqli->query($sql);
+    $aa =mysqli_fetch_array($resultaa, MYSQLI_ASSOC);
+    
+    $sql = "SELECT * FROM videos WHERE idProyecto ='1'";
     $result = $mysqli->query($sql);
     $vv = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+    $banner = $aa['Banner'];
+    $titulo = $aa['Titulo'];
+    $introduccion = $aa['Introduccion'];
+    $descripcion = $aa['Descripcion'];
+    $video = $vv['url'];
+
 
   ?>
 
@@ -63,15 +74,17 @@
         <div class="Linea3">
           <div class="Planilla">
             <div class="PlanillaFrame">
+
             <div class="BannerPlanillaEditable">
                 <h2>Banner:</h2>
                 <hr />
                 <div class="BannerEditable">
-                <label for="myfile">Select a file:</label>
-                <input type="file" id="myfile" name="myfile">
-      
+                <?php
+                echo "<div class='Banner'><img src='../img/".$banner."' id='banner' style='max-height:100%; max-width:100%;'></div>";
+                ?>
                 </div>
-           
+
+                <br>
                 <h2>Nuevo Proyecto:</h2>
                 <hr />
               
@@ -82,19 +95,18 @@
                     id="user"
                     placeholder= "Nombre de Proyecto"
                     name="nombre_proyecto"
-                    value="<?php echo $aa["Titulo"]; ?>">
+                    value="<?php echo $titulo ?>">
                   </div>
                 
                 <hr />
 
-
+              
                 <div class="form-group">
                   <textarea
                     class="form-control"
                     rows="5"
                     placeholder="Introduccion"
-                    id="descripcionCorta_Proyecto">
-                    <?php echo $aa["Introduccion"]; ?>
+                    id="descripcionCorta_Proyecto"><?php echo $introduccion; ?>
                   </textarea>
                 </div>
 
@@ -104,7 +116,7 @@
                   </div>
                   <div id="demo" class="collapse">
                   <div class="form-group">
-                    <input type="text" class="form-control" id="link" placeholder="URL del Video [YouTube]" name="nombre_proyecto" value= "<?php echo $vv["url"]; ?>" />
+                    <input type="text" class="form-control" id="link" placeholder="URL del Video [YouTube]" name="nombre_proyecto" value= "<?php echo $video; ?>" />
                   </div>
                   
                 </div>
@@ -114,8 +126,7 @@
                     class="form-control"
                     rows="5"
                     placeholder="Descripcion"
-                    id="descripcionLarga_Proyecto">
-                    <?php echo $aa["Descripcion"]; ?>
+                    id="descripcionLarga_Proyecto"><?php echo $descripcion; ?>
                   </textarea>
                 </div>
                 

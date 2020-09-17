@@ -950,6 +950,10 @@ BotonProyecto :hover {
 .BannerPlanillaEditable .BannerEditable input[type=file] {
   display: none;
 }
+
+.BannerPlanillaEditable h2{
+  text-align: center;
+}
 .BannerPlanillaEditable .BannerEditable .BotonSubir {
   padding: 9px 25px;
   background-color: #0088c4;
