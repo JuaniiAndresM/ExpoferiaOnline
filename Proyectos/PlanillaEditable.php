@@ -142,7 +142,7 @@
                 <hr />
                 <div class="Foto">
                 <form action="uploadIMG.php" method="post" enctype="multipart/form-data">
-                  <input type="file" onchange="cambiar()" name="fileToUpload" id="fileToUpload" hidden="hidden" />
+                  <input type="file" accept="image/x-png,image/jpg,image/jpeg" onchange="cambiar()" name="fileToUpload" id="fileToUpload" hidden="hidden" />
                   <label for="fileToUpload"><i class="fa">&#xf03e;</i> Seleccionar Imagen</label><br>
                     <label>
                       <input type="submit" class="button" hidden="hidden">Subir Imagen
@@ -151,7 +151,7 @@
                 </div>
                 <div class="Foto">
                  <form action="uploadIMGprincipal.php" method="post" enctype="multipart/form-data">
-                  <input type="file" onchange="cambiar()" name="fileToUpload" id="fileToUpload" hidden="hidden" />
+                  <input type="file" accept="image/x-png,image/jpg,image/jpeg" onchange="cambiar()" name="fileToUpload" id="fileToUpload" hidden="hidden" />
                   <label for="fileToUpload"><i class="fa">&#xf03e;</i> Seleccionar Imagen Principal</label><br>
                     <label>
                       <input type="submit" class="button" hidden="hidden">Subir Imagen
@@ -160,7 +160,7 @@
                 </div>
                 <div class="Foto">
                 <form action="uploadBanner.php" method="post" enctype="multipart/form-data">
-                  <input type="file" onchange="cambiar()" name="fileToUpload" id="fileToUpload" hidden="hidden" />
+                  <input type="file" accept="image/x-png,image/jpg,image/jpeg" onchange="cambiar()" name="fileToUpload" id="fileToUpload" hidden="hidden" />
                   <label for="fileToUpload"><i class="fa">&#xf03e;</i> Seleccionar Banner</label><br>
                     <label>
                       <input type="submit" class="button" hidden="hidden">Subir Imagen
