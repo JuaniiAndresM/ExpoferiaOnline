@@ -53,6 +53,7 @@ if($sql = mysqli_fetch_array($result, MYSQLI_ASSOC)){
                     $y ++;
                     $content.="
                         <div
+                        class='Seccion".$i."'
                     id ='Seccion".$i."'
                         data-aos='flip-right'
                         data-aos-duration='1000'
