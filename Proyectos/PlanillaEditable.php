@@ -44,14 +44,12 @@
 
     $sqlid = "SELECT idUsuario FROM usuario where usuario='". $_SESSION['Usuario']."'";
     $id = $mysqli -> real_escape_string($sqlid);
-
-    $sql1 = "SELECT idProyecto FROM datosProyecto where Alumno_Responsable='".$id."'";
-    $idp = $mysqli -> real_escape_string($sql1);
+    $idproyecto = $id['idUsuario'];
 
     $sql = "SELECT * FROM datosProyecto WHERE idProyecto ='1'";
     $resultaa = $mysqli->query($sql);
     $aa =mysqli_fetch_array($resultaa, MYSQLI_ASSOC);
-    
+
     $sql = "SELECT * FROM videos WHERE idProyecto ='1'";
     $result = $mysqli->query($sql);
     $vv = mysqli_fetch_array($result, MYSQLI_ASSOC);

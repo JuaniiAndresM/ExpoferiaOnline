@@ -1,5 +1,4 @@
 <?php 
-//DUDO QUE ANDE ALGO ASI QUE DESDE YA PERDON
 include 'Form\conexion.php';
 $content="";
 $sql = "SELECT *FROM datosProyecto";
@@ -8,7 +7,6 @@ $row_cnt = $result->num_rows;
 if($sql = mysqli_fetch_array($result, MYSQLI_ASSOC)){
         $i = 1;
         $y = 1;
-        //esto no estoy segura que ande, y si esto no anda no anda nada xd
         $arr = range(1,$row_cnt);
         shuffle($arr);
         $x = 0;
