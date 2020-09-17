@@ -109,17 +109,13 @@
                     id="descripcionCorta_Proyecto"><?php echo utf8_encode($introduccion); ?>
                   </textarea>
                 </div>
-
-                <div class="custom-control custom-checkbox mb-3">
-                    <input type="checkbox"class="custom-control-input" data-toggle="collapse" data-target="#demo" id="customCheck" name="example1"/>
-                    <label class="custom-control-label" for="customCheck" >Importar Video</label >
-                  </div>
-                  <div id="demo" class="collapse">
-                  <div class="form-group">
-                    <input type="text" class="form-control" id="link" placeholder="URL del Video [YouTube]" name="nombre_proyecto" value= "<?php echo utf8_encode($video); ?>" />
-                  </div>
-                  
-                </div>
+                  <?php
+                  while($row = $result->fetch_array()){
+                   echo "<div class='form-group'>
+                   <input type='text' class='form-control' id='link' placeholder='URL del Video [YouTube]' name='nombre_proyecto' value= '".$video."' /></div>";
+                  }
+                  ?>
+ 
                 
                 <div class="form-group">
                   <textarea
@@ -149,25 +145,25 @@
                   <label for="fileToUpload"><i class="fa">&#xf03e;</i> Seleccionar Imagen</label>
                   <form action="uploadIMG.php" method="post" enctype="multipart/form-data">
                     <label>
-                      <input type="submit" class="button" hidden="hidden">Enviar datos
+                      <input type="submit" class="button" hidden="hidden">Subir Imagen
                     </label>
                   </form>
                 </div>
                 <div class="Foto">
                   <input type="file" onchange="cambiar()" name="fileToUpload" id="fileToUpload" hidden="hidden" />
-                  <label for="fileToUpload"><i class="fa">&#xf03e;</i> Seleccionar Imagen</label>
+                  <label for="fileToUpload"><i class="fa">&#xf03e;</i> Seleccionar Imagen Principal</label>
                   <form action="uploadIMGprincipal.php" method="post" enctype="multipart/form-data">
                     <label>
-                      <input type="submit" class="button" hidden="hidden">Enviar datos
+                      <input type="submit" class="button" hidden="hidden">Subir Imagen
                     </label>
                   </form>
                 </div>
                 <div class="Foto">
                   <input type="file" onchange="cambiar()" name="fileToUpload" id="fileToUpload" hidden="hidden" />
-                  <label for="fileToUpload"><i class="fa">&#xf03e;</i> Seleccionar Imagen</label>
+                  <label for="fileToUpload"><i class="fa">&#xf03e;</i> Seleccionar Banner</label>
                   <form action="uploadBanner.php" method="post" enctype="multipart/form-data">
                     <label>
-                      <input type="submit" class="button" hidden="hidden">Enviar datos
+                      <input type="submit" class="button" hidden="hidden">Subir Imagen
                     </label>
                   </form>
                 </div>
