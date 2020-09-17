@@ -318,18 +318,19 @@ if($sql = mysqli_fetch_array($result, MYSQLI_ASSOC)){
       $column[] = $sql['idProyecto'];
     }
     $arr_length = count($column);
+   
     if($arr_length >= 3){
       $i = 1;
-      $arr = range(1,$arr_length);
-      shuffle($arr);
-      $x = 0;
+        $arr = range(1,$arr_length);
+        shuffle($arr);
+        $x = 0;
       do{
           $random = $arr[$x];
             $sql = "SELECT * FROM datosProyecto WHERE idProyecto = '".$random."'";
             $result = $mysqli -> query($sql);
             $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
-            $sql = "SELECT * FROM imagenes WHERE idProyecto = '".$random."'";
+            $sql = "SELECT url FROM imagenes WHERE idProyecto = '".$ss['idProyecto']."'";
             $resultI = $mysqli -> query($sql);
             $sI = mysqli_fetch_array($resultI, MYSQLI_ASSOC);
 
@@ -343,7 +344,7 @@ if($sql = mysqli_fetch_array($result, MYSQLI_ASSOC)){
               echo "<script> 
               document.getElementById('titulo".$i."').innerHTML = '".$ss['Titulo']."';
               document.getElementById('intro".$i."').innerHTML = '".$ss['Introduccion']."';
-              document.getElementById('foto".$i."').src = '../img/'".$sI['url']."';
+              document.getElementById('foto".$i."').src = 'img/'".$sI['url']."';
               </script>";
               $x++;
               $i++;
@@ -354,13 +355,16 @@ if($sql = mysqli_fetch_array($result, MYSQLI_ASSOC)){
 
     }elseif($arr_length  == 2){
       $i = 1;
+      $arr = range(1,$arr_length);
+      shuffle($arr);
+      $x = 0;
       do{
-        $random = rand ( 1, $arr_length );
+        $random = $arr[$x];
         $sql = "SELECT * FROM datosProyecto WHERE idProyecto = '".$random."'";
         $result = $mysqli -> query($sql);
         $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
-        $sql = "SELECT * FROM imagenes WHERE idProyecto = '".$random."'";
+        $sql = "SELECT url FROM imagenes WHERE idProyecto = '".$ss['idProyecto']."'";
         $resultI = $mysqli -> query($sql);
         $sI = mysqli_fetch_array($resultI, MYSQLI_ASSOC);
 
@@ -373,22 +377,25 @@ if($sql = mysqli_fetch_array($result, MYSQLI_ASSOC)){
           echo "<script> 
             document.getElementById('titulo".$i."').innerHTML = '".$ss['Titulo']."';
             document.getElementById('intro".$i."').innerHTML = '".$ss['Introduccion']."';
-            document.getElementById('foto".$i."').src = '../img/".$ss['url']."';
+            document.getElementById('foto".$i."').src = 'img/".$sI['url']."';
             </script>";
       }
+      $x++;
       $i++;
-
     }while($i <= 2);
 
     }elseif($arr_length  == 1){
       $i = 1;
+        $arr = range(1,$arr_length);
+        shuffle($arr);
+        $x = 0;
         do{
-          $random = rand ( 1, $arr_length );
+          $random = $arr[$x];
           $sql = "SELECT * FROM datosProyecto WHERE idProyecto = '".$random."'";
           $result = $mysqli -> query($sql);
           $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
-          $sql = "SELECT * FROM imagenes WHERE idProyecto = '".$random."'";
+          $sql = "SELECT url FROM imagenes WHERE idProyecto = '".$ss['idProyecto']."'";
           $resultI = $mysqli -> query($sql);
           $sI = mysqli_fetch_array($resultI, MYSQLI_ASSOC);
       
@@ -401,9 +408,10 @@ if($sql = mysqli_fetch_array($result, MYSQLI_ASSOC)){
             echo "<script> 
             document.getElementById('titulo".$i."').innerHTML = '".$ss['Titulo']."';
             document.getElementById('intro".$i."').innerHTML = '".$ss['Introduccion']."';
-            document.getElementById('foto".$i."').src = '../img/".$sI['url']."';
+            document.getElementById('foto".$i."').src = 'img/".$sI['url']."';
             </script>";
         }
+        $x++;
         $i++;
       
       }while($i == 1);
