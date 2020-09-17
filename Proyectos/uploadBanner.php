@@ -8,7 +8,7 @@ $idproyecto = $mysqli->query($sql);
 $ruta = 'proyecto' .$idproyecto; 
 
 $target_dir = $ruta;
-//$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
@@ -25,18 +25,13 @@ if ($_FILES["fileToUpload"]["size"] > 3000000) {
   $uploadOk = 0;
 }
 
-// Allow certain file formats
-if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
-  echo '<script language="javascript"> alert("La imagen no cumple con la extension adecuada (JPG, PNG, JPEG).")</script>';
-  $uploadOk = 0;
-}
-
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
   echo '<script language="javascript"> alert("La imagen no se pudo guardar". )</script>';
 // if everything is ok, try to upload file
 } else {
   if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+
     echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
   } else {
     echo "Sorry, there was an error uploading your file.";

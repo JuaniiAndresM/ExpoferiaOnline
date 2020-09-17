@@ -7,8 +7,9 @@ $idproyecto = $mysqli->query($sql);
 
 $ruta = 'proyecto' .$idproyecto; 
 
+$nombre = "IMGP";
 $target_dir = $ruta;
-//$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
@@ -22,12 +23,6 @@ if (file_exists($target_file)) {
 // Check file size
 if ($_FILES["fileToUpload"]["size"] > 3000000) {
   echo '<script language="javascript"> alert("La imagen supera el peso maximo (3MB).")</script>';
-  $uploadOk = 0;
-}
-
-// Allow certain file formats
-if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
-  echo '<script language="javascript"> alert("La imagen no cumple con la extension adecuada (JPG, PNG, JPEG).")</script>';
   $uploadOk = 0;
 }
 
