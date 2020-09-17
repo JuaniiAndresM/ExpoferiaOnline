@@ -58,7 +58,7 @@
     <h2>Menu:</h2>
     <ul class="nav-links2">
       <li>
-        <a href="/ExpoferiaOnline/index.php"
+        <a href="/ExpoferiaOnline/index.html"
           ><i class="fa">&#xf015;</i> Inicio</a
         >
         <hr>
