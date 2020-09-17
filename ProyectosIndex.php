@@ -15,8 +15,8 @@ if($sql = mysqli_fetch_array($result, MYSQLI_ASSOC)){
 
       do{
           $random = $arr[$x];
-            $sql3 = "SELECT * FROM datosProyecto WHERE idProyecto = '".$random."'";
-            $result = $mysqli -> query($sql3);
+            $sql = "SELECT * FROM datosProyecto WHERE idProyecto = '".$random."'";
+            $result = $mysqli -> query($sql);
             $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
             $sql3 = "SELECT url FROM imagenes WHERE idProyecto = '".$ss['idProyecto']."'";
@@ -59,7 +59,7 @@ if($sql = mysqli_fetch_array($result, MYSQLI_ASSOC)){
                     $y ++;
                     $content.="
                         <div
-                    id ='Seccion".$i."'
+                    id ='Seccion1'
                         data-aos='flip-right'
                         data-aos-duration='1000'
                     >
