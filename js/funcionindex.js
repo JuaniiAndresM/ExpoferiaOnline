@@ -6,16 +6,7 @@ $( document ).ready(function() {
           
           $('.index-frame2').html(content);
 
-          var id = 0;
-          ocultar(id);
           
       }
     })
     });
-
-    function ocultar(i) {
-        do{
-        document.getElementById('Seccion' + i).style.visibility = 'hidden';
-        i--;
-        }while(i > 0)
-    }
