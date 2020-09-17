@@ -746,6 +746,15 @@ BotonProyecto :hover {
   padding: 2%;
   margin-bottom: 1%;
 }
+.Foto label {
+  padding: 9px 25px;
+  background-color: #0088c4;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: .25rem 0px;
+  color: white;
+}
 
 .Banner .BannerIMG {
   width: 100%;
