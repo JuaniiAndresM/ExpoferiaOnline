@@ -32,11 +32,7 @@ if($sql = mysqli_fetch_array($result, MYSQLI_ASSOC)){
                         data-aos='flip-left'
                         data-aos-duration='1000'
                       >
-                        <div class='Seccion2Mobile'>
-                          <img 
-                            class='ImagenProyectos'
-                          />
-                        </div>
+                        
                         <div class='SeccionTexto'>
                           <h2  id ='titulo2'>".$ss['Titulo']."</h2>
                           <hr />
@@ -57,14 +53,14 @@ if($sql = mysqli_fetch_array($result, MYSQLI_ASSOC)){
                     $y ++;
                     $content.="
                         <div
-                    id ='Seccion1'
+                    id ='Seccion".$i."'
                         data-aos='flip-right'
                         data-aos-duration='1000'
                     >
                         <div>
                         <img src='img/".$sI['url']."'
-                            class='ImagenProyectos' 
-                            id ='foto".$i."' 
+                        id ='foto".$i."'
+                            class='ImagenProyectos'  
                             style='max-height:100%; max-width:100%;'
                         />
                         </div>
@@ -78,10 +74,7 @@ if($sql = mysqli_fetch_array($result, MYSQLI_ASSOC)){
                 }//si el if da falso no se puede mostrar el proyecto asi que no se crea nada
 
         }else{
-            //esto no se si es necesario
-            echo "<script> 
-            document.getElementById('Seccion".$i."').style.visibility = 'hidden';
-            </script>";
+           
         }
         $x++;
         $i++;
