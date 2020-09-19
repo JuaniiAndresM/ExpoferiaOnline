@@ -17,6 +17,11 @@ if($sql = mysqli_fetch_array($result, MYSQLI_ASSOC)){
             $result = $mysqli -> query($sql);
             $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
+            if(mysqli_num_rows($result) == 0){
+              $x++;
+          }else{
+
+             
             $sql3 = "SELECT url FROM imagenes WHERE idProyecto = '".$ss['idProyecto']."'";
             $resultI = $mysqli -> query($sql3);
             $sI = mysqli_fetch_array($resultI, MYSQLI_ASSOC);
@@ -74,11 +79,16 @@ if($sql = mysqli_fetch_array($result, MYSQLI_ASSOC)){
                     </div>";
                 }//si el if da falso no se puede mostrar el proyecto asi que no se crea nada
 
-        }else{
-           
-        }
-        $x++;
-        $i++;
+          }else{
+            
+          }
+
+          $x++;
+          $i++;
+
+            
+          }
+        
         
       }while($i <= 3);
       
