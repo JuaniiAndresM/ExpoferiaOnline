@@ -97,7 +97,7 @@
                   >
                 </li>
                 <li>
-                  <a href="/ExpoferiaOnline/Admin.php" style="<?php echo $admin ?>"
+                  <a href="/ExpoferiaOnline/Proyectos/Admin.html" style="<?php echo $admin ?>"
                     ><button class="botonPanel">
                       <i class="fa">&#xf0c0;</i> Administrar Usuarios
                     </button></a
