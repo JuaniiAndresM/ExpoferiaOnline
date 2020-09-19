@@ -81,17 +81,17 @@
                   <label for="year">Año:</label>
                   <div class="radio-opt">
                     <label class="rad-opt-child" for="prim">
-                      <input type="radio" id="prim" name="year" value="Primero"  required />
+                      <input type="radio" id="prim" name="year" value="1"  required />
                       <span class="radicon"></span>
                       Primer Año
                     </label>
                     <label class="rad-opt-child" for="seg">
-                      <input type="radio" id="seg" name="year" value="Segundo"  required />
+                      <input type="radio" id="seg" name="year" value="2"  required />
                       <span class="radicon"></span>
                       Segundo Año
                     </label>
                     <label class="rad-opt-child" for="terce">
-                      <input type="radio" id="terce" name="year" value="Tercero" required />
+                      <input type="radio" id="terce" name="year" value="3" required />
                       <span class="radicon"></span>
                       Tercer Año
                     </label>
@@ -103,16 +103,16 @@
                     <div style="margin: 0 auto">
                       <select name="orient" id="orient" class="form-control" required>
                         <option value="" disabled selected hidden>Seleccione Orientación</option>
-                        <option value="Administrativo">Administrativo</option>
-                        <option value="Artistico">Artístico</option>
-                        <option value="Biologico">Biológico</option>
-                        <option value="Cientifico">Científico</option>
-                        <option value="Ciclo Básico">Ciclo Básico</option>
-                        <option value="Deportivo">Deportivo</option>
-                        <option value="Expresion">Expresión</option>
-                        <option value="Humanistico">Humanístico</option>
-                        <option value="Informático">Informático</option>
-                        <option value="Ingles">Inglés</option>
+                        <option value="1">Administrativo</option>
+                        <option value="2">Artístico</option>
+                        <option value="3">Biológico</option>
+                        <option value="4">Científico</option>
+                        <option value="5">Ciclo Básico</option>
+                        <option value="6">Deportivo</option>
+                        <option value="7">Expresión</option>
+                        <option value="8">Humanístico</option>
+                        <option value="9">Informático</option>
+                        <option value="10">Inglés</option>
                       </select>
                     </div>
                   </div>
