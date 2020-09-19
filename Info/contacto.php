@@ -44,9 +44,9 @@
                 los datos requeridos, y te enviaremos los datos de la cuenta.</a
               >
               <hr />
-              <form action="/ExpoferiaOnline/index.html">
+              <form action="registrarAlumno.php" method="POST">
                 <div class="form-group">
-                  <label for="uname">Nombre Completo:</label>
+                  <label for="uname">Nombre:</label>
                   <input
                     type="text"
                     class="form-control"
@@ -56,6 +56,16 @@
                     required
                   />
                 </div>
+                <div class="form-group">
+                  <label for="uname">Apellido:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="apellido"
+                    placeholder="Ingrese Apellido"
+                    name="apellido"
+                    required
+                  />
                 <div class="form-group">
                   <label for="uname">Email:</label>
                   <input
@@ -71,17 +81,17 @@
                   <label for="year">Año:</label>
                   <div class="radio-opt">
                     <label class="rad-opt-child" for="prim">
-                      <input type="radio" id="prim" name="year" required />
+                      <input type="radio" id="prim" name="year" value="Primero"  required />
                       <span class="radicon"></span>
                       Primer Año
                     </label>
                     <label class="rad-opt-child" for="seg">
-                      <input type="radio" id="seg" name="year" required />
+                      <input type="radio" id="seg" name="year" value="Segundo"  required />
                       <span class="radicon"></span>
                       Segundo Año
                     </label>
                     <label class="rad-opt-child" for="terce">
-                      <input type="radio" id="terce" name="year" required />
+                      <input type="radio" id="terce" name="year" value="Tercero" required />
                       <span class="radicon"></span>
                       Tercer Año
                     </label>
@@ -93,16 +103,16 @@
                     <div style="margin: 0 auto">
                       <select name="orient" id="orient" class="form-control" required>
                         <option value="" disabled selected hidden>Seleccione Orientación</option>
-                        <option value="admivo">Administrativo</option>
-                        <option value="artist">Artístico</option>
-                        <option value="biolog">Biológico</option>
-                        <option value="cienti">Científico</option>
-                        <option value="cicbas">Ciclo Básico</option>
-                        <option value="deport">Deportivo</option>
-                        <option value="expres">Expresión</option>
-                        <option value="humani">Humanístico</option>
-                        <option value="inform">Informático</option>
-                        <option value="ingles">Inglés</option>
+                        <option value="Administrativo">Administrativo</option>
+                        <option value="Artistico">Artístico</option>
+                        <option value="Biologico">Biológico</option>
+                        <option value="Cientifico">Científico</option>
+                        <option value="Ciclo Básico">Ciclo Básico</option>
+                        <option value="Deportivo">Deportivo</option>
+                        <option value="Expresion">Expresión</option>
+                        <option value="Humanistico">Humanístico</option>
+                        <option value="Informático">Informático</option>
+                        <option value="Ingles">Inglés</option>
                       </select>
                     </div>
                   </div>
@@ -124,8 +134,20 @@
                     <div style="margin: 0 auto">
                       <select name="profacargo" id="profacargo" class="form-control" required>
                         <option value="" disabled selected hidden>Seleccione Profesor a Cargo</option>
-                        <!-- <option value="profe01">profesor traido desde la BD</option> -->
-                        <!-- <option value="profe02">profesor traido desde la BD</option> -->
+                        <?php
+
+                                require "../Form/conexion.php";
+                                $sql = "SELECT * from usuario where TipoUsuario = 1";
+                                $result = $mysqli -> query($sql);
+                                while($row = mysqli_fetch_array($result))
+                                      {
+                                     $Nombre = $row['Nombre'];  
+                          ?>
+                                      <option value="<?php echo $Nombre;?>"><?php echo $Nombre;?></option>
+                          <?php
+                                      }
+                               
+                          ?>
                       </select>
                     </div>
                   </div>
@@ -141,9 +163,9 @@
                   <input
                     type="text"
                     class="form-control"
-                    id="nombre"
+                    id="usuario"
                     placeholder="Ingrese Usuario"
-                    name="nombre"
+                    name="usuario"
                     required
                   />
                 </div>
@@ -152,9 +174,9 @@
                   <input
                     type="password"
                     class="form-control"
-                    id="nombre"
+                    id="password"
                     placeholder="Ingrese Contraseña"
-                    name="nombre"
+                    name="password"
                     required
                   />
                 </div>
@@ -170,6 +192,15 @@
                 <a class="buttonEnviar" type="submit"
                   ><button>Enviar</button></a
                 >
+                <div class="form-group">
+                  <p style="color: red; display: none;" id="errorPwd">*El usuario ya exsiste*</p>
+                </div>
+                <?php
+                  if(isset($_GET['eP'])){
+                      echo "<script>
+                      document.getElementById('errorPwd').style.display = 'block'; </script>";
+                  }
+                ?>
               </form>
             </div>
           </div>

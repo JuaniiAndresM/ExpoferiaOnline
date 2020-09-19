@@ -1,7 +1,7 @@
 <script src="/ExpoferiaOnline/js/menu.js"></script>
 <header>
   <a href="/ExpoferiaOnline/index.html"
-    ><img class="logo" src="/ExpoferiaOnline/img/Logo.png" alt="Logo"
+    ><img class="logo" src="/ExpoferiaOnline/img/logo-iep.png" alt="Logo"
   /></a>
   <nav>
     <ul class="nav-links">
