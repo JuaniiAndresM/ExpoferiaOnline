@@ -14,6 +14,7 @@ if($resutl= $mysqli -> query($sql)){
     //esto todavia no funciona (solo muestra)
   $content.=" 
 
+          <form method='post' action='prueba.php'>
                   <div class='listAdmin' id='Solicitud".$cont."' >
                   <div>
                       <img class='AdminIMG' src='/ExpoferiaOnline/img/AdminIMG.png'></img>
@@ -32,9 +33,7 @@ if($resutl= $mysqli -> query($sql)){
                   </div>
                 </div>
                 <div class='BotonesAdmin'>
-                <form method='post' action=''>
-                  <button input type='submit' name='aprobar' value ='".$sqlsolicitudes['Usuario']."' ><i class='fa'>&#xf14a;</i>  Aprobar</button>
-                  </form> 
+                  <button input type='submit' name='aprobar' value ='".$sqlsolicitudes['idSoli_Usuario']."' ><i class='fa'>&#xf14a;</i>  Aprobar</button>
                   <button data-toggle='collapse' data-target='#rechazar'><i class='fa'>&#xf00d;</i>  Rechazar</button>
                   <div id='rechazar' class='collapse form-group'>
                     <label for='comment'><i class='fa'>&#xf27a;</i> Comentario:</label>
@@ -44,11 +43,12 @@ if($resutl= $mysqli -> query($sql)){
                       placeholder='Ingrese Comentario'
                       id='comment'
                     ></textarea>
-                    <button class='Enviar'><i class='fa'>&#xf1d8;</i> Enviar</button>
+                    <button input type='submit' name='rechazado' class='Enviar'  ><i class='fa'>&#xf1d8;</i> Enviar</button>
                   </div>
                 </div> 
               </div>
-              <hr>";
+              <hr>
+              </form> ";
       $cont ++;
   }
 }else{
