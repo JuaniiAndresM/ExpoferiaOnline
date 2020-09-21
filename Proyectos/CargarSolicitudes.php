@@ -30,14 +30,14 @@ if($result){
                   </div>
                 </div>
                 <div class='BotonesAdmin'>
-                    <form method='post' action='prueba.php'>
+                    <form method='post' action='Solicitud.php'>
                       <button input type='submit' name='aprobar' value ='".$sqlsolicitudes['idSoli_Usuario']."'><i class='fa'>&#xf14a;</i>  Aprobar</button>
                     </form> 
                     <div>
                       <button data-toggle='collapse' data-target='#rechazar'><i class='fa'>&#xf00d;</i>  Rechazar</button>
                     </div> 
                   </div>
-                  <form method='post' action='prueba.php'>
+                  <form method='post' action='Solicitud.php'>
                     <div id='rechazar' class='collapse form-group'>
                       <label for='comment'><i class='fa'>&#xf27a;</i> Comentario:</label>
                       <textarea
