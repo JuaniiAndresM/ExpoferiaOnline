@@ -30,10 +30,13 @@ if($result){
                   </div>
                 </div>
                 <div class='BotonesAdmin'>
-                  <form method='post' action='prueba.php'>
-                    <button input type='submit' name='aprobar' value ='".$sqlsolicitudes['idSoli_Usuario']."'><i class='fa'>&#xf14a;</i>  Aprobar</button>
-                  </form> 
-                  <button data-toggle='collapse' data-target='#rechazar'><i class='fa'>&#xf00d;</i>  Rechazar</button>
+                    <form method='post' action='prueba.php'>
+                      <button input type='submit' name='aprobar' value ='".$sqlsolicitudes['idSoli_Usuario']."'><i class='fa'>&#xf14a;</i>  Aprobar</button>
+                    </form> 
+                    <div>
+                      <button data-toggle='collapse' data-target='#rechazar'><i class='fa'>&#xf00d;</i>  Rechazar</button>
+                    </div> 
+                  </div>
                   <form method='post' action='prueba.php'>
                     <div id='rechazar' class='collapse form-group'>
                       <label for='comment'><i class='fa'>&#xf27a;</i> Comentario:</label>
@@ -44,10 +47,9 @@ if($result){
                         placeholder='Ingrese Comentario'
                         id='comment'
                       ></textarea>
-                      <button input type='submit' name='rechazado' value ='".$sqlsolicitudes['idSoli_Usuario']."' class='Enviar'  ><i class='fa'>&#xf1d8;</i> Enviar</button>
+                      <button class='Enviar' input type='submit' name='rechazado' value ='".$sqlsolicitudes['idSoli_Usuario']."' class='Enviar'  ><i class='fa'>&#xf1d8;</i> Enviar</button>
                     </div>
-                  </form> 
-                </div> 
+                  </form>  
               </div>
               <hr>
               ";

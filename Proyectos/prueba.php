@@ -1,8 +1,9 @@
 
 <?php
-if(isset($_POST['aprobar'])){
-    include '..\Form\conexion.php';
+include '..\Form\conexion.php';
 
+if(isset($_POST['aprobar'])){
+    
     //esto todavia no funciona 
     $sql = "SELECT * FROM solicitud_usuario WHERE idSoli_Usuario = '".$_POST['aprobar']."'";
     $result = $mysqli -> query($sql);
