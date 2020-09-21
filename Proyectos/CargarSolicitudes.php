@@ -6,15 +6,12 @@ $content="";
 $cont = 1;
 $sql = "SELECT * FROM solicitud_usuario";
 $result = $mysqli -> query($sql);
-
-
-if($resutl= $mysqli -> query($sql)){
+if($result){
 
   while($sqlsolicitudes = mysqli_fetch_array($result, MYSQLI_ASSOC)){
     //esto todavia no funciona (solo muestra)
   $content.=" 
-
-          <form method='post' action='prueba.php'>
+                
                   <div class='listAdmin' id='Solicitud".$cont."' >
                   <div>
                       <img class='AdminIMG' src='/ExpoferiaOnline/img/AdminIMG.png'></img>
@@ -33,26 +30,32 @@ if($resutl= $mysqli -> query($sql)){
                   </div>
                 </div>
                 <div class='BotonesAdmin'>
-                  <button input type='submit' name='aprobar' value ='".$sqlsolicitudes['idSoli_Usuario']."' ><i class='fa'>&#xf14a;</i>  Aprobar</button>
+                  <form method='post' action='prueba.php'>
+                    <button input type='submit' name='aprobar' value ='".$sqlsolicitudes['idSoli_Usuario']."'><i class='fa'>&#xf14a;</i>  Aprobar</button>
+                  </form> 
                   <button data-toggle='collapse' data-target='#rechazar'><i class='fa'>&#xf00d;</i>  Rechazar</button>
-                  <div id='rechazar' class='collapse form-group'>
-                    <label for='comment'><i class='fa'>&#xf27a;</i> Comentario:</label>
-                    <textarea
-                      class='form-control'
-                      rows='5'
-                      placeholder='Ingrese Comentario'
-                      id='comment'
-                    ></textarea>
-                    <button input type='submit' name='rechazado' class='Enviar'  ><i class='fa'>&#xf1d8;</i> Enviar</button>
-                  </div>
+                  <form method='post' action='prueba.php'>
+                    <div id='rechazar' class='collapse form-group'>
+                      <label for='comment'><i class='fa'>&#xf27a;</i> Comentario:</label>
+                      <textarea
+                        input type='text' name='comentario'
+                        class='form-control'
+                        rows='5'
+                        placeholder='Ingrese Comentario'
+                        id='comment'
+                      ></textarea>
+                      <button input type='submit' name='rechazado' value ='".$sqlsolicitudes['idSoli_Usuario']."' class='Enviar'  ><i class='fa'>&#xf1d8;</i> Enviar</button>
+                    </div>
+                  </form> 
                 </div> 
               </div>
               <hr>
-              </form> ";
+              ";
       $cont ++;
   }
+
 }else{
-  $content.=" <a id='TituloTablaProyectos'><b>NO HAY NUEVAS SOLICITUDES</b></a> ";
+  $content.="<a><b>NO HAY NUEVAS SOLICITUDES</b></a>";
 }
 
 echo $content;

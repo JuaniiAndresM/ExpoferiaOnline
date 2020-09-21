@@ -25,6 +25,7 @@ if(isset($_POST['aprobar'])){
             $path = "..\img\PROYECT".$sqlID['idProyecto']."";
             if (!file_exists($path)) {
                 mkdir($path, 0777, true);
+                //aca se mandaria el mail defaul de cuando se aprueba un proyecto
                 $sql = "DELETE FROM solicitud_usuario WHERE idSoli_Usuario ='".$_POST['aprobar']."'";
                 $mysqli -> query($sql);
                 header("Location: Admin.html ");
@@ -38,7 +39,10 @@ if(isset($_POST['aprobar'])){
      echo "'Error : ('. $mysqli->errno .') '. $mysqli->error'";
     }
 }else{
-    echo 'YES';
+     //aca se mandaria el mail con el comentario que se manda por post de porque no se aprobo el proyecto
+    $sql = "DELETE FROM solicitud_usuario WHERE idSoli_Usuario ='".$_POST['rechazado']."'";
+    $mysqli -> query($sql);
+    header("Location: Admin.html ");
 }
 
 
