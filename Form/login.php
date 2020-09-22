@@ -40,7 +40,7 @@
               <hr />
               <p>
                 Si aún no tienes una cuenta, pidela<a
-                  href="/ExpoferiaOnline/Info/contacto.html"
+                  href="/ExpoferiaOnline/Info/contacto.php"
                 >
                   aquí.</a
                 >
