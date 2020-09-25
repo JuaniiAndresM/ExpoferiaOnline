@@ -47,11 +47,11 @@
     $idp = mysqli_fetch_array($resultid, MYSQLI_ASSOC);
     $idproyecto = $idp['idUsuario'];
 
-    $sql = "SELECT * FROM datosProyecto WHERE idProyecto ='1'";
+    $sql = "SELECT * FROM datosProyecto WHERE idProyecto ='".$idproyecto."'";
     $resultaa = $mysqli->query($sql);
     $aa =mysqli_fetch_array($resultaa, MYSQLI_ASSOC);
 
-    $sql = "SELECT * FROM videos WHERE idProyecto ='1'";
+    $sql = "SELECT * FROM videos WHERE idProyecto ='".$idproyecto."'";
     $result = $mysqli->query($sql);
     $vv = mysqli_fetch_array($result, MYSQLI_ASSOC);
 

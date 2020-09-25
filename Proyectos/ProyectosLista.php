@@ -32,8 +32,6 @@
   <?php
   include '..\Form\conexion.php';
   $sql = "SELECT * FROM datosproyectos";
-  $locales = $mysqli->query($sql);
-  $grado = $mysqli->query($sql);
   $orientacion = $mysqli->query($sql);
 
   ?>
@@ -51,34 +49,30 @@
                   <div class="SelectoresGrid">
                   
                   <form method ="post">
+                  
                   <div class="Selectores">
-
+<!-- crear tablas de orientacion -->
                       <select name="BachilleratoSelect" class="custom-select">
                         <option value="">Local</option>
-                        <?
-                          while($numlocal =  $locales->fetch_array(MYSQLI_ASSOC)){
-                            echo '<option value="'.$numlocal['ndolocal'].'">'.$numlocal['ndolocal'].'</option>';
-                          }
-                          
-                        ?>
+                        <option value="">Bachillerato Diversificado</option>
+                        <option value="">Bachillerato Tecnologico</option>
+                        <option value="">Ciclo Basico</option>
                       </select>
 
                       <select name="GradoSelect" class="custom-select">
-                        <option value="">Grado</option>
-                        <?
-                          while($gradof = $grado->fetch_array(MYSQLI_ BOTH)){
-                            echo '<option value="'.$gradof['Year'].'">'.$gradof['Year'].'</option>';
-                          }
-                     
-                        ?>
+                      <option value="">Grado</option>
+                        <option value="">1º</option>
+                        <option value="">2º</option>
+                        <option value="">3º</option>
                       </select>
 
                       <select name="OrientacionSelect" class="custom-select">
                         <option value="">Orientacion</option>
                         <?
-                          while($orientacionf = mysqli_fetch_array($orientacion, MYSQLI_ASSOC)){
-                            echo "<option value='".$orientacionf['Orientacion']."'>".$orientacionf['Orientacion']."</option>";
+                          while($row = $orientacion->fetch_assoc()) {
+                            echo "<option>".$row["Orientacion"]."</option>"
                           }
+                          
                         ?>
                       </select>
                       
