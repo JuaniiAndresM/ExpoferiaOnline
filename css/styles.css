@@ -1533,3 +1533,11 @@ footer .Facebook {
 .rad-opt-child input:checked ~ .radicon:after {
   display: block;
 }
+.sel-unirProy{
+  padding-bottom: 5%;
+}
+.guide{
+  text-align: left;
+  color: grey;
+  font-size: 80%;
+}
