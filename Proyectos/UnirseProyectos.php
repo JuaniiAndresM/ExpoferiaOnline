@@ -39,16 +39,52 @@
             <div class="Linea3">
               <div class="Proyecto">
                 <div class="Tabla">
-                  <form action="/ExpoferiaOnline/index.html">
+                  <form action="UnirseProyecto.php" method="POST">
                     <div class="sel-unirProy">
-                      <select name="proyectos" id="proyectos" class="form-control" multiple required>
-                        <option>hola1</option>
+                      <select name="proyectos[]" id="proyectos" class="form-control" multiple required>
+                      <?php
+
+                        require "../Form/conexion.php ";
+                        session_start();
+
+                        $sql = "SELECT * from usuario where Usuario = '".$_SESSION['Usuario']."'";
+                        $result = $mysqli -> query($sql);
+                        $row = mysqli_fetch_array($result);
+                        $idUsuario = $row['idUsuario'];  
+
+                        $sql2 = "SELECT * from datosProyecto";
+                        $result2 = $mysqli -> query($sql2);
+                        while($row2 = mysqli_fetch_array($result2))
+                       {
+                        $id = $row2['idProyecto']; 
+                        $Nombre = $row2['Titulo']; 
+                        $sql3 = "SELECT * from proyectoProfesor where idProyecto = 'id' AND idProfesor = 'idUsuario'";
+                        $result3 = $mysqli -> query($sql3);
+                        $row3 = mysqli_fetch_array($result3);
+                        if (row3==true){
+                          ?>
+                          <option value="<?php echo $Nombre;?>"><?php echo $Nombre;?></option>       
+                  <?php
+                        }
+        
+                    }
+                  
+                    ?>
                       </select>
                       <p class="guide">Ctrl + click para seleccionar más de una opción</p>
                     </div>
                     <button type="submit">
                       <i class="fa">&#xf055;</i> Unirse
                     </button>
+                    <div class="form-group">
+                  <p style="color: red; display: none;" id="errorPwd">*Intentaste unirte a un proyecto al cual ya estas agregado*</p>
+                </div>
+                    <?php
+                  if(isset($_GET['eP'])){
+                      echo "<script>
+                      document.getElementById('errorPwd').style.display = 'block'; </script>";
+                  }
+                ?>
                   </form>
                 </div>
               </div>
