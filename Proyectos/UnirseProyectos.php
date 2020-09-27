@@ -46,8 +46,9 @@
 
                         require "../Form/conexion.php ";
                         session_start();
+                        $usuario=$_SESSION['Usuario'];
 
-                        $sql = "SELECT * from usuario where Usuario = '".$_SESSION['Usuario']."'";
+                        $sql = "SELECT * from usuario where Usuario = '$usuario'";
                         $result = $mysqli -> query($sql);
                         $row = mysqli_fetch_array($result);
                         $idUsuario = $row['idUsuario'];  
@@ -58,12 +59,12 @@
                        {
                         $id = $row2['idProyecto']; 
                         $Nombre = $row2['Titulo']; 
-                        $sql3 = "SELECT * from proyectoProfesor where idProyecto = 'id' AND idProfesor = 'idUsuario'";
+                        $sql3 = "SELECT * from proyectoProfesor where idProyecto = '$id' AND idProfesor = '$idUsuario'";
                         $result3 = $mysqli -> query($sql3);
-                        $row3 = mysqli_fetch_array($result3);
-                        if (row3==true){
+                        $ss = mysqli_fetch_array($result3, MYSQLI_ASSOC);
+                        if (!isset($ss['idProfesor'])){
                           ?>
-                          <option value="<?php echo $Nombre;?>"><?php echo $Nombre;?></option>       
+                          <option value="<?php echo $id;?>"><?php echo $Nombre;?></option>       
                   <?php
                         }
         
