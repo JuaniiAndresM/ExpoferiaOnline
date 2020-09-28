@@ -103,16 +103,21 @@
                     <div style="margin: 0 auto">
                       <select name="orient" id="orient" class="form-control" required>
                         <option value="" disabled selected hidden>Seleccione Orientación</option>
-                        <option value="1">Administrativo</option>
-                        <option value="2">Artístico</option>
-                        <option value="3">Biológico</option>
-                        <option value="4">Científico</option>
-                        <option value="5">Ciclo Básico</option>
-                        <option value="6">Deportivo</option>
-                        <option value="7">Expresión</option>
-                        <option value="8">Humanístico</option>
-                        <option value="9">Informático</option>
-                        <option value="10">Inglés</option>
+                        <option value="0">Informático</option>
+                        <option value="1">Administración</option>
+                        <option value="2">Deporte</option>
+                        <option value="3">Científico</option>
+                        <option value="4">Biológico</option>
+                        <option value="5">Humanístico</option>
+                        <option value="6">Artistico</option>
+                        <option value="7">Ingeniera</option>
+                        <option value="8">Arquitectura</option>
+                        <option value="9">Medicina</option>
+                        <option value="10">Agronomía</option>
+                        <option value="11">Economía</option>
+                        <option value="12">Derecho</option>
+                        <option value="13">Ciclo Basico</option>
+                        <option value="14">Cuarto Año</option>
                       </select>
                     </div>
                   </div>
@@ -194,12 +199,17 @@
                 >
                 <div class="form-group">
                   <p style="color: red; display: none;" id="errorPwd">*El usuario ya exsiste*</p>
+                  <p style="color: red; display: none;" id="errorPwd2">*El titulo ya exsiste*</p>
                 </div>
                 <?php
                   if(isset($_GET['eP'])){
                       echo "<script>
-                      document.getElementById('errorPwd').style.display = 'block'; </script>";
+                      document.getElementById('errorPwd').style.display = 'block'; </script>";  
                   }
+                  if(isset($_GET['ePe'])){
+                    echo "<script>
+                    document.getElementById('errorPwd2').style.display = 'block'; </script>";  
+                }
                 ?>
               </form>
             </div>
