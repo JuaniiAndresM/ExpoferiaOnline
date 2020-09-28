@@ -24,22 +24,27 @@
                                                                     $sql = "SELECT * FROM datosProyecto WHERE Titulo = '".$_POST['nomproy']."'";
                                                                     $result = $mysqli -> query($sql);
                                                                     $ss = mysqli_fetch_array($result, MYSQLI_ASSOC); 
-
                                                                         if (isset($ss['Titulo'])){
                                                                             header('Location: ../Info/contacto.php?ePe');       
                                                               
                                                                         }else{
-                                                                            $usuario = '"'.$mysqli->real_escape_string($_POST['usuario']).'"';
-                                                                            $contra = '"'.$mysqli->real_escape_string($_POST['password']).'"';
-                                                                            $email = '"'.$mysqli->real_escape_string($_POST['email']).'"';
-                                                                            $nombre = '"'.$mysqli->real_escape_string($_POST['nombre']).'"';
-                                                                            $apellido = '"'.$mysqli->real_escape_string($_POST['apellido']).'"';
-                                                                            $titu = '"'.$mysqli->real_escape_string($_POST['nomproy']).'"';
-                                                                            $prof = '"'.$mysqli->real_escape_string($_POST['profacargo']).'"';
-                                                                            $year = '"'.$mysqli->real_escape_string($_POST['year']).'"';
-                                                                            $orientacion = '"'.$mysqli->real_escape_string($_POST['orient']).'"';
-                                                                            $insert_row = $mysqli->query("INSERT INTO solicitud_usuario  (Usuario, Password, Email, Nombre, Apellido, Titulo_Proyecto, Profesor, Year, Orientacion) VALUES($usuario, $contra, $email, $nombre, $apellido, $titu, $prof, $year, $orientacion)");
-        
+                                                                            $sql = "SELECT * FROM solicitud_usuario WHERE Titulo_Proyecto = '".$_POST['nomproy']."'";
+                                                                            $result = $mysqli -> query($sql);
+                                                                            $ss = mysqli_fetch_array($result, MYSQLI_ASSOC); 
+                                                                                if (isset($ss['Titulo_Proyecto'])){
+                                                                                    header('Location: ../Info/contacto.php?ePe');   
+                                                                                }else{
+                                                                                        $usuario = '"'.$mysqli->real_escape_string($_POST['usuario']).'"';
+                                                                                        $contra = '"'.$mysqli->real_escape_string($_POST['password']).'"';
+                                                                                        $email = '"'.$mysqli->real_escape_string($_POST['email']).'"';
+                                                                                        $nombre = '"'.$mysqli->real_escape_string($_POST['nombre']).'"';
+                                                                                        $apellido = '"'.$mysqli->real_escape_string($_POST['apellido']).'"';
+                                                                                        $titu = '"'.$mysqli->real_escape_string($_POST['nomproy']).'"';
+                                                                                        $prof = '"'.$mysqli->real_escape_string($_POST['profacargo']).'"';
+                                                                                        $year = '"'.$mysqli->real_escape_string($_POST['year']).'"';
+                                                                                        $orientacion = '"'.$mysqli->real_escape_string($_POST['orient']).'"';
+                                                                                        $insert_row = $mysqli->query("INSERT INTO solicitud_usuario  (Usuario, Password, Email, Nombre, Apellido, Titulo_Proyecto, Profesor, Year, Orientacion) VALUES($usuario, $contra, $email, $nombre, $apellido, $titu, $prof, $year, $orientacion)");
+                    
                                                                          }
                                                                             if($insert_row==true){
                                                                                     echo'<script type="text/javascript">
@@ -51,10 +56,11 @@
                                                                                                     alert("Hubo un error, intente nuevamente");
                                                                                                     window.location.href="../Info/Contacto.php";
                                                                                                     </script>';
-                                                                                                    }
-             }
-        }
+                                                                                                }
+                 }
+            }
+        } 
     } 
-}      
+}    
     $mysqli -> close();
 ?>
