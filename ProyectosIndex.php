@@ -39,9 +39,9 @@ if($sql = mysqli_fetch_array($result, MYSQLI_ASSOC)){
                       >
                         
                         <div class='SeccionTexto'>
-                          <h2  id ='titulo2'>".$ss['Titulo']."</h2>
+                          <h2  id ='titulo2'>".utf8_encode($ss['Titulo'])."</h2>
                           <hr />
-                          <p id ='intro2' style='word-wrap: break-word;'>".$ss['Introduccion']."
+                          <p id ='intro2' style='word-wrap: break-word;'>".utf8_encode($ss['Introduccion'])."
                           </p>
                         </div>
                         <div class='Seccion2IMG'>
