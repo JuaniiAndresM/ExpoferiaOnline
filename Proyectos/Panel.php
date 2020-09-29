@@ -12,7 +12,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="/ExpoferiaOnline/js/function.js"></script>
+    <script src="../js/function.js"></script>
 
     <link
       rel="stylesheet"
@@ -22,7 +22,7 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" href="/ExpoferiaOnline/css/styles.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
       rel="stylesheet"
@@ -76,28 +76,28 @@
               <hr style="margin: 10px 0px" />
               <ul class="panelList">
                 <li>
-                  <a href="/ExpoferiaOnline/Proyectos/EditarProyectos.php" 
+                  <a href="EditarProyectos.php" 
                     ><button class="botonPanel">
                       <i class="fa">&#xf044;</i> Editar Proyectos
                     </button></a
                   >
                 </li>
                 <li>
-                  <a href="/ExpoferiaOnline/Proyectos/EditarProyectos.php" style="<?php echo $prof ?>"
+                  <a href="EditarProyectos.php" style="<?php echo $prof ?>"
                     ><button class="botonPanel">
                       <i class="fa">&#xf013;</i> Gestionar Proyectos
                     </button></a
                   >
                 </li>
                 <li>
-                  <a href="/ExpoferiaOnline/Proyectos/UnirseProyectos.php" style="<?php echo $prof ?>"
+                  <a href="UnirseProyectos.php" style="<?php echo $prof ?>"
                     ><button class="botonPanel">
                       <i class="fa">&#xf055;</i> Unirse a Proyectos
                     </button></a
                   >
                 </li>
                 <li>
-                  <a href="/ExpoferiaOnline/Proyectos/Admin.html" style="<?php echo $admin ?>"
+                  <a href="Admin.html" style="<?php echo $admin ?>"
                     ><button class="botonPanel">
                       <i class="fa">&#xf0c0;</i> Administrar Usuarios
                     </button></a

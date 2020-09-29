@@ -24,7 +24,7 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" href="/ExpoferiaOnline/css/styles.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
       rel="stylesheet"

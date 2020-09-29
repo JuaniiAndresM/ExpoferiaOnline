@@ -22,7 +22,7 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" href="/ExpoferiaOnline/css/styles.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
       rel="stylesheet"
@@ -126,12 +126,12 @@
                   </textarea>
                 </div>
                 
-                <a class="BotonLogin2" href="/ExpoferiaOnline/index.html" style="<?php echo $aprobar ?>"
+                <a class="BotonLogin2" href="../index.php" style="<?php echo $aprobar ?>"
                   ><button style="margin-top: 5%;">
                     <i class="fa">&#xf14a;</i> Aprobar Proyecto
                   </button></a
                 >
-                <a class="BotonLogin2" href="/ExpoferiaOnline/index.html"
+                <a class="BotonLogin2" href="../index.php"
                   ><button onclick="myFunction()" style="margin-top: 5%;">
                     <i class="fa">&#xf0c7;</i> Guardar Cambios
                   </button></a

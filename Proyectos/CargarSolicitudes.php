@@ -6,10 +6,23 @@ $content="";
 $cont = 1;
 $sql = "SELECT * FROM solicitud_usuario";
 $result = $mysqli -> query($sql);
+
+
 if($result){
 
   while($sqlsolicitudes = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-    //esto todavia no funciona (solo muestra)
+
+    $sql = "SELECT * FROM orientaciones where idOrientacion = ".$sqlsolicitudes['Orientacion']."";
+    $result1 = $mysqli -> query($sql);
+    $sqlorientacion = mysqli_fetch_array($result1, MYSQLI_ASSOC);
+
+    if($sqlsolicitudes['Year'] == 1){
+      $Year = "Primero";
+    }elseif($sqlsolicitudes['Year'] == 2){
+      $Year = "Segundo";
+    }else{
+      $Year = "Tercero";
+    }
   $content.=" 
                 
                   <div class='listAdmin' id='Solicitud".$cont."' >
@@ -18,15 +31,15 @@ if($result){
                   </div>
                   <div>
                     <hr id='LineaMobileProyecto' />
-                    <a ><b><i class='fa'>&#xf007;</i> Nombre:</b> ".$sqlsolicitudes['Nombre']." </a><br>
-                    <a><b><i class='fa'>&#xf007;</i> Apellido:</b> ".$sqlsolicitudes['Apellido']." </a><br>
-                    <a><b><i class='fa'>&#xf0e0;</i> Email:</b> ".$sqlsolicitudes['Email']." </a><br>
-                    <a><b><i class='fa'>&#xf19d;</i> Año:</b> ".$sqlsolicitudes['Year']." </a><br>
-                    <a><b><i class='fa'>&#xf02d;</i> Orientacion:</b> ".$sqlsolicitudes['Orientacion']." </a><br>
+                    <a style='word-wrap: break-word;'><b><i class='fa'>&#xf007;</i> Nombre:</b> ".$sqlsolicitudes['Nombre']." </a><br>
+                    <a style='word-wrap: break-word;'><b><i class='fa'>&#xf007;</i> Apellido:</b> ".$sqlsolicitudes['Apellido']." </a><br>
+                    <a style='word-wrap: break-word;'><b><i class='fa'>&#xf0e0;</i> Email:</b> ".$sqlsolicitudes['Email']." </a><br>
+                    <a style='word-wrap: break-word;'><b><i class='fa'>&#xf19d;</i> Año:</b> ".$Year." </a><br>
+                    <a style='word-wrap: break-word;'><b><i class='fa'>&#xf02d;</i> Orientacion:</b> ".$sqlorientacion['Nombre']." </a><br>
                     <hr>
-                    <a><b><i class='fa'>&#xf007;</i>  Usuario:</b>  ".$sqlsolicitudes['Usuario']." </a><br>
-                    <a><b><i class='fa'>&#xf023;</i> Contraseña:</b> ".$sqlsolicitudes['Password']." </a><br>
-                    <a><b><i class='fa'>&#xf14b;</i> Titulo de Poryecto :</b> ".$sqlsolicitudes['Titulo_Proyecto']." </a>
+                    <a style='word-wrap: break-word;'><b><i class='fa'>&#xf007;</i>  Usuario:</b>  ".$sqlsolicitudes['Usuario']." </a><br>
+                    <a style='word-wrap: break-word;'><b><i class='fa'>&#xf023;</i> Contraseña:</b> ".$sqlsolicitudes['Password']." </a><br>
+                    <a style='word-wrap: break-word;'><b><i class='fa'>&#xf14b;</i> Titulo de Poryecto :</b> ".$sqlsolicitudes['Titulo_Proyecto']." </a>
                   </div>
                 </div>
                 <div class='BotonesAdmin'>
