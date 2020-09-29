@@ -1,7 +1,7 @@
 <?php 
 include 'Form\conexion.php';
 $content="";
-$sql = "SELECT *FROM datosProyecto";
+$sql = "SELECT *FROM datosProyecto where Estado = '1'";
 $result = $mysqli -> query($sql);
 $row_cnt = $result->num_rows;
 if($sql = mysqli_fetch_array($result, MYSQLI_ASSOC)){
@@ -27,7 +27,7 @@ if($sql = mysqli_fetch_array($result, MYSQLI_ASSOC)){
             $sI = mysqli_fetch_array($resultI, MYSQLI_ASSOC);
 
             //va creandpo los proyectos
-            if(isset($ss['Titulo'],$ss['Introduccion'],$sI['url'])){
+            if(isset($ss['Titulo'],$ss['Introduccion'],$sI['url']) && $ss['Estado'] == '1'){
                 if($y == 2){
                     $y ++;
                     $content.="
