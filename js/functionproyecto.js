@@ -4,9 +4,11 @@ $( document ).ready(function() {
           type: "post", 
           success:function(content){
             $('.gridProyectos').html(content);
+
+            $(".BotonProyecto").click(function(){
+              $.redirect("../Planilla.php", {idpproyecto: }, "POST"); 
+             });
         }
            });
-         $(".BotonProyecto").click(function(){
-          $.redirect("../Planilla.php", {idpproyecto: $idp}, "POST"); 
-         });
+         
 });

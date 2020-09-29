@@ -42,7 +42,7 @@ include '..\Form\conexion.php';
                            <b>Descripción:</b> ".utf8_encode($row['Introduccion'])."</p>
                             </div>
                             </div>
-                            <a><button class='BotonProyecto' data-idp='".utf8_encode($row['idProyecto'])."'>Ver más</button></a
+                            <a><button class='BotonProyecto' data-idp='".$row['idProyecto']."'>Ver más</button></a
                             >
                         </div>";
 
