@@ -1,12 +1,12 @@
 <script src="/iep/js/menu.js"></script>
 <header>
-  <a href="/iep/index.html"
+  <a href="/iep/index.php"
     ><img class="logo" src="/iep/img/logo-iep.png" alt="Logo"
   /></a>
   <nav>
     <ul class="nav-links">
       <li>
-        <a href="/iep/index.html"
+        <a href="/iep/index.php"
           ><i class="fa">&#xf015;</i> Inicio</a
         >
       </li>
@@ -58,7 +58,7 @@
     <h2>Menu:</h2>
     <ul class="nav-links2">
       <li>
-        <a href="/iep/index.html"
+        <a href="/iep/index.php"
           ><i class="fa">&#xf015;</i> Inicio</a
         >
         <hr>
