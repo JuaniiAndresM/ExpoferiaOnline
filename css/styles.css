@@ -79,7 +79,7 @@ header .nav-links li a:hover {
 
 #nav-mobile {
   justify-content: center;
-  display: block;
+  display: none;
 }
 #nav-mobile .nav-links2 {
   list-style: none;
