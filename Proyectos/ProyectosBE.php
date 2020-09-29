@@ -15,11 +15,11 @@ include '..\Form\conexion.php';
                             </div>
                             </div>
                             </div>
-                            </div>
                             </div> ";
                         }
 
-            $content.="<div class='Linea1Proyecto'>
+            $content.=" <div>
+                        <div class='Linea1Proyecto'>
                         <div class='Linea2'>
                         <div class='Linea3'>
                         <div class='Proyecto'>
@@ -29,22 +29,23 @@ include '..\Form\conexion.php';
             }
 
         $content.= "<div class='listProyectoLista'>
-                    <div class='listGrid'>
-                        <div class='listFoto'>
-                        <img class='FotoLista' src='hola'/>
-                    </div>
+                        <div class='listGrid'>
+                            <div class='listFoto'>
+                                <img class='FotoLista' src='hola'/>
+                            </div>
 
-                    <div class='textoLista'>
-                         <hr id='LineaMobileProyecto' />
-                         <h2>".utf8_encode($row['Titulo'])."</h2>
-                         <p><b>Grupo:</b> ".utf8_encode($row['Orientacion'])." </p>
-                         <p>
-                           <b>Descripción:</b> ".utf8_encode($row['Introduccion'])."</p>
+                            <div class='textoLista'>
+                                <hr id='LineaMobileProyecto' />
+                                <h2>".utf8_encode($row['Titulo'])."</h2>
+                                <p><b>Grupo:</b> ".utf8_encode($row['Orientacion'])." </p>
+                                <p>
+                                <b>Descripción:</b> ".utf8_encode($row['Introduccion'])."</p>
                             </div>
-                            </div>
-                            <a><button class='BotonProyecto' data-idp='".utf8_encode($row['idProyecto'])."'>Ver más</button></a
-                            >
-                        </div>";
+                        </div>
+
+                        <a><button class='BotonProyecto' data-idp='".utf8_encode($row['idProyecto'])."'>Ver más</button></a
+                        >
+                    </div>";
 
                         
      }

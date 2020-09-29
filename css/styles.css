@@ -656,14 +656,6 @@ BotonProyecto :hover {
   padding-bottom: 3%;
 }
 
-.Linea1Proyecto {
-  margin-left: 5%;
-  margin-right: 5%;
-  background-color: #ffcb00;
-  border-radius: 30px;
-  height: 100%;
-}
-
 .Linea1ProyectosLista {
   margin-top: 3%;
   margin-bottom: 6%;
