@@ -14,6 +14,7 @@
     <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
     <script src="js/Texto.js"></script>
     <script src="js/function.js"></script>
+    <script src="js/contador.js"></script>
     <script src="js/funcionindex.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
@@ -53,36 +54,6 @@
           del Liceo IEP.
         </p>
         <p id="Regresiva"></p>
-
-            <script>
-
-            var countDownDate = new Date("Nov 20, 2020 18:00").getTime();
-
-
-            var x = setInterval(function() {
-
-              
-              var now = new Date().getTime();
-            
-              var distancia = countDownDate - now;
-                
-            
-              var dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
-              var horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-              var minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
-
-                
-            
-              document.getElementById("Regresiva").innerHTML = dias + "d " + horas + "h "
-              + minutos + "m ";
-                
-            
-              if (distancia < 0) {
-                clearInterval(x);
-                document.getElementById("Regresiva").innerHTML = "TERMINO!";
-              }
-            }, 1000);
-            </script>
         <br /><br />
         <a class="ContinuarIndex" href="#Inicio">Comenzar</a><br />
         <i id="Flecha" style="font-size: 50px" class="fa">&#xf103;</i>
