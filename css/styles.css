@@ -101,6 +101,49 @@ header .nav-links li a:hover {
   font-size: 25px;
 }
 
+
+/*
+!Disponible CSS
+*/
+#disponible-body{
+  background-color: white;
+  background-image: none;
+  overflow-y: hidden;
+}
+
+#Regresiva{
+  font-size: 40px;
+}
+.Disponible{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Disponible .logo{
+  margin: 2% 10%;
+}
+.Disponible img{
+  width: 100%;
+}
+.disponible-wrapper{
+  width: 800px;
+  text-align: center;
+  color: #4d4d4d;
+}
+.disponible-wrapper .info{
+  margin: 2% 20%;
+}
+.disponible-wrapper .texto{
+  margin: 10% 0;
+}
+
+/*
+!Index
+*/
+
+
 .Index-Page {
   width: 100%;
   padding-top: 100px;
