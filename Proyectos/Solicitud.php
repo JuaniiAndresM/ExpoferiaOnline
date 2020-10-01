@@ -11,7 +11,6 @@ require 'PHPMailer/SMTP.php';
 
 if(isset($_POST['aprobar'])){
     
-    //esto todavia no funciona 
     $sql = "SELECT * FROM solicitud_usuario WHERE idSoli_Usuario = '".$_POST['aprobar']."'";
     $result = $mysqli -> query($sql);
     $sqlsolicitudes = mysqli_fetch_array($result, MYSQLI_ASSOC);
@@ -81,7 +80,7 @@ if(isset($_POST['aprobar'])){
      echo "'Error : ('. $mysqli->errno .') '. $mysqli->error'";
     }
 }else{
-     //aca se mandaria el mail con el comentario que se manda por post de porque no se aprobo el proyecto
+  
 
      $sql = "SELECT * FROM solicitud_usuario WHERE idSoli_Usuario = '".$_POST['rechazado']."'";
      $result = $mysqli -> query($sql);
