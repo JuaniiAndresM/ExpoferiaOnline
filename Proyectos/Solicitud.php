@@ -32,7 +32,6 @@ if(isset($_POST['aprobar'])){
             $path = "..\img\PROYECT".$sqlID['idProyecto']."";
             if (!file_exists($path)) {
                 mkdir($path, 0777, true);
-                //aca se mandaria el mail defaul de cuando se aprueba un proyecto
 
                 $sql = "SELECT * FROM solicitud_usuario WHERE idSoli_Usuario = '".$_POST['aprobar']."'";
                 $result = $mysqli -> query($sql);
