@@ -13,6 +13,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="../js/function.js"></script>
+    <script src="../js/jqredirect.js"></script>
+    <script src="../js/functioneditarproyecto.js"></script>
 
     <link
       rel="stylesheet"
@@ -35,64 +37,8 @@
         <div class="Linea3">
           <div class="EditarProyecto">
             <div class="EditarProyectoFrame">
-              <div class="ProyectoLista">
-                <div class="PanelProyecto"></div>
-                <br />
-                <p>Nombre de Proyecto</p>
-                <hr />
-                <ul class="panelList">
-                  <li>
-                  <?php
-            include '..\Form\conexion.php';
-            session_start();
-            $sql = "SELECT TipoUsuario FROM usuario where usuario='". $_SESSION['Usuario']."'";
-            $result = $mysqli -> query($sql);
-            $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
-            if(isset($ss['TipoUsuario'])){ 
-              if($ss['TipoUsuario']==2){
-                $gest1 = "display: none;";
-                $gest2 = "display: none;";
-              }
-              }
-              //cuando es alumno no muestra el boton de aprobar proyecto
-            ?>
-                    <a href="PlanillaEditable.php" 
-                      ><button class="botonPanel">
-                        <i class="fa">&#xf044;</i> Editar Proyecto
-                      </button></a
-                    >
-                  </li>
-                  <li>
-                    <a href="PlanillaEditable.php" style="<?php echo $gest1 ?>"
-                      ><button class="botonPanel">
-                        <i class="fa">&#xf013;</i> Gestionar Proyecto
-                      </button></a
-                    >
-                  </li>
-                </ul>
-              </div>
-              <div class="ProyectoLista">
-                <div class="PanelProyecto"></div>
-                <br />
-                <p>Nombre de Proyecto</p>
-                <hr />
-                <ul class="panelList">
-                  <li>
-                    <a href="PlanillaEditable.php"
-                      ><button class="botonPanel">
-                        <i class="fa">&#xf044;</i> Editar Proyecto
-                      </button></a
-                    >
-                  </li>
-                  <li>
-                    <a href="PlanillaEditable.php" style="<?php echo $gest2 ?>"
-                      ><button class="botonPanel">
-                        <i class="fa">&#xf013;</i> Gestionar Proyecto
-                      </button></a
-                    >
-                  </li>
-                </ul>
-              </div>
+             
+            
             </div>
           </div>
         </div>

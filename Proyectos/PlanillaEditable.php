@@ -42,10 +42,7 @@
     }
     //cuando es alumno no muestra el boton de aprobar proyecto
 
-    $sqlid = "SELECT idUsuario FROM usuario where usuario='". $_SESSION['Usuario']."'";
-    $resultid = $mysqli -> query  ($sqlid);
-    $idp = mysqli_fetch_array($resultid, MYSQLI_ASSOC);
-    $idproyecto = $idp['idUsuario'];
+   $idproyecto = $_POST['proyectoid']; 
 
     $sql = "SELECT * FROM datosProyecto WHERE idProyecto ='".$idproyecto."'";
     $resultaa = $mysqli->query($sql);

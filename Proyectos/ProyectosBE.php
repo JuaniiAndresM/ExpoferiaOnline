@@ -14,12 +14,12 @@ include '..\Form\conexion.php';
                 $content.=" </div>
                             </div>
                             </div>
-                            </div>
-                            </div>
-                            </div> ";
+                            </div> 
+                            </div>";
                         }
 
-            $content.="<div class='Linea1Proyecto'>
+            $content.=" <div>
+                        <div class='Linea1Proyecto'>
                         <div class='Linea2'>
                         <div class='Linea3'>
                         <div class='Proyecto'>
@@ -42,8 +42,7 @@ include '..\Form\conexion.php';
                            <b>Descripción:</b> ".utf8_encode($row['Introduccion'])."</p>
                             </div>
                             </div>
-                            <a><button class='BotonProyecto' data-idp='".$row['idProyecto']."'>Ver más</button></a
-                            >
+                            <a><button class='BotonProyecto' id='1' data-idp='".$row['idProyecto']."'>Ver más</button></a>
                         </div>";
 
                         

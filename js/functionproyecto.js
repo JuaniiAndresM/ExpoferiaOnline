@@ -6,7 +6,8 @@ $( document ).ready(function() {
             $('.gridProyectos').html(content);
 
             $(".BotonProyecto").click(function(){
-              $.redirect("../Planilla.php", {idpproyecto: }, "POST"); 
+              var proyectoid =document.getElementById("1").dataset.idp
+              $.redirect("../Proyectos/Planilla.html", {proyectoid}, "POST"); 
              });
         }
            });
