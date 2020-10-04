@@ -48,21 +48,40 @@ header .nav-links li a:hover {
   text-decoration: none;
   color: #a3a3a3;
 }
-header .MobileBars {
+
+.burger{
+  position: absolute;
+  z-index: 5;
+  top: 40px;
+  right: 30px;
   display: none;
-  background-color: #283c5c;
-  padding: 20px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.burger i{
+  font-size: 30px;
+}
+
+#open{
+  display: none;
+}
+#close{
+  display: none;
+}
+#open i{
   color: white;
 }
-header .MobileBars a:hover {
+#close i{
   color: white;
 }
 
-.nav-mobile {
+#nav-mobile {
   justify-content: center;
   display: none;
 }
-.nav-mobile .nav-links2 {
+#nav-mobile .nav-links2 {
   list-style: none;
 }
 
@@ -81,6 +100,49 @@ header .MobileBars a:hover {
   text-align: center;
   font-size: 25px;
 }
+
+
+/*
+!Disponible CSS
+*/
+#disponible-body{
+  background-color: white;
+  background-image: none;
+  overflow-y: hidden;
+}
+
+#Regresiva{
+  font-size: 40px;
+}
+.Disponible{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Disponible .logo{
+  margin: 2% 10%;
+}
+.Disponible img{
+  width: 100%;
+}
+.disponible-wrapper{
+  width: 800px;
+  text-align: center;
+  color: #4d4d4d;
+}
+.disponible-wrapper .info{
+  margin: 2% 20%;
+}
+.disponible-wrapper .texto{
+  margin: 10% 0;
+}
+
+/*
+!Index
+*/
+
 
 .Index-Page {
   width: 100%;
@@ -654,14 +716,6 @@ BotonProyecto :hover {
   margin-left: 2%;
   margin-right: 2%;
   padding-bottom: 3%;
-}
-
-.Linea1Proyecto {
-  margin-left: 5%;
-  margin-right: 5%;
-  background-color: #ffcb00;
-  border-radius: 30px;
-  height: 100%;
 }
 
 .Linea1ProyectosLista {
@@ -1326,7 +1380,7 @@ footer .Facebook {
 
 @media screen and (max-width: 1100px) {
   header {
-    justify-content: center;
+    justify-content: space-between;
   }
   header .nav-links {
     display: none;
@@ -1334,50 +1388,48 @@ footer .Facebook {
   header .button button {
     display: none;
   }
-  header .MobileBars {
-    display: block;
-    background: transparent;
-  }
   header .logo {
     width: 250px;
     cursor: pointer;
   }
-
-  .nav-mobile {
+  #open{
+    display: block;
+  }
+  #nav-mobile {
     z-index: 2;
+    text-align: center;
     position: absolute;
     right: 0;
-    height: 80vh;
-    width: 50%;
-    top: 15vh;
-    background: url("/ExpoferiaOnline/img/Fondo.png") no-repeat center center fixed;
+    height: 100vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid white;
-    box-shadow: -7px 0px 16px 0px white;
-    transform: translateX(120%);
+    background-color: rgba(0, 0, 0, 0.85);
+    transform: translateY(-105%);
     transition: transform 0.5s ease-in;
   }
-  .nav-mobile h2 {
+  #nav-mobile .nav-logo{
+    width: 250px;
+  }
+  #nav-mobile h2 {
     color: white;
     margin-bottom: 50px;
   }
-  .nav-mobile li a {
+  #nav-mobile li{
+    margin: 20% 0;
+  }
+  #nav-mobile li a {
     color: white;
   }
-  .nav-mobile hr {
+  #nav-mobile hr {
     background-color: white;
   }
-  .nav-mobile .nav-links2 {
+  #nav-mobile .nav-links2 {
     list-style: none;
   }
-  .nav-mobile .BotonLogin2 {
+  #nav-mobile .BotonLogin2 {
     display: none;
-  }
-
-  .nav-active {
-    transform: translateX(0%);
   }
 
   .Linea1Login {

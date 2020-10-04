@@ -37,4 +37,5 @@ if ($uploadOk == 0) {
     echo "Sorry, there was an error uploading your file.";
   }
 }
+header("Location: PlanillaEditable.php ");
 ?>

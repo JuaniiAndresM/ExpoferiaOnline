@@ -14,8 +14,8 @@ include '..\Form\conexion.php';
                 $content.=" </div>
                             </div>
                             </div>
-                            </div> 
-                            </div>";
+                            </div>
+                            </div> ";
                         }
 
             $content.=" <div>
@@ -29,18 +29,17 @@ include '..\Form\conexion.php';
             }
 
         $content.= "<div class='listProyectoLista'>
-                    <div class='listGrid'>
-                        <div class='listFoto'>
-                        <img class='FotoLista' src='hola'/>
-                    </div>
-
-                    <div class='textoLista'>
-                         <hr id='LineaMobileProyecto' />
-                         <h2>".utf8_encode($row['Titulo'])."</h2>
-                         <p><b>Grupo:</b> ".utf8_encode($row['Orientacion'])." </p>
-                         <p>
-                           <b>Descripción:</b> ".utf8_encode($row['Introduccion'])."</p>
+                        <div class='listGrid'>
+                            <div class='listFoto'>
+                                <img class='FotoLista' src='hola'/>
                             </div>
+
+                            <div class='textoLista'>
+                                <hr id='LineaMobileProyecto' />
+                                <h2>".utf8_encode($row['Titulo'])."</h2>
+                                <p><b>Grupo:</b> ".utf8_encode($row['Orientacion'])." </p>
+                                <p>
+                                <b>Descripción:</b> ".utf8_encode($row['Introduccion'])."</p>
                             </div>
                             <a><button class='BotonProyecto' id='1' data-idp='".$row['idProyecto']."'>Ver más</button></a>
                         </div>";

@@ -2,9 +2,15 @@
 <?php
 include '..\Form\conexion.php';
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'PHPMailer/Exception.php';
+require 'PHPMailer/PHPMailer.php';
+require 'PHPMailer/SMTP.php';
+
 if(isset($_POST['aprobar'])){
     
-    //esto todavia no funciona 
     $sql = "SELECT * FROM solicitud_usuario WHERE idSoli_Usuario = '".$_POST['aprobar']."'";
     $result = $mysqli -> query($sql);
     $sqlsolicitudes = mysqli_fetch_array($result, MYSQLI_ASSOC);
@@ -26,7 +32,40 @@ if(isset($_POST['aprobar'])){
             $path = "..\img\PROYECT".$sqlID['idProyecto']."";
             if (!file_exists($path)) {
                 mkdir($path, 0777, true);
-                //aca se mandaria el mail defaul de cuando se aprueba un proyecto
+
+                $sql = "SELECT * FROM solicitud_usuario WHERE idSoli_Usuario = '".$_POST['aprobar']."'";
+                $result = $mysqli -> query($sql);
+                $sqlsolicitudes = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+                $mail = new PHPMailer(true);
+
+                try {
+                    //Server settings
+                    $mail->SMTPDebug = 0;                                       // Enable verbose debug output
+                    $mail->isSMTP();                                            // Send using SMTP
+                    $mail->Host       = 'smtp.gmail.com';                       // Set the SMTP server to send through
+                    $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+                    $mail->Username   = 'expoferiaiep@gmail.com';            // SMTP username
+                    $mail->Password   = 'expoferia';                          // SMTP password
+                    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+                    $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+
+                    //Recipients
+                    $mail->CharSet = 'UTF-8';
+                    $mail->setFrom("expoferiaiep@gmail.com");
+                    $mail->addAddress($sqlsolicitudes['Email']);             // Add a recipient
+
+                    // Content
+                    $mail->isHTML(true);                                        // Set email format to HTML
+                    $mail->Subject = 'Aprobado';
+                    $mail->Body    = 'buenos dias queremos informarle que se a aprobado su solicitud';
+
+                    $mail->send();
+
+                } catch (Exception $e) {
+                    echo "Error al enviar: {$mail->ErrorInfo}";
+                }
+
                 $sql = "DELETE FROM solicitud_usuario WHERE idSoli_Usuario ='".$_POST['aprobar']."'";
                 $mysqli -> query($sql);
                 header("Location: Admin.html ");
@@ -40,11 +79,43 @@ if(isset($_POST['aprobar'])){
      echo "'Error : ('. $mysqli->errno .') '. $mysqli->error'";
     }
 }else{
-     //aca se mandaria el mail con el comentario que se manda por post de porque no se aprobo el proyecto
+  
+
+     $sql = "SELECT * FROM solicitud_usuario WHERE idSoli_Usuario = '".$_POST['rechazado']."'";
+     $result = $mysqli -> query($sql);
+     $sqlsolicitudes = mysqli_fetch_array($result, MYSQLI_ASSOC);   
+
+    $mail = new PHPMailer(true);
+
+    try {
+        //Server settings
+        $mail->SMTPDebug = 0;                                       // Enable verbose debug output
+        $mail->isSMTP();                                            // Send using SMTP
+        $mail->Host       = 'smtp.gmail.com';                       // Set the SMTP server to send through
+        $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+        $mail->Username   = 'expoferiaiep@gmail.com';            // SMTP username
+        $mail->Password   = 'expoferia';                          // SMTP password
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+        $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+
+        //Recipients
+        $mail->CharSet = 'UTF-8';
+        $mail->setFrom("expoferiaiep@gmail.com");
+        $mail->addAddress($sqlsolicitudes['Email']);             // Add a recipient
+
+        // Content
+        $mail->isHTML(true);                                        // Set email format to HTML
+        $mail->Subject = 'Rechazado';
+        $mail->Body    = $_POST['Comentario'];
+
+        $mail->send();
+    } catch (Exception $e) {
+        echo "Error al enviar: {$mail->ErrorInfo}";
+    }
+    
     $sql = "DELETE FROM solicitud_usuario WHERE idSoli_Usuario ='".$_POST['rechazado']."'";
     $mysqli -> query($sql);
     header("Location: Admin.html ");
 }
-
 
 ?>
