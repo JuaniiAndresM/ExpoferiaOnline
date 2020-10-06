@@ -5,10 +5,9 @@ $( document ).ready(function() {
       success:function(content){
         $('.EditarProyectoFrame').html(content);
 
-       
         $(".botonPanel").click(function(){
           var proyectoid =document.getElementById("1").dataset.idp;
-          $.redirect("../Proyectos/PlanillaEditable.php",{id : proyectoid}, "POST"); 
+          $.redirect("../Proyectos/PlanillaEditable.php",{proyectoid}, "POST"); 
          });
     }
        });
