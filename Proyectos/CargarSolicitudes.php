@@ -1,4 +1,5 @@
 <?php
+include 'verificosesion.php';
 
 include '..\Form\conexion.php';
 
@@ -27,7 +28,7 @@ if($result){
                 
                   <div class='listAdmin' id='Solicitud".$cont."' >
                   <div>
-                      <img class='AdminIMG' src='/ExpoferiaOnline/img/AdminIMG.png'></img>
+                      <img class='AdminIMG' src='../img/AdminIMG.png'></img>
                   </div>
                   <div>
                     <hr id='LineaMobileProyecto' />

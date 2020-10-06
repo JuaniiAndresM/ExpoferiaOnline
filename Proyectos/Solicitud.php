@@ -1,5 +1,6 @@
 
 <?php
+include 'verificosesion.php';
 include '..\Form\conexion.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -68,7 +69,7 @@ if(isset($_POST['aprobar'])){
 
                 $sql = "DELETE FROM solicitud_usuario WHERE idSoli_Usuario ='".$_POST['aprobar']."'";
                 $mysqli -> query($sql);
-                header("Location: Admin.html ");
+                header("Location: Admin.php ");
             }else{
                 echo 'Error al crear proyecto';
             }
@@ -106,7 +107,7 @@ if(isset($_POST['aprobar'])){
         // Content
         $mail->isHTML(true);                                        // Set email format to HTML
         $mail->Subject = 'Rechazado';
-        $mail->Body    = $_POST['Comentario'];
+        $mail->Body    = $_POST['comentario'];
 
         $mail->send();
     } catch (Exception $e) {
@@ -115,7 +116,7 @@ if(isset($_POST['aprobar'])){
     
     $sql = "DELETE FROM solicitud_usuario WHERE idSoli_Usuario ='".$_POST['rechazado']."'";
     $mysqli -> query($sql);
-    header("Location: Admin.html ");
+    header("Location: Admin.php ");
 }
 
 ?>

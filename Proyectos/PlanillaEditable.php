@@ -2,10 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Editar Proyecto | Expoeduca</title>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -14,18 +12,45 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="tinymce/tinymce.min.js"></script>
     <script>
       tinymce.init({
-        selector: 'textarea#editor',
-        skin: 'bootstrap',
-        plugins: 'lists, link, image, media',
-        toolbar: 'h1 h2 bold italic strikethrough blockquote bullist numlist backcolor | link image media | removeformat help',
-        menubar: false
+        selector: '#descripcionLarga_Proyecto',
+        plugins: 'lists, link, image, media, code',
+  toolbar: 'h1 h2 bold italic strikethrough blockquote bullist numlist backcolor undo redo | link image media | code removeformat help',
+  // enable title field in the Image dialog
+  image_title: true, 
+  // enable automatic uploads of images represented by blob or data URIs
+  automatic_uploads: true,
+  // add custom filepicker only to Image dialog
+  file_picker_types: 'image',
+  file_picker_callback: function(cb, value, meta) {
+    var input = document.createElement('input');
+    input.setAttribute('type', 'file');
+    input.setAttribute('accept', 'image/*');
+
+    input.onchange = function() {
+      var file = this.files[0];
+      var reader = new FileReader();
+      
+      reader.onload = function () {
+        var id = 'blobid' + (new Date()).getTime();
+        var blobCache =  tinymce.activeEditor.editorUpload.blobCache;
+        var base64 = reader.result.split(',')[1];
+        var blobInfo = blobCache.create(id, file, base64);
+        blobCache.add(blobInfo);
+
+        // call the callback and populate the Title field with the file name
+        cb(blobInfo.blobUri(), { title: file.name });
+      };
+      reader.readAsDataURL(file);
+    };
+    
+    input.click();
+  }
+        
         });
     </script>
-
-
 
     <script src="../js/function.js"></script>
 
@@ -45,7 +70,7 @@
   </head>
 
   <?php
-   session_start(); 
+  include 'verificosesion.php';
   include '..\Form\conexion.php';  
    $sql = "SELECT TipoUsuario FROM usuario where usuario='". $_SESSION['Usuario']."'";   
    $result = $mysqli -> query($sql);   
@@ -57,7 +82,7 @@
     }
     //cuando es alumno no muestra el boton de aprobar proyecto
 
-   $idproyecto = $_POST['proyectoid']; 
+   $idproyecto = $_POST['id'];
 
     $sql = "SELECT * FROM datosProyecto WHERE idProyecto ='".$idproyecto."'";
     $resultaa = $mysqli->query($sql);
@@ -72,14 +97,18 @@
     $introduccion = $aa['Introduccion'];
     $descripcion = $aa['Descripcion'];
     $video = $vv['url'];
-
-
   ?>
 
   
   <body onload="hfindex()">
-    <div id="header"></div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" 
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
+  <div id="header"></div>
     <div class="Linea1Planilla">
       <div class="Linea2">
         <div class="Linea3">
@@ -134,10 +163,11 @@
                     class="form-control"
                     rows="5"
                     placeholder="Descripcion"
-                    id="descripcionLarga_Proyecto"><?php echo utf8_encode($descripcion); ?>
+                    id="editor"><?php echo utf8_encode($descripcion); ?>
                   </textarea>
                 </div>
                 
+
                 <a class="BotonLogin2" href="../index.php" style="<?php echo $aprobar ?>"
                   ><button style="margin-top: 5%;">
                     <i class="fa">&#xf14a;</i> Aprobar Proyecto
