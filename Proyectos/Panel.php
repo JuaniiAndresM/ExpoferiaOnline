@@ -29,6 +29,9 @@
     />
   </head>
   <body onload="hfindex()">
+  <?php
+  include 'verificosesion.php';
+  ?>
     <div id="header"></div>
 
     <div class="Linea1Panel">
@@ -97,7 +100,7 @@
                   >
                 </li>
                 <li>
-                  <a href="Admin.html" style="<?php echo $admin ?>"
+                  <a href="Admin.php" style="<?php echo $admin ?>"
                     ><button class="botonPanel">
                       <i class="fa">&#xf0c0;</i> Administrar Usuarios
                     </button></a

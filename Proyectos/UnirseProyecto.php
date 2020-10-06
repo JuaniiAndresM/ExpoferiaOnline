@@ -1,5 +1,6 @@
 <?php
     session_start();
+  include 'verificosesion.php';
     include "../Form/conexion.php";
     $proyectos=$_POST["proyectos"]; 
     $usuario=$_SESSION['Usuario'];
