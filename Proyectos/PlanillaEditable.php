@@ -2,10 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Editar Proyecto | Expoeduca</title>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -13,19 +11,33 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://cdn.tiny.cloud/1/bauex5a7tu385ytyjdg6wmerico7us9d0xxhp1j6dpi311xt/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script>
-      tinymce.init({
-        selector: 'textarea#editor',
-        skin: 'bootstrap',
-        plugins: 'lists, link, image, media',
-        toolbar: 'h1 h2 bold italic strikethrough blockquote bullist numlist backcolor | link image media | removeformat help',
-        menubar: false
-        });
+        tinymce.init({
+        selector: "textarea#editor",
+        skin: "bootstrap",
+        plugins: "lists, link, image, media",
+        toolbar: "h1 h2 bold italic strikethrough blockquote bullist numlist backcolor | link image media | removeformat help",
+        menubar: false,
+
+        setup: editor => {
+            editor.on("init", () => {
+            editor.getContainer().style.transition =
+            "border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out";
+          });
+            editor.on("focus", () => {
+            (editor.getContainer().style.boxShadow = "0 0 0 .2rem rgba(0, 123, 255, .25)"),
+            (editor.getContainer().style.borderColor = "#80bdff");
+          });
+            editor.on("blur", () => {
+            (editor.getContainer().style.boxShadow = ""),
+            (editor.getContainer().style.borderColor = "");
+          });
+        }
+      });
     </script>
-
-
 
     <script src="../js/function.js"></script>
 
@@ -57,7 +69,7 @@
     }
     //cuando es alumno no muestra el boton de aprobar proyecto
 
-   $idproyecto = $_POST['id']; 
+   $idproyecto = $_POST['id'];
 
     $sql = "SELECT * FROM datosProyecto WHERE idProyecto ='".$idproyecto."'";
     $resultaa = $mysqli->query($sql);
@@ -72,14 +84,18 @@
     $introduccion = $aa['Introduccion'];
     $descripcion = $aa['Descripcion'];
     $video = $vv['url'];
-
-
   ?>
 
   
   <body onload="hfindex()">
-    <div id="header"></div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" 
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
+  <div id="header"></div>
     <div class="Linea1Planilla">
       <div class="Linea2">
         <div class="Linea3">
@@ -134,10 +150,11 @@
                     class="form-control"
                     rows="5"
                     placeholder="Descripcion"
-                    id="descripcionLarga_Proyecto"><?php echo utf8_encode($descripcion); ?>
+                    id="editor"><?php echo utf8_encode($descripcion); ?>
                   </textarea>
                 </div>
                 
+
                 <a class="BotonLogin2" href="../index.php" style="<?php echo $aprobar ?>"
                   ><button style="margin-top: 5%;">
                     <i class="fa">&#xf14a;</i> Aprobar Proyecto
