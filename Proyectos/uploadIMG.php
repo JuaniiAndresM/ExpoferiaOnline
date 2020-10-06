@@ -9,12 +9,15 @@ $cont = 1;
 
 $ruta = '../img/PROYECT' .$idproyecto; 
 
+if(!is_dir($ruta)){ 
+  @mkdir($ruta, 0700); 
+}
+
 $target_dir = $ruta;
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
-if($ruta)
 
 // Check if file already exists
 if (file_exists($target_file)) {

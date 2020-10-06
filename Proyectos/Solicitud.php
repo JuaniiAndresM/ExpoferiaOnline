@@ -107,7 +107,7 @@ if(isset($_POST['aprobar'])){
         // Content
         $mail->isHTML(true);                                        // Set email format to HTML
         $mail->Subject = 'Rechazado';
-        $mail->Body    = $_POST['Comentario'];
+        $mail->Body    = $_POST['comentario'];
 
         $mail->send();
     } catch (Exception $e) {
