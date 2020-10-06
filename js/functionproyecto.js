@@ -7,7 +7,7 @@ $( document ).ready(function() {
 
             $(".BotonProyecto").click(function(){
               var proyectoid =document.getElementById("1").dataset.idp
-              $.redirect("../Proyectos/Planilla.html", {proyectoid}, "POST"); 
+              $.redirect("../Proyectos/Planilla.html", {id : proyectoid}, "POST"); 
              });
         }
            });
