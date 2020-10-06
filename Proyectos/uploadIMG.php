@@ -7,7 +7,7 @@ $idproyecto = $mysqli->query($sql);
 
 $cont = 1;
 
-$ruta = 'PROYECT' .$idproyecto; 
+$ruta = '../img/PROYECT' .$idproyecto; 
 
 $target_dir = $ruta;
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
@@ -28,13 +28,15 @@ if ($_FILES["fileToUpload"]["size"] > 3000000) {
   $uploadOk = 0;
 }
 $name = "foto".$cont;
-// Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
   echo '<script language="javascript"> alert("La imagen no se pudo guardar". )</script>';
-// if everything is ok, try to upload file
 } else {
   if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
     echo "The file ". basename( $_FILES["fileToUpload"][$name]). " has been uploaded.";
+
+    $sql = "INSERT INTO imagenes (url, idProyecto) VALUES ('".$target_dir."','".$idproyecto."')";
+    $resultaa = $mysqli->query($sql);
+
     $cont = $cont + 1;
   } else {
     echo "Sorry, there was an error uploading your file.";

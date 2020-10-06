@@ -2,10 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Editar Proyecto | Expoeduca</title>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -54,8 +52,6 @@
         });
     </script>
 
-
-
     <script src="../js/function.js"></script>
 
     <link
@@ -86,7 +82,7 @@
     }
     //cuando es alumno no muestra el boton de aprobar proyecto
 
-   $idproyecto = $_POST['id']; 
+   $idproyecto = $_POST['id'];
 
     $sql = "SELECT * FROM datosProyecto WHERE idProyecto ='".$idproyecto."'";
     $resultaa = $mysqli->query($sql);
@@ -101,14 +97,18 @@
     $introduccion = $aa['Introduccion'];
     $descripcion = $aa['Descripcion'];
     $video = $vv['url'];
-
-
   ?>
 
   
   <body onload="hfindex()">
-    <div id="header"></div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" 
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
+  <div id="header"></div>
     <div class="Linea1Planilla">
       <div class="Linea2">
         <div class="Linea3">
@@ -163,10 +163,11 @@
                     class="form-control"
                     rows="5"
                     placeholder="Descripcion"
-                    id="descripcionLarga_Proyecto"><?php echo utf8_encode($descripcion); ?>
+                    id="editor"><?php echo utf8_encode($descripcion); ?>
                   </textarea>
                 </div>
                 
+
                 <a class="BotonLogin2" href="../index.php" style="<?php echo $aprobar ?>"
                   ><button style="margin-top: 5%;">
                     <i class="fa">&#xf14a;</i> Aprobar Proyecto
