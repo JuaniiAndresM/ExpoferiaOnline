@@ -1,7 +1,6 @@
 <?php
 include 'verificosesion.php';
 include '..\Form\conexion.php';
-session_start();
 
 $sql = "SELECT idProyecto FROM datosproyecto where Alumno= (SELECT idUsuario FROM usuario where usuario='". $_SESSION['Usuario']."')";
 $idproyecto = $mysqli->query($sql);

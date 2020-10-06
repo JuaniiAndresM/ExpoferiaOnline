@@ -45,7 +45,6 @@
   </head>
 
   <?php
-   session_start(); 
   include 'verificosesion.php';
   include '..\Form\conexion.php';  
    $sql = "SELECT TipoUsuario FROM usuario where usuario='". $_SESSION['Usuario']."'";   

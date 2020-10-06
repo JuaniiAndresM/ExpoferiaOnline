@@ -48,7 +48,6 @@
                       <?php
 
                         require "../Form/conexion.php ";
-                        session_start();
                         $usuario=$_SESSION['Usuario'];
 
                         $sql = "SELECT * from usuario where Usuario = '$usuario'";
