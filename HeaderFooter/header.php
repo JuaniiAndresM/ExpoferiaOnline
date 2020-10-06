@@ -1,21 +1,21 @@
 <header>
-  <a href="/ExpoferiaOnline/index.html"
-    ><img class="logo" src="/ExpoferiaOnline/img/logo-iep.png" alt="Logo"
+  <a href="../index.html"
+    ><img class="logo" src="../img/logo-iep.png" alt="Logo"
   /></a>
   <nav>
     <ul class="nav-links">
       <li>
-        <a href="/ExpoferiaOnline/index.html"
+        <a href="../index.html"
           ><i class="fa">&#xf015;</i> Inicio</a
         >
       </li>
       <li>
-        <a href="/ExpoferiaOnline/Proyectos/BuscarProyectos.html"
+        <a href="../Proyectos/BuscarProyectos.html"
           ><i class="fa">&#xf002;</i> Proyectos</a
         >
       </li>
       <li>
-        <a href="/ExpoferiaOnline/Info/informacion.html"
+        <a href="../Info/informacion.html"
           ><i class="fa">&#xf05a;</i> Información</a
         >
       </li>
@@ -35,17 +35,17 @@
             }
             ?>  
 
-<a href="/ExpoferiaOnline/Proyectos/Panel.php" style="<?php echo $buttonvisible2 ?>"
+<a href="../Proyectos/Panel.php" style="<?php echo $buttonvisible2 ?>"
           ><i class="fa">&#xf2bb;</i> Panel</a
         >
       </li>
     </ul>
   </nav>
   
-  <a class="button" href="/ExpoferiaOnline/Form/login.php" style="<?php echo $buttonvisible ?>"
+  <a class="button" href="../Form/login.php" style="<?php echo $buttonvisible ?>"
     ><button>Login</button></a
   >
-  <a class="button" href="/ExpoferiaOnline/Form/CerrarSesion.php" style="<?php echo $buttonvisible1 ?>"
+  <a class="button" href="../Form/CerrarSesion.php" style="<?php echo $buttonvisible1 ?>"
     ><button>Cerrar sesión</button></a
   >
 </header>
@@ -58,26 +58,26 @@
 
 <div id="nav-mobile">
   <nav>
-    <img class="nav-logo" src="/ExpoferiaOnline/img/Logo.png">
+    <img class="nav-logo" src="../img/Logo.png">
     <ul class="nav-links2">
       <li>
-        <a href="/ExpoferiaOnline/index.html"
+        <a href="../index.html"
           ><i class="fa">&#xf015;</i> Inicio</a
         >
       </li>
       <li>
-        <a href="/ExpoferiaOnline/Proyectos/BuscarProyectos.html"
+        <a href="../Proyectos/BuscarProyectos.html"
           ><i class="fa">&#xf002;</i> Proyectos</a
         >
       </li>
       <li>
-        <a href="/ExpoferiaOnline/Info/informacion.html"
+        <a href="../Info/informacion.html"
           ><i class="fa">&#xf05a;</i> Información</a
         >
       </li>
       <li>
         <div style="<?php echo $buttonvisible2 ?>">
-      <a href="/ExpoferiaOnline/Proyectos/Panel.php"
+      <a href="../Proyectos/Panel.php"
           ><i class="fa">&#xf2bb;</i> Panel</a
         >
       </div>
@@ -85,7 +85,7 @@
       <li>
         <div style="<?php echo $buttonvisible ?>">
           <hr>
-          <a href="/ExpoferiaOnline/Form/login.php"
+          <a href="../Form/login.php"
             ><i class="fa">&#xf138;</i> Login</a   
           >
         </div>
@@ -93,7 +93,7 @@
       <li>
         <div style="<?php echo $buttonvisible1 ?>">
         <hr>
-          <a href="/ExpoferiaOnline/Form/login.php"
+          <a href="../Form/login.php"
             ><i class="fa">&#xf137;</i> Cerrar Sesión</a
           >
         </div>
@@ -102,10 +102,10 @@
     <br />
   </nav>
   <br />
-  <a class="BotonLogin2" href="/ExpoferiaOnline/Form/login.php"
+  <a class="BotonLogin2" href="../Form/login.php"
     ><button>Login</button></a
   >
 </div>
 <br />
 
-<script src="/ExpoferiaOnline/js/menu.js"></script>
+<script src="../js/menu.js"></script>

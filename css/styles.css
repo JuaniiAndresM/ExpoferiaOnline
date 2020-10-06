@@ -6,7 +6,7 @@
 
 body {
   overflow-x: hidden;
-  background: url("/ExpoferiaOnline/img/Fondo.png") no-repeat center center fixed;
+  background: url("../img/Fondo.png") no-repeat center center fixed;
   font-family: "Montserrat", sans-serif;
 }
 
