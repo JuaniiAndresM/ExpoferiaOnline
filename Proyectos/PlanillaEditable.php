@@ -24,10 +24,9 @@
         menubar: false
         });
     </script>
-
-
-
     <script src="../js/function.js"></script>
+    <script src="../js/functionPlanillaEditable.js"></script>
+    
 
     <link
       rel="stylesheet"
@@ -138,8 +137,8 @@
                   </textarea>
                 </div>
                 
-                <a class="BotonLogin2" href="../index.php" style="<?php echo $aprobar ?>"
-                  ><button style="margin-top: 5%;">
+                <a class="BotonLogin2"  style="<?php echo $aprobar ?>"
+                  ><button style="margin-top: 5%;" onclick="aprobar(4)">
                     <i class="fa">&#xf14a;</i> Aprobar Proyecto
                   </button></a
                 >
@@ -193,6 +192,7 @@
                 $sql = " UPDATE datosproyectos SET Descripcion = '$descripcion' WHERE idproyecto = '$idp' ";
                 }
 
+                
                 ?>
 
               </div>
