@@ -100,7 +100,7 @@
   ?>
 
   
-  <body onload="hfindex()">
+<body onload="hfindex()">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" 
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
@@ -163,7 +163,7 @@
                     class="form-control"
                     rows="5"
                     placeholder="Descripcion"
-                    id="editor"><?php echo utf8_encode($descripcion); ?>
+                    id="descripcionLarga_Proyecto"><?php echo utf8_encode($descripcion); ?>
                   </textarea>
                 </div>
                 
@@ -206,7 +206,7 @@
                   <label for="fileToUpload"><i class="fa">&#xf03e;</i> Seleccionar Banner</label><br>
                     <label>
                       <input type="submit" class="button" hidden="hidden">Subir Imagen
-                    </label>
+                    </label>  
                   </form>
                 </div>
               </div>
