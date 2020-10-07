@@ -29,6 +29,9 @@
     />
   </head>
   <body onload="hfindex()">
+  <?php
+  include 'verificosesion.php';
+  ?>
     <div id="header"></div>
     <div class="ProyectoLista">
       <h2 id="TituloProyectos">Unirse a Proyectos:</h2>
@@ -45,7 +48,6 @@
                       <?php
 
                         require "../Form/conexion.php ";
-                        session_start();
                         $usuario=$_SESSION['Usuario'];
 
                         $sql = "SELECT * from usuario where Usuario = '$usuario'";

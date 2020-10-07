@@ -4,10 +4,10 @@ $( document ).ready(function() {
       type: "post",
       success:function(content){
         $('.EditarProyectoFrame').html(content);
-        var proyectoid =document.getElementById("1").dataset.idp;
+
         $(".botonPanel").click(function(){
-         //debug  
-          $.redirect("../Proyectos/PlanillaEditable.html",{proyectoid}, "POST"); 
+          var proyectoid =document.getElementById("1").dataset.idp;
+          $.redirect("../Proyectos/PlanillaEditable.php",{id: proyectoid}, "POST"); 
          });
     }
        });

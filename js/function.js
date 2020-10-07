@@ -1,4 +1,4 @@
 function hfindex() {
-  $("#header").load("/ExpoferiaOnline/HeaderFooter/header.php");
-  $("#footer").load("/ExpoferiaOnline/HeaderFooter/footer.html");
+  $("#header").load("../HeaderFooter/header.php");
+  $("#footer").load("../HeaderFooter/footer.html");
 }

@@ -1,5 +1,5 @@
 <?php
-    session_start();
+  include 'verificosesion.php';
     include "../Form/conexion.php";
     $proyectos=$_POST["proyectos"]; 
     $usuario=$_SESSION['Usuario'];
@@ -11,7 +11,7 @@
     for ($i=0;$i<count($proyectos);$i++) 
     { 
             $idProyecto = $proyectos[$i];
-            $insert_row = $mysqli->query("INSERT INTO proyectoProfesor (idProyecto, idProfesor,Responsable) VALUES($idProyecto, $idProfesor,false)");
+            $insert_row = $mysqli->query("INSERT INTO proyectoProfesor (idProyecto, idProfesor,Responsable) VALUES($idProyecto, $idProfesor,true)");
 
     } 
         echo'<script type="text/javascript">

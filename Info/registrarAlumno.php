@@ -1,4 +1,4 @@
-<?php
+<?php   
         include "../Form/conexion.php";
         if(isset($_POST['usuario']) && $_POST['password']){
         $sql = "SELECT * FROM solicitud_usuario WHERE Usuario = '".$_POST['usuario']."'";
@@ -40,13 +40,15 @@
                                                                                         $nombre = '"'.$mysqli->real_escape_string($_POST['nombre']).'"';
                                                                                         $apellido = '"'.$mysqli->real_escape_string($_POST['apellido']).'"';
                                                                                         $titu = '"'.$mysqli->real_escape_string($_POST['nomproy']).'"';
-                                                                                        $prof = '"'.$mysqli->real_escape_string($_POST['profacargo']).'"';
+                                                                                     
                                                                                         $year = '"'.$mysqli->real_escape_string($_POST['year']).'"';
                                                                                         $orientacion = '"'.$mysqli->real_escape_string($_POST['orient']).'"';
-                                                                                        $insert_row = $mysqli->query("INSERT INTO solicitud_usuario  (Usuario, Password, Email, Nombre, Apellido, Titulo_Proyecto, Profesor, Year, Orientacion) VALUES($usuario, $contra, $email, $nombre, $apellido, $titu, $prof, $year, $orientacion)");
-                    
+                                                                                        $insert_row = $mysqli->query("INSERT INTO solicitud_usuario  (Usuario, Password, Email, Nombre, Apellido, Titulo_Proyecto, Year, Orientacion) VALUES($usuario, $contra, $email, $nombre, $apellido, $titu, $year, $orientacion)");
+                                                                                   
+                                                                                        
                                                                          }
                                                                             if($insert_row==true){
+                                                                                include '..\Proyectos\EnviarEmail.php';
                                                                                     echo'<script type="text/javascript">
                                                                                     alert("Todo se grabo correctamente, presiona aceptar para poder volver a la pagina");
                                                                                     window.location.href="../Info/Contacto.php";

@@ -29,6 +29,9 @@
     />
   </head>
   <body onload="hfindex()">
+  <?php
+  include 'verificosesion.php';
+  ?>
     <div id="header"></div>
 
     <div class="Linea1Panel">
@@ -42,7 +45,6 @@
 
             <?php
             include '..\Form\conexion.php';
-            session_start();
             $sql = "SELECT TipoUsuario FROM usuario where usuario='". $_SESSION['Usuario']."'";
             $result = $mysqli -> query($sql);
             $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
@@ -97,7 +99,7 @@
                   >
                 </li>
                 <li>
-                  <a href="Admin.html" style="<?php echo $admin ?>"
+                  <a href="Admin.php" style="<?php echo $admin ?>"
                     ><button class="botonPanel">
                       <i class="fa">&#xf0c0;</i> Administrar Usuarios
                     </button></a

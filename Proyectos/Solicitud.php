@@ -58,7 +58,7 @@ if(isset($_POST['aprobar'])){
                     // Content
                     $mail->isHTML(true);                                        // Set email format to HTML
                     $mail->Subject = 'Aprobado';
-                    $mail->Body    = 'buenos dias queremos informarle que se a aprobado su solicitud';
+                    $mail->Body    = 'Buenos dias queremos informarle que se a aprobado su solicitud';
 
                     $mail->send();
 
@@ -68,7 +68,7 @@ if(isset($_POST['aprobar'])){
 
                 $sql = "DELETE FROM solicitud_usuario WHERE idSoli_Usuario ='".$_POST['aprobar']."'";
                 $mysqli -> query($sql);
-                header("Location: Admin.html ");
+                header("Location: Admin.php ");
             }else{
                 echo 'Error al crear proyecto';
             }
@@ -115,7 +115,7 @@ if(isset($_POST['aprobar'])){
     
     $sql = "DELETE FROM solicitud_usuario WHERE idSoli_Usuario ='".$_POST['rechazado']."'";
     $mysqli -> query($sql);
-    header("Location: Admin.html ");
+    header("Location: Admin.php ");
 }
 
 ?>
