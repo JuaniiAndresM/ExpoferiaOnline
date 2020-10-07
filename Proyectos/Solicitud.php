@@ -1,6 +1,5 @@
 
 <?php
-include 'verificosesion.php';
 include '..\Form\conexion.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -59,7 +58,7 @@ if(isset($_POST['aprobar'])){
                     // Content
                     $mail->isHTML(true);                                        // Set email format to HTML
                     $mail->Subject = 'Aprobado';
-                    $mail->Body    = 'buenos dias queremos informarle que se a aprobado su solicitud';
+                    $mail->Body    = 'Buenos dias queremos informarle que se a aprobado su solicitud';
 
                     $mail->send();
 
@@ -107,7 +106,7 @@ if(isset($_POST['aprobar'])){
         // Content
         $mail->isHTML(true);                                        // Set email format to HTML
         $mail->Subject = 'Rechazado';
-        $mail->Body    = $_POST['comentario'];
+        $mail->Body    = $_POST['Comentario'];
 
         $mail->send();
     } catch (Exception $e) {
