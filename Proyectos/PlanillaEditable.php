@@ -134,10 +134,11 @@
                 <hr />
               
                 <div class="form-group">
-                  <input
+                <input
                     type="text"
                     class="form-control"
                     id="user"
+                    data-idp="<?php echo $idproyecto ?>"
                     placeholder= "Nombre de Proyecto"
                     name="nombre_proyecto"
                     value="<?php echo utf8_encode($titulo) ?>">
@@ -177,11 +178,9 @@
                     <i class="fa">&#xf14a;</i> Aprobar Proyecto
                   </button></a
                 >
-                <a class="BotonLogin2" href="../index.php"
-                  ><button onclick="myFunction()" style="margin-top: 5%;">
+                <button onclick="ActualizoPlanilla()" style="margin-top: 5%;">
                     <i class="fa">&#xf0c7;</i> Guardar Cambios
-                  </button></a
-                >
+                  </button>
 
                 <div class="ImagenesPlanilla">
                 <h2>Fotos:</h2>
