@@ -39,6 +39,13 @@ include '..\Form\conexion.php';
             $oo =mysqli_fetch_array($resultI, MYSQLI_ASSOC);
             $imgprincipal = $oo['url'];
 
+            /*
+            $sql = "SELECT * FROM imagenes WHERE idProyecto ='".$row['idProyecto']."'";  
+            $resultI = $mysqli->query($sql);
+            $oo =mysqli_fetch_array($resultI, MYSQLI_ASSOC);
+            $imgprincipal = $oo['url'];
+            */
+
         $content.= "<div class='listProyectoLista'>
                     <div class='listGrid'>
                         <div class='listFoto'>
