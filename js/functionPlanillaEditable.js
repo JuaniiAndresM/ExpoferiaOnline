@@ -4,7 +4,7 @@ function aprobar(id){
       data: {idproyecto: id},
       type: "post", 
       success:function(content){
-        window.location.href="../index.html";
+        window.location.href="../HeaderFooter/index.html";
     }
        });
      
