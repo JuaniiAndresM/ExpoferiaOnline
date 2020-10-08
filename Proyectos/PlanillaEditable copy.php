@@ -20,7 +20,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script src="https://cdn.tiny.cloud/1/lnayizsauri3gzzl1bqg6knbre479369o4olx2xg5q683s6d/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="tinymce/tinymce.min.js"></script>
    
 
     <script src="../js/functionPlanillaEditable.js"></script>
@@ -102,7 +102,7 @@
                     data-idp="<?php echo $idproyecto ?>"
                     placeholder= "Nombre de Proyecto"
                     name="nombre_proyecto"
-                    value="<?php echo $titulo ?>">
+                    value="<?php echo utf8_encode($titulo) ?>">
                   </div>
                 
                 <hr />
@@ -114,7 +114,7 @@
                     rows="5"
                     placeholder="Introduccion"
                     
-                    id="descripcionCorta_Proyecto"><?php echo $introduccion; ?>
+                    id="descripcionCorta_Proyecto"><?php echo utf8_encode($introduccion); ?>
                   </textarea>
                 </div>
                   <?php
@@ -125,11 +125,12 @@
                   ?>
  
                 
-                <div>
+                <div class="form-group">
                   <textarea
                     class="form-control"
+                    rows="5"
                     placeholder="Descripcion"
-                    id="descripcionLarga_Proyecto"><?php echo $descripcion; ?>
+                    id="descripcionLarga_Proyecto"><?php echo utf8_encode($descripcion); ?>
                   </textarea>
                 </div>
                 

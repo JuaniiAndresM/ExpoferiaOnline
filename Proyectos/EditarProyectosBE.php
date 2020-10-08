@@ -47,7 +47,7 @@ include '..\Form\conexion.php';
                     <img class='PanelProyecto' src='".$imgprincipal."'>
                     <br/>
 
-                    <p>".utf8_encode($row['Titulo'])."</p>
+                    <p>".$row['Titulo']."</p>
                     <hr/>
                     <ul class='panelList'>
                     <li>
