@@ -55,7 +55,7 @@ include '..\Form\conexion.php';
                             </div>
                             <a><button class='BotonProyecto' id='1' data-idp='".$row['idProyecto']."'>Ver más</button></a>
                         </div>";
-
+            
                         
      }
      echo $content;

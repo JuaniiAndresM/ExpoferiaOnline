@@ -1,15 +1,16 @@
 <?php
+    if(isset($_POST['id'])){
     include '..\Form\conexion.php';
-    $sql = "SELECT * FROM datosProyecto WHERE idProyecto = '1'";
+    session_start();
+    $sql = "SELECT * FROM datosProyecto WHERE idProyecto = '".$_POST['id']."'";
     $result = $mysqli -> query($sql);
     $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
     $cont = 1;
     $content= "";
     // DEL PROFESOR. 
-    $sql = "SELECT * FROM datosProyecto WHERE idProyecto = '1'";
+    $sql = "SELECT * FROM datosProyecto WHERE idProyecto = '".$_POST['id']."'";
     $result = $mysqli -> query($sql);
     $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
-
 
     if(isset($ss['Titulo'],$ss['Introduccion'],$ss['Descripcion'])){
       $content.="
@@ -97,4 +98,5 @@
     <script>slidesVid()</script>
     </div>";
     echo $content;
+    }
   ?>
