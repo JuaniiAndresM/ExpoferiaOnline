@@ -2,26 +2,44 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, shrink-to-fit=no"/>
     <title>Editar Proyecto | Expoeduca</title>
+    
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" 
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
+    
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../js/function.js"></script>
+    <script src="../js/functionPlanillaEditable.js"></script>
+    
+<link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
+      rel="stylesheet"
+    />
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script src="tinymce/tinymce.min.js"></script>
     <script>
       tinymce.init({
-        selector: 'textarea#editor',
-        skin: 'bootstrap',
-        plugins: 'lists, link, image, media',
-        toolbar: 'h1 h2 bold italic strikethrough blockquote bullist numlist backcolor | link image media | removeformat help',
-        menubar: false
-        });
-    </script>
+     
+      
         selector: '#descripcionLarga_Proyecto',
         plugins: 'lists, link, image, media, code',
   toolbar: 'h1 h2 bold italic strikethrough blockquote bullist numlist backcolor undo redo | link image media | code removeformat help',
@@ -31,6 +49,7 @@
   automatic_uploads: true,
   // add custom filepicker only to Image dialog
   file_picker_types: 'image',
+  menubar: false,
   file_picker_callback: function(cb, value, meta) {
     var input = document.createElement('input');
     input.setAttribute('type', 'file');
@@ -55,32 +74,16 @@
     
     input.click();
   }
+  
         
         });
     </script>
 
-    <script src="../js/function.js"></script>
-    <script src="../js/functionPlanillaEditable.js"></script>
-    
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="../css/styles.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
-      rel="stylesheet"
-    />
   </head>
 
   <?php
   include 'verificosesion.php';
-  include '..\Form\conexion.php';  
+  include '../Form/conexion.php';  
    $sql = "SELECT TipoUsuario FROM usuario where usuario='". $_SESSION['Usuario']."'";   
    $result = $mysqli -> query($sql);   
    $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);   
@@ -110,13 +113,7 @@
 
   
 <body onload="hfindex()">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" 
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
+    
   <div id="header"></div>
     <div class="Linea1Planilla">
       <div class="Linea2">
@@ -138,10 +135,11 @@
                 <hr />
               
                 <div class="form-group">
-                  <input
+                <input
                     type="text"
                     class="form-control"
                     id="user"
+                    data-idp="<?php echo $idproyecto ?>"
                     placeholder= "Nombre de Proyecto"
                     name="nombre_proyecto"
                     value="<?php echo utf8_encode($titulo) ?>">
@@ -181,11 +179,9 @@
                     <i class="fa">&#xf14a;</i> Aprobar Proyecto
                   </button></a
                 >
-                <a class="BotonLogin2" href="../index.php"
-                  ><button onclick="myFunction()" style="margin-top: 5%;">
+                <button onclick="ActualizoPlanilla()" style="margin-top: 5%; color: white">
                     <i class="fa">&#xf0c7;</i> Guardar Cambios
-                  </button></a
-                >
+                  </button>
 
                 <div class="ImagenesPlanilla">
                 <h2>Fotos:</h2>
@@ -195,7 +191,7 @@
                   <input type="file" accept="image/x-png,image/jpg,image/jpeg" onchange="cambiar()" name="fileToUpload" id="fileToUpload" hidden="hidden" />
                   <label for="fileToUpload"><i class="fa">&#xf03e;</i> Seleccionar Imagen</label><br>
                     <label>
-                      <input type="submit" class="button" hidden="hidden">Subir Imagen
+                      <input type="submit" id ="1" class="button1" hidden="hidden" data-idp= "<?php echo $idproyecto;?>" >Subir Imagen
                     </label>
                   </form>
                 </div>
@@ -204,7 +200,7 @@
                   <input type="file" accept="image/x-png,image/jpg,image/jpeg" onchange="cambiar()" name="fileToUpload" id="fileToUpload" hidden="hidden" />
                   <label for="fileToUpload"><i class="fa">&#xf03e;</i> Seleccionar Imagen Principal</label><br>
                     <label>
-                      <input type="submit" class="button" hidden="hidden">Subir Imagen
+                      <input type="submit" id="2" class="button2" hidden="hidden" data-idp= "<?php echo $idproyecto;?>">Subir Imagen
                     </label>
                  </form>
                 </div>
@@ -213,7 +209,7 @@
                   <input type="file" accept="image/x-png,image/jpg,image/jpeg" onchange="cambiar()" name="fileToUpload" id="fileToUpload" hidden="hidden" />
                   <label for="fileToUpload"><i class="fa">&#xf03e;</i> Seleccionar Banner</label><br>
                     <label>
-                      <input type="submit" class="button" hidden="hidden">Subir Imagen
+                      <input type="submit" id="3" class="button3" hidden="hidden" data-idp= "<?php echo $idproyecto;?>">Subir Imagen
                     </label>  
                   </form>
                 </div>

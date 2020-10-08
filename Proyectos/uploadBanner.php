@@ -2,9 +2,7 @@
 include 'verificosesion.php';
 include '..\Form\conexion.php';
 
-$sql = "SELECT idProyecto FROM datosproyecto where Alumno= (SELECT idUsuario FROM usuario where usuario='". $_SESSION['Usuario']."')";
-$idproyecto = $mysqli->query($sql);
-
+$idproyecto = $_POST['id'];
 $ruta = '../img/PROYECT' .$idproyecto; 
 
 $target_dir = $ruta;

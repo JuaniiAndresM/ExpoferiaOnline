@@ -39,6 +39,13 @@ include '..\Form\conexion.php';
             $oo =mysqli_fetch_array($resultI, MYSQLI_ASSOC);
             $imgprincipal = $oo['url'];
 
+            /*
+            $sql = "SELECT * FROM imagenes WHERE idProyecto ='".$row['idProyecto']."'";  
+            $resultI = $mysqli->query($sql);
+            $oo =mysqli_fetch_array($resultI, MYSQLI_ASSOC);
+            $imgprincipal = $oo['url'];
+            */
+
         $content.= "<div class='listProyectoLista'>
                     <div class='listGrid'>
                         <div class='listFoto'>
@@ -53,7 +60,7 @@ include '..\Form\conexion.php';
                            <b>Descripción:</b> ".utf8_encode($row['Introduccion'])."</p>
                             </div>
                             </div>
-                            <a><button class='BotonProyecto' id='1' data-idp='".$row['idProyecto']."'>Ver más</button></a>
+                            <a><button class='BotonProyecto' id='".$row['idProyecto']."'>Ver más</button></a>
                         </div>";
             
                         
