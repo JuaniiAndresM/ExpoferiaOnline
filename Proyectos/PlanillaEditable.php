@@ -178,7 +178,7 @@
                     <i class="fa">&#xf14a;</i> Aprobar Proyecto
                   </button></a
                 >
-                <button onclick="ActualizoPlanilla()" style="margin-top: 5%;">
+                <button onclick="ActualizoPlanilla()" style="margin-top: 5%; color: white">
                     <i class="fa">&#xf0c7;</i> Guardar Cambios
                   </button>
 
