@@ -17,17 +17,15 @@
                 <h2 id='titulo' style='word-wrap: break-word; font-weight: bolder;'>".$ss['Titulo']."</h2>
                 <hr />
                   <div class='Banner'><img src='../img/".$ss['Banner']."' id='banner' style='max-height:100%; max-width:100%;'></div>
-                <hr />
-                <h4 >Introducción:</h4>
-                <p id='intro' style='word-wrap: break-word;'>".$ss['Introduccion']."</p>
-                <hr />
                 <br></br>
               </div>
               <div class='CentralPlanilla'>
                 <div class='Descripcion'>
-                  <h4>Descripcion:</h4>
-                  <p id='desc' style='word-wrap: break-word;'>".$ss['Descripcion']."</p>
-                </div>";
+                <h4 >Introducción:</h4>
+                <p id='intro' style='word-wrap: break-word;'>".$ss['Introduccion']."</p>
+                  
+                </div>
+                ";
         
 
               
@@ -62,6 +60,14 @@
     </script>
     </div>	";
 
+    $content.="
+    <div class='BannerPlanilla'>
+    <hr />
+    <h4>Descripcion:</h4>
+      <p id='desc' style='word-wrap: break-word;'>".$ss['Descripcion']."</p>
+    <hr />
+    </div>";
+
     $sql = "SELECT url FROM expoeduc_expoeduca.videos WHERE idProyecto = '".$ss['idProyecto']."'";
     $resultvid = $mysqli -> query($sql);
     $cont = 1;
@@ -71,7 +77,6 @@
       while($ssvid = mysqli_fetch_array($resultvid, MYSQLI_ASSOC)){
         $content.= " 
           <div class='VideoSlides' >
-              <div>
                 <iframe
                   id = 'video".$cont."'
                   width='560'
@@ -80,7 +85,6 @@
                   frameborder='0'
                   allowfullscreen></iframe>
                   <div class='numbertextVid'>".$cont."/".mysqli_num_rows($resultvid)."</div>
-              </div>
             </div>
           <script>
             getVideo('".$ssvid['url']."', ".$cont.")

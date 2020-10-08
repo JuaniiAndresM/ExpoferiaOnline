@@ -766,6 +766,7 @@ BotonProyecto :hover {
   text-decoration: none;
 }
 .Planilla h2 {
+  padding-top: 2%;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 25px;
@@ -889,8 +890,6 @@ BotonProyecto :hover {
 
 .numbertext {
   text-align: center;
-  color: white;
-  background-image: url('../img/Fondo.png');
   font-weight: bolder;
   font-size: 12px;
   padding: 8px 12px;

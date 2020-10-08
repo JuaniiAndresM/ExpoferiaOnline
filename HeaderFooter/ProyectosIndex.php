@@ -1,5 +1,5 @@
 <?php 
-include 'Form\conexion.php';
+include '..\Form\conexion.php';
 $content="";
 $sql = "SELECT *FROM datosProyecto where Estado = '1'";
 $result = $mysqli -> query($sql);
@@ -45,7 +45,7 @@ if($sql = mysqli_fetch_array($result, MYSQLI_ASSOC)){
                           </p>
                         </div>
                         <div class='Seccion2IMG'>
-                          <img src='img/".$sI['url']."'
+                          <img src='../img/".$sI['url']."'
                             id ='foto2'
                             class='ImagenProyectos'
                             style='max-height:100%; max-width:100%;'
@@ -64,7 +64,7 @@ if($sql = mysqli_fetch_array($result, MYSQLI_ASSOC)){
                         data-aos-duration='1000'
                     >
                         <div>
-                        <img src='img/".$sI['url']."'
+                        <img src='../img/".$sI['url']."'
                         id ='foto".$i."'
                             class='ImagenProyectos'  
                             style='max-height:100%; max-width:100%;'

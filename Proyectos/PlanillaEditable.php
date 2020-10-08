@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, shrink-to-fit=no"/>
     <title>Editar Proyecto | Expoeduca</title>
+    
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" 
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
     
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -30,6 +37,8 @@
     <script src="tinymce/tinymce.min.js"></script>
     <script>
       tinymce.init({
+     
+      
         selector: '#descripcionLarga_Proyecto',
         plugins: 'lists, link, image, media, code',
   toolbar: 'h1 h2 bold italic strikethrough blockquote bullist numlist backcolor undo redo | link image media | code removeformat help',
@@ -39,6 +48,7 @@
   automatic_uploads: true,
   // add custom filepicker only to Image dialog
   file_picker_types: 'image',
+  menubar: false,
   file_picker_callback: function(cb, value, meta) {
     var input = document.createElement('input');
     input.setAttribute('type', 'file');
@@ -63,6 +73,7 @@
     
     input.click();
   }
+  
         
         });
     </script>
@@ -71,7 +82,7 @@
 
   <?php
   include 'verificosesion.php';
-  include '..\Form\conexion.php';  
+  include '../Form/conexion.php';  
    $sql = "SELECT TipoUsuario FROM usuario where usuario='". $_SESSION['Usuario']."'";   
    $result = $mysqli -> query($sql);   
    $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);   
@@ -101,13 +112,7 @@
 
   
 <body onload="hfindex()">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" 
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
+    
   <div id="header"></div>
     <div class="Linea1Planilla">
       <div class="Linea2">
@@ -167,9 +172,8 @@
                   </textarea>
                 </div>
                 
-
-                <a class="BotonLogin2" href="../index.php" style="<?php echo $aprobar ?>"
-                  ><button style="margin-top: 5%;">
+                <a class="BotonLogin2"  style="<?php echo $aprobar ?>"
+                  ><button style="margin-top: 5%;" onclick="aprobar(4)">
                     <i class="fa">&#xf14a;</i> Aprobar Proyecto
                   </button></a
                 >
@@ -223,6 +227,7 @@
                 $sql = " UPDATE datosproyectos SET Descripcion = '$descripcion' WHERE idproyecto = '$idp' ";
                 }
 
+                
                 ?>
 
               </div>
