@@ -71,9 +71,9 @@ if($sql = mysqli_fetch_array($result, MYSQLI_ASSOC)){
                         />
                         </div>
                         <div class='SeccionTexto'>
-                        <h2 id = 'titulo".$i."' >".$ss['Titulo']."</h2>
+                        <h2 id = 'titulo".$i."' >".utf8_encode($ss['Titulo'])."</h2>
                         <hr />
-                        <p id = 'intro".$i."' style='word-wrap: break-word;'>".$ss['Introduccion']."
+                        <p id = 'intro".$i."' style='word-wrap: break-word;'>".utf8_encode($ss['Introduccion'])."
                         </p>
                         </div>
                     </div>";

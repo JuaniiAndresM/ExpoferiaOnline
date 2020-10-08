@@ -1,12 +1,9 @@
 <?php
 include 'verificosesion.php';
 include '..\Form\conexion.php';
-//cambiar para recibir el id
-$sql = "SELECT idProyecto FROM datosproyecto where Alumno= (SELECT idUsuario FROM usuario where usuario='". $_SESSION['Usuario']."')";
-$idproyecto = $mysqli->query($sql);
 
+$idproyecto = $_POST['id'];
 $cont = 1;
-
 $ruta = '../img/PROYECT' .$idproyecto; 
 
 if(!is_dir($ruta)){ 
@@ -45,4 +42,5 @@ if ($uploadOk == 0) {
     echo "Sorry, there was an error uploading your file.";
   }
 }
+header("Location: PlanillaEditable.php ");
 ?>  

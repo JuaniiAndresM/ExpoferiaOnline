@@ -4,12 +4,12 @@ $( document ).ready(function() {
           type: "post", 
           success:function(content){
             $('.gridProyectos').html(content);
-
-            $(".BotonProyecto").click(function(){
-              var proyectoid =document.getElementById("1").dataset.idp
-              $.redirect("../Proyectos/Planilla.html", {id : proyectoid}, "POST"); 
-             });
         }
            });
          
 });
+
+function mandarID(id){
+  sessionStorage.setItem("id", id);
+  $.redirect("../Proyectos/Planilla.html"); 
+};
