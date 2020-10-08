@@ -18,6 +18,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="../js/function.js"></script>
+    <script src="../js/functionPlanillaEditable.js"></script>
     
 <link
       rel="stylesheet"
@@ -190,7 +191,7 @@
                   <input type="file" accept="image/x-png,image/jpg,image/jpeg" onchange="cambiar()" name="fileToUpload" id="fileToUpload" hidden="hidden" />
                   <label for="fileToUpload"><i class="fa">&#xf03e;</i> Seleccionar Imagen</label><br>
                     <label>
-                      <input type="submit" class="button" hidden="hidden">Subir Imagen
+                      <input type="submit" id ="1" class="button1" hidden="hidden" data-idp= "<?php echo $idproyecto;?>" >Subir Imagen
                     </label>
                   </form>
                 </div>
@@ -199,7 +200,7 @@
                   <input type="file" accept="image/x-png,image/jpg,image/jpeg" onchange="cambiar()" name="fileToUpload" id="fileToUpload" hidden="hidden" />
                   <label for="fileToUpload"><i class="fa">&#xf03e;</i> Seleccionar Imagen Principal</label><br>
                     <label>
-                      <input type="submit" class="button" hidden="hidden">Subir Imagen
+                      <input type="submit" id="2" class="button2" hidden="hidden" data-idp= "<?php echo $idproyecto;?>">Subir Imagen
                     </label>
                  </form>
                 </div>
@@ -208,7 +209,7 @@
                   <input type="file" accept="image/x-png,image/jpg,image/jpeg" onchange="cambiar()" name="fileToUpload" id="fileToUpload" hidden="hidden" />
                   <label for="fileToUpload"><i class="fa">&#xf03e;</i> Seleccionar Banner</label><br>
                     <label>
-                      <input type="submit" class="button" hidden="hidden">Subir Imagen
+                      <input type="submit" id="3" class="button3" hidden="hidden" data-idp= "<?php echo $idproyecto;?>">Subir Imagen
                     </label>  
                   </form>
                 </div>

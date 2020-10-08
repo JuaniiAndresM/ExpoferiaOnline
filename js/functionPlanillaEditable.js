@@ -1,3 +1,27 @@
+$( document ).ready(function() {
+  $.ajax({
+    url:"PlanillaEditable.php", 
+    type: "post", 
+    success:function(content){
+      $(".button1").click(function(){
+        var proyectoid =document.getElementById("1").dataset.idp
+        $.redirect("/uploadIMG.php", {id : proyectoid}, "POST"); 
+       });
+
+       $(".button2").click(function(){
+        var proyectoid =document.getElementById("2").dataset.idp
+        $.redirect("/uploadIMGprincipal.php", {id : proyectoid}, "POST"); 
+       });
+
+       $(".button3").click(function(){
+        var proyectoid =document.getElementById("3").dataset.idp
+        $.redirect("/uploadBanner.php", {id : proyectoid}, "POST"); 
+       });
+  }
+     });
+   
+});
+
 function aprobar(id){
     $.ajax({
       url:"../Proyectos/aprobar.php",
@@ -30,3 +54,4 @@ function hfindex() {
   $("#header").load("../HeaderFooter/header.php");
   $("#footer").load("../HeaderFooter/footer.html");
 }
+
