@@ -12,7 +12,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="../js/function.js"></script>
     <script src="../js/functionPlanillaEditable.js"></script>
-    
+   
 <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -43,6 +43,7 @@
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="styles2.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
       rel="stylesheet"
@@ -51,7 +52,15 @@
 
   <?php
   include 'verificosesion.php';
-  include '../Form/conexion.php';  
+  //include '../Form/conexion.php'; 
+  $mysqli = new mysqli('localhost','expoeduc_informatica2','LiceoIep_2020_2do_Inf','expoeduc_expoeduca');
+
+
+  //Output any connection error
+  if ($mysqli->connect_error) {
+      echo "error al conectar con base de datos";
+      return;
+  }  
    $sql = "SELECT TipoUsuario FROM usuario where usuario='". $_SESSION['Usuario']."'";   
    $result = $mysqli -> query($sql);   
    $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);   
@@ -71,15 +80,18 @@
     $sql = "SELECT * FROM videos WHERE idProyecto ='".$idproyecto."'";
     $result = $mysqli->query($sql);
     $vv = mysqli_fetch_array($result, MYSQLI_ASSOC);
-
-    $banner = $aa['Banner'];
+    $banner='';
+    if(isset($aa['Banner'])){
+      $banner = $aa['Banner'];
+    }
+    
     $titulo = $aa['Titulo'];
     $introduccion = $aa['Introduccion'];
     $descripcion = $aa['Descripcion'];
     $video = $vv['url'];
   ?>
 
-  
+   
 <body onload="hfindex()">
     
   <div id="header"></div>
@@ -94,7 +106,7 @@
                 <hr />
                 <div class="BannerEditable">
                 <?php
-                echo "<div class='Banner'><img src='../img/".$banner."' id='banner' style='max-height:100%; max-width:100%;'></div>";
+                echo "<div class='Banner'><img src='".$banner."' id='banner' style='max-height:100%; max-width:100%;'></div>";
                 ?>
                 </div>
 
@@ -151,34 +163,53 @@
                   </button>
 
                 <div class="ImagenesPlanilla">
-                <h2>Fotos:</h2>
+                <h2>Subimos Fotos:</h2>
+                <hr />
+                <h3>Foto Principal (solo 1):</h3>
                 <hr />
                 <div class="Foto">
-                <form action="uploadIMG.php" method="post" enctype="multipart/form-data">
-                  <input type="file" accept="image/x-png,image/jpg,image/jpeg" onchange="cambiar()" name="fileToUpload" id="fileToUpload1" hidden="hidden" />
-                  <label for="fileToUpload"><i class="fa">&#xf03e;</i> Seleccionar Imagen</label><br>
-                    <label>
-                      <input type="submit" id ="1" class="button1" hidden="hidden" data-idp= "<?php echo $idproyecto;?>" >Subir Imagen
-                    </label>
-                  </form>
+                <div id="drop_file_zone" ondrop="upload_file(event,1)" ondragover="return false">
+                      <div id="drag_upload_file">
+                          <p>Arrastra y suelta el archivo aquí</p>
+                          <p>o</p>
+                          <p><input type="button" value="Select File" onclick="file_explorer();"></p>
+                          <input type="file" id="selectfile">
+                      </div>
+                  </div>
+                  <div class="Foto" id="fprincipal">
+                    
+                  </div>
                 </div>
+                <hr />
+                <h3>Fotos secundarias:</h3>
+                <hr />
                 <div class="Foto">
-                 <form action="uploadIMGprincipal.php" method="post" enctype="multipart/form-data">
-                  <input type="file" accept="image/x-png,image/jpg,image/jpeg" onchange="cambiar()" name="fileToUpload" id="fileToUpload2" hidden="hidden" />
-                  <label for="fileToUpload"><i class="fa">&#xf03e;</i> Seleccionar Imagen Principal</label><br>
-                    <label>
-                      <input type="submit" id="2" class="button2" hidden="hidden" data-idp= "<?php echo $idproyecto;?>">Subir Imagen
-                    </label>
-                 </form>
+               
+                  <div id="drop_file_zone" ondrop="upload_file(event)" ondragover="return false">
+                      <div id="drag_upload_file">
+                          <p>Arrastra y suelta los archivos aquí</p>
+                          <p>or</p>
+                          <p><input type="button" value="Select File" onclick="file_explorer();"></p>
+                          <input type="file" id="selectfile">
+                      </div>
+                  </div>
+                  
                 </div>
+                <hr />
+                <h3>Banner:</h3>
+                <hr />
                 <div class="Foto">
-                <form action="uploadBanner.php" method="post" enctype="multipart/form-data">
-                  <input type="file" accept="image/x-png,image/jpg,image/jpeg" onchange="cambiar()" name="fileToUpload" id="fileToUpload3" hidden="hidden" />
-                  <label for="fileToUpload"><i class="fa">&#xf03e;</i> Seleccionar Banner</label><br>
-                    <label>
-                      <input type="submit" id="3" class="button3" hidden="hidden" data-idp= "<?php echo $idproyecto;?>">Subir Imagen
-                    </label>  
-                  </form>
+                <div id="drop_file_zone" ondrop="upload_file(event,2)" ondragover="return false">
+                      <div id="drag_upload_file">
+                          <p>Arrastra y suelta el Banner aquí</p>
+                          <p>or</p>
+                          <p><input type="button" value="Select File" onclick="file_explorer();"></p>
+                          <input type="file" id="selectfile">
+                      </div>
+                  </div>
+                  <div class="Foto" id="fbanner">
+                    
+                  </div>
                 </div>
               </div>
                 

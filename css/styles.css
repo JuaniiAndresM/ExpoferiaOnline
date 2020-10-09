@@ -1048,7 +1048,7 @@ BotonProyecto :hover {
 }
 
 .BannerPlanillaEditable .BannerEditable {
-  height: 600px;
+  height: 200px;
   display: flex;
   justify-content: center;
   align-content: center;
