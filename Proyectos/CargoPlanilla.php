@@ -71,32 +71,37 @@
 
     $sql = "SELECT url FROM expoeduc_expoeduca.videos WHERE idProyecto = '".$ss['idProyecto']."'";
     $resultvid = $mysqli -> query($sql);
+    $rows = mysqli_num_rows($resultvid);
     $cont = 1;
-    $content.= "<div class='VideoPlanilla'>
-                <h2>Video:</h2>
-                <hr />";
-      while($ssvid = mysqli_fetch_array($resultvid, MYSQLI_ASSOC)){
-        $content.= " 
-          <div class='VideoSlides' >
-                <iframe
-                  id = 'video".$cont."'
-                  width='560'
-                  height='315'
-                  src='https://www.youtube.com/embed/'
-                  frameborder='0'
-                  allowfullscreen></iframe>
-                  <div class='numbertextVid'>".$cont."/".mysqli_num_rows($resultvid)."</div>
-            </div>
-          <script>
-            getVideo('".$ssvid['url']."', ".$cont.")
-          </script>";
-          $cont = $cont + 1;
-      }
-    $content.="
-    <a class='prev' onclick='plusSlidesVid(-1)'>❮</a>
-    <a class='next' onclick='plusSlidesVid(1)'>❯</a>
-    <script>slidesVid()</script>
-    </div>";
+    if($rows > 0){
+      $content.= "<div class='VideoPlanilla'>
+                  <h2>Video:</h2>
+                  <hr />";
+        while( $ssvid = mysqli_fetch_array($resultvid, MYSQLI_ASSOC)){
+          $content.= " 
+            <div class='VideoSlides' >
+                  <iframe
+                    id = 'video".$cont."'
+                    width='560'
+                    height='315'
+                    src='https://www.youtube.com/embed/'
+                    frameborder='0'
+                    allowfullscreen></iframe>
+                    <div class='numbertextVid'>".$cont."/".mysqli_num_rows($resultvid)."</div>
+              </div>
+            <script>
+              getVideo('".$ssvid['url']."', ".$cont.")
+            </script>";
+            $cont = $cont + 1;
+            $rows = $rows - 1;
+        }
+      $content.="
+      <a class='prev' onclick='plusSlidesVid(-1)'>❮</a>
+      <a class='next' onclick='plusSlidesVid(1)'>❯</a>
+      <script>slidesVid()</script>
+      </div>";
+    }
+    
     echo $content;
     }
   ?>
