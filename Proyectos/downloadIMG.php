@@ -34,7 +34,13 @@ if($tipo==1){
     
     while($row = $result->fetch_array()){
       $url=$row['url'];
-      echo "<img src='".$url."' width='350' height='196'>";
+      $pos = strrpos($url, "/");
+      $url2='';
+      if ($pos !== false) { 
+          $url2= substr($url, $pos+1);
+      }
+      echo '<div class="img-wrap" ><span class="close" onclick="borramos(\''.$url2.'\')">&times;</span>';
+      echo "<img src='".$url."' width='350' height='196' data-id='".$url2."'></div>";
      }
   }
 }

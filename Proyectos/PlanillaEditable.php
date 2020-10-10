@@ -191,8 +191,8 @@
                       <div id="drag_upload_file">
                           <p>Arrastra y suelta el archivo aquí</p>
                           <p>o</p>
-                          <p><input type="button" value="Select File" onclick="file_explorer();"></p>
-                          <input type="file" id="selectfile1">
+                          <p><input type="button" id="selectfile1" value="Select File" onclick="file_explorer();"></p>
+                          
                       </div>
                   </div>
                   <div class="Foto" id="fprincipal">
@@ -208,13 +208,15 @@
                       <div id="drag_upload_file">
                           <p>Arrastra y suelta los archivos aquí</p>
                           <p>or</p>
-                          <p><input type="button" value="Select File" onclick="file_explorer();"></p>
-                          <input type="file" id="selectfile3">
+                          <p><input type="button" id="selectfile3" value="Select File" onclick="file_explorer();"></p>
+                          
                       </div>
                   </div>
-                  <div class="Foto" id="fsecundarias">
-                    
+                  <div id="fsecundarias">
+                      
+                     
                   </div>
+                 
                 </div>
                 <hr />
                 <h3>Banner:</h3>
@@ -224,8 +226,8 @@
                       <div id="drag_upload_file">
                           <p>Arrastra y suelta el Banner aquí</p>
                           <p>or</p>
-                          <p><input type="button" value="Select File" onclick="file_explorer();"></p>
-                          <input type="file" id="selectfile2">
+                          <p><input type="button" id="selectfile2"  value="Select File" onclick="file_explorer();"></p>
+                         
                       </div>
                   </div>
                   <div class="Foto" id="fbanner">

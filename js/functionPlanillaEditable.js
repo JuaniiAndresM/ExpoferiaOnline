@@ -7,11 +7,28 @@ $( document ).ready(function() {
       TraigoFoto(idp,1);// cargo la imagen principal
       TraigoFoto(idp,2);// cargo el banner
       TraigoFoto(idp,3);// cargo todas las fotos secundarias
+      
       }
   });
    
 });
-
+function borramos(url){
+  var idp = $("#user").data("idp");
+  $.ajax({
+    type: 'POST',
+    url: 'deleteIMG.php',
+    data: {url: url, idp: idp},
+    success:function(msg) {
+      $('#fsecundarias').html("");
+     
+      TraigoFoto(idp,3);
+      
+        
+    }
+});
+    
+ 
+}
 function aprobar(id){
     $.ajax({
       url:"../Proyectos/aprobar.php",
@@ -70,7 +87,7 @@ function upload_file(e,tipo) {
           }
         }
       } else {
-        // Use DataTransfer interface to access the file(s)
+        // Uso DataTransfer a los archivos 
         for (var i = 0; i < e.dataTransfer.files.length; i++) {
           var file = e.dataTransfer.items[i].getAsFile();
             ajax_file_upload(file,tipo);
@@ -78,12 +95,7 @@ function upload_file(e,tipo) {
       } 
       
     }
-    
-    //
-     // Prevent default behavior (Prevent file from being opened)
- 
-  
-  // Pass event to removeDragData for cleanup
+
   
 }
  

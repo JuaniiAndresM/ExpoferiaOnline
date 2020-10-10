@@ -50,7 +50,7 @@ if ($uploadOk == 0) {
   $name = basename($_FILES["file"]["name"]);
   
   if (move_uploaded_file($tmp_name, "$target_dir/$name")) {
-   
+    chmod("$target_dir/$name", 0777);
     if($tipo==1){// imagen principal
       $sql = "UPDATE datosProyecto set ImagenPrincipal = '".$target_file2."' where idProyecto = '".$idproyecto."';";
     }else{
