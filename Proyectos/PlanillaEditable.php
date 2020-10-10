@@ -132,6 +132,7 @@
                 <hr />
               
                 <div class="form-group">
+                  <h4>Título del proyecto</h4>
                 <input
                     type="text"
                     class="form-control"
@@ -146,6 +147,7 @@
 
               
                 <div class="form-group" >
+                  <h4>Descripción corta</h4>
                   <textarea
                     class="form-control"
                     rows="5"
@@ -190,7 +192,7 @@
                           <p>Arrastra y suelta el archivo aquí</p>
                           <p>o</p>
                           <p><input type="button" value="Select File" onclick="file_explorer();"></p>
-                          <input type="file" id="selectfile">
+                          <input type="file" id="selectfile1">
                       </div>
                   </div>
                   <div class="Foto" id="fprincipal">
@@ -202,15 +204,17 @@
                 <hr />
                 <div class="Foto">
                
-                  <div id="drop_file_zone" ondrop="upload_file(event)" ondragover="return false">
+                  <div id="drop_file_zone" ondrop="upload_file(event,3)" ondragover="return false">
                       <div id="drag_upload_file">
                           <p>Arrastra y suelta los archivos aquí</p>
                           <p>or</p>
                           <p><input type="button" value="Select File" onclick="file_explorer();"></p>
-                          <input type="file" id="selectfile">
+                          <input type="file" id="selectfile3">
                       </div>
                   </div>
-                  
+                  <div class="Foto" id="fsecundarias">
+                    
+                  </div>
                 </div>
                 <hr />
                 <h3>Banner:</h3>
@@ -221,7 +225,7 @@
                           <p>Arrastra y suelta el Banner aquí</p>
                           <p>or</p>
                           <p><input type="button" value="Select File" onclick="file_explorer();"></p>
-                          <input type="file" id="selectfile">
+                          <input type="file" id="selectfile2">
                       </div>
                   </div>
                   <div class="Foto" id="fbanner">

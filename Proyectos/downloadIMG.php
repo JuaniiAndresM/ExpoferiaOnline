@@ -28,6 +28,15 @@ if($tipo==1){
     $url=$rr['Banner'];
     echo "<img src='".$url."' width='600' height='100'>";
   }
+  else{
+    $sql = "SELECT * FROM imagenes WHERE idProyecto ='".$idproyecto."';";
+    $result = $mysqli->query($sql);
+    
+    while($row = $result->fetch_array()){
+      $url=$row['url'];
+      echo "<img src='".$url."' width='350' height='196'>";
+     }
+  }
 }
 
 

@@ -6,6 +6,7 @@ $( document ).ready(function() {
       var idp = $("#user").data("idp");
       TraigoFoto(idp,1);// cargo la imagen principal
       TraigoFoto(idp,2);// cargo el banner
+      TraigoFoto(idp,3);// cargo todas las fotos secundarias
       }
   });
    
@@ -39,7 +40,7 @@ function ActualizoPlanilla(){
     data: {idp: idp, nombre: nombreproyecto, dcorta: dcorta, dlarga: dlarga, mlink: mlink},
     type: "post",
     success:function(content){
-        $("#msg").html(content);
+        alert("Todo actualizado");
       }
      });
     
@@ -53,15 +54,54 @@ function hfindex() {
   var fileobj;
 function upload_file(e,tipo) {
     e.preventDefault();
-    fileobj = e.dataTransfer.files[0];
-    ajax_file_upload(fileobj,tipo);
+    if(tipo==1 || tipo==2){
+      fileobj = e.dataTransfer.files[0];
+      ajax_file_upload(fileobj,tipo);
+    }else{
+      e.preventDefault();
+
+      if (e.dataTransfer.items) {
+        // Use DataTransferItemList interface to access the file(s)
+        for (var i = 0; i < e.dataTransfer.items.length; i++) {
+          // If dropped items aren't files, reject them
+          if (e.dataTransfer.items[i].kind === 'file') {
+            var file = e.dataTransfer.items[i].getAsFile();
+            ajax_file_upload(file,tipo);
+          }
+        }
+      } else {
+        // Use DataTransfer interface to access the file(s)
+        for (var i = 0; i < e.dataTransfer.files.length; i++) {
+          var file = e.dataTransfer.items[i].getAsFile();
+            ajax_file_upload(file,tipo);
+        }
+      } 
+      
+    }
+    
+    //
+     // Prevent default behavior (Prevent file from being opened)
+ 
+  
+  // Pass event to removeDragData for cleanup
+  
 }
  
 function file_explorer() {
-    document.getElementById('selectfile').click();
-    document.getElementById('selectfile').onchange = function() {
-        fileobj = document.getElementById('selectfile').files[0];
-        ajax_file_upload(fileobj);
+    document.getElementById('selectfile1').click();
+    document.getElementById('selectfile1').onchange = function() {
+        fileobj = document.getElementById('selectfile1').files[0];
+        ajax_file_upload(fileobj,1);
+    };
+    document.getElementById('selectfile2').click();
+    document.getElementById('selectfile2').onchange = function() {
+        fileobj = document.getElementById('selectfile2').files[0];
+        ajax_file_upload(fileobj,2);
+    };
+    document.getElementById('selectfile3').click();
+    document.getElementById('selectfile3').onchange = function() {
+        fileobj = document.getElementById('selectfile3').files[0];
+        ajax_file_upload(fileobj,3);
     };
 }
  
@@ -98,12 +138,16 @@ function TraigoFoto(idp, tipo){
         url: 'downloadIMG.php',
         data: {idp: idp, tipo: tipo},
         success:function(msg) {
+          $('#fsecundarias').html("");
           if(tipo==1){
             $('#fprincipal').html(msg);
           }
           if(tipo==2){
             $('#fbanner').html(msg);
           } 
+          if(tipo==3){
+            $('#fsecundarias').append(msg);
+          }
             
         }
     });
