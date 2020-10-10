@@ -44,6 +44,21 @@ function borramosprincipal(url){
     }
 });
 }
+function borramosbanner(url){
+  var idp = $("#user").data("idp");
+  $.ajax({
+    type: 'POST',
+    url: 'deleteIMGbanner.php',
+    data: {url: url, idp: idp},
+    success:function(msg) {
+      
+     
+      TraigoFoto(idp,2);
+      
+        
+    }
+});
+}
 function aprobar(id){
     $.ajax({
       url:"../Proyectos/aprobar.php",

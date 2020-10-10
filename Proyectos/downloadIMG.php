@@ -36,7 +36,14 @@ if($tipo==1){
     $result = $mysqli->query($sql);
     $rr = mysqli_fetch_array($result, MYSQLI_ASSOC);
     $url=$rr['Banner'];
-    echo "<img src='".$url."' width='600' height='100'>";
+    $pos = strrpos($url, "/");
+    $url2='';
+    if ($pos !== false) { 
+        $url2= substr($url, $pos+1);
+    }
+    echo '<div class="img-wrap" ><span class="close" onclick="borramosbanner(\''.$url2.'\')">&times;</span>';
+    echo "<img src='".$url."' width='600' height='100' data-id='".$url2."'></div>";
+    
   }
   else{
     $sql = "SELECT * FROM imagenes WHERE idProyecto ='".$idproyecto."';";
