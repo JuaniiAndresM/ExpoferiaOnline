@@ -26,8 +26,23 @@ function borramos(url){
         
     }
 });
-    
+   
  
+}
+function borramosprincipal(url){
+  var idp = $("#user").data("idp");
+  $.ajax({
+    type: 'POST',
+    url: 'deleteIMGprincipal.php',
+    data: {url: url, idp: idp},
+    success:function(msg) {
+      
+     
+      TraigoFoto(idp,1);
+      
+        
+    }
+});
 }
 function aprobar(id){
     $.ajax({
@@ -150,7 +165,7 @@ function TraigoFoto(idp, tipo){
         url: 'downloadIMG.php',
         data: {idp: idp, tipo: tipo},
         success:function(msg) {
-          $('#fsecundarias').html("");
+          
           if(tipo==1){
             $('#fprincipal').html(msg);
           }
@@ -158,6 +173,7 @@ function TraigoFoto(idp, tipo){
             $('#fbanner').html(msg);
           } 
           if(tipo==3){
+            $('#fsecundarias').html("");
             $('#fsecundarias').append(msg);
           }
             

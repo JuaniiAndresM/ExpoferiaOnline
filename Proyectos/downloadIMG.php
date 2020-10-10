@@ -19,7 +19,17 @@ if($tipo==1){
   $result = $mysqli->query($sql);
   $rr = mysqli_fetch_array($result, MYSQLI_ASSOC);
   $url=$rr['ImagenPrincipal'];
-  echo "<img src='".$url."' width='350' height='196'>";
+  //
+  
+  $pos = strrpos($url, "/");
+  $url2='';
+  if ($pos !== false) { 
+      $url2= substr($url, $pos+1);
+  }
+  echo '<div class="img-wrap" ><span class="close" onclick="borramosprincipal(\''.$url2.'\')">&times;</span>';
+  echo "<img src='".$url."' width='350' height='196' data-id='".$url2."'></div>";
+  //
+  
 }else{
   if($tipo==2){
     $sql = "SELECT Banner FROM datosProyecto WHERE idProyecto ='".$idproyecto."'";
