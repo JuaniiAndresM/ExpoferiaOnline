@@ -1,14 +1,20 @@
 
 <?php
-include '..\Form\conexion.php';
+//include '..\Form\conexion.php';
+$mysqli = new mysqli('localhost','expoeduc_informatica2','LiceoIep_2020_2do_Inf','expoeduc_expoeduca');
 
+
+//Output any connection error
+if ($mysqli->connect_error) {
+    die('Error : ('. $mysqli->connect_errno .') '. $mysqli->connect_error);
+}
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 require 'PHPMailer/Exception.php';
 require 'PHPMailer/PHPMailer.php';
 require 'PHPMailer/SMTP.php';
-
+ 
 if(isset($_POST['aprobar'])){
     
     $sql = "SELECT * FROM solicitud_usuario WHERE idSoli_Usuario = '".$_POST['aprobar']."'";
@@ -38,7 +44,7 @@ if(isset($_POST['aprobar'])){
                 $sqlsolicitudes = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
                 $mail = new PHPMailer(true);
-
+                
                 try {
                     //Server settings
                     $mail->SMTPDebug = 0;                                       // Enable verbose debug output
@@ -59,9 +65,9 @@ if(isset($_POST['aprobar'])){
                     $mail->isHTML(true);                                        // Set email format to HTML
                     $mail->Subject = 'Aprobado';
                     $mail->Body    = 'Buenos dias queremos informarle que se a aprobado su solicitud';
-
+                    echo "antes";
                     $mail->send();
-
+                    echo "despues";
                 } catch (Exception $e) {
                     echo "Error al enviar: {$mail->ErrorInfo}";
                 }

@@ -1,8 +1,14 @@
 <?php
 include 'verificosesion.php';
 
-include '..\Form\conexion.php';
+//include '..\Form\conexion.php';
+$mysqli = new mysqli('localhost','expoeduc_informatica2','LiceoIep_2020_2do_Inf','expoeduc_expoeduca');
 
+
+//Output any connection error
+if ($mysqli->connect_error) {
+    die('Error : ('. $mysqli->connect_errno .') '. $mysqli->connect_error);
+}
 $content="";
 $cont = 1;
 $sql = "SELECT * FROM solicitud_usuario";
@@ -50,7 +56,7 @@ if($result){
                     <div>
                       <button data-toggle='collapse' data-target='#rechazar'><i class='fa'>&#xf00d;</i>  Rechazar</button>
                     </div> 
-                  </div>
+                  </div> 
                   <form method='post' action='Solicitud.php'>
                     <div id='rechazar' class='collapse form-group'>
                       <label for='comment'><i class='fa'>&#xf27a;</i> Comentario:</label>
