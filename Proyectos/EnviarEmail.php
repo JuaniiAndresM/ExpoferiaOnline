@@ -23,12 +23,12 @@ try {
     //Recipients
     $mail->CharSet = 'UTF-8';
     $mail->setFrom("expoferiaiep@gmail.com");
-    $mail->addAddress("expoferiaiep@gmail.com");             // Add a recipient
+    $mail->addAddress($address);             // Add a recipient
 
     // Content
     $mail->isHTML(true);                                        // Set email format to HTML
-    $mail->Subject = 'Registrar Usuario';
-    $mail->Body    = 'Buenos Dias, Hay un solicitud de profesor nueva';
+    $mail->Subject = $subject;
+    $mail->Body    = $body;
 
     $mail->send();
 

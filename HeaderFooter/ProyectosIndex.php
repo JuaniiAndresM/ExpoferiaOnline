@@ -71,7 +71,7 @@ if($sql = mysqli_fetch_array($result, MYSQLI_ASSOC)){
                         <img src='".$ss['ImagenPrincipal']."'
                         id ='foto".$i."'
                             class='ImagenProyectos'  
-                            style='max-height:100%; max-width:100%;'
+                            style='max-height:50%; max-width:50%;'
                         />
                         </div>
                         <div class='SeccionTexto'>
