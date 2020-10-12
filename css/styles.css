@@ -200,7 +200,7 @@ header .nav-links li a:hover {
 
 .CardsIndex {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 .CardsIndex .Carta {
   margin-left: 4%;
@@ -231,16 +231,7 @@ header .nav-links li a:hover {
   border-radius: 30px;
 }
 .CardsIndex .Cards1 {
-  margin-right: 2%;
-  background-color: white;
-  border-radius: 30px;
-}
-.CardsIndex .Cards2 {
-  margin-right: 2%;
-  background-color: white;
-  border-radius: 30px;
-}
-.CardsIndex .Cards3 {
+  min-height: 350px;
   margin-right: 2%;
   background-color: white;
   border-radius: 30px;
