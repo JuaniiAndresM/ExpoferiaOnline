@@ -1,5 +1,12 @@
 <?php 
-include 'Form\conexion.php';
+$mysqli = new mysqli('localhost','expoeduc_informatica2','LiceoIep_2020_2do_Inf','expoeduc_expoeduca');
+
+
+//Output any connection error
+if ($mysqli->connect_error) {
+    die('Error : ('. $mysqli->connect_errno .') '. $mysqli->connect_error);
+}include '..\Form\conexion.php';
+
 $content="";
 $sql = "SELECT *FROM datosProyecto where Estado = '1'";
 $result = $mysqli -> query($sql);
@@ -21,13 +28,10 @@ if($sql = mysqli_fetch_array($result, MYSQLI_ASSOC)){
               $x++;
           }else{
 
-             
-            $sql3 = "SELECT url FROM imagenes WHERE idProyecto = '".$ss['idProyecto']."'";
-            $resultI = $mysqli -> query($sql3);
-            $sI = mysqli_fetch_array($resultI, MYSQLI_ASSOC);
+            
 
             //va creandpo los proyectos
-            if(isset($ss['Titulo'],$ss['Introduccion'],$sI['url']) && $ss['Estado'] == '1'){
+            if(isset($ss['Titulo'],$ss['Introduccion'],$ss['ImagenPrincipal']) && $ss['Estado'] == '1'){
                 if($y == 2){
                     $y ++;
                     $content.="
@@ -39,16 +43,16 @@ if($sql = mysqli_fetch_array($result, MYSQLI_ASSOC)){
                       >
                         
                         <div class='SeccionTexto'>
-                          <h2  id ='titulo2'>".utf8_encode($ss['Titulo'])."</h2>
+                          <h2  id ='titulo2'>".$ss['Titulo']."</h2>
                           <hr />
-                          <p id ='intro2' style='word-wrap: break-word;'>".utf8_encode($ss['Introduccion'])."
+                          <p id ='intro2' style='word-wrap: break-word;'>".$ss['Introduccion']."
                           </p>
                         </div>
                         <div class='Seccion2IMG'>
-                          <img src='img/".$sI['url']."'
+                          <img src='".$ss['ImagenPrincipal']."'
                             id ='foto2'
                             class='ImagenProyectos'
-                            style='max-height:100%; max-width:100%;'
+                            style='max-height:50%; max-width:50%;'
                             
                           />
                         </div>
@@ -64,10 +68,10 @@ if($sql = mysqli_fetch_array($result, MYSQLI_ASSOC)){
                         data-aos-duration='1000'
                     >
                         <div>
-                        <img src='img/".$sI['url']."'
+                        <img src='".$ss['ImagenPrincipal']."'
                         id ='foto".$i."'
                             class='ImagenProyectos'  
-                            style='max-height:100%; max-width:100%;'
+                            style='max-height:50%; max-width:50%;'
                         />
                         </div>
                         <div class='SeccionTexto'>

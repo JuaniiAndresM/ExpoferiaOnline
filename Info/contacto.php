@@ -66,6 +66,7 @@
                     name="apellido"
                     required
                   />
+                </div>
                 <div class="form-group">
                   <label for="uname">Email:</label>
                   <input
@@ -77,7 +78,7 @@
                     required
                   />
                 </div>
-                <div class="form-group" style="display: flex; padding-top:1rem">
+                <div class="form-group" style="display: flex; padding-top:1rem; justify-content: center">
                   <label for="year">Año:</label>
                   <div class="radio-opt">
                     <label class="rad-opt-child" for="prim">
@@ -96,35 +97,50 @@
                       Tercer Año
                     </label>
                   </div>
-                  <div class="select-opt" style="width: 65%">
-                    <div style="text-align: center">
-                      <label for="orient">Orientación:</label>
-                    </div>
-                    <div style="margin: 0 auto">
-                      <select name="orient" id="orient" class="form-control" required>
-                        <option value="" disabled selected hidden>Seleccione Orientación</option>
-                        <option value="0">Informático</option>
-                        <option value="1">Administración</option>
-                        <option value="2">Deporte</option>
-                        <option value="3">Científico</option>
-                        <option value="4">Biológico</option>
-                        <option value="5">Humanístico</option>
-                        <option value="6">Artistico</option>
-                        <option value="7">Ingeniera</option>
-                        <option value="8">Arquitectura</option>
-                        <option value="9">Medicina</option>
-                        <option value="10">Agronomía</option>
-                        <option value="11">Economía</option>
-                        <option value="12">Derecho</option>
-                        <option value="13">Ciclo Basico</option>
-                        <option value="14">Cuarto Año</option>
-                      </select>
-                    </div>
+                  <div class="radio-opt">
+                    <label class="rad-opt-child" for="cuart">
+                      <input type="radio" id="cuart" name="year" value="4"  required />
+                      <span class="radicon"></span>
+                      Cuarto Año
+                    </label>
+                    <label class="rad-opt-child" for="quint">
+                      <input type="radio" id="quint" name="year" value="5"  required />
+                      <span class="radicon"></span>
+                      Quinto Año
+                    </label>
+                    <label class="rad-opt-child" for="hexa">
+                      <input type="radio" id="hexa" name="year" value="6" required />
+                      <span class="radicon"></span>
+                      Sexto Año
+                    </label>
+                  </div>
+                </div>
+                <div class="select-opt" style="padding: 1%">
+                  <label for="orient">Orientación:</label>
+                  <div style="margin: 0 auto">
+                    <select name="orient" id="orient" class="form-control" required>
+                      <option value="" disabled selected hidden>Seleccione Orientación</option>
+                      <option value="0">Informático</option>
+                      <option value="1">Administración</option>
+                      <option value="2">Deporte</option>
+                      <option value="3">Científico</option>
+                      <option value="4">Biológico</option>
+                      <option value="5">Humanístico</option>
+                      <option value="6">Artistico</option>
+                      <option value="7">Ingeniera</option>
+                      <option value="8">Arquitectura</option>
+                      <option value="9">Medicina</option>
+                      <option value="10">Agronomía</option>
+                      <option value="11">Economía</option>
+                      <option value="12">Derecho</option>
+                      <option value="13">Ciclo Basico</option>
+                      <option value="14">Cuarto Año</option>
+                    </select>
                   </div>
                 </div>
                 <div class="form-group">
                   <div class="select-opt" style="padding: 1%">
-                      <label for="nomproy">Nombre del proyecto:</label>
+                    <label for="nomproy">Nombre del proyecto:</label>
                     <div style="margin: 0 auto">
                       <input type="text"
                       class="form-control"
@@ -132,28 +148,6 @@
                       placeholder="Nombre del Proyecto"
                       name="nomproy"
                       required>
-                    </div>
-                  </div>
-                  <div class="select-opt" style="padding: 1%">
-                      <label for="profacargo">Profesor a Cargo:</label>
-                    <div style="margin: 0 auto">
-                      <select name="profacargo" id="profacargo" class="form-control" required>
-                        <option value="" disabled selected hidden>Seleccione Profesor a Cargo</option>
-                        <?php
-
-                                require "../Form/conexion.php";
-                                $sql = "SELECT * from usuario where TipoUsuario = 1";
-                                $result = $mysqli -> query($sql);
-                                while($row = mysqli_fetch_array($result))
-                                      {
-                                     $Nombre = $row['Nombre'];  
-                          ?>
-                                      <option value="<?php echo $Nombre;?>"><?php echo $Nombre;?></option>
-                          <?php
-                                      }
-                               
-                          ?>
-                      </select>
                     </div>
                   </div>
                 </div>
@@ -210,8 +204,9 @@
                     echo "<script>
                     document.getElementById('errorPwd2').style.display = 'block'; </script>";  
                 }
-                ?>
-              </form>
+                  ?>
+                </form>
+              </div>
             </div>
           </div>
         </div>

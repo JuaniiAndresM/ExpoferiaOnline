@@ -39,6 +39,13 @@ include '..\Form\conexion.php';
             $oo =mysqli_fetch_array($resultI, MYSQLI_ASSOC);
             $imgprincipal = $oo['url'];
 
+            /*
+            $sql = "SELECT * FROM imagenes WHERE idProyecto ='".$row['idProyecto']."'";  
+            $resultI = $mysqli->query($sql);
+            $oo =mysqli_fetch_array($resultI, MYSQLI_ASSOC);
+            $imgprincipal = $oo['url'];
+            */
+
         $content.= "<div class='listProyectoLista'>
                     <div class='listGrid'>
                         <div class='listFoto'>
@@ -47,15 +54,15 @@ include '..\Form\conexion.php';
 
                     <div class='textoLista'>
                          <hr id='LineaMobileProyecto' />
-                         <h2>".utf8_encode($row['Titulo'])."</h2>
-                         <p><b>Grupo:</b> ".utf8_encode($orientacion)." </p>
+                         <h2 style='word-wrap: break-word;'>".utf8_encode($row['Titulo'])."</h2>
+                         <p style='word-wrap: break-word;'><b>Grupo:</b> ".utf8_encode($orientacion)." </p>
                          <p>
-                           <b>Descripción:</b> ".utf8_encode($row['Introduccion'])."</p>
+                           <b style='word-wrap: break-word;'>Introduccion:</b> ".utf8_encode($row['Introduccion'])."</p>
                             </div>
                             </div>
-                            <a><button class='BotonProyecto' id='1' data-idp='".$row['idProyecto']."'>Ver más</button></a>
+                            <a><button class='BotonProyecto' onclick='mandarID(".$row['idProyecto'].")'>Ver más</button></a>
                         </div>";
-
+            
                         
      }
      echo $content;

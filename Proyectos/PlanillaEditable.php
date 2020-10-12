@@ -2,46 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, shrink-to-fit=no"/>
     <title>Editar Proyecto | Expoeduca</title>
-
+  
+    
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://cdn.tiny.cloud/1/bauex5a7tu385ytyjdg6wmerico7us9d0xxhp1j6dpi311xt/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-    <script>
-        tinymce.init({
-        selector: "textarea#editor",
-        skin: "bootstrap",
-        plugins: "lists, link, image, media",
-        toolbar: "h1 h2 bold italic strikethrough blockquote bullist numlist backcolor | link image media | removeformat help",
-        menubar: false,
-
-        setup: editor => {
-            editor.on("init", () => {
-            editor.getContainer().style.transition =
-            "border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out";
-          });
-            editor.on("focus", () => {
-            (editor.getContainer().style.boxShadow = "0 0 0 .2rem rgba(0, 123, 255, .25)"),
-            (editor.getContainer().style.borderColor = "#80bdff");
-          });
-            editor.on("blur", () => {
-            (editor.getContainer().style.boxShadow = ""),
-            (editor.getContainer().style.borderColor = "");
-          });
-        }
-      });
-    </script>
-
     <script src="../js/function.js"></script>
-
-    <link
+    <script src="../js/functionPlanillaEditable.js"></script>
+   
+<link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
@@ -54,11 +26,58 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
       rel="stylesheet"
     />
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.tiny.cloud/1/lnayizsauri3gzzl1bqg6knbre479369o4olx2xg5q683s6d/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+   
+
+    <script src="../js/functionPlanillaEditable.js"></script>
+    <script>
+        tinymce.init({
+     
+      
+     selector: '#descripcionLarga_Proyecto',
+     entity_encoding : "raw",
+     height: 500,
+     plugins: [
+       'advlist autolink lists link charmap print preview anchor',
+       'searchreplace visualblocks code fullscreen',
+       'insertdatetime media table paste imagetools wordcount'
+     ],
+     toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+     content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+   
+     
+     });
+    </script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="styles2.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <?php
   include 'verificosesion.php';
-  include '..\Form\conexion.php';  
+  //include '../Form/conexion.php'; 
+  $mysqli = new mysqli('localhost','expoeduc_informatica2','LiceoIep_2020_2do_Inf','expoeduc_expoeduca');
+
+
+  //Output any connection error
+  if ($mysqli->connect_error) {
+      echo "error al conectar con base de datos";
+      return;
+  }  
    $sql = "SELECT TipoUsuario FROM usuario where usuario='". $_SESSION['Usuario']."'";   
    $result = $mysqli -> query($sql);   
    $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);   
@@ -78,23 +97,20 @@
     $sql = "SELECT * FROM videos WHERE idProyecto ='".$idproyecto."'";
     $result = $mysqli->query($sql);
     $vv = mysqli_fetch_array($result, MYSQLI_ASSOC);
-
-    $banner = $aa['Banner'];
+    $banner='';
+    if(isset($aa['Banner'])){
+      $banner = $aa['Banner'];
+    }
+    
     $titulo = $aa['Titulo'];
     $introduccion = $aa['Introduccion'];
     $descripcion = $aa['Descripcion'];
     $video = $vv['url'];
   ?>
 
-  
-  <body onload="hfindex()">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" 
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
+   
+<body onload="hfindex()">
+    
   <div id="header"></div>
     <div class="Linea1Planilla">
       <div class="Linea2">
@@ -107,7 +123,7 @@
                 <hr />
                 <div class="BannerEditable">
                 <?php
-                echo "<div class='Banner'><img src='../img/".$banner."' id='banner' style='max-height:100%; max-width:100%;'></div>";
+                echo "<div class='Banner'><img src='".$banner."' id='banner' style='max-height:100%; max-width:100%;'></div>";
                 ?>
                 </div>
 
@@ -116,25 +132,28 @@
                 <hr />
               
                 <div class="form-group">
-                  <input
+                  <h4>Título del proyecto</h4>
+                <input
                     type="text"
                     class="form-control"
                     id="user"
+                    data-idp="<?php echo $idproyecto ?>"
                     placeholder= "Nombre de Proyecto"
                     name="nombre_proyecto"
-                    value="<?php echo utf8_encode($titulo) ?>">
+                    value="<?php echo $titulo ?>">
                   </div>
                 
                 <hr />
 
               
                 <div class="form-group" >
+                  <h4>Descripción corta</h4>
                   <textarea
                     class="form-control"
                     rows="5"
                     placeholder="Introduccion"
                     
-                    id="descripcionCorta_Proyecto"><?php echo utf8_encode($introduccion); ?>
+                    id="descripcionCorta_Proyecto"><?php echo $introduccion; ?>
                   </textarea>
                 </div>
                   <?php
@@ -145,72 +164,78 @@
                   ?>
  
                 
-                <div class="form-group">
+                <div>
                   <textarea
                     class="form-control"
-                    rows="5"
                     placeholder="Descripcion"
-                    id="editor"><?php echo utf8_encode($descripcion); ?>
+                    id="descripcionLarga_Proyecto"><?php echo $descripcion; ?>
                   </textarea>
                 </div>
                 
-
-                <a class="BotonLogin2" href="../index.php" style="<?php echo $aprobar ?>"
-                  ><button style="margin-top: 5%;">
+                <a class="BotonLogin2"  style="<?php echo $aprobar ?>"
+                  ><button style="margin-top: 5%;" onclick="aprobar(4)">
                     <i class="fa">&#xf14a;</i> Aprobar Proyecto
                   </button></a
                 >
-                <a class="BotonLogin2" href="../index.php"
-                  ><button onclick="myFunction()" style="margin-top: 5%;">
+                <button onclick="ActualizoPlanilla()" style="margin-top: 5%; color: white">
                     <i class="fa">&#xf0c7;</i> Guardar Cambios
-                  </button></a
-                >
+                  </button>
 
                 <div class="ImagenesPlanilla">
-                <h2>Fotos:</h2>
+                <h2>Subimos Fotos:</h2>
+                <hr />
+                <h3>Foto Principal (solo 1):</h3>
                 <hr />
                 <div class="Foto">
-                <form action="uploadIMG.php" method="post" enctype="multipart/form-data">
-                  <input type="file" accept="image/x-png,image/jpg,image/jpeg" onchange="cambiar()" name="fileToUpload" id="fileToUpload" hidden="hidden" />
-                  <label for="fileToUpload"><i class="fa">&#xf03e;</i> Seleccionar Imagen</label><br>
-                    <label>
-                      <input type="submit" class="button" hidden="hidden">Subir Imagen
-                    </label>
-                  </form>
+                <div id="drop_file_zone" ondrop="upload_file(event,1)" ondragover="return false">
+                      <div id="drag_upload_file">
+                          <p>Arrastra y suelta el archivo aquí</p>
+                          <p>o</p>
+                          <p><input type="button" id="selectfile1" value="Select File" onclick="file_explorer();"></p>
+                          
+                      </div>
+                  </div>
+                  <div class="Foto" id="fprincipal">
+                    
+                  </div>
                 </div>
+                <hr />
+                <h3>Fotos secundarias:</h3>
+                <hr />
                 <div class="Foto">
-                 <form action="uploadIMGprincipal.php" method="post" enctype="multipart/form-data">
-                  <input type="file" accept="image/x-png,image/jpg,image/jpeg" onchange="cambiar()" name="fileToUpload" id="fileToUpload" hidden="hidden" />
-                  <label for="fileToUpload"><i class="fa">&#xf03e;</i> Seleccionar Imagen Principal</label><br>
-                    <label>
-                      <input type="submit" class="button" hidden="hidden">Subir Imagen
-                    </label>
-                 </form>
+               
+                  <div id="drop_file_zone" ondrop="upload_file(event,3)" ondragover="return false">
+                      <div id="drag_upload_file">
+                          <p>Arrastra y suelta los archivos aquí</p>
+                          <p>or</p>
+                          <p><input type="button" id="selectfile3" value="Select File" onclick="file_explorer();"></p>
+                          
+                      </div>
+                  </div>
+                  <div id="fsecundarias">
+                      
+                     
+                  </div>
+                 
                 </div>
+                <hr />
+                <h3>Banner:</h3>
+                <hr />
                 <div class="Foto">
-                <form action="uploadBanner.php" method="post" enctype="multipart/form-data">
-                  <input type="file" accept="image/x-png,image/jpg,image/jpeg" onchange="cambiar()" name="fileToUpload" id="fileToUpload" hidden="hidden" />
-                  <label for="fileToUpload"><i class="fa">&#xf03e;</i> Seleccionar Banner</label><br>
-                    <label>
-                      <input type="submit" class="button" hidden="hidden">Subir Imagen
-                    </label>
-                  </form>
+                <div id="drop_file_zone" ondrop="upload_file(event,2)" ondragover="return false">
+                      <div id="drag_upload_file">
+                          <p>Arrastra y suelta el Banner aquí</p>
+                          <p>or</p>
+                          <p><input type="button" id="selectfile2"  value="Select File" onclick="file_explorer();"></p>
+                         
+                      </div>
+                  </div>
+                  <div class="Foto" id="fbanner">
+                    
+                  </div>
                 </div>
               </div>
-                <?php
-                function myFunction() {
-                  $nombre_proyecto = $_POST['user'];
-                  $introduccion =$_POST['descripcionCorta_Proyecto'];
-                  $link= $_POST['link'];
-                  $descripcion= $_POST['descripcionLarga_Proyecto'];
-
-                $sql = " UPDATE datosproyectos SET Titulo = '$nombre_proyecto' WHERE idproyecto = '$idp' ";
-                $sql = " UPDATE datosproyectos SET Introduccion = '$introduccion' WHERE idproyecto = '$idp' ";
-                $sql = " UPDATE datosproyectos SET LinkVideo = '$link' WHERE idproyecto = '$idp' ";
-                $sql = " UPDATE datosproyectos SET Descripcion = '$descripcion' WHERE idproyecto = '$idp' ";
-                }
-
-                ?>
+                
 
               </div>
             
@@ -247,6 +272,7 @@
         </div>
       </div>
     </div>
+    <p id="msg"></p>
     <div id="footer"></div>
   </body>
 </html>

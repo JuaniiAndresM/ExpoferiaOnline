@@ -1,9 +1,9 @@
 $( document ).ready(function() {
     $.ajax({
         url:"CargoPlanilla.php", 
+        data: {id: sessionStorage.getItem("id")},
         type: "post", 
         success:function(content){
-          
           $('.Planilla').html(content);
       }
     });

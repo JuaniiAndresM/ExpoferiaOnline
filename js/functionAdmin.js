@@ -6,7 +6,7 @@ $( document ).ready(function() {
           
           $('.SolicitudFrame').html(content);
 
-          
+           
       }
     })
     });

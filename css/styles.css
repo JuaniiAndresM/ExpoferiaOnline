@@ -525,7 +525,7 @@ BotonProyecto :hover {
   text-decoration: none;
 }
 
-.PanelFrame {
+.PanelFrame { 
   text-align: center;
   margin-left: 20%;
   margin-right: 20%;
@@ -536,8 +536,8 @@ BotonProyecto :hover {
 .PanelProyecto {
   margin: auto;
   background-color: grey;
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 84px;
   border-radius: 15%;
 }
 
@@ -757,6 +757,7 @@ BotonProyecto :hover {
   text-decoration: none;
 }
 .Planilla h2 {
+  padding-top: 2%;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 25px;
@@ -880,8 +881,6 @@ BotonProyecto :hover {
 
 .numbertext {
   text-align: center;
-  color: white;
-  background-image: url('../img/Fondo.png');
   font-weight: bolder;
   font-size: 12px;
   padding: 8px 12px;
@@ -1040,7 +1039,7 @@ BotonProyecto :hover {
 }
 
 .BannerPlanillaEditable .BannerEditable {
-  height: 600px;
+  height: 200px;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -1602,4 +1601,76 @@ footer .Facebook {
   text-align: left;
   color: grey;
   font-size: 80%;
+}
+/* agregado para tinymce */
+textarea#mentions {
+  height: 350px;
+}
+
+div.card,
+.tox div.card {
+  width: 240px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: 0 4px 8px 0 rgba(34, 47, 62, .1);
+  padding: 8px;
+  font-size: 14px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}
+
+div.card::after,
+.tox div.card::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+div.card h1,
+.tox div.card h1 {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0 0 8px;
+  padding: 0;
+  line-height: normal;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}
+
+div.card p,
+.tox div.card p {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}
+
+div.card img.avatar,
+.tox div.card img.avatar {
+  width: 48px;
+  height: 48px;
+  margin-right: 8px;
+  float: left;
+}
+/* img wrap para agregar botón de eliminar en las fotos */
+.img-wrap {
+  position: relative;
+  display: inline-block;
+  border: 1px red solid;
+  font-size: 0;
+}
+.img-wrap .close {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  z-index: 100;
+  background-color: #FFF;
+  padding: 5px 2px 2px;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: .2;
+  text-align: center;
+  font-size: 22px;
+  line-height: 10px;
+  border-radius: 50%;
+}
+.img-wrap:hover .close {
+  opacity: 1;
 }

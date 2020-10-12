@@ -31,7 +31,7 @@
   </head>
   <body onload="hfindex()">
   <?php
-  include 'verificosesion.php';
+  include 'verificosesion.php'; 
   ?>
     <div id="header"></div>
     <div>
