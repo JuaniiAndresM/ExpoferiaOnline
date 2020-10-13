@@ -52,7 +52,7 @@ include '../Form/conexion.php';
                     <hr/>
                     <ul class='panelList'>
                     <li>
-                        <button class='botonPanel' id = '1' data-idp='".$row['idProyecto']."'>
+                        <button class='botonPanel' id = '1' onclick='mandarID(".$row['idProyecto'].")'>
                             <i class='fa'>&#xf044;</i> Editar Proyecto
                         </button></a>
                     </li>
