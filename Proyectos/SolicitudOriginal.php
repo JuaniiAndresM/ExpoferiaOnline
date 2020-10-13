@@ -122,7 +122,7 @@ if(isset($_POST['aprobar'])){
     $sql = "DELETE FROM solicitud_usuario WHERE idSoli_Usuario ='".$_POST['rechazado']."'";
     $mysqli -> query($sql);
     echo "luego de";
-    header("Location: ../HeaderFooter/index.php ");
+    header("Location: ../HeaderFooter/index.html ");
 } 
 
 ?>

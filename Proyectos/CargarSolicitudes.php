@@ -1,14 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+  <script src="../js/functionsolicitud.js"></script>
+  </head>
+
+
+
 <?php
 include 'verificosesion.php';
 
-//include '..\Form\conexion.php';
-$mysqli = new mysqli('localhost','expoeduc_informatica2','LiceoIep_2020_2do_Inf','expoeduc_expoeduca');
+include '..\Form\conexion.php';
 
-
-//Output any connection error
-if ($mysqli->connect_error) {
-    die('Error : ('. $mysqli->connect_errno .') '. $mysqli->connect_error);
-}
 $content="";
 $cont = 1;
 $sql = "SELECT * FROM solicitud_usuario";
@@ -50,14 +53,11 @@ if($result){
                   </div>
                 </div>
                 <div class='BotonesAdmin'>
-                    <form method='post' action='Solicitud.php'>
-                      <button input type='submit' name='aprobar' value ='".$sqlsolicitudes['idSoli_Usuario']."'><i class='fa'>&#xf14a;</i>  Aprobar</button>
-                    </form> 
+                      <button onclick='aprobado(".$sqlsolicitudes['idSoli_Usuario'].")'><i class='fa'>&#xf14a;</i>  Aprobar</button>
                     <div>
                       <button data-toggle='collapse' data-target='#rechazar'><i class='fa'>&#xf00d;</i>  Rechazar</button>
                     </div> 
                   </div> 
-                  <form method='post' action='Solicitud.php'>
                     <div id='rechazar' class='collapse form-group'>
                       <label for='comment'><i class='fa'>&#xf27a;</i> Comentario:</label>
                       <textarea
@@ -67,9 +67,8 @@ if($result){
                         placeholder='Ingrese Comentario'
                         id='comment'
                       ></textarea>
-                      <button class='Enviar' input type='submit' name='rechazado' value ='".$sqlsolicitudes['idSoli_Usuario']."' class='Enviar'  ><i class='fa'>&#xf1d8;</i> Enviar</button>
+                      <button class='Enviar' onclick='noaprobado(".$sqlsolicitudes['idSoli_Usuario'].")' ><i class='fa'>&#xf1d8;</i> Enviar</button>
                     </div>
-                  </form>  
               </div>
               <hr>
               ";

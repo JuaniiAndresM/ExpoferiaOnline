@@ -1,11 +1,5 @@
 <?php 
-$mysqli = new mysqli('localhost','expoeduc_informatica2','LiceoIep_2020_2do_Inf','expoeduc_expoeduca');
-
-
-//Output any connection error
-if ($mysqli->connect_error) {
-    die('Error : ('. $mysqli->connect_errno .') '. $mysqli->connect_error);
-}include '..\Form\conexion.php';
+include '..\Form\conexion.php';
 
 $content="";
 $sql = "SELECT *FROM datosProyecto where Estado = '1'";
