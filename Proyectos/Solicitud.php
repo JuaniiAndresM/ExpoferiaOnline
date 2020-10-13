@@ -1,13 +1,6 @@
 
 <?php
-//include '..\Form\conexion.php';
-$mysqli = new mysqli('localhost','expoeduc_informatica2','LiceoIep_2020_2do_Inf','expoeduc_expoeduca');
-
-
-//Output any connection error
-if ($mysqli->connect_error) {
-    die('Error : ('. $mysqli->connect_errno .') '. $mysqli->connect_error);
-}
+include '..\Form\conexion.php';
 
  
 if(isset($_POST['aprobar'])){
@@ -55,14 +48,13 @@ if(isset($_POST['aprobar'])){
     }else{
      echo "'Error : ('. $mysqli->errno .') '. $mysqli->error'";
     }
+    
 }else{
   
 
     $sql = "SELECT * FROM solicitud_usuario WHERE idSoli_Usuario = '".$_POST['rechazado']."'";
     $result = $mysqli -> query($sql);
     $sqlsolicitudes = mysqli_fetch_array($result, MYSQLI_ASSOC);   
-
-    $mail = new PHPMailer(true);
 
 
     $address=$sqlsolicitudes['Email'];         

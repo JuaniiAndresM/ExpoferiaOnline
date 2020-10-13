@@ -6,6 +6,7 @@
     $result = $mysqli -> query($sql);
     $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
     $cont = 1;
+    
     $content= "";
     // DEL PROFESOR. 
     $sql = "SELECT * FROM datosProyecto WHERE idProyecto = '".$_POST['id']."'";
