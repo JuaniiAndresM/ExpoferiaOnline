@@ -10,7 +10,7 @@
 <?php
 include 'verificosesion.php';
 
-include '..\Form\conexion.php';
+include '../Form/conexion.php';
 
 $content="";
 $cont = 1;

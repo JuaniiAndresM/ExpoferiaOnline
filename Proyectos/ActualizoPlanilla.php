@@ -1,7 +1,7 @@
 <?php
 
     include 'verificosesion.php';
-    include '..\Form\conexion.php';
+    include '../Form/conexion.php';
     $nombre_proyecto = $_POST['nombre'];
     $introduccion =$_POST['dcorta'];
     $link='';

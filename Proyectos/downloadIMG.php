@@ -1,15 +1,7 @@
 <?php
 
 session_start();
-//include '..\Form\conexion.php';
-$mysqli = new mysqli('localhost','expoeduc_informatica2','LiceoIep_2020_2do_Inf','expoeduc_expoeduca');
-
-
-//Output any connection error
-if ($mysqli->connect_error) {
-    echo "error al conectar con base de datos";
-    return;
-}
+include '../Form/conexion.php';
 
 $idproyecto = $_POST['idp'];
 $tipo=$_POST['tipo'];

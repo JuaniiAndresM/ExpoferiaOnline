@@ -1,5 +1,5 @@
 <?php
-include '..\Form\conexion.php';
+include '../Form/conexion.php';
 $nlocal = $_POST['numerolocal']; 
 $grado = $_POST['grado']; 
 $orientacion = $_POST['orientacion']; 
