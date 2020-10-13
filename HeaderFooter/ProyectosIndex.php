@@ -2,18 +2,22 @@
 include '../Form/conexion.php';
 
 $content="";
-$sql = "SELECT *FROM datosProyecto where Estado = '1'";
+$num = 0;
+$sql = "SELECT * FROM datosProyecto where Estado = '1'";
 $result = $mysqli -> query($sql);
-$row_cnt = $result->num_rows;
-if($sql = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+
+while($sqlarray = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+  $array[$num] = $sqlarray['idProyecto'];
+  echo $array[$num];
+  $num ++;
+}
         $i = 1;
         $y = 1;
-        $arr = range(1,$row_cnt);
-        shuffle($arr);
+        shuffle($array);
         $x = 0;
 
       do{
-          $random = $arr[$x];
+          $random = $array[$x];
             $sql = "SELECT * FROM datosProyecto WHERE idProyecto = '".$random."'";
             $result = $mysqli -> query($sql);
             $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
@@ -90,7 +94,6 @@ if($sql = mysqli_fetch_array($result, MYSQLI_ASSOC)){
         
       }while($i <= 3);
       
-    }
 
     echo $content;
 
