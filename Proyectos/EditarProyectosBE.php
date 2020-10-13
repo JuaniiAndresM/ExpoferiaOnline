@@ -1,6 +1,6 @@
 <?php
 include 'verificosesion.php';
-include '..\Form\conexion.php';
+include '../Form/conexion.php';
 
             $sql = "SELECT TipoUsuario FROM usuario where usuario='". $_SESSION['Usuario']."'";
             $result = $mysqli -> query($sql);

@@ -174,11 +174,22 @@
                 </div>
                 
                 <?php
+                $sql = "SELECT Estado FROM expoeduc_expoeduca.datosProyecto where idProyecto='".$idproyecto."';";
+                $result = $mysqli -> query($sql);
+                $aprobado = mysqli_fetch_array($result, MYSQLI_ASSOC);
+                if($aprobado["Estado"]==0){
                 echo "<a class='BotonLogin2'  style='".$aprobar."'
                   ><button style='margin-top: 5%;' onclick='aprobar(".$idproyecto.")'>
                     <i class='fa'>&#xf14a;</i> Aprobar Proyecto
                   </button></a
                 >";
+                }else{
+                  echo "<a class='BotonLogin2'  style='".$aprobar."'
+                  ><button style='margin-top: 5%;' onclick='desaprobar(".$idproyecto.")'>
+                    <i class='fa'>&#xf14a;</i> Desaprobar Proyecto
+                  </button></a
+                >";
+                }
                 ?>
 
                 <button onclick="ActualizoPlanilla()" style="margin-top: 5%; color: white">

@@ -1,6 +1,6 @@
 <?php
 include 'verificosesion.php';
-include '..\Form\conexion.php';
+include '../Form/conexion.php';
 
 //$idproyecto = $_POST['id'];
 $cont = 1;
