@@ -13,7 +13,6 @@ if ($mysqli->connect_error) {
 
 $idproyecto = $_POST['id'];
 $tipo=$_POST['tipo'];
-$cont = 1;
 $ruta = '../img/PROYECT' .$idproyecto; 
 $ruta2= 'http://expoeduca.liceoiep.edu.uy/iep/img/PROYECT'.$idproyecto;
 
@@ -22,6 +21,7 @@ if (!file_exists($ruta)) {
   
 }
 
+$file = basename($_FILES["file"]["name"]);
 $target_dir = $ruta;
 $target_file = $target_dir ."/". basename($_FILES["file"]["name"]);
 $target_file2 = $ruta2 ."/". basename($_FILES["file"]["name"]);
@@ -40,6 +40,58 @@ if ($_FILES["file"]["size"] > 3000000) {
   echo '<script language="javascript"> alert("La imagen supera el peso maximo (3MB).")</script>';
   $uploadOk = 0;
 }
+
+function check_valid_image_size( $file ) {
+  $allowed_mimetypes = array( 'image/jpeg', 'image/png');
+
+  if (!in_array($file['type'], $allowed_mimetypes)){
+      return $file;
+  }
+
+  $image = getimagesize($file['tmp_name']);
+  $too_large = "Image dimensions are too large. Maximum size is {$maximum['width']} by {$maximum['height']} pixels. Uploaded image is $image_width by $image_height pixels.";
+
+
+    if($tipo == 2){
+      $uploadOk = 0;
+      //banner
+      $maximum = array(
+        'width' => '1200',
+        'height' => '200'
+      );
+    $image_width = $image[0];
+    $image_height = $image[1];
+
+    $proporcion = $image_width / $image_height;
+
+    if($proporcion == 6){
+      $uploadOk = 1;
+    }else{
+      echo $too_large;
+    };
+
+    }else{
+      $uploadOk = 0;
+      //img
+      $maximum = array(
+        'width' => '700',
+        'height' => '350'
+    );
+
+    $image_width = $image[0];
+    $image_height = $image[1];
+
+    $proporcion = $image_width / $image_height;
+
+    if($proporcion == 2){
+      $uploadOk = 1;
+    }else{
+      echo $too_large;
+    };
+    }
+  }
+
+
 
 if ($uploadOk == 0) {
   echo '<script language="javascript"> alert("La imagen no se pudo guardar". )</script>';
