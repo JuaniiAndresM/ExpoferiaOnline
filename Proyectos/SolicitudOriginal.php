@@ -44,7 +44,7 @@ if(isset($_POST['aprobar'])){
                 $sqlsolicitudes = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
                 $mail = new PHPMailer(true);
-                
+                 
                 try {
                     //Server settings
                     $mail->SMTPDebug = 0;                                       // Enable verbose debug output

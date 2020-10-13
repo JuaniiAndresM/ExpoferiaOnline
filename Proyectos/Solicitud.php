@@ -30,7 +30,7 @@ if(isset($_POST['aprobar'])){
         $result = $mysqli -> query($sql);
         $sqlID= mysqli_fetch_array($result, MYSQLI_ASSOC);
             
-            $path = "..\img\PROYECT".$sqlID['idProyecto']."";
+            $path = "../img/PROYECT".$sqlID['idProyecto']."";
             if (!file_exists($path)) {
                 mkdir($path, 0777, true);
 
