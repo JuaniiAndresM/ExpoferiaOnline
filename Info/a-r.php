@@ -1,6 +1,6 @@
-<?php include_once ("aprobar.php");?>
+<?php include_once ("aprobarProfesores.php");?>
 <?php
-include ("conexion.php");
+include "../Form/conexion.php";
 if(isset($_POST['enviar'])){
     if(!empty($_POST['activo'])){
         foreach($_POST['activo'] as $selected){
