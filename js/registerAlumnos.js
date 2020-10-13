@@ -4,8 +4,12 @@ function hola(){
         url: "registrarAlumno.php",
         data: $("#formulario").serialize(),
         success: function(data){
-            alert("todo bien")
-             }
-
+            if (data==1){
+                alert("error");
+            }else{
+                alert("se grabó correctamente");
+            }
+         }
+  
         });
 }
