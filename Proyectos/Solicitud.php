@@ -1,6 +1,6 @@
 
 <?php
-include '..\Form\conexion.php';
+include '../Form/conexion.php';
 
   
 if(isset($_POST['aprobar'])){

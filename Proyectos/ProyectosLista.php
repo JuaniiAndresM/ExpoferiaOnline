@@ -30,7 +30,7 @@
   </head>
 
   <?php
-  include '..\Form\conexion.php';
+  include '../Form/conexion.php';
   $sql = "SELECT * FROM datosproyectos";
   $orientacion = $mysqli->query($sql);
 

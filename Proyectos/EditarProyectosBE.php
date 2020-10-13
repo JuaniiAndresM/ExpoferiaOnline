@@ -1,6 +1,6 @@
 <?php
 include 'verificosesion.php';
-include '..\Form\conexion.php';
+include '../Form/conexion.php';
 
             $sql = "SELECT TipoUsuario FROM usuario where usuario='". $_SESSION['Usuario']."'";
             $result = $mysqli -> query($sql);
@@ -52,7 +52,7 @@ include '..\Form\conexion.php';
                     <hr/>
                     <ul class='panelList'>
                     <li>
-                        <button class='botonPanel' id = '1' data-idp='".$row['idProyecto']."'>
+                        <button class='botonPanel' id = '1' onclick='mandarID(".$row['idProyecto'].")'>
                             <i class='fa'>&#xf044;</i> Editar Proyecto
                         </button></a>
                     </li>

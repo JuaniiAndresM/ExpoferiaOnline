@@ -1,3 +1,4 @@
+<?php include ("contacto.php");?>
 <?php   
     include "../Form/conexion.php";
     if(isset($_POST['usuario']) && $_POST['password']){
@@ -47,11 +48,19 @@
                             
                     }
                     if($insert_row==true){
-                        include '..\Proyectos\EnviarEmail.php';
-                        echo 0;
+                        ?>
+                        <script>
+                        alert("Todo bien");
+                        </script>
+                        <?php
+
                         
                     }else{
-                        echo 1;
+                        ?>
+                        <script>
+                        alert("Todo bien");
+                        </script>
+                         <?php
                     }
                  }
             }
