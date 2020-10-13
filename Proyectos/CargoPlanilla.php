@@ -1,6 +1,6 @@
 <?php
     if(isset($_POST['id'])){
-    include '..\Form\conexion.php';
+    include '../Form/conexion.php';
     session_start();
     $sql = "SELECT * FROM datosProyecto WHERE idProyecto = '".$_POST['id']."'";
     $result = $mysqli -> query($sql);

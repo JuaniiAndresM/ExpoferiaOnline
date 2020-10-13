@@ -1,5 +1,5 @@
 <?php 
-include '..\Form\conexion.php';
+include '../Form/conexion.php';
 
 $content="";
 $sql = "SELECT *FROM datosProyecto where Estado = '1'";

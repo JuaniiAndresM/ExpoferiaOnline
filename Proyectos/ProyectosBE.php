@@ -1,5 +1,5 @@
 <?php
-include '..\Form\conexion.php';
+include '../Form/conexion.php';
 
     $sql = "SELECT idProyecto, Titulo, Introduccion, Orientacion, ndolocal FROM datosProyecto WHERE Estado = 1 order by ndolocal";
     $results = $mysqli->query($sql);

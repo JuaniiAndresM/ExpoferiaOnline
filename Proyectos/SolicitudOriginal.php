@@ -1,13 +1,7 @@
 
 <?php
-//include '..\Form\conexion.php';
-$mysqli = new mysqli('localhost','expoeduc_informatica2','LiceoIep_2020_2do_Inf','expoeduc_expoeduca');
+include '../Form/conexion.php';
 
-
-//Output any connection error
-if ($mysqli->connect_error) {
-    die('Error : ('. $mysqli->connect_errno .') '. $mysqli->connect_error);
-}
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
