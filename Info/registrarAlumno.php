@@ -1,6 +1,4 @@
-<?php 
-include_once("contacto.php")
-?>
+
 <?php 
     $error = false;
     include "../Form/conexion.php";

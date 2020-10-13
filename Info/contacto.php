@@ -189,7 +189,7 @@
                     id="comment"
                   ></textarea>
                 </div>
-                <a class="buttonEnviar" 
+                <a class="buttonEnviar" onclick="hola();"
                   ><button>Enviar</button></a
                 >
                 <div class="form-group">
