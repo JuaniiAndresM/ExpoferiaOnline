@@ -1,7 +1,7 @@
 $( document ).ready(function() {
   $.ajax({
-    url:"PlanillaEditable.php", 
-    type: "post", 
+    url:"PlanillaEditable.php",
+    type: "post",
     success:function(content){
       var idp = $("#user").data("idp");
       TraigoFoto(idp,1);// cargo la imagen principal
@@ -10,7 +10,7 @@ $( document ).ready(function() {
       
       }
   });
-   
+  
 });
 function borramos(url){
   var idp = $("#user").data("idp");
@@ -62,14 +62,15 @@ function borramosbanner(url){
 function aprobar(id){
     $.ajax({
       url:"../Proyectos/aprobar.php",
-      data: {idproyecto: id},
+      data: {idproyecto: sessionStorage.setItem("id", id)},
       type: "post", 
       success:function(content){
         window.location.href="../HeaderFooter/index.html";
     }
        });
-     
 };
+
+
 function ActualizoPlanilla(){
   
   var nombreproyecto= $("#user").val();

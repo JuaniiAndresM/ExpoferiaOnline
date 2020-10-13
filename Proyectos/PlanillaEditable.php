@@ -69,8 +69,8 @@
 
   <?php
   include 'verificosesion.php';
-  //include '../Form/conexion.php'; 
-  $mysqli = new mysqli('localhost','expoeduc_informatica2','LiceoIep_2020_2do_Inf','expoeduc_expoeduca');
+  include '../Form/conexion.php'; 
+  //$mysqli = new mysqli('localhost','expoeduc_informatica2','LiceoIep_2020_2do_Inf','expoeduc_expoeduca');
 
 
   //Output any connection error
@@ -84,28 +84,29 @@
    if(isset($ss['TipoUsuario'])){      
      if($ss['TipoUsuario']==2){       
        $aprobar = "display: none;";     
-      }     
+      }else {$aprobar = "";}
     }
     //cuando es alumno no muestra el boton de aprobar proyecto
+   $idproyecto = $_GET['id'];
+   
+   $sql = "SELECT * FROM datosProyecto WHERE idProyecto ='".$idproyecto."'";
+   $resultaa = $mysqli->query($sql);
+   $aa =mysqli_fetch_array($resultaa, MYSQLI_ASSOC);
 
-   $idproyecto = $_POST['id'];
+   $sql = "SELECT * FROM videos WHERE idProyecto ='".$idproyecto."'";
+   $result = $mysqli->query($sql);
+   $vv = mysqli_fetch_array($result, MYSQLI_ASSOC);
+   $banner='';
+   if(isset($aa['Banner'])){
+     $banner = $aa['Banner'];
+   }
+   
+   $titulo = $aa['Titulo'];
+   $introduccion = $aa['Introduccion'];
+   $descripcion = $aa['Descripcion'];
+   if(isset($vv['url'])){
+    $video = $vv['url'];}
 
-    $sql = "SELECT * FROM datosProyecto WHERE idProyecto ='".$idproyecto."'";
-    $resultaa = $mysqli->query($sql);
-    $aa =mysqli_fetch_array($resultaa, MYSQLI_ASSOC);
-
-    $sql = "SELECT * FROM videos WHERE idProyecto ='".$idproyecto."'";
-    $result = $mysqli->query($sql);
-    $vv = mysqli_fetch_array($result, MYSQLI_ASSOC);
-    $banner='';
-    if(isset($aa['Banner'])){
-      $banner = $aa['Banner'];
-    }
-    
-    $titulo = $aa['Titulo'];
-    $introduccion = $aa['Introduccion'];
-    $descripcion = $aa['Descripcion'];
-    $video = $vv['url'];
   ?>
 
    
@@ -172,11 +173,14 @@
                   </textarea>
                 </div>
                 
-                <a class="BotonLogin2"  style="<?php echo $aprobar ?>"
-                  ><button style="margin-top: 5%;" onclick="aprobar(4)">
-                    <i class="fa">&#xf14a;</i> Aprobar Proyecto
+                <?php
+                echo "<a class='BotonLogin2'  style='".$aprobar."'
+                  ><button style='margin-top: 5%;' onclick='aprobar(".$idproyecto.")'>
+                    <i class='fa'>&#xf14a;</i> Aprobar Proyecto
                   </button></a
-                >
+                >";
+                ?>
+
                 <button onclick="ActualizoPlanilla()" style="margin-top: 5%; color: white">
                     <i class="fa">&#xf0c7;</i> Guardar Cambios
                   </button>
