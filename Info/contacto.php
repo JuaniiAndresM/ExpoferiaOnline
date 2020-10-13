@@ -13,6 +13,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="../js/function.js"></script>
+    <script src="../js/registerAlumnos.js"></script>
 
     <link
       rel="stylesheet"
@@ -44,7 +45,7 @@
                 los datos requeridos, y te enviaremos los datos de la cuenta.</a
               >
               <hr />
-              <form action="registrarAlumno.php" method="POST">
+              <form action="" method="POST" id="formulario" >
                 <div class="form-group">
                   <label for="uname">Nombre:</label>
                   <input
@@ -188,7 +189,7 @@
                     id="comment"
                   ></textarea>
                 </div>
-                <a class="buttonEnviar" type="submit"
+                <a class="buttonEnviar" onclick="hola();" 
                   ><button>Enviar</button></a
                 >
                 <div class="form-group">
