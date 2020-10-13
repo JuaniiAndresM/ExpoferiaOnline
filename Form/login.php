@@ -39,10 +39,18 @@
               <h2>Login:</h2>
               <hr />
               <p>
-                Si aún no tienes una cuenta, pidela<a
+                Si aún no tienes una cuenta, pidela aqui.
+                <br>
+                <a
                   href="../Info/contacto.php"
                 >
-                  aquí.</a
+                  Usuario</a
+                >
+                <br>
+                <a
+                  href="../Form/Register.php"
+                >
+                  Profesor</a
                 >
               </p>
               <form action="logearse.php" method="POST">

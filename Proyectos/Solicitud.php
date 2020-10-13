@@ -2,7 +2,7 @@
 <?php
 include '../Form/conexion.php';
 
- 
+  
 if(isset($_POST['aprobar'])){
     
     $sql = "SELECT * FROM solicitud_usuario WHERE idSoli_Usuario = '".$_POST['aprobar']."'";
@@ -68,7 +68,7 @@ if(isset($_POST['aprobar'])){
     $sql = "DELETE FROM solicitud_usuario WHERE idSoli_Usuario ='".$_POST['rechazado']."'";
     $mysqli -> query($sql);
     echo "luego de";
-    header("Location: ../HeaderFooter/index.html ");
+    header("Location: Admin.php ");
 } 
 
 ?>

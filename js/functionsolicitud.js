@@ -4,8 +4,8 @@ function aprobado(id){
         url:"Solicitud.php", 
         data: {aprobar: sessionStorage.getItem("aprobar")},
         type: "post", 
-        success:function(content){
-            $('.SolicitudFrame').html(content);
+        success:function(){
+            location.reload();
       }
     })
     }
@@ -16,8 +16,8 @@ function aprobado(id){
             url:"Solicitud.php", 
             data: {rechazado: sessionStorage.getItem("rechazado")},
             type: "post", 
-            success:function(content){
-                $('.SolicitudFrame').html(content);
+            success:function(){
+                location.reload();
           }
         })
         }
