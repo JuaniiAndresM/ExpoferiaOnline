@@ -1,11 +1,5 @@
 <?php 
-$mysqli = new mysqli('expoeduca.liceoiep.edu.uy','expoeduc_informatica2','LiceoIep_2020_2do_Inf','expoeduc_expoeduca');
-
-
-//Output any connection error
-if ($mysqli->connect_error) {
-    die('Error : ('. $mysqli->connect_errno .') '. $mysqli->connect_error);
-}include '..\Form\conexion.php';
+include '..\Form\conexion.php';
 
 $content="";
 $sql = "SELECT *FROM datosProyecto where Estado = '1'";
@@ -71,7 +65,7 @@ if($sql = mysqli_fetch_array($result, MYSQLI_ASSOC)){
                         <img src='".$ss['ImagenPrincipal']."'
                         id ='foto".$i."'
                             class='ImagenProyectos'  
-                            style='max-height:100%; max-width:100%;'
+                            style='max-height:50%; max-width:50%;'
                         />
                         </div>
                         <div class='SeccionTexto'>
