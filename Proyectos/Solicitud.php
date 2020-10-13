@@ -2,7 +2,7 @@
 <?php
 include '..\Form\conexion.php';
 
- 
+  
 if(isset($_POST['aprobar'])){
     
     $sql = "SELECT * FROM solicitud_usuario WHERE idSoli_Usuario = '".$_POST['aprobar']."'";
