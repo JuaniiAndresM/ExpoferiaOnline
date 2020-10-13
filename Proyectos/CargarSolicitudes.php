@@ -54,10 +54,7 @@ if($result){
                 </div>
                 <div class='BotonesAdmin'>
                       <button onclick='aprobado(".$sqlsolicitudes['idSoli_Usuario'].")'><i class='fa'>&#xf14a;</i>  Aprobar</button>
-                    <div>
-                      <button data-toggle='collapse' data-target='#rechazar'><i class='fa'>&#xf00d;</i>  Rechazar</button>
-                    </div> 
-                  </div> 
+                      <button data-toggle='collapse' data-target='#rechazar'><i class='fa'>&#xf00d;</i>  Rechazar</button> 
                     <div id='rechazar' class='collapse form-group'>
                       <label for='comment'><i class='fa'>&#xf27a;</i> Comentario:</label>
                       <textarea
@@ -68,6 +65,7 @@ if($result){
                         id='comment'
                       ></textarea>
                       <button class='Enviar' onclick='noaprobado(".$sqlsolicitudes['idSoli_Usuario'].")' ><i class='fa'>&#xf1d8;</i> Enviar</button>
+                    </div>
                     </div>
               </div>
               <hr>
