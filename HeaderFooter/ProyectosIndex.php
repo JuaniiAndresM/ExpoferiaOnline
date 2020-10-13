@@ -1,5 +1,5 @@
 <?php 
-$mysqli = new mysqli('localhost','expoeduc_informatica2','LiceoIep_2020_2do_Inf','expoeduc_expoeduca');
+$mysqli = new mysqli('expoeduca.liceoiep.edu.uy','expoeduc_informatica2','LiceoIep_2020_2do_Inf','expoeduc_expoeduca');
 
 
 //Output any connection error
