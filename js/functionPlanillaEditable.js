@@ -62,12 +62,22 @@ function borramosbanner(url){
 function aprobar(id){
     $.ajax({
       url:"../Proyectos/aprobar.php",
-      data: {idproyecto: sessionStorage.setItem("id", id)},
+      data: {idproyecto: id},
       type: "post", 
       success:function(content){
         window.location.href="../HeaderFooter/index.html";
     }
        });
+};
+function desaprobar(id){
+  $.ajax({
+    url:"../Proyectos/desaprobar.php",
+    data: {idproyecto: id},
+    type: "post", 
+    success:function(content){
+      window.location.href="../HeaderFooter/index.html";
+  }
+     });
 };
 
 
