@@ -42,7 +42,7 @@
   <!-- Modal content -->
   <div class="modal-content">
     <p>Unirse a proyectos:</p>
-    <p>Todo funciono correctamente y te unise a los proyectos seleccioandos.</p>
+    <p>Todo funciono correctamente y te uniste a los proyectos seleccioandos.</p>
     <span class="close" onclick="cerrar();">&times;</span>
   </div>
 </div>
