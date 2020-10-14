@@ -38,21 +38,7 @@
             <div class="LoginFrame">
               <h2>Login:</h2>
               <hr />
-              <p>
-                Si aún no tienes una cuenta, pidela aqui.
-                <br>
-                <a
-                  href="../Info/contacto.php"
-                >
-                  Alumno</a
-                >
-                <br>
-                <a
-                  href="../Form/register.php"
-                >
-                  Profesor</a
-                >
-              </p>
+             
               <form action="logearse.php" method="POST">
                 <div class="form-group">
                   <label for="uname">Usuario:</label>
@@ -90,6 +76,22 @@
                   ><button>Iniciar Sesión</button></a
                 >
               </form>
+              <p style='background-color:#e4fca7'>
+                Solo deben crear cuenta: <br>- Un alumno por proyecto.<br>- Todos los profesores lideres de proyecto.
+                <br>Si aún no tienes cuenta, solícitala mediante los enlaces de abajo.
+                <br></p>
+                <a class='btnlogin'
+                  href="../Info/contacto.php"
+                >
+                  Alumno</a
+                >
+                <br><br><br>
+                <a class='btnlogin'
+                  href="../Form/register.php"
+                >
+                  Profesor</a
+                >
+              
             </div>
           </div>
         </div>
