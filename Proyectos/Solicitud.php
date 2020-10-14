@@ -2,6 +2,7 @@
 <?php
 include '../Form/conexion.php';
 
+echo "<script>alert('Espere un segundo...')</script>";
   
 if(isset($_POST['aprobar'])){
     
@@ -9,7 +10,7 @@ if(isset($_POST['aprobar'])){
     $result = $mysqli -> query($sql);
     $sqlsolicitudes = mysqli_fetch_array($result, MYSQLI_ASSOC);
     
-    $insert_row = $mysqli->query("INSERT INTO usuario (TipoUsuario,Usuario,Password, Nombre, Apellido) VALUES ('2','".$sqlsolicitudes['Usuario']."','".$sqlsolicitudes['Password']."','".$sqlsolicitudes['Nombre']."','".$sqlsolicitudes['Apellido']."')");
+    $insert_row = $mysqli->query("INSERT INTO usuario (TipoUsuario,Usuario,Password, Nombre, Apellido, Email) VALUES ('2','".$sqlsolicitudes['Usuario']."','".$sqlsolicitudes['Password']."','".$sqlsolicitudes['Nombre']."','".$sqlsolicitudes['Apellido']."','".$sqlsolicitudes['Email']."')");
     
     if($insert_row){
     $sql = "SELECT * FROM usuario WHERE Usuario = '".$sqlsolicitudes['Usuario']."'";
@@ -51,7 +52,8 @@ if(isset($_POST['aprobar'])){
     
 }else{
   
-
+    if(isset($_POST['rechazado'])){
+    
     $sql = "SELECT * FROM solicitud_usuario WHERE idSoli_Usuario = '".$_POST['rechazado']."'";
     $result = $mysqli -> query($sql);
     $sqlsolicitudes = mysqli_fetch_array($result, MYSQLI_ASSOC);   
@@ -69,6 +71,57 @@ if(isset($_POST['aprobar'])){
     $mysqli -> query($sql);
     echo "luego de";
     header("Location: Admin.php ");
+    }
 } 
+
+if(isset($_POST['aprobadoPROF'])){
+    
+    $sql = "SELECT * FROM solicitud_profesor WHERE idSoliProf = '".$_POST['aprobadoPROF']."'";
+    $result = $mysqli -> query($sql);
+    $sqlsolicitudes = mysqli_fetch_array($result, MYSQLI_ASSOC);
+    
+    $insert_row = $mysqli->query("INSERT INTO usuario (TipoUsuario,Usuario,Password, Nombre, Apellido, Email) VALUES ('1','".$sqlsolicitudes['Usuario']."','".$sqlsolicitudes['Password']."','".$sqlsolicitudes['Nombre']."','".$sqlsolicitudes['Apellido']."','".$sqlsolicitudes['Email']."')");
+    
+    if($insert_row){
+                $sql = "SELECT * FROM solicitud_profesor WHERE idSoliProf = '".$_POST['aprobadoPROF']."'";
+                $result = $mysqli -> query($sql);
+                $sqlsolicitudes = mysqli_fetch_array($result, MYSQLI_ASSOC);
+                $address=$sqlsolicitudes['Email'];
+                $subject='Solicitud de proyecto aprobado';
+                $body='Queremos informarle que su solicitud del usuario '.$sqlsolicitudes['Usuario'].' fue aprobado. Saludos, Alumnos de segundo Informatica.';
+                // Enviar email
+                include 'EnviarEmail.php';
+                // sigue mi programa.
+                $sql = "DELETE FROM solicitud_profesor WHERE idSoliProf ='".$_POST['aprobadoPROF']."'";
+                $mysqli -> query($sql);
+                header("Location: Admin.php ");
+    }else{
+     echo "'Error : ('. $mysqli->errno .') '. $mysqli->error'";
+    }
+    
+}else{
+
+    if(isset($_POST['noaprobadoPROF'])){
+    
+        $sql = "SELECT * FROM solicitud_profesor WHERE idSoliProf = '".$_POST['noaprobadoPROF']."'";
+        $result = $mysqli -> query($sql);
+        $sqlsolicitudes = mysqli_fetch_array($result, MYSQLI_ASSOC);   
+    
+    
+        $address=$sqlsolicitudes['Email'];         
+        $subject='Solicitud de usuario rechazado';
+        $body=$_POST['comentario'];
+        // 
+        echo "antes de enviar email";
+        include 'EnviarEmail.php';
+    
+    
+        $sql = "DELETE FROM solicitud_profesor WHERE idSoliProf ='".$_POST['noaprobadoPROF']."'";
+        $mysqli -> query($sql);
+        echo "luego de";
+        header("Location: Admin.php ");
+        }
+
+}
 
 ?>

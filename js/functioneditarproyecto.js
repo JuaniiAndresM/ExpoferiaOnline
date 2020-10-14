@@ -10,6 +10,5 @@ $( document ).ready(function() {
 }); 
 
 function mandarID(id){
-  alert(id);
   window.location = 'PlanillaEditable.php?id=' + id;
 };

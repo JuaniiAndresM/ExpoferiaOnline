@@ -37,8 +37,10 @@
         <div class="Linea3">
           <div class="Login">
             <div class="LoginFrame">
-              <h2>Register:</h2>
+              <h2>Registro del Profesor:</h2>
               <hr />
+              <br><p>Bienvenido Profesor: recuerda que solo debes registrarte una vez, luego de aprobado tu registro, podrás vincular tu usuario a todos los proyectos que estés liderando</p>
+              <br>
                 <div class="form-group">
                   <label for="uname">Usuario:</label>
                   <input

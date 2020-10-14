@@ -1,20 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="min-height: 100%;">
   <head>
     <meta charset="UTF-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no"
     />
-    <title>Admin Panel | Expoeduca</title>
-
+    <title>Expoeduca | IEP</title>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="../js/Texto.js"></script>
     <script src="../js/function.js"></script>
-    <script src="../js/functionAdmin.js"></script>
+    <script src="../js/contador.js"></script>
+    <script src="../js/funcionindex.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      var scroll = new SmoothScroll('a[href*="#"]');
+    </script>
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -30,30 +37,18 @@
     />
   </head>
   <body onload="hfindex()">
-  <?php
-  include 'verificosesion.php'; 
-  ?>
-    <div id="header"></div>
-    <div>
-    </div>
-      <div class="Linea1Admin">
-        <div class="Linea2">
-          <div class="Linea3">
-            <div class="Admin">
-                <a id="TituloTablaProyectos">Nuevas Solicitudes Poryectos:</a>
-                <br>
-                <a>NO APRETAR MAS DE UNA VEZ, TENGA PACIENCIA</a>
-                <hr />
-
-                <div class="Solicitudes">
-                <div class="SolicitudFrame">
-                  
-              </div>
-            </div>
-            </div>
-          </div>
+    <div class="Index-Page">
+        <div class="SubPage">
+          <p class="texto" style="font-size: 400%;">
+            <b>PROXIMAMENTE</b>
+          </p>
+          <p class="texto2">
+            Los proyectos todavía no están habilitados. Espere hasta la ExpoFeria! <br> Faltan:
+          </p>
+          <p id="Regresiva"></p>
+          <br />
+          <a class="ContinuarIndex" href="../index.html">Volver</a><br />
         </div>
       </div>
-    <div id="footer"></div>
   </body>
 </html>

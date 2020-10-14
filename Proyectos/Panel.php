@@ -85,13 +85,6 @@
                   >
                 </li>
                 <li>
-                  <a href="EditarProyectos.php" style="<?php echo $prof ?>"
-                    ><button class="botonPanel">
-                      <i class="fa">&#xf013;</i> Gestionar Proyectos
-                    </button></a
-                  >
-                </li>
-                <li>
                   <a href="UnirseProyectos.php" style="<?php echo $prof ?>"
                     ><button class="botonPanel">
                       <i class="fa">&#xf055;</i> Unirse a Proyectos
