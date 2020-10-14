@@ -697,7 +697,7 @@ BotonProyecto :hover {
 .listGrid {
   display: grid;
   grid-template-columns: 20% 80%;
-  gap: 3%;
+  margin: 2% 2%;
 }
 .listGrid .textoLista {
   display: flex;
@@ -807,7 +807,7 @@ BotonProyecto :hover {
 }
 
 .Foto {
-  background-color: grey;
+  background-color: #f8f9fa;
   width: 100%;
   padding: 2%;
   margin-bottom: 1%;
@@ -1044,7 +1044,7 @@ BotonProyecto :hover {
   justify-content: center;
   align-content: center;
   flex-direction: column;
-  background-color: grey;
+  background-color: #f8f9fa;
 }
 .BannerPlanillaEditable .BannerEditable input[type=file] {
   display: none;
@@ -1652,7 +1652,6 @@ div.card img.avatar,
 .img-wrap {
   position: relative;
   display: inline-block;
-  border: 1px red solid;
   font-size: 0;
 }
 .img-wrap .close {

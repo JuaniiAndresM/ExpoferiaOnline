@@ -2,42 +2,36 @@
 include 'verificosesion.php';
 include '../Form/conexion.php';
 
-            $sql = "SELECT TipoUsuario FROM usuario where usuario='". $_SESSION['Usuario']."'";
+            $sql = "SELECT TipoUsuario, idUsuario FROM usuario where usuario='". $_SESSION['Usuario']."'";
             $result = $mysqli -> query($sql);
             $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
+            $idUS = $ss['idUsuario'];
             if(isset($ss['TipoUsuario'])){ 
               if($ss['TipoUsuario']==2){
                 $gest1 = "display: none;";
                 $gest2 = "display: none;";
               } }
-              $sqlid = "SELECT idUsuario FROM usuario where usuario='". $_SESSION['Usuario']."'";
-                $resultid = $mysqli -> query  ($sqlid);
-                $idp = mysqli_fetch_array($resultid, MYSQLI_ASSOC);
-                $idproyecto = $idp['idUsuario'];
-                
+
                 if($ss['TipoUsuario'] == 1){
-                $sql = "SELECT idProyecto FROM proyectoProfesor where Responsable='".$idproyecto."'";
-                $result = $mysqli->query($sql);
+                  //profesor
+                $sql2 = "SELECT idProyecto FROM proyectoProfesor where idProfesor='".$idUS."'";
+                $result = $mysqli->query($sql2);
                 $idproyect = mysqli_fetch_array($result, MYSQLI_ASSOC);
-                $Proyectoid = $idp['idUsuario'];
+                $Proyectoid = $idp['idProyecto'];
 
-                $sql = "SELECT idProyecto, Titulo FROM datosProyecto WHERE idProyecto ='".$Proyectoid."'";
-                $results = $mysqli->query($sql);
-
-                $sql = "SELECT * FROM imagenes WHERE idProyecto  ='".$Proyectoid."'";
-                $resultI = $mysqli->query($sql);
-                $oo =mysqli_fetch_array($resultI, MYSQLI_ASSOC);
-                $imgprincipal = $oo['url'];
+                $sql3 = "SELECT idProyecto, Titulo, ImagenPrincipal FROM datosProyecto WHERE idProyecto ='".$Proyectoid."'";
+                $results = $mysqli->query($sql3);
 
               }else{  
-                
-                $sql = "SELECT idProyecto, Titulo FROM datosProyecto WHERE idProyecto ='".$idproyecto."'";
-                $results = $mysqli->query($sql);
-
-                $sql = "SELECT * FROM imagenes WHERE idProyecto  ='".$idproyecto."'";
-                $resultI = $mysqli->query($sql);
-                $oo =mysqli_fetch_array($resultI, MYSQLI_ASSOC);
-                $imgprincipal = $oo['url'];
+                //alumno
+                if($ss['TipoUsuario'] == 2){
+                $sql4 = "SELECT idProyecto, Titulo, ImagenPrincipal FROM datosProyecto WHERE Alumno_Responsable ='".$idUS."'";
+                $results = $mysqli->query($sql4);
+              }else{
+                //admin
+                $sql5 = "SELECT idProyecto, Titulo, ImagenPrincipal FROM datosProyecto";
+                $results = $mysqli->query($sql5);
+              }
               }
     
     $content = '';
@@ -45,7 +39,7 @@ include '../Form/conexion.php';
      while($row = $results->fetch_array()){
 
          $content.="<div class='ProyectoLista'>
-                    <img class='PanelProyecto' src='".$imgprincipal."'>
+                    <img class='PanelProyecto' src='".$row['ImagenPrincipal']."'>
                     <br/>
 
                     <p>".$row['Titulo']."</p>
