@@ -33,19 +33,18 @@
   include 'verificosesion.php';
   ?>
     <div id="header"></div>
-    <div class="ProyectoLista">
-      <h2 id="TituloProyectos">Unirse a Proyectos:</h2>
-
-<!-- The Modal -->
+    <!-- The Modal -->
 <div id="myModal" class="modal">
 
-  <!-- Modal content -->
-  <div class="modal-content">
-    <p>Unirse a proyectos:</p>
-    <p>Todo funciono correctamente y te uniste a los proyectos seleccioandos.</p>
-    <span class="close" style="color: red;" onclick="cerrar();">&times;</span>
-  </div>
+<!-- Modal content -->
+<div class="modal-content">
+  <p>Unirse a proyectos:</p>
+  <p>Todo funciono correctamente y te uniste a los proyectos seleccioandos.</p>
+  <span class="close" style="color: red;" onclick="cerrar();">&times;</span>
 </div>
+</div>
+    <div class="ProyectoLista">
+      <h2 id="TituloProyectos">Unirse a Proyectos:</h2>
       <div class="gridProyectosLista">
         <div class="Linea1ProyectosLista">
           <div class="Linea2">
