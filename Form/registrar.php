@@ -29,7 +29,7 @@ include './conexion.php';
                         }
 
         if($insert_row==true){
-            echo 0;
+            echo 3;
         }else{
             echo 1;
              }
