@@ -52,7 +52,7 @@ function aprobado(id){
                     };
             
                 function comentarioPROF(comentario){
-                    var comentario = document.getElementById("comment").value;
-                    sessionStorage.setItem("comentario", comentario);
+                    var comentario1 = document.getElementById("comment").value;
+                    sessionStorage.setItem("comentario", comentario1);
                     };
 
