@@ -1,5 +1,4 @@
 function hola(){
-
     var usu = document.getElementById("usuario").value;
     var contra = document.getElementById("password").value;
     var nomproy = document.getElementById("nomproy").value;
@@ -13,6 +12,7 @@ function hola(){
     var year4 = document.getElementById("cuart");
     var year5 = document.getElementById("quint");
     var year6 = document.getElementById("hexa");
+    var year = 0;
     if(year1.checked == true){
         var year = 1;
     }
@@ -31,7 +31,9 @@ function hola(){
     if(year6.checked == true){
         var year = 6;
     }
-
+    if(year == 0 || usu.length == 0 || contra.length == 0 || nomproy.length==0 || apellido.length==0 || nombre.length==0 || email.length==0 || orient==""){
+        alert("Todos los campos obligatorios");
+    }else{
     $.ajax({
         type: "POST",
         url: "registrarAlumno.php",
@@ -40,14 +42,19 @@ function hola(){
             if (data==1){
                 alert("Error al procesar la solicitud, verifique que haya completado todos los datos, son todos obligatorios.");
 
-            }else{
-                alert("se grabó correctamente");
+            }
+            if(data==2){
+                alert("Todos los campos son obligatorios");
+            }
+            if(data==3){
+                alert("Los datos se guardaron correctamente, en la brevedad le llegara un email que dira si se confirmo o no el usuario");
                 window.location.href="../index.html";
             }
          }
   
         });
 
+}
 }
 function hola2(){
 
@@ -57,7 +64,9 @@ function hola2(){
     var apellido = document.getElementById("apellido").value;
     var tel = document.getElementById("tel").value;
     var mail = document.getElementById("mail").value;
-
+    if( usu.length == 0 || contra.length == 0 || nombre.length==0 || apellido.length==0 || tel.length==0 || mail.length==0){
+        alert("Todos los campos obligatorios");
+    }else{
          $.ajax({
         type: "POST",
         url: "registrar.php",
@@ -66,8 +75,8 @@ function hola2(){
             if (data==1){
                 alert("ERROR, no se pudo procesar la solicitud, verifique que haya completado todos los datos");
 
-            }else{
-                alert("se grabó correctamente");
+            }if(data==3){
+                alert("Los datos se guardaron correctamente, en la brevedad le llegara un email que dira si se confirmo o no el usuario");
                 window.location.href="../index.html";
             }
          }
@@ -76,5 +85,5 @@ function hola2(){
 
 
 
-
+    }
 }

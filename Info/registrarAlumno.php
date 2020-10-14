@@ -1,10 +1,19 @@
 
+<<<<<<< HEAD
 <?php
 $error = false;
 include "../Form/conexion.php";
 if (isset($_POST['usuario']) && $_POST['password'] && $_POST['email'] && $_POST['nombre'] && $_POST['apellido'] && $_POST['nomproy'] && $_POST['year'] && $_POST['orient']) {
     $sql = "SELECT * FROM solicitud_usuario WHERE Usuario = '" . $_POST['usuario'] . "'";
     $result = $mysqli->query($sql);
+=======
+<?php 
+    $error = false;
+    include "../Form/conexion.php";
+    if(isset($_POST['usuario']) && $_POST['password'] ){
+    $sql = "SELECT * FROM solicitud_usuario WHERE Usuario = '".$_POST['usuario']."'";
+    $result = $mysqli -> query($sql);
+>>>>>>> 8088ecebaa1aa56ba109bc551cb4a2569b54eb58
     $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
     if (isset($ss['Usuario'])) {
         echo 1;
@@ -20,6 +29,7 @@ if (isset($_POST['usuario']) && $_POST['password'] && $_POST['email'] && $_POST[
             $result = $mysqli->query($sql);
             $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
+<<<<<<< HEAD
             if (isset($ss['Usuario'])) {
                 echo 1;
             } else {
@@ -43,4 +53,28 @@ if (isset($_POST['usuario']) && $_POST['password'] && $_POST['email'] && $_POST[
 }else {
     echo 1;
 }
+=======
+            if (isset($ss['Usuario'])){
+                echo 1;      
+            }else{ 
+                        $usuario = '"'.$mysqli->real_escape_string($_POST['usuario']).'"';
+                        $contra = '"'.$mysqli->real_escape_string($_POST['password']).'"';
+                        $email = '"'.$mysqli->real_escape_string($_POST['email']).'"';
+                        $nombre = '"'.$mysqli->real_escape_string($_POST['nombre']).'"';
+                        $apellido = '"'.$mysqli->real_escape_string($_POST['apellido']).'"';
+                        $titu = '"'.$mysqli->real_escape_string($_POST['nomproy']).'"';                                                                      
+                        $year = '"'.$mysqli->real_escape_string($_POST['year']).'"';
+                        $orientacion = '"'.$mysqli->real_escape_string($_POST['orient']).'"';
+                        $insert_row = $mysqli->query("INSERT INTO solicitud_usuario  (Usuario, Password, Email, Nombre, Apellido, Titulo_Proyecto, Year, Orientacion) VALUES($usuario, $contra, $email, $nombre, $apellido, $titu, $year, $orientacion)");
+                        if($insert_row){
+                            echo 3;
+                        }else{
+                            echo 1;
+                        }  
+                    }
+                    
+        }
+    }
+ } 
+>>>>>>> 8088ecebaa1aa56ba109bc551cb4a2569b54eb58
 ?>
