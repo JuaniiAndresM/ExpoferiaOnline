@@ -37,12 +37,12 @@
         <div class="Linea3">
           <div class="Contacto">
             <div class="ContactoFrame">
-              <h2>Contacto:</h2>
+              <h2>Registro de alumno:</h2>
               <hr />
               <a
-                >Si eres alumno o profesor y quieres tener tu proyecto en
-                nuestra pagina, tan solo completa el siguiente formulario con
-                los datos requeridos, y te enviaremos los datos de la cuenta.</a
+                >Hola, recuerda que deben crear un único usuario por proyecto. Debes completar estos
+                datos y te contestaremos en breve. Una vez aprobado el registro, podrán ingresar toda
+                la info del proyecto. Gracias.</a
               >
               <hr />
                 <div class="form-group">

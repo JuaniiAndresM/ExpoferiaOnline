@@ -44,11 +44,11 @@
                 <a
                   href="../Info/contacto.php"
                 >
-                  Usuario</a
+                  Alumno</a
                 >
                 <br>
                 <a
-                  href="../Form/Register.php"
+                  href="../Form/register.php"
                 >
                   Profesor</a
                 >
