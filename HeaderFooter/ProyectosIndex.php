@@ -16,20 +16,18 @@ while ($sqlarray = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
         $x = 0;
 
       do{
-            $random = $array[$x];
-            $sql = "SELECT * FROM datosProyecto WHERE idProyecto = '".$random."'";
-            $result = $mysqli -> query($sql);
-            $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
-            if(mysqli_num_rows($result) == 0){
-              $x++;
-          }else{
-
-            
-
-            //va creandpo los proyectos
-            if(isset($ss['Titulo'],$ss['Introduccion'],$ss['ImagenPrincipal']) && $ss['Estado'] == '1'){
+        $random = $array[$x];
+        $sql = "SELECT * FROM datosProyecto WHERE idProyecto = '".$random."'";
+        $result = $mysqli -> query($sql);
+        $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
+        if(mysqli_num_rows($result) == 0){
+          $x++;
+        }else{
+          //va creandpo los proyectos
+          if(isset($ss['Titulo'],$ss['Introduccion'],$ss['ImagenPrincipal']) && $ss['Estado'] == '1'){
                 if($y == 2){
                     $y ++;
+                   
                     $content.="
                     <div
                         class='Seccion2'
@@ -79,18 +77,16 @@ while ($sqlarray = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                     </div>";
                 }//si el if da falso no se puede mostrar el proyecto asi que no se crea nada
 
-          }else{
-            
           }
 
           $x++;
           $i++;
 
             
-          }
+        }
         
         
-      }while($i < 3 || $array[$x] != null);
+      }while($i < 3 && count($array)>3);
       
     
     echo $content;
