@@ -76,21 +76,25 @@
                   ><button>Iniciar Sesión</button></a
                 >
               </form>
-              <p style='background-color:#e4fca7'>
-                Solo deben crear cuenta: <br>- Un alumno por proyecto.<br>- Todos los profesores lideres de proyecto.
-                <br>Si aún no tienes cuenta, solícitala mediante los enlaces de abajo.
+              <br>
+              <p>
+                Solo deben crear una cuenta: <br>- Un alumno por proyecto.<br>- Todos los profesores lideres de proyecto.
+                <br>Si aún no tienes tu cuenta, solícitala mediante los enlaces de abajo.
                 <br></p>
-                <a class='btnlogin'
-                  href="../Info/contacto.php"
-                >
-                  Alumno</a
-                >
-                <br><br><br>
-                <a class='btnlogin'
-                  href="../Form/register.php"
-                >
-                  Profesor</a
-                >
+              <div>
+                  <button class="buttonLogin"
+                  style="color: white;"
+                    href="../Info/contacto.php"
+                  >
+                    Alumno</button
+                  >
+                  <button class="buttonLogin"
+                  style="color: white;"
+                    href="../Form/register.php"
+                  >
+                    Profesor</button
+                  >
+              </div>
               
             </div>
           </div>
