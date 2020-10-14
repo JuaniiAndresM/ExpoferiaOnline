@@ -49,3 +49,32 @@ function hola(){
         });
 
 }
+function hola2(){
+
+    var usu = document.getElementById("user").value;
+    var contra = document.getElementById("contra").value;
+    var nombre = document.getElementById("nombre").value;
+    var apellido = document.getElementById("apellido").value;
+    var tel = document.getElementById("tel").value;
+    var mail = document.getElementById("mail").value;
+
+         $.ajax({
+        type: "POST",
+        url: "registrar.php",
+        data: {user:usu,contra:contra,tel:tel,mail:mail,nombre:nombre,apellido:apellido},
+        success: function(data){
+            if (data==1){
+                alert("El usuario ya exsiste");
+
+            }else{
+                alert("se grabó correctamente");
+                window.location.href="../index.html";
+            }
+         }
+  
+        });
+
+
+
+
+}
