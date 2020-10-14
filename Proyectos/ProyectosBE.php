@@ -1,7 +1,7 @@
 <?php
 include '../Form/conexion.php';
 
-    $sql = "SELECT idProyecto, Titulo, Introduccion, Orientacion, ndolocal FROM datosProyecto WHERE Estado = 1 order by ndolocal";
+    $sql = "SELECT idProyecto, Titulo, Introduccion, Orientacion, ImagenPrincipal, ndolocal FROM datosProyecto WHERE Estado = 1 order by ndolocal";
     $results = $mysqli->query($sql);
     $content = '';
     $numerolocal = 0;
@@ -34,15 +34,10 @@ include '../Form/conexion.php';
             $oo =mysqli_fetch_array($resultO, MYSQLI_ASSOC);
             $orientacion = $oo['Nombre'];
 
-            $sql = "SELECT * FROM datosProyectos WHERE idProyecto ='".$row['idProyecto']."'";  
-            $resultI = $mysqli->query($sql);
-            $oo =mysqli_fetch_array($resultI, MYSQLI_ASSOC);
-            $imgprincipal = $oo['ImagenPrincipal'];
-
         $content.= "<div class='listProyectoLista'>
                     <div class='listGrid'>
                         <div class='listFoto'>
-                        <img class='FotoLista' src='".$imgprincipal."'>
+                        <img class='FotoLista' src='".$row['ImagenPrincipal']."'>
                     </div>
 
                     <div class='textoLista'>
