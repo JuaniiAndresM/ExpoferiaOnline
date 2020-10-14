@@ -6,55 +6,68 @@ include '../Form/conexion.php';
             $result = $mysqli -> query($sql);
             $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
             $idUS = $ss['idUsuario'];
+
+            $content = '';
+
             if(isset($ss['TipoUsuario'])){ 
               if($ss['TipoUsuario']==2){
                 $gest1 = "display: none;";
                 $gest2 = "display: none;";
-              } }
+              }  }
 
-                if($ss['TipoUsuario'] == 1){
-                  //profesor
-                $sql2 = "SELECT idProyecto FROM proyectoProfesor where idProfesor='".$idUS."'";
-                $result = $mysqli->query($sql2);
-                $idproyect = mysqli_fetch_array($result, MYSQLI_ASSOC);
-                $Proyectoid = $idp['idProyecto'];
+                if($ss['TipoUsuario'] == 1){//profesor
+                $sql = "SELECT idProyecto FROM proyectoProfesor where idProfesor='".$idUS."'";
+                $resultid = $mysqli->query($sql);
+                
+                while($row = $resultid->fetch_array()){
+                  $Proyectoid = $row['idProyecto'];
+                  $sql = "SELECT idProyecto, Titulo, ImagenPrincipal FROM datosProyecto WHERE idProyecto ='".$Proyectoid."'";
+                  $results = $mysqli->query($sql);
 
-                $sql3 = "SELECT idProyecto, Titulo, ImagenPrincipal FROM datosProyecto WHERE idProyecto ='".$Proyectoid."'";
-                $results = $mysqli->query($sql3);
+                  while($row = $results->fetch_array()){
 
-              }else{  
-                //alumno
-                if($ss['TipoUsuario'] == 2){
-                $sql4 = "SELECT idProyecto, Titulo, ImagenPrincipal FROM datosProyecto WHERE Alumno_Responsable ='".$idUS."'";
-                $results = $mysqli->query($sql4);
-              }else{
-                //admin
-                $sql5 = "SELECT idProyecto, Titulo, ImagenPrincipal FROM datosProyecto";
-                $results = $mysqli->query($sql5);
-              }
-              }
-    
-    $content = '';
+                    $content.="<div class='ProyectoLista'>
+                               <img class='PanelProyecto' src='".$row['ImagenPrincipal']."'>
+                               <br/>
+                               <p>".$row['Titulo']."</p>
+                               <hr/>
+                               <ul class='panelList'>
+                               <li>
+                                   <button class='botonPanel' id = '1' onclick='mandarID(".$row['idProyecto'].")'>
+                                       <i class='fa'>&#xf044;</i> Editar Proyecto
+                                   </button></a>
+                               </li>
+                               </ul>
+                           </div>";}
+                }
+                
+                }else{
 
-     while($row = $results->fetch_array()){
+                if($ss['TipoUsuario'] == 2){//alumno
+                  $sql = "SELECT idProyecto, Titulo, ImagenPrincipal FROM datosProyecto WHERE Alumno_Responsable ='".$idUS."'";
+                  $results = $mysqli->query($sql);
+                }else{
+                  if($ss['TipoUsuario'] == 0){//admin
+                  $sql = "SELECT idProyecto, Titulo, ImagenPrincipal FROM datosProyecto";
+                  $results = $mysqli->query($sql);}
+                    }
+                    
+                  while($row = $results->fetch_array()){
 
-         $content.="<div class='ProyectoLista'>
-                    <img class='PanelProyecto' src='".$row['ImagenPrincipal']."'>
-                    <br/>
-
-                    <p>".$row['Titulo']."</p>
-                    <hr/>
-                    <ul class='panelList'>
-                    <li>
-                        <button class='botonPanel' id = '1' onclick='mandarID(".$row['idProyecto'].")'>
-                            <i class='fa'>&#xf044;</i> Editar Proyecto
-                        </button></a>
-                    </li>
-                    </ul>
-                </div>";
-
-
-                        
+                    $content.="<div class='ProyectoLista'>
+                              <img class='PanelProyecto' src='".$row['ImagenPrincipal']."'>
+                              <br/>
+                              <p>".$row['Titulo']."</p>
+                              <hr/>
+                              <ul class='panelList'>
+                              <li>
+                                  <button class='botonPanel' id = '1' onclick='mandarID(".$row['idProyecto'].")'>
+                                      <i class='fa'>&#xf044;</i> Editar Proyecto
+                                  </button></a>
+                              </li>
+                              </ul>
+                          </div>";
+                  }                        
      }
      echo $content;
     ?>
