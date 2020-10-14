@@ -14,10 +14,7 @@
             $insert_row = $mysqli->query("INSERT INTO proyectoProfesor (idProyecto, idProfesor,Responsable) VALUES($idProyecto, $idProfesor,true)");
 
     } 
-        echo'<script type="text/javascript">
-        alert("Todo se grabo correctamente, presiona aceptar para poder volver a la pagina");
-        window.location.href="../Proyectos/UnirseProyectos.php";
-        </script>';
+    header('Location: ../Proyectos/UnirseProyectos.php?eP');
 
             
     $mysqli -> close();

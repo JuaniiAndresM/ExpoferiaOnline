@@ -13,7 +13,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="../js/function.js"></script>
-
+    <script src="../js/functionUnirse.js"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -36,6 +36,16 @@
     <div class="ProyectoLista">
       <h2 id="TituloProyectos">Unirse a Proyectos:</h2>
 
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <p>Unirse a proyectos:</p>
+    <p>Todo funciono correctamente y te unise a los proyectos seleccioandos.</p>
+    <span class="close" onclick="cerrar();">&times;</span>
+  </div>
+</div>
       <div class="gridProyectosLista">
         <div class="Linea1ProyectosLista">
           <div class="Linea2">
@@ -85,7 +95,7 @@
                     <?php
                   if(isset($_GET['eP'])){
                       echo "<script>
-                      document.getElementById('errorPwd').style.display = 'block'; </script>";
+                      document.getElementById('myModal').style.display = 'block'; </script>";
                   }
                 ?>
                   </form>
