@@ -27,6 +27,7 @@ while ($sqlarray = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
           if(isset($ss['Titulo'],$ss['Introduccion'],$ss['ImagenPrincipal']) && $ss['Estado'] == '1'){
                 if($y == 2){
                     $y ++;
+                   
                     $content.="
                     <div
                         class='Seccion2'
@@ -85,7 +86,7 @@ while ($sqlarray = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
         }
         
         
-      }while($i < 3 && count($array)<4);
+      }while($i < 3 && count($array)>3);
       
     
     echo $content;
