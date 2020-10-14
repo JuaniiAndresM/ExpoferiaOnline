@@ -1677,3 +1677,23 @@ div.card img.avatar,
 .img-wrap:hover .close {
   opacity: 1;
 }
+/* boton del login*/
+.btnlogin {
+  background-color: rgb(255, 205, 98);
+box-shadow: 0 5px 0 rgb(235, 182, 10);
+color: white;
+padding: 1em 1.5em;
+
+text-decoration: none;
+text-transform: uppercase;
+display:inline;
+}
+
+a.btnlogin a:hover {
+background-color: #ce0606;
+}
+
+a.btnlogin a:active {
+box-shadow: none;
+top: 5px;
+}

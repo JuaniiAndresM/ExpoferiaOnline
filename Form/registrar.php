@@ -26,7 +26,6 @@ if (isset($_POST['user']) && $_POST['contra'] && $_POST['apellido'] && $_POST['n
                 $nombre = '"' . $mysqli->real_escape_string($_POST['nombre']) . '"';
                 $apellido = '"' . $mysqli->real_escape_string($_POST['apellido']) . '"';
                 $insert_row = $mysqli->query("INSERT INTO solicitud_profesor  (Usuario, Password, Nombre, Apellido, Email, Telefono) VALUES($usuario, $contra, $nombre, $apellido, $email, $telefono)");
-<<<<<<< HEAD
                 if ($insert_row == true) {
                     echo 0;
                 } else {
@@ -37,17 +36,6 @@ if (isset($_POST['user']) && $_POST['contra'] && $_POST['apellido'] && $_POST['n
     }
 } else {
     echo 1;
-=======
-                        }
-
-        if($insert_row==true){
-            echo 3;
-        }else{
-            echo 1;
-             }
-         }
-    } 
->>>>>>> 8088ecebaa1aa56ba109bc551cb4a2569b54eb58
 }
 $mysqli->close();
 
