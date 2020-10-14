@@ -2,7 +2,7 @@
 <?php 
     $error = false;
     include "../Form/conexion.php";
-    if(isset($_POST['usuario']) && $_POST['password']){
+    if(isset($_POST['usuario']) && $_POST['password'] ){
     $sql = "SELECT * FROM solicitud_usuario WHERE Usuario = '".$_POST['usuario']."'";
     $result = $mysqli -> query($sql);
     $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
@@ -33,7 +33,7 @@
                         $orientacion = '"'.$mysqli->real_escape_string($_POST['orient']).'"';
                         $insert_row = $mysqli->query("INSERT INTO solicitud_usuario  (Usuario, Password, Email, Nombre, Apellido, Titulo_Proyecto, Year, Orientacion) VALUES($usuario, $contra, $email, $nombre, $apellido, $titu, $year, $orientacion)");
                         if($insert_row){
-                            echo 0;
+                            echo 3;
                         }else{
                             echo 1;
                         }  
@@ -41,5 +41,5 @@
                     
         }
     }
- }  
+ } 
 ?>
