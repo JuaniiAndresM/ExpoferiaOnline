@@ -82,17 +82,18 @@
                 <br>Si aún no tienes tu cuenta, solícitala mediante los enlaces de abajo.
                 <br></p>
               <div>
-                  <button class="buttonLogin"
+                  <a 
+                  class="buttonLogin"
+                  style="color: ;"
+                  href=../Info/contacto.php
+                  ><button>
+                    Alumno</button></a
+                  >
+                  <a class="buttonLogin"
                   style="color: white;"
-                    href="../Info/contacto.php"
-                  >
-                    Alumno</button
-                  >
-                  <button class="buttonLogin"
-                  style="color: white;"
-                    href="../Form/register.php"
-                  >
-                    Profesor</button
+                   href=register.php
+                  ><button>
+                    Profesor</button></a
                   >
               </div>
               
