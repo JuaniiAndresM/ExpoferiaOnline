@@ -43,7 +43,7 @@
   <div class="modal-content">
     <p>Unirse a proyectos:</p>
     <p>Todo funciono correctamente y te uniste a los proyectos seleccioandos.</p>
-    <span class="close" onclick="cerrar();">&times;</span>
+    <span class="close" style="color: red;" onclick="cerrar();">&times;</span>
   </div>
 </div>
       <div class="gridProyectosLista">
