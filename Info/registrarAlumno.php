@@ -22,7 +22,7 @@
 
             if (isset($ss['Usuario'])){
                 echo 1;      
-            }else{
+            }else{ 
                         $usuario = '"'.$mysqli->real_escape_string($_POST['usuario']).'"';
                         $contra = '"'.$mysqli->real_escape_string($_POST['password']).'"';
                         $email = '"'.$mysqli->real_escape_string($_POST['email']).'"';
@@ -32,7 +32,7 @@
                         $year = '"'.$mysqli->real_escape_string($_POST['year']).'"';
                         $orientacion = '"'.$mysqli->real_escape_string($_POST['orient']).'"';
                         $insert_row = $mysqli->query("INSERT INTO solicitud_usuario  (Usuario, Password, Email, Nombre, Apellido, Titulo_Proyecto, Year, Orientacion) VALUES($usuario, $contra, $email, $nombre, $apellido, $titu, $year, $orientacion)");
-                        if($insert_row==true){
+                        if($insert_row){
                             echo 0;
                         }else{
                             echo 1;
