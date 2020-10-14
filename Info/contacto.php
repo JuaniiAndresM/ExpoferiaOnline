@@ -45,7 +45,6 @@
                 los datos requeridos, y te enviaremos los datos de la cuenta.</a
               >
               <hr />
-              <form action="registrarAlumno.php" method="POST" id="formulario" >
                 <div class="form-group">
                   <label for="uname">Nombre:</label>
                   <input
@@ -201,7 +200,6 @@
                       document.getElementById('errorPwd').style.display = 'block'; </script>";  
                   }
                   ?>
-                </form>
               </div>
             </div>
           </div>
