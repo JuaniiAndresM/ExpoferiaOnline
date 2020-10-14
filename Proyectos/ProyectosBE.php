@@ -48,10 +48,11 @@ include '../Form/conexion.php';
                            <b style='word-wrap: break-word;'>Introduccion:</b> ".$row['Introduccion']."</p>
                             </div>
                             </div>
-                            <a><button class='BotonProyecto' onclick='mandarID(".$row['idProyecto'].")'>Ver más</button></a>
+                            <a><button class='BotonProyecto' onclick=window.location.href='proximamente.html'>Ver más</button></a>
                         </div>";
             
                         
      }
+     //<button class='BotonProyecto' onclick='mandarID(".$row['idProyecto'].")'>Ver más</button> los jajas
      echo $content;
     ?>
