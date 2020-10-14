@@ -46,7 +46,6 @@ while ($sqlarray = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                           <img src='".$ss['ImagenPrincipal']."'
                             id ='foto2'
                             class='ImagenProyectos'
-                            style='max-height:50%; max-width:50%;'
                             
                           />
                         </div>
@@ -65,7 +64,6 @@ while ($sqlarray = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                         <img src='".$ss['ImagenPrincipal']."'
                         id ='foto".$i."'
                             class='ImagenProyectos'  
-                            style='max-height:50%; max-width:50%;'
                         />
                         </div>
                         <div class='SeccionTexto'>
