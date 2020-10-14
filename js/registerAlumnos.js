@@ -39,8 +39,10 @@ function hola(){
         success: function(data){
             if (data==1){
                 alert("El usuario ya exsiste");
+
             }else{
                 alert("se grabó correctamente");
+                window.location.href="../index.html";
             }
          }
   
