@@ -1,3 +1,4 @@
+<?php include '../Proyectos/verificosesion.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>

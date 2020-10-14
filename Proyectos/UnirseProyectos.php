@@ -55,8 +55,13 @@
                     <div class="sel-unirProy">
                       <select name="proyectos[]" id="proyectos" class="form-control" multiple required>
                       <?php
+                  $mysqli = new mysqli('localhost','expoeduc_informatica2','LiceoIep_2020_2do_Inf','expoeduc_expoeduca');
 
-                        require "../Form/conexion.php ";
+                    if ($mysqli->connect_error) {
+                   die('Error : ('. $mysqli->connect_errno .') '. $mysqli->connect_error);
+                                              }
+
+
                         $usuario=$_SESSION['Usuario'];
 
                         $sql = "SELECT * from usuario where Usuario = '$usuario'";
