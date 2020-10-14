@@ -1290,13 +1290,16 @@ BotonProyecto :hover {
   text-align: center;
   display: grid;
   grid-template-columns: 50% 50%;
+  margin: 0 2%;
 }
 .Admin .BotonesAdmin button {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 16px;
   color: white;
+  outline: none;
   text-decoration: none;
+  margin: 0 1%;
 }
 .Admin .Enviar{
   font-family: "Montserrat", sans-serif;

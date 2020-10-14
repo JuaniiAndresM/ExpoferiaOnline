@@ -6,7 +6,7 @@ $( document ).ready(function() {
           
           $('.index-frame2').html(content);
 
-          
+           
       }
     })
     });
