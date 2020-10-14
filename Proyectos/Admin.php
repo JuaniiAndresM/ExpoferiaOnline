@@ -40,7 +40,9 @@
         <div class="Linea2">
           <div class="Linea3">
             <div class="Admin">
-                <a id="TituloTablaProyectos">Nuevas Solicitudes:</a>
+                <a id="TituloTablaProyectos">Nuevas Solicitudes Poryectos:</a>
+                <br>
+                <a>NO APRETAR MAS DE UNA VEZ, TENGA PACIENCIA</a>
                 <hr />
 
                 <div class="Solicitudes">
