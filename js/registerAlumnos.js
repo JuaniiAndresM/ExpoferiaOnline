@@ -38,7 +38,7 @@ function hola(){
         data: {usuario:usu,password:contra,nomproy:nomproy,apellido:apellido,nombre:nombre,email:email,orient:orient,year:year},
         success: function(data){
             if (data==1){
-                alert("El usuario ya exsiste");
+                alert("Error al procesar la solicitud, verifique que haya completado todos los datos, son todos obligatorios.");
 
             }else{
                 alert("se grabó correctamente");
@@ -64,7 +64,7 @@ function hola2(){
         data: {user:usu,contra:contra,tel:tel,mail:mail,nombre:nombre,apellido:apellido},
         success: function(data){
             if (data==1){
-                alert("El usuario ya exsiste");
+                alert("ERROR, no se pudo procesar la solicitud, verifique que haya completado todos los datos");
 
             }else{
                 alert("se grabó correctamente");
