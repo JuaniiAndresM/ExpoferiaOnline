@@ -34,10 +34,10 @@ include '../Form/conexion.php';
             $oo =mysqli_fetch_array($resultO, MYSQLI_ASSOC);
             $orientacion = $oo['Nombre'];
 
-            $sql = "SELECT * FROM imagenes WHERE idProyecto ='".$row['idProyecto']."'";  
+            $sql = "SELECT * FROM datosProyectos WHERE idProyecto ='".$row['idProyecto']."'";  
             $resultI = $mysqli->query($sql);
             $oo =mysqli_fetch_array($resultI, MYSQLI_ASSOC);
-            $imgprincipal = $oo['url'];
+            $imgprincipal = $oo['ImagenPrincipal'];
 
         $content.= "<div class='listProyectoLista'>
                     <div class='listGrid'>
