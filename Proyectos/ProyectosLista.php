@@ -58,6 +58,7 @@
                         <option value="">Bachillerato Tecnologico</option>
                         <option value="">Ciclo Basico</option>
                       </select>
+                      
 
                       <select name="GradoSelect" class="custom-select">
                       <option value="">Grado</option>

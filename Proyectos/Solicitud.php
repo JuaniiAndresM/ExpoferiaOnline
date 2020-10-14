@@ -110,7 +110,7 @@ if(isset($_POST['aprobadoPROF'])){
     
         $address=$sqlsolicitudes['Email'];         
         $subject='Solicitud de usuario rechazado';
-        $body=$_POST['comentario'];
+        $body=$_POST['comentarioPROF'];
         // 
         echo "antes de enviar email";
         include 'EnviarEmail.php';
