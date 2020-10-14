@@ -1696,3 +1696,40 @@ a.btnlogin a:active {
 box-shadow: none;
 top: 5px;
 }
+.Linea1Aprob {
+  margin-bottom: 6%;
+  margin-top: 100px;
+  margin-left: 10%;
+  margin-right: 10%;
+  background-color: #ffcb00;
+  border-radius: 30px;
+}
+.blancCntnt {
+  margin-right: 2%;
+  background-color: white;
+  border-radius: 30px; 
+}
+.aprobTable {
+  padding: 6% 0% 2% 0%;
+  display: flex;
+  justify-content: center;
+}
+.submitBtn {
+  text-align: center;
+  padding-bottom: 5%;
+}
+input[type=submit] {
+  padding: 9px 25px;
+  background-color: #0088c4;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer; 
+}
+#profTabl th {
+  padding: 10px 15px;
+  text-align: left;
+  background-color: #0088c4;
+  color: white;
+}
+#profTabl tr:nth-child(odd){background-color: #f2f2f2;}
