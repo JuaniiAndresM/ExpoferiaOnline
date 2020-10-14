@@ -67,7 +67,7 @@ function check_valid_image_size( $file ) {
       //img
       $maximum = array(
         'width' => '700',
-        'height' => '350'
+        'height' => '400'
     );
 
     $image_width = $image[0];
@@ -75,7 +75,7 @@ function check_valid_image_size( $file ) {
 
     $proporcion = $image_width / $image_height;
 
-    if($proporcion == 2){
+    if($proporcion == 1.75){
       $uploadOk = 1;
     }else{
       echo $too_large;

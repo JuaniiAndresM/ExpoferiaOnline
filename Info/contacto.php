@@ -45,7 +45,6 @@
                 los datos requeridos, y te enviaremos los datos de la cuenta.</a
               >
               <hr />
-              <form action="" method="POST" id="formulario" >
                 <div class="form-group">
                   <label for="uname">Nombre:</label>
                   <input
@@ -189,24 +188,18 @@
                     id="comment"
                   ></textarea>
                 </div>
-                <a class="buttonEnviar" onclick="hola();" 
+                <a class="buttonEnviar" onclick="hola();"
                   ><button>Enviar</button></a
                 >
                 <div class="form-group">
                   <p style="color: red; display: none;" id="errorPwd">*El usuario ya exsiste*</p>
-                  <p style="color: red; display: none;" id="errorPwd2">*El titulo ya exsiste*</p>
                 </div>
                 <?php
                   if(isset($_GET['eP'])){
                       echo "<script>
                       document.getElementById('errorPwd').style.display = 'block'; </script>";  
                   }
-                  if(isset($_GET['ePe'])){
-                    echo "<script>
-                    document.getElementById('errorPwd2').style.display = 'block'; </script>";  
-                }
                   ?>
-                </form>
               </div>
             </div>
           </div>
