@@ -160,14 +160,15 @@
                 </div>
                  <?php
                  $videos = '';
+                 $cont = 1;
                  if(isset($vv['url'])){
                   while($row = $result->fetch_array()){
                     $videos.= "<div id = '1' class='form-group'>
-                   <input type='text' class='form-control' id='video' placeholder='URL del Video [YouTube]' name='nombre_proyecto' value=". $vv['url']."></div>";
-                    }
+                   <input type='text' class='form-control' id='".'video'.$cont."' placeholder='URL del Video [YouTube]' name='nombre_proyecto' value=". $vv['url']."></div>";
+                    $cont++;}
                   }else{
                    $videos.= "<div id = '1' class='form-group'>
-                   <input type='text' class='form-control' id='video' placeholder='URL del Video [YouTube]' name='nombre_proyecto'></div>";
+                   <input type='text' class='form-control' id='video1' placeholder='URL del Video [YouTube]' name='nombre_proyecto'></div>";
                   }
                   echo $videos;
                   ?>
