@@ -1,4 +1,5 @@
 function aprobado(id){
+    $(':button').prop('disabled', true);
     sessionStorage.setItem("aprobar", id);
     $.ajax({
         url:"Solicitud.php", 
@@ -11,6 +12,7 @@ function aprobado(id){
     }
     
     function noaprobado(id){
+        $(':button').prop('disabled', true);
         sessionStorage.setItem("rechazado", id);
         var comentario1 = document.getElementById("comment").value;
         alert(comentario1);
@@ -26,6 +28,7 @@ function aprobado(id){
         }
 
         function aprobadoPROF(id){
+            $(':button').prop('disabled', true);
             sessionStorage.setItem("aprobadoPROF", id);
             $.ajax({
                 url:"Solicitud.php", 
@@ -38,6 +41,7 @@ function aprobado(id){
             }
             
             function noaprobadoPROF(id){
+                $(':button').prop('disabled', true);
                 sessionStorage.setItem("noaprobadoPROF", id);
                 var comentarioPROF = document.getElementById("commentPROF").value;
                     sessionStorage.setItem("comentarioPROF", comentarioPROF);
@@ -50,5 +54,11 @@ function aprobado(id){
                   }
                 })
                 }
+
+function deshabilitar(id){
+    alert(id);
+    $(':button').prop('disabled', true);
+    alert('hola');
+}
         
                 
