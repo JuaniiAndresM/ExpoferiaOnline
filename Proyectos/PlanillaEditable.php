@@ -99,6 +99,7 @@
    $sql = "SELECT * FROM videos WHERE idProyecto ='".$idproyecto."'";
    $result = $mysqli->query($sql);
    $vv = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
    $banner='';
    if(isset($aa['Banner'])){
      $banner = $aa['Banner'];
@@ -107,9 +108,6 @@
    $titulo = $aa['Titulo'];
    $introduccion = $aa['Introduccion'];
    $descripcion = $aa['Descripcion'];
-   if(isset($vv['url'])){
-    $video = $vv['url'];}
-
   ?>
 
    
@@ -160,14 +158,22 @@
                     id="descripcionCorta_Proyecto"><?php echo $introduccion; ?>
                   </textarea>
                 </div>
-                  <?php
+                 <?php
+                 $videos = '';
+                 if(isset($vv['url'])){
                   while($row = $result->fetch_array()){
-                   echo "<div class='form-group'>
-                   <input type='text' class='form-control' id='link' placeholder='URL del Video [YouTube]' name='nombre_proyecto' value= '".$video."' /></div>";
+                    $videos.= "<div id = '1' class='form-group'>
+                   <input type='text' class='form-control' id='video' placeholder='URL del Video [YouTube]' name='nombre_proyecto' value=". $vv['url']."></div>";
+                    }
+                  }else{
+                   $videos.= "<div id = '1' class='form-group'>
+                   <input type='text' class='form-control' id='video' placeholder='URL del Video [YouTube]' name='nombre_proyecto'></div>";
                   }
+                  echo $videos;
                   ?>
- 
-                
+                   <button onclick="NuevoVideo()" style="margin-top: 5%; color: white">
+                    <i class="fa"></i>+</button>
+                  
                 <div>
                   <textarea
                     class="form-control"
