@@ -1,3 +1,7 @@
+<?php
+   
+           include 'verificosesion.php';
+    ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -68,7 +72,6 @@
   </head>
 
   <?php
-  include 'verificosesion.php';
   include '../Form/conexion.php'; 
   //$mysqli = new mysqli('localhost','expoeduc_informatica2','LiceoIep_2020_2do_Inf','expoeduc_expoeduca');
 

@@ -1,3 +1,8 @@
+<?php
+   
+           include 'verificosesion.php';
+    ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,7 +13,6 @@
 
 
 <?php
-include 'verificosesion.php';
 
 include '../Form/conexion.php';
 
