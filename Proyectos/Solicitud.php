@@ -84,7 +84,7 @@ if(isset($_POST['aprobadoPROF'])){
                 $result = $mysqli -> query($sql);
                 $sqlsolicitudes = mysqli_fetch_array($result, MYSQLI_ASSOC);
                 $address=$sqlsolicitudes['Email'];
-                $subject='Solicitud de proyecto aprobado';
+                $subject='Solicitud de profesor aprobado';
                 $body='Queremos informarle que su solicitud del usuario '.$sqlsolicitudes['Usuario'].' fue aprobado. Saludos, Alumnos de segundo Informatica.';
                 // Enviar email
                 include 'EnviarEmail.php';
@@ -106,7 +106,7 @@ if(isset($_POST['aprobadoPROF'])){
     
     
         $address=$sqlsolicitudes['Email'];         
-        $subject='Solicitud de usuario rechazado';
+        $subject='Solicitud de profesor rechazado';
         $body=$_POST['comentarioPROF'];
         // 
         include 'EnviarEmail.php';
