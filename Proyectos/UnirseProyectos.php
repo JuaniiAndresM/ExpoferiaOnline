@@ -54,7 +54,7 @@
                 <div class="Tabla">
                   <form action="UnirseProyecto.php" method="POST">
                     <div class="sel-unirProy">
-                      <select name="proyectos[]" id="proyectos" class="form-control" multiple required>
+                      <select name="proyectos[]" id="proyectos" class="form-control" multiple size="7" required>
                       <?php
                   $mysqli = new mysqli('localhost','expoeduc_informatica2','LiceoIep_2020_2do_Inf','expoeduc_expoeduca');
 

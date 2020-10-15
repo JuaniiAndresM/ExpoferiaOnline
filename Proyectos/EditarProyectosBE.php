@@ -44,7 +44,7 @@ include '../Form/conexion.php';
                 }else{
 
                 if($ss['TipoUsuario'] == 2){//alumno
-                  $sql = "SELECT idProyecto, Titulo, ImagenPrincipal FROM datosProyecto WHERE Alumno_Responsable ='".$idUS."'";
+                  $sql = "SELECT idProyecto, Titulo, ImagenPrincipal FROM datosProyecto WHERE Alumno_Responsable ='".$idUS."' AND Estado=0";
                   $results = $mysqli->query($sql);
                 }else{
                   if($ss['TipoUsuario'] == 0){//admin

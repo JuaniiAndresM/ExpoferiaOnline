@@ -18,7 +18,7 @@
               <div class='BannerPlanilla'>
                 <h2 id='titulo' style='word-wrap: break-word; font-weight: bolder;'>".$ss['Titulo']."</h2>
                 <hr />
-                  <div class='Banner'><img src='../img/".$ss['Banner']."' id='banner' style='max-height:100%; max-width:100%;'></div>
+                  <div class='Banner'><img src='".$ss['Banner']."' id='banner' style='max-height:100%; max-width:100%;'></div>
                 <br></br>
               </div>
               <div class='CentralPlanilla'>
@@ -41,7 +41,7 @@
 
       $content.= "
       <div class='mySlides'>
-          <img src='../img/".$ssimg['url']."' id ='foto".$cont."' onclick='agrando(".$cont.")'  class='imagenPlanilla' style='width:100%'>
+          <img src='".$ssimg['url']."' id ='foto".$cont."' onclick='agrando(".$cont.")'  class='imagenPlanilla' style='width:100%'>
           
           <div class='numbertext'>".$cont."/".mysqli_num_rows($resultimg)."</div>
       </div>";
