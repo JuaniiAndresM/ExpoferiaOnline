@@ -1,3 +1,7 @@
+<?php
+   
+           include 'verificosesion.php';
+    ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,7 +18,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="../js/function.js"></script>
     <script src="../js/functionAdmin.js"></script>
-
+  
+ 
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -30,9 +35,6 @@
     />
   </head>
   <body onload="hfindex()">
-  <?php
-  include 'verificosesion.php'; 
-  ?>
     <div id="header"></div>
     <div>
     </div>
@@ -40,7 +42,7 @@
         <div class="Linea2">
           <div class="Linea3">
             <div class="Admin">
-                <a id="TituloTablaProyectos">Nuevas Solicitudes Poryectos:</a>
+                <a id="TituloTablaProyectos">Nuevas Solicitudes Proyectos:</a>
                 <br>
                 <a>NO APRETAR MAS DE UNA VEZ, TENGA PACIENCIA</a>
                 <hr />

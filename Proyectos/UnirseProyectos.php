@@ -1,3 +1,6 @@
+<?php
+  include 'verificosesion.php';
+  ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,7 +16,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="../js/function.js"></script>
-
+    <script src="../js/functionUnirse.js"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -29,13 +32,20 @@
     />
   </head>
   <body onload="hfindex()">
-  <?php
-  include 'verificosesion.php';
-  ?>
+
     <div id="header"></div>
+    <!-- The Modal -->
+<div id="myModal" class="modal">
+
+<!-- Modal content -->
+<div class="modal-content">
+  <p>Unirse a proyectos:</p>
+  <p>Todo funciono correctamente y te uniste a los proyectos seleccioandos.</p>
+  <span class="close" style="color: red;" onclick="cerrar();">&times;</span>
+</div>
+</div>
     <div class="ProyectoLista">
       <h2 id="TituloProyectos">Unirse a Proyectos:</h2>
-
       <div class="gridProyectosLista">
         <div class="Linea1ProyectosLista">
           <div class="Linea2">
@@ -44,10 +54,15 @@
                 <div class="Tabla">
                   <form action="UnirseProyecto.php" method="POST">
                     <div class="sel-unirProy">
-                      <select name="proyectos[]" id="proyectos" class="form-control" multiple required>
+                      <select name="proyectos[]" id="proyectos" class="form-control" multiple size="7" required>
                       <?php
+                  $mysqli = new mysqli('localhost','expoeduc_informatica2','LiceoIep_2020_2do_Inf','expoeduc_expoeduca');
 
-                        require "../Form/conexion.php ";
+                    if ($mysqli->connect_error) {
+                   die('Error : ('. $mysqli->connect_errno .') '. $mysqli->connect_error);
+                                              }
+
+
                         $usuario=$_SESSION['Usuario'];
 
                         $sql = "SELECT * from usuario where Usuario = '$usuario'";
@@ -85,7 +100,7 @@
                     <?php
                   if(isset($_GET['eP'])){
                       echo "<script>
-                      document.getElementById('errorPwd').style.display = 'block'; </script>";
+                      document.getElementById('myModal').style.display = 'block'; </script>";
                   }
                 ?>
                   </form>

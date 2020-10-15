@@ -1,5 +1,6 @@
 <?php
 
+  include 'verificosesion.php';
 session_start();
 include '../Form/conexion.php';
 

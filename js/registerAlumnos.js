@@ -31,22 +31,16 @@ function hola(){
     if(year6.checked == true){
         var year = 6;
     }
-    if(year == 0 || usu.length == 0 || contra.length == 0 || nomproy.length==0 || apellido.length==0 || nombre.length==0 || email.length==0 || orient==""){
-        alert("Todos los campos obligatorios");
-    }else{
+   
     $.ajax({
         type: "POST",
         url: "registrarAlumno.php",
         data: {usuario:usu,password:contra,nomproy:nomproy,apellido:apellido,nombre:nombre,email:email,orient:orient,year:year},
         success: function(data){
             if (data==1){
-                alert("El usuario ya exsiste");
+                alert("Error al procesar la solicitud, verifique que haya completado todos los datos, son todos obligatorios.");
 
-            }
-            if(data==2){
-                alert("Todos los campos son obligatorios");
-            }
-            if(data==3){
+            }else {
                 alert("Los datos se guardaron correctamente, en la brevedad le llegara un email que dira si se confirmo o no el usuario");
                 window.location.href="../index.html";
             }
@@ -54,7 +48,7 @@ function hola(){
   
         });
 
-}
+
 }
 function hola2(){
 
@@ -64,18 +58,16 @@ function hola2(){
     var apellido = document.getElementById("apellido").value;
     var tel = document.getElementById("tel").value;
     var mail = document.getElementById("mail").value;
-    if( usu.length == 0 || contra.length == 0 || nombre.length==0 || apellido.length==0 || tel.length==0 || mail.length==0){
-        alert("Todos los campos obligatorios");
-    }else{
+  
          $.ajax({
         type: "POST",
         url: "registrar.php",
         data: {user:usu,contra:contra,tel:tel,mail:mail,nombre:nombre,apellido:apellido},
         success: function(data){
             if (data==1){
-                alert("El usuario ya exsiste");
+                alert("ERROR, no se pudo procesar la solicitud, verifique que haya completado todos los datos");
 
-            }if(data==3){
+            }else{
                 alert("Los datos se guardaron correctamente, en la brevedad le llegara un email que dira si se confirmo o no el usuario");
                 window.location.href="../index.html";
             }
@@ -85,5 +77,5 @@ function hola2(){
 
 
 
-    }
+    
 }

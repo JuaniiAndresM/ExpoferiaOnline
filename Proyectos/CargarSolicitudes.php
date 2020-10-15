@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-
-  <script src="../js/functionsolicitud.js"></script>
-  </head>
-
-
-
 <?php
-include 'verificosesion.php';
 
 include '../Form/conexion.php';
 
@@ -66,13 +56,14 @@ if($result){
                         id='comment'
                       ></textarea>
                       
-                      <button class='Enviar' onclick='noaprobado(".$sqlsolicitudes['idSoli_Usuario'].")' ><i class='fa'>&#xf1d8;</i> Enviar</button>
+                      <button class='Enviar' onclick='noaprobado(".$sqlsolicitudes['idSoli_Usuario'].")'><i class='fa'>&#xf1d8;</i> Enviar</button>
                     </div>
               </div>
               <hr>
               ";
       $cont ++;
   }
+
 
   $sql = "SELECT * FROM solicitud_profesor";
   $result = $mysqli -> query($sql);
@@ -110,7 +101,7 @@ if($result){
                           class='form-control'
                           rows='5'
                           placeholder='Ingrese Comentario'
-                          id='comment'
+                          id='commentPROF'
                         ></textarea>
                         <button class='Enviar' onclick='noaprobadoPROF(".$sqlsolicitudes['idSoliProf'].")' ><i class='fa'>&#xf1d8;</i> Enviar</button>
                       </div>

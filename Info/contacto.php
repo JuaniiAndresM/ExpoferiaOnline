@@ -120,7 +120,7 @@
                   <div style="margin: 0 auto">
                     <select name="orient" id="orient" class="form-control" required>
                       <option value="" disabled selected hidden>Seleccione Orientación</option>
-                      <option value="0">Informático</option>
+                      <option value="15">Informático</option>
                       <option value="1">Administración</option>
                       <option value="2">Deporte</option>
                       <option value="3">Científico</option>

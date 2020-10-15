@@ -1,6 +1,7 @@
 <?php
 
-session_start();
+include 'verificosesion.php';
+
 include '../Form/conexion.php';
 
 $idproyecto = $_POST['idp'];

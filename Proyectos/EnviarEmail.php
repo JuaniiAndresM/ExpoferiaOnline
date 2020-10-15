@@ -1,5 +1,7 @@
 
 <?php
+
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -25,13 +27,14 @@ try {
     $mail->setFrom("expoferiaiep@gmail.com");
     $mail->addAddress($address);             // Add a recipient
 
-    // Content
+    // Content 
     $mail->isHTML(true);                                        // Set email format to HTML
     $mail->Subject = $subject;
     $mail->Body    = $body;
 
     $mail->send();
 
+    echo "Email enviado !";
 } catch (Exception $e) {
     echo "Error al enviar: {$mail->ErrorInfo}";
 }

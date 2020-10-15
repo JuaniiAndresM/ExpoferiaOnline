@@ -1,8 +1,8 @@
 
 <?php
+
 include '../Form/conexion.php';
 
-echo "<script>alert('Espere un segundo...')</script>";
   
 if(isset($_POST['aprobar'])){
     
@@ -16,15 +16,19 @@ if(isset($_POST['aprobar'])){
     $sql = "SELECT * FROM usuario WHERE Usuario = '".$sqlsolicitudes['Usuario']."'";
     $result = $mysqli -> query($sql);
     $sqlusuario= mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+    $sql = "SELECT * FROM orientaciones WHERE idOrientacion = '".$sqlsolicitudes['Orientacion']."'";
+    $result = $mysqli -> query($sql);
+    $sqllocal = mysqli_fetch_array($result, MYSQLI_ASSOC);
         
-        $insert_row = $mysqli->query("INSERT INTO datosProyecto (Year,Titulo,Alumno_Responsable, Estado, Orientacion) VALUES ('".$sqlsolicitudes['Year']."','".$sqlsolicitudes['Titulo_Proyecto']."','".$sqlusuario['idUsuario']."','0','".$sqlsolicitudes['Orientacion']."')");
+        $insert_row = $mysqli->query("INSERT INTO datosProyecto (Year,Titulo,Alumno_Responsable, Estado, Orientacion, ndolocal) VALUES ('".$sqlsolicitudes['Year']."','".$sqlsolicitudes['Titulo_Proyecto']."','".$sqlusuario['idUsuario']."','0','".$sqlsolicitudes['Orientacion']."','".$sqllocal['Local']."')");
 
         if($insert_row){
         $sql = "SELECT * FROM datosProyecto WHERE Titulo = '".$sqlsolicitudes['Titulo_Proyecto']."'";
         $result = $mysqli -> query($sql);
         $sqlID= mysqli_fetch_array($result, MYSQLI_ASSOC);
             
-            $path = "../img/PROYECT".$sqlID['idProyecto']."";
+            $path = "../img/PROYECT".$sqlID['idProyecto'].""; 
             if (!file_exists($path)) {
                 mkdir($path, 0777, true);
 
@@ -39,7 +43,7 @@ if(isset($_POST['aprobar'])){
                 // sigue mi programa.
                 $sql = "DELETE FROM solicitud_usuario WHERE idSoli_Usuario ='".$_POST['aprobar']."'";
                 $mysqli -> query($sql);
-                header("Location: Admin.php ");
+               
             }else{
                 echo 'Error al crear proyecto';
             }
@@ -63,14 +67,11 @@ if(isset($_POST['aprobar'])){
     $subject='Solicitud de proyecto rechazado';
     $body=$_POST['comentario'];
     // 
-    echo "antes de enviar email";
     include 'EnviarEmail.php';
 
 
     $sql = "DELETE FROM solicitud_usuario WHERE idSoli_Usuario ='".$_POST['rechazado']."'";
     $mysqli -> query($sql);
-    echo "luego de";
-    header("Location: Admin.php ");
     }
 } 
 
@@ -87,14 +88,14 @@ if(isset($_POST['aprobadoPROF'])){
                 $result = $mysqli -> query($sql);
                 $sqlsolicitudes = mysqli_fetch_array($result, MYSQLI_ASSOC);
                 $address=$sqlsolicitudes['Email'];
-                $subject='Solicitud de proyecto aprobado';
+                $subject='Solicitud de profesor aprobado';
                 $body='Queremos informarle que su solicitud del usuario '.$sqlsolicitudes['Usuario'].' fue aprobado. Saludos, Alumnos de segundo Informatica.';
                 // Enviar email
                 include 'EnviarEmail.php';
                 // sigue mi programa.
                 $sql = "DELETE FROM solicitud_profesor WHERE idSoliProf ='".$_POST['aprobadoPROF']."'";
                 $mysqli -> query($sql);
-                header("Location: Admin.php ");
+                
     }else{
      echo "'Error : ('. $mysqli->errno .') '. $mysqli->error'";
     }
@@ -109,17 +110,15 @@ if(isset($_POST['aprobadoPROF'])){
     
     
         $address=$sqlsolicitudes['Email'];         
-        $subject='Solicitud de usuario rechazado';
-        $body=$_POST['comentario'];
+        $subject='Solicitud de profesor rechazado';
+        $body=$_POST['comentarioPROF'];
         // 
-        echo "antes de enviar email";
         include 'EnviarEmail.php';
     
     
         $sql = "DELETE FROM solicitud_profesor WHERE idSoliProf ='".$_POST['noaprobadoPROF']."'";
         $mysqli -> query($sql);
-        echo "luego de";
-        header("Location: Admin.php ");
+       
         }
 
 }
