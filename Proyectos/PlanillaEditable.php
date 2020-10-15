@@ -195,6 +195,28 @@
                 <button onclick="ActualizoPlanilla()" style="margin-top: 5%; color: white">
                     <i class="fa">&#xf0c7;</i> Guardar Cambios
                   </button>
+                  <div id="myModal" class="modal">
+                  <div class="modal-content">
+                  <span class="close" style="color: red;">&times;</span>
+                    <br>
+                    <p style="padding: 20px">            Los cambios se han guardado correctamente!</p>
+                    <br>
+                  </div>
+                  </div>
+                  <script>
+                    var modal = document.getElementById("myModal");
+                    var span = document.getElementsByClassName("close")[0];
+                    window.onclick = function(event) {
+                    if (event.target == modal) {
+                    modal.style.display = "none";
+                    location.reload();
+                   }
+                  }
+                  span.onclick = function() {
+                    modal.style.display = "none";
+                    location.reload();
+                  }
+                  </script>
 
                 <div class="ImagenesPlanilla">
                 <h2>Subimos Fotos:</h2>
