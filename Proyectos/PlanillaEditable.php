@@ -175,7 +175,60 @@
                     id="descripcionLarga_Proyecto"><?php echo $descripcion; ?>
                   </textarea>
                 </div>
-                
+          
+                <div class="ImagenesPlanilla">
+                <h2>Subimos Fotos:</h2>
+                <hr />
+                <h3>Foto Principal (solo 1):</h3>
+                <hr />
+                <div class="Foto">
+                <div id="drop_file_zone" ondrop="upload_file(event,1)" ondragover="return false">
+                      <div id="drag_upload_file">
+                          <p>Arrastra y suelta el archivo aquí</p>
+                          <!-- <p>o</p> -->
+                        <!--   <p><input type="button" id="selectfile1" value="Select File" onclick="file_explorer();"></p> -->
+                          
+                      </div>
+                  </div>
+                  <div class="Foto" id="fprincipal">
+                    
+                  </div>
+                </div>
+                <hr />
+                <h3>Fotos secundarias:</h3>
+                <hr />
+                <div class="Foto">
+               
+                  <div id="drop_file_zone" ondrop="upload_file(event,3)" ondragover="return false">
+                      <div id="drag_upload_file">
+                          <p>Arrastra y suelta los archivos aquí</p>
+                          <!-- <p>o</p> -->
+                          <!--  <p><input type="button" id="selectfile3" value="Select File" onclick="file_explorer();"></p> -->
+                          
+                      </div>
+                  </div>
+                  <div id="fsecundarias">
+                      
+                     
+                  </div>
+                 
+                </div>
+                <hr />
+                <h3>Banner:</h3>
+                <hr />
+                <div class="Foto">
+                <div id="drop_file_zone" ondrop="upload_file(event,2)" ondragover="return false">
+                      <div id="drag_upload_file">
+                          <p>Arrastra y suelta el Banner aquí</p>
+                         <!--  <p>o</p>-->
+                          <!-- <p><input type="button" id="selectfile2"  value="Select File" onclick="file_explorer();"></p> -->
+                         
+                      </div>
+                  </div>
+                  <div class="Foto" id="fbanner">
+                    
+                  </div>
+                </div>
                 <?php
                 $sql = "SELECT Estado FROM expoeduc_expoeduca.datosProyecto where idProyecto='".$idproyecto."';";
                 $result = $mysqli -> query($sql);
@@ -220,60 +273,6 @@
                     location.reload();
                   }
                   </script>
-
-                <div class="ImagenesPlanilla">
-                <h2>Subimos Fotos:</h2>
-                <hr />
-                <h3>Foto Principal (solo 1):</h3>
-                <hr />
-                <div class="Foto">
-                <div id="drop_file_zone" ondrop="upload_file(event,1)" ondragover="return false">
-                      <div id="drag_upload_file">
-                          <p>Arrastra y suelta el archivo aquí</p>
-                          <p>o</p>
-                          <p><input type="button" id="selectfile1" value="Select File" onclick="file_explorer();"></p>
-                          
-                      </div>
-                  </div>
-                  <div class="Foto" id="fprincipal">
-                    
-                  </div>
-                </div>
-                <hr />
-                <h3>Fotos secundarias:</h3>
-                <hr />
-                <div class="Foto">
-               
-                  <div id="drop_file_zone" ondrop="upload_file(event,3)" ondragover="return false">
-                      <div id="drag_upload_file">
-                          <p>Arrastra y suelta los archivos aquí</p>
-                          <p>or</p>
-                          <p><input type="button" id="selectfile3" value="Select File" onclick="file_explorer();"></p>
-                          
-                      </div>
-                  </div>
-                  <div id="fsecundarias">
-                      
-                     
-                  </div>
-                 
-                </div>
-                <hr />
-                <h3>Banner:</h3>
-                <hr />
-                <div class="Foto">
-                <div id="drop_file_zone" ondrop="upload_file(event,2)" ondragover="return false">
-                      <div id="drag_upload_file">
-                          <p>Arrastra y suelta el Banner aquí</p>
-                          <p>or</p>
-                          <p><input type="button" id="selectfile2"  value="Select File" onclick="file_explorer();"></p>
-                         
-                      </div>
-                  </div>
-                  <div class="Foto" id="fbanner">
-                    
-                  </div>
-                </div>
               </div>
                 
 
