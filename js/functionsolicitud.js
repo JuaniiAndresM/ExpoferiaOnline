@@ -6,7 +6,7 @@ function aprobado(id){
         type: "post", 
         success:function(){
             location.reload();
-      }
+      } 
     })
     }
     

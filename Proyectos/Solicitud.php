@@ -24,7 +24,7 @@ if(isset($_POST['aprobar'])){
         $result = $mysqli -> query($sql);
         $sqlID= mysqli_fetch_array($result, MYSQLI_ASSOC);
             
-            $path = "../img/PROYECT".$sqlID['idProyecto']."";
+            $path = "../img/PROYECT".$sqlID['idProyecto'].""; 
             if (!file_exists($path)) {
                 mkdir($path, 0777, true);
 
@@ -39,7 +39,7 @@ if(isset($_POST['aprobar'])){
                 // sigue mi programa.
                 $sql = "DELETE FROM solicitud_usuario WHERE idSoli_Usuario ='".$_POST['aprobar']."'";
                 $mysqli -> query($sql);
-                header("Location: Admin.php ");
+               
             }else{
                 echo 'Error al crear proyecto';
             }
@@ -70,7 +70,7 @@ if(isset($_POST['aprobar'])){
     $sql = "DELETE FROM solicitud_usuario WHERE idSoli_Usuario ='".$_POST['rechazado']."'";
     $mysqli -> query($sql);
     echo "luego de";
-    header("Location: Admin.php ");
+   
     }
 } 
 
@@ -94,7 +94,7 @@ if(isset($_POST['aprobadoPROF'])){
                 // sigue mi programa.
                 $sql = "DELETE FROM solicitud_profesor WHERE idSoliProf ='".$_POST['aprobadoPROF']."'";
                 $mysqli -> query($sql);
-                header("Location: Admin.php ");
+                
     }else{
      echo "'Error : ('. $mysqli->errno .') '. $mysqli->error'";
     }
@@ -118,8 +118,8 @@ if(isset($_POST['aprobadoPROF'])){
     
         $sql = "DELETE FROM solicitud_profesor WHERE idSoliProf ='".$_POST['noaprobadoPROF']."'";
         $mysqli -> query($sql);
-        echo "luego de";
-        header("Location: Admin.php ");
+       
+       
         }
 
 }

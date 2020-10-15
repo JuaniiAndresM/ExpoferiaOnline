@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-
-  <script src="../js/functionsolicitud.js"></script>
-  </head>
-
-
-
 <?php
 include 'verificosesion.php';
 
