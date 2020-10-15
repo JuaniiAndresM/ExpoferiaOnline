@@ -1,5 +1,7 @@
 
 <?php
+
+include 'verificosesion.php';
 include '../Form/conexion.php';
 
 echo "<script>alert('Espere un segundo...')</script>";
