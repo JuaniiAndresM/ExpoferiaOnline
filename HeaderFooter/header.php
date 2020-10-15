@@ -15,7 +15,7 @@
         >
       </li>
       <li>
-        <a href="../Info/informacion.html"
+        <a href="../Proyectos/proximamente.html"
           ><i class="fa">&#xf05a;</i> Información</a
         >
       </li>
