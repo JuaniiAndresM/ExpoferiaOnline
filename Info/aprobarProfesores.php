@@ -137,6 +137,7 @@
                                         <script>
                                         window.location = 'aprobarProfesores.php';
                                         </script>
+                                        </div>
                                         <?php
                                     }
                                 }
@@ -147,7 +148,6 @@
                         }
                     }   
                     ?>
-                    </div>
                     <sctipt></script>
                     <?php
                         echo "
