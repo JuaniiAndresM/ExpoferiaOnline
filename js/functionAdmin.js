@@ -35,7 +35,8 @@ $( document ).ready(function() {
               url:"Solicitud.php", 
               data: {rechazado: sessionStorage.getItem("rechazado"),comentario: comentario1},
               type: "post", 
-              success:function(){
+              success:function(data){
+                alert(data);
                   location.reload();
             }
           })
@@ -47,7 +48,8 @@ $( document ).ready(function() {
                   url:"Solicitud.php", 
                   data: {aprobadoPROF: sessionStorage.getItem("aprobadoPROF")},
                   type: "post", 
-                  success:function(){
+                  success:function(data){
+                    alert(data);
                       location.reload();
                 }
               })
@@ -61,7 +63,8 @@ $( document ).ready(function() {
                       url:"Solicitud.php", 
                       data: {noaprobadoPROF: sessionStorage.getItem("noaprobadoPROF"), comentarioPROF: comentarioPROF},
                       type: "post", 
-                      success:function(){
+                      success:function(data){
+                        alert(data);
                           location.reload();
                     }
                   })
