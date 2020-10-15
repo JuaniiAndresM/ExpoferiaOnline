@@ -13,7 +13,7 @@ function aprobado(id){
     function noaprobado(id){
         sessionStorage.setItem("rechazado", id);
         var comentario1 = document.getElementById("comment").value;
-        alert(comentario1);
+
         sessionStorage.setItem("comentario", comentario1);
         $.ajax({
             url:"Solicitud.php", 
