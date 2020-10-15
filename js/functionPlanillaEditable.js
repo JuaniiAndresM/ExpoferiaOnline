@@ -97,7 +97,7 @@ function ActualizoPlanilla(){
     $.ajax({
     url:"ActualizoPlanilla.php", 
     data: {idp: idp, nombre: nombreproyecto, dcorta: dcorta, dlarga: dlarga, mlink: mlink},
-    type: "post",
+    type: "post", 
     success:function(content){
       modal.style.display = "block";
       }
