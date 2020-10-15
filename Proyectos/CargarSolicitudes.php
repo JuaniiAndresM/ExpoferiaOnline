@@ -70,7 +70,7 @@ if($result){
                         id='comment'
                       ></textarea>
                       
-                      <button class='Enviar' onclick='noaprobado(".$sqlsolicitudes['idSoli_Usuario'].")'><i class='fa'>&#xf1d8;</i> Enviar</button>
+                      <button class='Enviar' onclick='deshabilitar(".$sqlsolicitudes['idSoli_Usuario'].")'><i class='fa'>&#xf1d8;</i> Enviar</button>
                     </div>
               </div>
               <hr>
@@ -117,7 +117,7 @@ if($result){
                           placeholder='Ingrese Comentario'
                           id='commentPROF'
                         ></textarea>
-                        <button class='Enviar' onclick='noaprobadoPROF(".$sqlsolicitudes['idSoliProf'].")' ><i class='fa'>&#xf1d8;</i> Enviar</button>
+                        <button class='Enviar' onclick='desaprobadoPROF(".$sqlsolicitudes['idSoliProf'].")' ><i class='fa'>&#xf1d8;</i> Enviar</button>
                       </div>
                 </div>
                 <hr>
