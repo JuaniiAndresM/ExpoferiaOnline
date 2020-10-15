@@ -99,26 +99,30 @@ function ActualizoPlanilla(){
     data: {idp: idp, nombre: nombreproyecto, dcorta: dcorta, dlarga: dlarga, mlink: mlink},
     type: "post",
     success:function(content){
-      modal.style.display = "block";
+          var idp2=idp;
+          cont2 = 1;
+          while(cont2 <= cont){
+          var video = $("#video"+cont2).val();
+          $.ajax({
+            url:"SuboVideos.php", 
+            data: {idp: idp, video: video},
+            type: "post",
+            success:function(content){
+                alert(content);
+                modal.style.display = "block";
+              }
+             });
+             cont2++;
+        }
       }
      });
 
-    cont2 = 1;
+    
 
-    while(cont2 <= cont){
-      var video = $("#video"+cont2).val();
-      $.ajax({
-        url:"SuboVideos.php", 
-        data: {idp: idp, video: video},
-        type: "post",
-        success:function(content){
-            alert("Todo actualizado");
-          }
-         });
-    }
+    
 
 }
-var cont = 1;
+var cont = 2;
 
 function NuevoVideo(){
   var div = document.getElementById("1");
