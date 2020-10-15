@@ -1,3 +1,7 @@
+<?php
+   
+           include 'verificosesion.php';
+    ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -30,9 +34,6 @@
     />
   </head>
   <body onload="hfindex()">
-  <?php
-  include 'verificosesion.php'; 
-  ?>
     <div id="header"></div>
     <div>
     </div>
