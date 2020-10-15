@@ -81,7 +81,7 @@
                 Solo deben crear una cuenta: <br>- Un alumno por proyecto.<br>- Todos los profesores lideres de proyecto.
                 <br>Si aún no tienes tu cuenta, solícitala mediante los enlaces de abajo.
                 <br></p>
-              <div>
+              <div class="botonesLogin">
                   <a 
                   class="buttonLogin"
                   style="color: ;"
