@@ -162,9 +162,8 @@
                  $videos = '';
                  if(isset($vv['url'])){
                   while($row = $result->fetch_array()){
-                 
                     $videos.= "<div id = '1' class='form-group'>
-                    <input type='text' class='form-control' id='video' placeholder='URL del Video [YouTube]' name='nombre_proyecto' value=". $vv['url']."></div>";
+                   <input type='text' class='form-control' id='video' placeholder='URL del Video [YouTube]' name='nombre_proyecto' value=". $vv['url']."></div>";
                     }
                   }else{
                    $videos.= "<div id = '1' class='form-group'>
