@@ -120,15 +120,11 @@ function ActualizoPlanilla(){
                     }
                     });
                     cont2++;
-                  } 
+                } 
           }
          });
       }
      });
-
-     
-
-    
 
 }
 var cont = 1;
