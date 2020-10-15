@@ -1,4 +1,5 @@
 function aprobado(id){
+    $(':button').prop('disabled', true);
     sessionStorage.setItem("aprobar", id);
     $.ajax({
         url:"Solicitud.php", 
@@ -11,13 +12,14 @@ function aprobado(id){
     }
     
     function noaprobado(id){
+        $(':button').prop('disabled', true);
         sessionStorage.setItem("rechazado", id);
         var comentario1 = document.getElementById("comment").value;
-        alert(comentario1);
+
         sessionStorage.setItem("comentario", comentario1);
         $.ajax({
             url:"Solicitud.php", 
-            data: {rechazado: sessionStorage.getItem("rechazado"), comentario: sessionStorage.getItem("comentario1")},
+            data: {rechazado: sessionStorage.getItem("rechazado"),comentario: comentario1},
             type: "post", 
             success:function(){
                 location.reload();
@@ -26,6 +28,7 @@ function aprobado(id){
         }
 
         function aprobadoPROF(id){
+            $(':button').prop('disabled', true);
             sessionStorage.setItem("aprobadoPROF", id);
             $.ajax({
                 url:"Solicitud.php", 
@@ -38,17 +41,24 @@ function aprobado(id){
             }
             
             function noaprobadoPROF(id){
+                $(':button').prop('disabled', true);
                 sessionStorage.setItem("noaprobadoPROF", id);
                 var comentarioPROF = document.getElementById("commentPROF").value;
                     sessionStorage.setItem("comentarioPROF", comentarioPROF);
                 $.ajax({
                     url:"Solicitud.php", 
-                    data: {noaprobadoPROF: sessionStorage.getItem("noaprobadoPROF"), comentarioPROF: sessionStorage.getItem("comentarioPROF")},
+                    data: {noaprobadoPROF: sessionStorage.getItem("noaprobadoPROF"), comentarioPROF: comentarioPROF},
                     type: "post", 
                     success:function(){
                         location.reload();
                   }
                 })
                 }
+
+function deshabilitar(id){
+    alert(id);
+    $(':button').prop('disabled', true);
+    alert('hola');
+}
         
                 
