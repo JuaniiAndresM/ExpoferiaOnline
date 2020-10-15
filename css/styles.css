@@ -221,6 +221,7 @@ header .nav-links li a:hover {
   border-radius: 30px;
 }
 .CardsIndex .Cards1 {
+  min-height: 420px;
   margin-right: 2%;
   background-color: white;
   border-radius: 30px;
