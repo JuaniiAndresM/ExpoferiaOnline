@@ -37,7 +37,7 @@ $( document ).ready(function() {
               type: "post", 
               success:function(data){
                 alert(data);
-                  location.reload();
+                cargosolicitudes();
             }
           })
           }
@@ -50,7 +50,7 @@ $( document ).ready(function() {
                   type: "post", 
                   success:function(data){
                     alert(data);
-                      location.reload();
+                    cargosolicitudes();
                 }
               })
               }
@@ -65,7 +65,7 @@ $( document ).ready(function() {
                       type: "post", 
                       success:function(data){
                         alert(data);
-                          location.reload();
+                        cargosolicitudes();
                     }
                   })
                   }
