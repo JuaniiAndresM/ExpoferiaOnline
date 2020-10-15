@@ -1762,6 +1762,11 @@ top: 5px;
   border-radius: 25px;
   width: 90%;
 }
+.botonesLogin{
+  display: grid;
+  gap: 3%;
+  grid-template-columns: 1fr 1fr;
+}
 input[type=submit] {
   padding: 9px 25px;
   background-color: #0088c4;
