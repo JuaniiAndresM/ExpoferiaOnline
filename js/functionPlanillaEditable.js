@@ -81,6 +81,7 @@ function desaprobar(id){
 };
 
 
+
 function ActualizoPlanilla(){
   
   var nombreproyecto= $("#user").val();
@@ -98,11 +99,14 @@ function ActualizoPlanilla(){
     data: {idp: idp, nombre: nombreproyecto, dcorta: dcorta, dlarga: dlarga, mlink: mlink},
     type: "post",
     success:function(content){
-        alert("Todo actualizado");
+      modal.style.display = "block";
       }
      });
     
 }
+
+
+
 function hfindex() {
   $("#header").load("../HeaderFooter/header.php");
   $("#footer").load("../HeaderFooter/footer.html");
