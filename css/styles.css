@@ -1395,6 +1395,16 @@ footer .Facebook {
 }
 
 @media screen and (max-width: 1100px) {
+  .Linea1{
+    margin: 0 5%;
+  }
+  .LoginFrame{
+    margin: 0 10%;
+  }
+  .ContactoFrame{
+    margin-left: 10%;
+    margin-right: 10%;
+  }
   .gridProyectos{
     grid-template-columns: 1fr;
   }
