@@ -101,8 +101,37 @@ function ActualizoPlanilla(){
         alert("Todo actualizado");
       }
      });
-    
+
+    cont2 = 1;
+
+    while(cont2 <= cont){
+      var video = $("#video"+cont2).val();
+      $.ajax({
+        url:"SuboVideos.php", 
+        data: {idp: idp, video: video},
+        type: "post",
+        success:function(content){
+            alert("Todo actualizado");
+          }
+         });
+    }
+
 }
+var cont = 1;
+
+function NuevoVideo(){
+  var div = document.getElementById("1");
+  var input = document.createElement("input");
+  input.type = "text";
+  input.className = "form-control";
+  input.id = "video"+ cont;
+  input.name = "nombre_proyecto";
+  input.placeholder = "URL del Video [YouTube]";
+  input.value = "";
+  div.appendChild(input); 
+  cont++;
+};
+
 function hfindex() {
   $("#header").load("../HeaderFooter/header.php");
   $("#footer").load("../HeaderFooter/footer.html");

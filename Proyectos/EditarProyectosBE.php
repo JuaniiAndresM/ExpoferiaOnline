@@ -6,6 +6,7 @@ include '../Form/conexion.php';
             $result = $mysqli -> query($sql);
             $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
             $idUS = $ss['idUsuario'];
+            $img = "";
 
             $content = '';
 
@@ -25,6 +26,12 @@ include '../Form/conexion.php';
                   $results = $mysqli->query($sql);
 
                   while($row = $results->fetch_array()){
+
+                    if(isset($row['ImagenPrincipal'])) {
+                      $img = $row['ImagenPrincipal'];
+                    }else{
+                      $img = "../img/imgError.png";
+                    }
 
                     $content.="<div class='ProyectoLista'>
                                <img class='PanelProyecto' src='".$row['ImagenPrincipal']."'>
@@ -51,11 +58,17 @@ include '../Form/conexion.php';
                   $sql = "SELECT idProyecto, Titulo, ImagenPrincipal FROM datosProyecto";
                   $results = $mysqli->query($sql);}
                     }
-                    
+
                   while($row = $results->fetch_array()){
 
+                    if(isset($row['ImagenPrincipal'])) {
+                      $img = $row['ImagenPrincipal'];
+                    }else{
+                      $img = "../img/imgError.png";
+                    }
+
                     $content.="<div class='ProyectoLista'>
-                              <img class='PanelProyecto' src='".$row['ImagenPrincipal']."'>
+                              <img class='PanelProyecto' src='".$img."'>
                               <br/>
                               <p>".$row['Titulo']."</p>
                               <hr/>

@@ -28,8 +28,8 @@ if (file_exists($target_file)) {
 }
 
 // Check file size
-if ($_FILES["file"]["size"] > 3000000) {
-  echo '<script language="javascript"> alert("La imagen supera el peso maximo (3MB).")</script>';
+if ($_FILES["file"]["size"] > 1000000) {
+  echo '<script language="javascript"> alert("La imagen supera el peso maximo (1MB).")</script>';
   $uploadOk = 0;
 }
 
