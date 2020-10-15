@@ -1,10 +1,8 @@
 
 <?php
 
-include 'verificosesion.php';
 include '../Form/conexion.php';
 
-echo "<script>alert('Espere un segundo...')</script>";
   
 if(isset($_POST['aprobar'])){
     
@@ -65,14 +63,11 @@ if(isset($_POST['aprobar'])){
     $subject='Solicitud de proyecto rechazado';
     $body=$_POST['comentario'];
     // 
-    echo "antes de enviar email";
     include 'EnviarEmail.php';
 
 
     $sql = "DELETE FROM solicitud_usuario WHERE idSoli_Usuario ='".$_POST['rechazado']."'";
     $mysqli -> query($sql);
-    echo "luego de";
-   
     }
 } 
 
@@ -114,13 +109,11 @@ if(isset($_POST['aprobadoPROF'])){
         $subject='Solicitud de usuario rechazado';
         $body=$_POST['comentarioPROF'];
         // 
-        echo "antes de enviar email";
         include 'EnviarEmail.php';
     
     
         $sql = "DELETE FROM solicitud_profesor WHERE idSoliProf ='".$_POST['noaprobadoPROF']."'";
         $mysqli -> query($sql);
-       
        
         }
 
