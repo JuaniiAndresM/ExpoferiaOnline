@@ -16,8 +16,12 @@ if(isset($_POST['aprobar'])){
     $sql = "SELECT * FROM usuario WHERE Usuario = '".$sqlsolicitudes['Usuario']."'";
     $result = $mysqli -> query($sql);
     $sqlusuario= mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+    $sql = "SELECT * FROM orientaciones WHERE idOrientacion = '".$sqlsolicitudes['Orientacion']."'";
+    $result = $mysqli -> query($sql);
+    $sqllocal = mysqli_fetch_array($result, MYSQLI_ASSOC);
         
-        $insert_row = $mysqli->query("INSERT INTO datosProyecto (Year,Titulo,Alumno_Responsable, Estado, Orientacion) VALUES ('".$sqlsolicitudes['Year']."','".$sqlsolicitudes['Titulo_Proyecto']."','".$sqlusuario['idUsuario']."','0','".$sqlsolicitudes['Orientacion']."')");
+        $insert_row = $mysqli->query("INSERT INTO datosProyecto (Year,Titulo,Alumno_Responsable, Estado, Orientacion, ndolocal) VALUES ('".$sqlsolicitudes['Year']."','".$sqlsolicitudes['Titulo_Proyecto']."','".$sqlusuario['idUsuario']."','0','".$sqlsolicitudes['Orientacion']."','".$sqllocal['Local']."')");
 
         if($insert_row){
         $sql = "SELECT * FROM datosProyecto WHERE Titulo = '".$sqlsolicitudes['Titulo_Proyecto']."'";
