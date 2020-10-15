@@ -53,6 +53,7 @@
                 echo "<script>
                 document.getElementById('fotousr').src = '../img/admin.png';
               </script>";
+              $prof = "display: none;";
               }elseif($ss['TipoUsuario']==1){
                 echo "<script>
                 document.getElementById('fotousr').src = '../img/prof.png';
@@ -84,7 +85,7 @@
                     </button></a
                   >
                 </li>
-                <li>
+                <li style="<?php echo $prof ?>>
                   <a href="UnirseProyectos.php" style="<?php echo $prof ?>"
                     ><button class="botonPanel">
                       <i class="fa">&#xf055;</i> Unirse a Proyectos
