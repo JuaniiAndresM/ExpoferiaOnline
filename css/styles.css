@@ -1392,6 +1392,30 @@ footer .Facebook {
 }
 
 @media screen and (max-width: 1100px) {
+  .Linea1Admin{
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  #TituloTablaProyectos{
+    margin: 2% 5%;
+  }
+  .Linea1EditarProyecto{
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .EditarProyectoFrame{
+    grid-template-columns: 1fr;
+  }
+  .Linea1Panel{
+    margin: 0 10%;
+  }
+  .Linea1BuscarProyecto {
+    margin: 0 5%;
+
+  }
+  .PanelFrame{
+    margin: 0 10%;
+  }
   header {
     justify-content: space-between;
   }
