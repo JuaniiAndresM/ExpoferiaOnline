@@ -81,7 +81,7 @@ if(isset($_POST['aprobadoPROF'])){
     $result = $mysqli -> query($sql);
     $sqlsolicitudes = mysqli_fetch_array($result, MYSQLI_ASSOC);
     
-    $insert_row = $mysqli->query("INSERT INTO usuario (TipoUsuario,Usuario,Password, Nombre, Apellido, Email) VALUES ('1','".$sqlsolicitudes['Usuario']."','".$sqlsolicitudes['Password']."','".$sqlsolicitudes['Nombre']."','".$sqlsolicitudes['Apellido']."','".$sqlsolicitudes['Email']."')");
+    $insert_row = $mysqli->query("INSERT INTO usuario (TipoUsuario,Usuario,Password, Nombre, Apellido, Email, Telefono) VALUES ('1','".$sqlsolicitudes['Usuario']."','".$sqlsolicitudes['Password']."','".$sqlsolicitudes['Nombre']."','".$sqlsolicitudes['Apellido']."','".$sqlsolicitudes['Email']."','".$sqlsolicitudes['Telefono']."')");
     
     if($insert_row){
                 $sql = "SELECT * FROM solicitud_profesor WHERE idSoliProf = '".$_POST['aprobadoPROF']."'";
