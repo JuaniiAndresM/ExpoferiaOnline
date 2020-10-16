@@ -115,6 +115,7 @@ function ActualizoPlanilla(){
                     data: {idp: idp2, video: video},
                     type: "post",
                     success:function(content){
+<<<<<<< HEAD
                        
                        
                     }
@@ -122,21 +123,36 @@ function ActualizoPlanilla(){
                     cont2++;
                   } 
                    modal.style.display = "block";
+=======
+                        alert(content);
+                        modal.style.display = "block";
+                    }
+                    });
+                    cont2++;
+                } 
+>>>>>>> 9d09b6fcbd67e3127eca79761ad0ad98488240d4
           }
          });
       }
      });
+<<<<<<< HEAD
 
      
 
     
+=======
+>>>>>>> 9d09b6fcbd67e3127eca79761ad0ad98488240d4
 
 }
 var cont = 1;
 
 function NuevoVideo(){
   cont++;
+<<<<<<< HEAD
   var div = document.getElementById("misurls");
+=======
+  var div = document.getElementById("1");
+>>>>>>> 9d09b6fcbd67e3127eca79761ad0ad98488240d4
   var input = document.createElement("input");
   input.type = "text";
   input.className = "form-control";
