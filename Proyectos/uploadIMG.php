@@ -66,7 +66,7 @@ $file_extension = pathinfo($target_file, PATHINFO_EXTENSION);
         $uploadOk = 1;
       }else{
         echo '5';
-      
+       return;
       };
 
     }else{
@@ -85,7 +85,7 @@ $file_extension = pathinfo($target_file, PATHINFO_EXTENSION);
     if($proporcion == 1.75){
       $uploadOk = 1;
     }else{
-      echo '4 --  la proporcion es '.$proporcion.'y w '.$image[0].' y h '.$image[1].'<br>';
+      echo '4'; return;
      
     };
     }
@@ -93,7 +93,7 @@ $file_extension = pathinfo($target_file, PATHINFO_EXTENSION);
 
 
 if ($uploadOk == 0) {
-  echo '3';
+  echo '3'; return;
 } else {
   $tmp_name = $_FILES["file"]["tmp_name"];
         // basename() puede evitar ataques de denegación de sistema de ficheros;
@@ -117,6 +117,6 @@ if ($uploadOk == 0) {
     $resultaa = $mysqli->query($sql);
     echo '1';
   } else {
-    echo '2';
+    echo '2';return;
   }
 }
