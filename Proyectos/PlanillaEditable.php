@@ -3,7 +3,7 @@
            include 'verificosesion.php';
     ?>
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, shrink-to-fit=no"/>
@@ -98,7 +98,7 @@
 
    $sql = "SELECT * FROM videos WHERE idProyecto ='".$idproyecto."'";
    $result = $mysqli->query($sql);
-   $vv = mysqli_fetch_array($result, MYSQLI_ASSOC);
+   
 
    $banner='';
    if(isset($aa['Banner'])){
@@ -158,22 +158,31 @@
                     id="descripcionCorta_Proyecto"><?php echo $introduccion; ?>
                   </textarea>
                 </div>
+                
+                    <div id = 'misurls' class='form-group'><h4>Pega la url del video de youtube</h4>
                  <?php
-                 $videos = '';
-                 if(isset($vv['url'])){
+                 $videos = "";
+                 $cont = 1;
+                 if($result->num_rows>0){
                   while($row = $result->fetch_array()){
-                    $videos.= "<div id = '1' class='form-group'>
-                   <input type='text' class='form-control' id='video' placeholder='URL del Video [YouTube]' name='nombre_proyecto' value=". $vv['url']."></div>";
-                    }
-                  }else{
-                   $videos.= "<div id = '1' class='form-group'>
-                   <input type='text' class='form-control' id='video' placeholder='URL del Video [YouTube]' name='nombre_proyecto'></div>";
+                    $videos.= "
+                   <input type='text' class='form-control' data-cont='".$cont."' id='".'video'.$cont."' placeholder='URL del Video [YouTube]' name='nombre_proyecto' value=". $row['url'].">";
+                   
+                    $cont++;
+                      
                   }
+                   
+                  }else{
+                   $videos.= "
+                   <input type='text' class='form-control' data-cont='1' id='video1' placeholder='URL del Video [YouTube]' name='nombre_proyecto'>";
+                  }
+                  
                   echo $videos;
                   ?>
+                  </div>
                    <button onclick="NuevoVideo()" style="margin-top: 5%; color: white">
                     <i class="fa"></i>+</button>
-                  
+                 
                 <div>
                   <textarea
                     class="form-control"

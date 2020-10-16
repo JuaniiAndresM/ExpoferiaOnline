@@ -18,7 +18,7 @@ while ($sqlarray = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
       do{
         $random = $array[$x];
         $sql = "SELECT * FROM datosProyecto WHERE idProyecto = '".$random."'";
-        
+       
         $result = $mysqli -> query($sql);
         $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
         if(mysqli_num_rows($result) == 0){

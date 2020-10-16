@@ -7,7 +7,7 @@ $( document ).ready(function() {
       TraigoFoto(idp,1);// cargo la imagen principal
       TraigoFoto(idp,2);// cargo el banner
       TraigoFoto(idp,3);// cargo todas las fotos secundarias
-      
+     cont=$("#misurls input:last-child").data("cont");
       }
   });
   
@@ -97,31 +97,46 @@ function ActualizoPlanilla(){
     $.ajax({
     url:"ActualizoPlanilla.php", 
     data: {idp: idp, nombre: nombreproyecto, dcorta: dcorta, dlarga: dlarga, mlink: mlink},
-    type: "post", 
+    type: "post",
     success:function(content){
-      modal.style.display = "block";
+
+      $.ajax({
+        url:"BorroVideos.php", 
+        data: {idp: idp},
+        type: "post",
+        success:function(content){
+                  var idp2=idp;
+                  cont2 = 1;
+                  while(cont2 <= cont){
+                  var video = $("#video"+cont2).val();
+
+                  $.ajax({
+                    url:"SuboVideos.php", 
+                    data: {idp: idp2, video: video},
+                    type: "post",
+                    success:function(content){
+                       
+                       
+                    }
+                    });
+                    cont2++;
+                  } 
+                   modal.style.display = "block";
+          }
+         });
       }
      });
 
-    cont2 = 1;
+     
 
-    while(cont2 <= cont){
-      var video = $("#video"+cont2).val();
-      $.ajax({
-        url:"SuboVideos.php", 
-        data: {idp: idp, video: video},
-        type: "post",
-        success:function(content){
-            alert("Todo actualizado");
-          }
-         });
-    }
+    
 
 }
 var cont = 1;
 
 function NuevoVideo(){
-  var div = document.getElementById("1");
+  cont++;
+  var div = document.getElementById("misurls");
   var input = document.createElement("input");
   input.type = "text";
   input.className = "form-control";
@@ -129,8 +144,7 @@ function NuevoVideo(){
   input.name = "nombre_proyecto";
   input.placeholder = "URL del Video [YouTube]";
   input.value = "";
-  div.appendChild(input); 
-  cont++;
+  div.appendChild(input);
 };
 
 function hfindex() {
