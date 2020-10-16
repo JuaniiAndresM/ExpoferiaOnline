@@ -43,7 +43,7 @@ while ($sqlarray = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                           <p id ='intro2' style='word-wrap: break-word;'>".$ss['Introduccion']."
                           </p>
                         </div>
-                        <div class='Seccion2IMG'>
+                        <div class='ImgIndex'>
                           <img src='".$ss['ImagenPrincipal']."'
                             id ='foto2'
                             class='ImagenProyectos'
@@ -61,7 +61,7 @@ while ($sqlarray = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                         data-aos='flip-right'
                         data-aos-duration='1000'
                     >
-                        <div>
+                        <div class='ImgIndex'>
                         <img src='".$ss['ImagenPrincipal']."'
                         id ='foto".$i."'
                             class='ImagenProyectos'  
