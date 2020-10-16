@@ -19,7 +19,7 @@ $target_dir = $ruta;
 $target_file = $target_dir ."/". basename($_FILES["file"]["name"]);
 $target_file2 = $ruta2 ."/". basename($_FILES["file"]["name"]);
 $uploadOk = 1;
-$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
 
 
 // Check if file already exists
@@ -34,15 +34,20 @@ if ($_FILES["file"]["size"] > 1000000) {
   $uploadOk = 0;
 }
 
-function check_valid_image_size( $file ) {
-  $allowed_mimetypes = array( 'image/jpeg', 'image/png');
 
-  if (!in_array($file['type'], $allowed_mimetypes)){
-      return $file;
+  $allowed_mimetypes = array( 'jpeg', 'png', 'jpg');
+// Get image file extension
+$file_extension = pathinfo($target_file, PATHINFO_EXTENSION);
+  if (!in_array($file_extension, $allowed_mimetypes)){
+      echo 'la extension es '.$file_extension; 
+      return;
   }
-
-  $image = getimagesize($file['tmp_name']);
-  $too_large = "Image dimensions are too large. Maximum size is {$maximum['width']} by {$maximum['height']} pixels. Uploaded image is $image_width by $image_height pixels.";
+  $maximum = array(
+    'width' => '1200',
+    'height' => '200'
+  );
+  $image = @getimagesize($_FILES["file"]["tmp_name"]);
+  $too_large = "Las dimensiones de la imagen no están permitidas. El tamaño máximo es: {$maximum['width']} por {$maximum['height']} pixeles. La imagen que subió es de: $image_width por $image_height pixeles.";
 
 
     if($tipo == 2){
@@ -52,16 +57,17 @@ function check_valid_image_size( $file ) {
         'width' => '1200',
         'height' => '200'
       );
-    $image_width = $image[0];
-    $image_height = $image[1];
+      $image_width = $image[0];
+      $image_height = $image[1];
 
-    $proporcion = $image_width / $image_height;
+      $proporcion = $image_width / $image_height;
 
-    if($proporcion == 6){
-      $uploadOk = 1;
-    }else{
-      echo $too_large;
-    };
+      if($proporcion == 6){
+        $uploadOk = 1;
+      }else{
+        echo '5';
+      
+      };
 
     }else{
       $uploadOk = 0;
@@ -79,15 +85,15 @@ function check_valid_image_size( $file ) {
     if($proporcion == 1.75){
       $uploadOk = 1;
     }else{
-      echo $too_large;
+      echo '4 --  la proporcion es '.$proporcion.'y w '.$image[0].' y h '.$image[1].'<br>';
+     
     };
     }
-  }
 
 
 
 if ($uploadOk == 0) {
-  echo '<script language="javascript"> alert("La imagen no se pudo guardar". )</script>';
+  echo '3';
 } else {
   $tmp_name = $_FILES["file"]["tmp_name"];
         // basename() puede evitar ataques de denegación de sistema de ficheros;
@@ -109,10 +115,8 @@ if ($uploadOk == 0) {
     }
    
     $resultaa = $mysqli->query($sql);
-    
+    echo '1';
   } else {
-    echo "Lo siento, ocurrió un error y no se pudo cargar la imagen.";
+    echo '2';
   }
 }
-
-?>  

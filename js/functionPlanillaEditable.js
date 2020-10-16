@@ -216,7 +216,17 @@ function ajax_file_upload(file_obj,tipo) {
             processData: false,
             data: form_data,
             success:function(msg) {
-                
+                if(msg=='2'){
+                  alert('Disculpa amigo!. ocurrió un error inesperado al intentar subir la imagen, comunícate con soporte.');
+                }else if(msg=='3'){
+                  alert('Disculpa amigo!. No se pudo subir imagen, comunícate con soporte, gracias.');
+                }else if(msg=='4'){
+                  alert('Disculpa amigo!. La imagen no se pudo guardar porque no cumple los requerimientos de medidas, consulta el manual o pide ayuda a los administradores.');
+                }else if(msg=='5'){
+                  alert('Disculpa amigo!. La imagen del Banner no se pudo guardar porque no cumple los requerimientos de medidas, consulta el manual o pide ayuda a los administradores.');
+                }else if(msg==6){
+                  alert('Disculpa amigo!. No se pudo subir imagen, comunícate con soporte, gracias.');
+                }
                 $('#selectfile').val('');
                
                 TraigoFoto(idp,tipo);
