@@ -18,6 +18,7 @@ while ($sqlarray = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
       do{
         $random = $array[$x];
         $sql = "SELECT * FROM datosProyecto WHERE idProyecto = '".$random."'";
+       
         $result = $mysqli -> query($sql);
         $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
         if(mysqli_num_rows($result) == 0){
@@ -42,7 +43,7 @@ while ($sqlarray = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                           <p id ='intro2' style='word-wrap: break-word;'>".$ss['Introduccion']."
                           </p>
                         </div>
-                        <div class='Seccion2IMG'>
+                        <div class='ImgIndex'>
                           <img src='".$ss['ImagenPrincipal']."'
                             id ='foto2'
                             class='ImagenProyectos'
@@ -60,7 +61,7 @@ while ($sqlarray = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                         data-aos='flip-right'
                         data-aos-duration='1000'
                     >
-                        <div>
+                        <div class='ImgIndex'>
                         <img src='".$ss['ImagenPrincipal']."'
                         id ='foto".$i."'
                             class='ImagenProyectos'  
@@ -84,7 +85,7 @@ while ($sqlarray = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
         }
         
         
-      }while($i < 3 && count($array)>3);
+      }while($i < 3 || count($array)>3);
       
     
     echo $content;

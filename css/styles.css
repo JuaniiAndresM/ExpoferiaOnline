@@ -355,13 +355,19 @@ header .nav-links li a:hover {
   background-color: white;
   margin-bottom: 2%;
 }
+.ImgIndex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .index-frame2 .Seccion1 {
+  padding: 2% 2%;
   display: grid;
   grid-template-columns: 20% 80%;
 }
 .index-frame2 .Seccion2 {
   display: grid;
-  margin-right: 1%;
+  padding: 2% 2%;
   grid-template-columns: 80% 20%;
 }
 .index-frame2 .Seccion2Mobile {
@@ -1536,9 +1542,6 @@ footer .Facebook {
   }
   .index-frame2 .Seccion2Mobile {
     display: block;
-  }
-  .index-frame2 .Seccion2IMG {
-    display: none;
   }
   .index-frame2 .Seccion3 {
     margin-right: 4%;
