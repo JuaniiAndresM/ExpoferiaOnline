@@ -113,6 +113,11 @@
                       <span class="radicon"></span>
                       Sexto Año
                     </label>
+                    <label class="rad-opt-child" for="ins">
+                      <input type="radio" id="ins" name="year" value="7" required />
+                      <span class="radicon"></span>
+                     Institucional
+                    </label>
                   </div>
                 </div>
                 <div class="select-opt" style="padding: 1%">
@@ -135,6 +140,10 @@
                       <option value="12">Derecho</option>
                       <option value="13">Ciclo Basico</option>
                       <option value="14">Cuarto Año</option>
+                      <option value="16">Ingles</option>
+                      <option value="17">Ingles Diversificado</option>
+                      <option value="18">Ingles Ciclo Basico</option>
+                      <option value="19">Ingles Tecnologico</option>
                     </select>
                   </div>
                 </div>
