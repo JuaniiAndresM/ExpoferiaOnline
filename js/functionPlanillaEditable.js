@@ -99,13 +99,48 @@ function ActualizoPlanilla(){
     data: {idp: idp, nombre: nombreproyecto, dcorta: dcorta, dlarga: dlarga, mlink: mlink},
     type: "post",
     success:function(content){
-      modal.style.display = "block";
+
+      $.ajax({
+        url:"BorroVideos.php", 
+        data: {idp: idp},
+        type: "post",
+        success:function(content){
+                  var idp2=idp;
+                  cont2 = 1;
+                  while(cont2 <= cont){
+                  var video = $("#video"+cont2).val();
+
+                  $.ajax({
+                    url:"SuboVideos.php", 
+                    data: {idp: idp2, video: video},
+                    type: "post",
+                    success:function(content){
+                        alert(content);
+                        modal.style.display = "block";
+                    }
+                    });
+                    cont2++;
+                } 
+          }
+         });
       }
      });
-    
+
 }
+var cont = 1;
 
-
+function NuevoVideo(){
+  cont++;
+  var div = document.getElementById("1");
+  var input = document.createElement("input");
+  input.type = "text";
+  input.className = "form-control";
+  input.id = "video"+ cont;
+  input.name = "nombre_proyecto";
+  input.placeholder = "URL del Video [YouTube]";
+  input.value = "";
+  div.appendChild(input);
+};
 
 function hfindex() {
   $("#header").load("../HeaderFooter/header.php");

@@ -98,7 +98,8 @@
 
    $sql = "SELECT * FROM videos WHERE idProyecto ='".$idproyecto."'";
    $result = $mysqli->query($sql);
-   $vv = mysqli_fetch_array($result, MYSQLI_ASSOC);
+   
+
    $banner='';
    if(isset($aa['Banner'])){
      $banner = $aa['Banner'];
@@ -107,9 +108,6 @@
    $titulo = $aa['Titulo'];
    $introduccion = $aa['Introduccion'];
    $descripcion = $aa['Descripcion'];
-   if(isset($vv['url'])){
-    $video = $vv['url'];}
-
   ?>
 
    
@@ -160,14 +158,31 @@
                     id="descripcionCorta_Proyecto"><?php echo $introduccion; ?>
                   </textarea>
                 </div>
-                  <?php
-                  while($row = $result->fetch_array()){
-                   echo "<div class='form-group'>
-                   <input type='text' class='form-control' id='link' placeholder='URL del Video [YouTube]' name='nombre_proyecto' value= '".$video."' /></div>";
-                  }
-                  ?>
- 
                 
+                    <div id = 'misurls' class='form-group'><h4>Pega la url del video de youtube</h4>
+                 <?php
+                 $videos = "";
+                 $cont = 1;
+                 if($result->num_rows>0){
+                  while($row = $result->fetch_array()){
+                    $videos.= "
+                   <input type='text' class='form-control' data-cont='".$cont."' id='".'video'.$cont."' placeholder='URL del Video [YouTube]' name='nombre_proyecto' value=". $row['url'].">";
+                   
+                    $cont++;
+                      
+                  }
+                   
+                  }else{
+                   $videos.= "
+                   <input type='text' class='form-control' data-cont='1' id='video1' placeholder='URL del Video [YouTube]' name='nombre_proyecto'>";
+                  }
+                  
+                  echo $videos;
+                  ?>
+                  </div>
+                   <button onclick="NuevoVideo()" style="margin-top: 5%; color: white">
+                    <i class="fa"></i>+</button>
+                 
                 <div>
                   <textarea
                     class="form-control"
