@@ -75,5 +75,17 @@ $(':button').prop('disabled', true);
     }
   })
 }
+
+function contraseña(address,Subject,body){
+  $.ajax({
+      url:"EnviarEmail.php", 
+      data: {address: address,Subject: Subject,body: body},
+      type: "post", 
+      success:function(data){
+        alert(data);
+        cargosolicitudes();
+    }
+  })
+}
           
                   
