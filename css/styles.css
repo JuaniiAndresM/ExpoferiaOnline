@@ -10,6 +10,11 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+button{
+  color: white;
+  outline: none;
+}
+
 header {
   background-color: transparent;
   display: flex;
@@ -23,6 +28,7 @@ header {
 header li,
 header a,
 header button {
+  outline: none;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -459,6 +465,7 @@ header .nav-links li a:hover {
 
 button,
 BotonProyecto {
+  outline: none;
   padding: 9px 25px;
   background-color: #0088c4;
   border: none;
@@ -514,6 +521,7 @@ BotonProyecto :hover {
 .Panel li,
 .Panel a,
 .Panel button {
+  outline: none;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -563,6 +571,7 @@ BotonProyecto :hover {
 .Proyecto li,
 .Proyecto a,
 .Proyecto button {
+  outline: none;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -649,6 +658,7 @@ BotonProyecto :hover {
 .EditarProyecto li,
 .EditarProyecto a,
 .EditarProyecto button {
+  outline: none;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -1030,6 +1040,7 @@ BotonProyecto :hover {
 }
 
 .BotonLogin2 button {
+  outline: none;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -1201,6 +1212,7 @@ BotonProyecto :hover {
 }
 
 .buttonLogin button {
+  outline: none;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -1260,6 +1272,7 @@ BotonProyecto :hover {
 }
 
 .buttonEnviar button {
+  outline: none;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 16px;

@@ -77,7 +77,7 @@
                 >
               </form>
               <br>
-              <button data-toggle='collapse' data-target='#rechazar' style="color: white;" ><i class='fa'>&#xf00d;</i>Me olvide de la contraseña</button>                     
+              <button data-toggle='collapse' data-target='#rechazar'>Me olvide de la contraseña</button>                     
               <br>
               <form action="../Proyectos/contraseña.php" method="POST">
                 <div id='rechazar' class='collapse form-group'>
@@ -87,12 +87,12 @@
                       type="Text"
                       class="form-control"
                       id="mail"
-                      placeholder="Ingrese Contraseña"
+                      placeholder="Ingrese Email"
                       name="mail"
                       required
                     />
                   </div>
-                  <button>nose</button>
+                  <button class="button">Envíar</button>
                 </div>
               </form>
               <br>
