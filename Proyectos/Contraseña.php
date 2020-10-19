@@ -6,7 +6,7 @@ $sql = "SELECT * FROM usuario where Email = '".$_POST['mail']."'";
 $result = $mysqli -> query($sql);
 $sqlcontra = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
-$address = 'tomassosa1303@gmail.com';
+$address = $_POST['mail'];
 $subject = "Contraseña";
 if(isset($sqlcontra['Email'])){
     $body = $sqlcontra['Password']; 
