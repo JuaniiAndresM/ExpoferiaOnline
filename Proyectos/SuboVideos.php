@@ -11,10 +11,6 @@
         echo "todo bien con ". $sql;
     }else echo "todo mal con este ".$sql;
     
-    if($video == ""){
-      $sql="DELETE FROM videos WHERE idProyecto='".$_POST['idp']."'";
-      $result = $mysqli -> query($sql);
-    }
     return;
 
 ?>
