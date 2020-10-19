@@ -109,21 +109,23 @@ function ActualizoPlanilla(){
                   cont2 = 1;
                   while(cont2 <= cont){
                   var video = $("#video"+cont2).val();
-
+                  if(video !== ""){
                   $.ajax({
                     url:"SuboVideos.php", 
                     data: {idp: idp2, video: video},
                     type: "post",
                     success:function(content){
-                       
+                      
                        
                     }
                     });
+                  }
                     cont2++;
                   } 
-                   modal.style.display = "block";
+                   
           }
          });
+         modal.style.display = "block";
       }
      });
 

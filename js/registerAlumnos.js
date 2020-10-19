@@ -12,6 +12,7 @@ function hola(){
     var year4 = document.getElementById("cuart");
     var year5 = document.getElementById("quint");
     var year6 = document.getElementById("hexa");
+    var year7 = document.getElementById("ins");
     var year = 0;
     if(year1.checked == true){
         var year = 1;
@@ -31,6 +32,10 @@ function hola(){
     if(year6.checked == true){
         var year = 6;
     }
+    if(year7.checked == true){
+        var year = 7;
+    }
+   
    
     $.ajax({
         type: "POST",
