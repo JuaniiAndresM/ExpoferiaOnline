@@ -1828,3 +1828,56 @@ input[type=submit] {
   text-decoration: none;
   cursor: pointer;
 }
+.acerca-Linea{
+  margin-right: 1%;
+}
+.wrapper-grid{
+  margin-top: 120px;
+  width: 100%;
+
+  background-color: white;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.acerca{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper-grid .acerca-card{
+  width: 280px;
+  height: 400px;
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.5);
+  border-radius: 25px;
+  margin: 5% 5%;
+
+  background-color: #2980b9;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  transition: box-shadow 0.5s, transform 0.5s;
+}
+.wrapper-grid .acerca-card:hover{
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.8);
+  transform: scale(1.02);
+}
+.wrapper-grid .card-foto{
+  margin: 5% 5%;
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+}
+.wrapper-grid .card-body-acerca{
+  text-align: center;
+  color: white;
+  margin-top: 30px;
+}
+.foto-acerca{
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+}
