@@ -1950,3 +1950,11 @@ input[type=submit] {
 .modal-backdrop {
   z-index: -1;
 }
+.footerlink{
+  text-decoration: none;
+  color: white;
+}
+.footerlink:hover{
+  text-decoration: none;
+  color: #ccc;
+}
