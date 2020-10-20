@@ -43,8 +43,8 @@
     <div class="Linea2">
         <div class="Linea3">
             <div class="blancCntnt">
-            <input type='text' id='elInput' onkeyup='myFunction()'/>
                 <div class="aprobTable">
+                <input type='text' id='elInput' onkeyup='myFunction()' placeholder="Buscar"/>
                     <table id="profTabl">
                     <thead>
                     <tr>
@@ -98,7 +98,8 @@
                 }           
                 ?>
                 </table>
-                <table>
+                <br>
+                <table id="proyTabl">
                 <tr>
                         <th>ID</th>
                         <th>Alumno Responsable</th>
@@ -125,6 +126,7 @@
                 }
                 ?>
                 </table>
+                <br>
                 </div>
             </div>
         </div>
