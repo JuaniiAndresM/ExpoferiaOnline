@@ -1745,8 +1745,8 @@ top: 5px;
 .Linea1Aprob {
   margin-bottom: 6%;
   margin-top: 100px;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 2%;
+  margin-right: 2%;
   background-color: #ffcb00;
   border-radius: 30px;
 }
@@ -1756,9 +1756,11 @@ top: 5px;
   border-radius: 30px; 
 }
 .aprobTable {
-  padding: 6% 0% 2% 0%;
   display: flex;
   justify-content: center;
+  align-items: center;
+
+  flex-direction: column;
 }
 .submitBtn {
   text-align: center;
@@ -1791,13 +1793,48 @@ input[type=submit] {
   border-radius: 20px;
   cursor: pointer; 
 }
-#profTabl th {
-  padding: 10px 15px;
-  text-align: left;
+
+.filtroTabla{
+  padding: 5px;
+  border-radius: 25px 25px 0 0;
   background-color: #0088c4;
+  text-align: center;
   color: white;
 }
-#profTabl tr:nth-child(odd){background-color: #f2f2f2;}
+
+#elInput{
+  height: 40px;
+  width: 300px;
+  outline: none;
+  line-height: 35px;
+  border: 1px solid white;
+  background-color: #0088c4;
+  border-radius: 1em;
+  color: white;
+  padding-left: 5px;
+}
+.filtroTabla h3{
+  margin: 20px 0;
+
+}
+.table-alumnos{
+  margin-bottom: 2%;
+  width: 100%;
+}
+.table-alumnos .table-head{
+  background-color: #0088c4;
+  color: white;
+  text-align: center;
+  height: 50px;
+  border-radius: 20px !important;
+}
+.table-alumnos td{
+  border: 1px solid #ccc;
+  color: rgb(88, 88, 88);
+}
+.table-alumnos td{
+  padding: 5px 10px;
+}
 
 /*  Modal guardar cambios */
 .modal {

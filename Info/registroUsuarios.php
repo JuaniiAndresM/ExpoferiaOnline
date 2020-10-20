@@ -30,24 +30,19 @@
   </head>
   <body onload="hfindex()">
     <div id="header"></div>
-
-                <style>
-                table,td,th {
-                    border: 1px solid black;
-                }
-                table {
-                    padding-bottom: 5%;
-                }
-                </style>
 <div class="Linea1Aprob">
     <div class="Linea2">
         <div class="Linea3">
             <div class="blancCntnt">
-            <input type='text' id='elInput' onkeyup='myFunction()'/>
+            <div class="filtroTabla">
+              <h3>Registro de Usuarios:</h3>
+              <label><i class="fa">&#xf002;</i> Buscar:</label>
+              <input type='text' id='elInput' onkeyup='myFunction()'/>
+            </div>
                 <div class="aprobTable">
-                    <table id="profTabl">
+                    <table class="table-alumnos">
                     <thead>
-                    <tr>
+                      <tr class="table-head">
                         <th>ID</th>
                         <th>Rango</th>
                         <th>Nombre</th>
@@ -55,7 +50,7 @@
                         <th>Mail</th>
                         <th>Telefono</th>
                         <th>Usuario</th>
-                        </tr>
+                      </tr>
                     </thead> 
                     <?php
                         include "../Form/conexion.php";
@@ -98,8 +93,9 @@
                 }           
                 ?>
                 </table>
-                <table>
-                <tr>
+                <br>
+                <table class="table-alumnos">
+                <tr class="table-head">
                         <th>ID</th>
                         <th>Alumno Responsable</th>
                         <th>Titulo</th>
