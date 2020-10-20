@@ -253,6 +253,8 @@
                 <hr />
                 <h3>Banner:</h3>
                 <hr />
+                <br><br>La medida en pixeles base es 1200 px de ancho x 200 px de alto (o proporcionales a estas medidas)
+                <br>
                 <div class="Foto">
                 <div id="drop_file_zone" ondrop="upload_file(event,2)" ondragover="return false">
                       <div id="drag_upload_file">
