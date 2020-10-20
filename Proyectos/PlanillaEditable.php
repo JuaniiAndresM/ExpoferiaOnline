@@ -14,6 +14,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.943/pdf.min.js">
+</script>
     <script src="../js/function.js"></script>
     <script src="../js/functionPlanillaEditable.js"></script>
    
@@ -26,6 +29,7 @@
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="styles2.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
       rel="stylesheet"
@@ -69,6 +73,7 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
       rel="stylesheet"
     />
+    
   </head>
 
   <?php
@@ -182,7 +187,9 @@
                   </div>
                    <button onclick="NuevoVideo()" style="margin-top: 5%; color: white">
                     <i class="fa"></i>+</button>
-                 
+                    <br><br>
+                <h3>Descripción larga:</h3>
+                <br> Utiliza negritas, títulos centrados y otras técnicas de edición para que tu trabajo se luzca más.<br>
                 <div>
                   <textarea
                     class="form-control"
@@ -196,6 +203,11 @@
                 <hr />
                 <h3>Foto Principal (solo 1):</h3>
                 <hr />
+                <br><br>La medida en pixeles base es 700 ancho x 400 alto (proporcionales a estas medidas)
+                <br>
+                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ayuda1">
+                Ayuda diseño gráfico
+                </button>
                 <div class="Foto">
                 <div id="drop_file_zone" ondrop="upload_file(event,1)" ondragover="return false">
                       <div id="drag_upload_file">
@@ -212,6 +224,8 @@
                 <hr />
                 <h3>Fotos secundarias:</h3>
                 <hr />
+                <br><br>La medida en pixeles base es 700 ancho x 400 alto (proporcionales a estas medidas)
+                <br>
                 <div class="Foto">
                
                   <div id="drop_file_zone" ondrop="upload_file(event,3)" ondragover="return false">
@@ -258,6 +272,23 @@
                   echo "<a class='BotonLogin2'  style='".$aprobar."'
                   ><button style='margin-top: 5%;' onclick='desaprobar(".$idproyecto.")'>
                     <i class='fa'>&#xf14a;</i> Desaprobar Proyecto
+                  </button></a
+                >";
+                }
+
+                $sql = "SELECT EstadoAdelanto FROM expoeduc_expoeduca.datosProyecto where idProyecto='".$idproyecto."';";
+                $result = $mysqli -> query($sql);
+                $aprobado = mysqli_fetch_array($result, MYSQLI_ASSOC);
+                if($aprobado["EstadoAdelanto"]==0){
+                echo "<a class='BotonLogin2'  style='".$aprobar."'
+                  ><button style='margin-top: 5%;margin-left: 1%;' onclick='aprobarAdelanto(".$idproyecto.")'>
+                    <i class='fa'>&#xf14a;</i> Aprobar adelanto
+                  </button></a
+                >";
+                }else{
+                  echo "<a class='BotonLogin2'  style='".$aprobar."'
+                  ><button style='margin-top: 5%;margin-left: 1%;' onclick='desaprobarAdelanto(".$idproyecto.")'>
+                    <i class='fa'>&#xf14a;</i> Desaprobar adelanto
                   </button></a
                 >";
                 }
@@ -327,6 +358,45 @@
       </div>
     </div>
     <p id="msg"></p>
+    
+    <!-- Modales  -->
+<div id="ayuda1" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+       
+      </div><h4 class="modal-title">Ayuda para subir imagen.</h4>
+        <div class="modal-body">
+            La imagen puede ser del tamaño que prefieras pero siempre respetando una proporción de 700 px de ancho por 400 alto. Por ejemplo, puedes tener una imagen de 1400 por 800, 
+            sería correcto, porque está en proporción.
+            <br>
+            Cómo modificar tu imagen a la proporción?<br>
+            Para ello debes valerte de un programa de edición gráfica, uno sencillo de manejar es el paint de windows.<br>
+         
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+    <!-- Modal content-->
+    
+      
+      
+    </div>
+
+  </div>
+</div>
+
+    
+
+    
     <div id="footer"></div>
   </body>
 </html>
