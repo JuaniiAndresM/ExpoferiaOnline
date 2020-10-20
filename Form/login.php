@@ -79,7 +79,7 @@
               <br>
               <button data-toggle='collapse' data-target='#rechazar'>Me olvide de la contraseña</button>                     
               <br>
-              <form action="../Proyectos/contraseña.php" method="POST">
+              <form action="../Proyectos/Contraseña.php" method="POST">
                 <div id='rechazar' class='collapse form-group'>
                   <div class="form-group">
                     <label for="mail">Gmail:</label>
