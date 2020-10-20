@@ -10,6 +10,11 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+button{
+  color: white;
+  outline: none;
+}
+
 header {
   background-color: transparent;
   display: flex;
@@ -23,6 +28,7 @@ header {
 header li,
 header a,
 header button {
+  outline: none;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -355,13 +361,19 @@ header .nav-links li a:hover {
   background-color: white;
   margin-bottom: 2%;
 }
+.ImgIndex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .index-frame2 .Seccion1 {
+  padding: 2% 2%;
   display: grid;
   grid-template-columns: 20% 80%;
 }
 .index-frame2 .Seccion2 {
   display: grid;
-  margin-right: 1%;
+  padding: 2% 2%;
   grid-template-columns: 80% 20%;
 }
 .index-frame2 .Seccion2Mobile {
@@ -453,6 +465,7 @@ header .nav-links li a:hover {
 
 button,
 BotonProyecto {
+  outline: none;
   padding: 9px 25px;
   background-color: #0088c4;
   border: none;
@@ -508,6 +521,7 @@ BotonProyecto :hover {
 .Panel li,
 .Panel a,
 .Panel button {
+  outline: none;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -557,6 +571,7 @@ BotonProyecto :hover {
 .Proyecto li,
 .Proyecto a,
 .Proyecto button {
+  outline: none;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -643,6 +658,7 @@ BotonProyecto :hover {
 .EditarProyecto li,
 .EditarProyecto a,
 .EditarProyecto button {
+  outline: none;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -1024,6 +1040,7 @@ BotonProyecto :hover {
 }
 
 .BotonLogin2 button {
+  outline: none;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -1195,6 +1212,7 @@ BotonProyecto :hover {
 }
 
 .buttonLogin button {
+  outline: none;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -1254,6 +1272,7 @@ BotonProyecto :hover {
 }
 
 .buttonEnviar button {
+  outline: none;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -1537,9 +1556,6 @@ footer .Facebook {
   .index-frame2 .Seccion2Mobile {
     display: block;
   }
-  .index-frame2 .Seccion2IMG {
-    display: none;
-  }
   .index-frame2 .Seccion3 {
     margin-right: 4%;
     grid-template-columns: 1fr;
@@ -1729,8 +1745,8 @@ top: 5px;
 .Linea1Aprob {
   margin-bottom: 6%;
   margin-top: 100px;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 2%;
+  margin-right: 2%;
   background-color: #ffcb00;
   border-radius: 30px;
 }
@@ -1740,9 +1756,16 @@ top: 5px;
   border-radius: 30px; 
 }
 .aprobTable {
-  padding: 6% 0% 2% 0%;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.aprobTable input{
+  outline: none;
+  margin: 2% 0;
+  width: 300px;
+  height: 40px;
 }
 .submitBtn {
   text-align: center;
@@ -1775,13 +1798,41 @@ input[type=submit] {
   border-radius: 20px;
   cursor: pointer; 
 }
-#profTabl th {
+#proyTabl{
+  width: 90%;
+}
+#proyTabl th {
   padding: 10px 15px;
-  text-align: left;
+  text-align: center;
   background-color: #0088c4;
   color: white;
 }
-#profTabl tr:nth-child(odd){background-color: #f2f2f2;}
+#proyTabl tr{
+  height: 30px;
+}
+#proyTabl td{
+  padding: 5px 10px;
+}
+
+
+#profTabl{
+  width: 90%;
+}
+#profTabl th {
+  padding: 10px 15px;
+  text-align: center;
+  background-color: #0088c4;
+  color: white;
+}
+#profTabl tr{
+  height: 30px;
+}
+#profTabl td{
+  padding: 5px 10px;
+}
+#profTabl tr:nth-child(odd){
+  background-color: #f2f2f2;
+}
 
 /*  Modal guardar cambios */
 .modal {
@@ -1824,4 +1875,57 @@ input[type=submit] {
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+.acerca-Linea{
+  margin-right: 1%;
+}
+.wrapper-grid{
+  margin-top: 120px;
+  width: 100%;
+
+  background-color: white;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.acerca{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper-grid .acerca-card{
+  width: 280px;
+  height: 400px;
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.5);
+  border-radius: 25px;
+  margin: 5% 5%;
+
+  background-color: #2980b9;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  transition: box-shadow 0.5s, transform 0.5s;
+}
+.wrapper-grid .acerca-card:hover{
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.8);
+  transform: scale(1.02);
+}
+.wrapper-grid .card-foto{
+  margin: 5% 5%;
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+}
+.wrapper-grid .card-body-acerca{
+  text-align: center;
+  color: white;
+  margin-top: 30px;
+}
+.foto-acerca{
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
 }

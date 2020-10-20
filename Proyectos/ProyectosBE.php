@@ -6,6 +6,7 @@ include '../Form/conexion.php';
     $content = '';
     $numerolocal = 0;
 
+
      while($row = $results->fetch_array()){
 
 
@@ -18,8 +19,17 @@ include '../Form/conexion.php';
                             </div> 
                             </div>";
                         }
-
+        if ( $row['ndolocal'] == 1){
+            $local = "Diversificado";
+        }else{
+            if ( $row['ndolocal'] == 2){
+                $local = "Ciclo Basico";
+            }else{
+                $local = "Tecnológico";
+            }
+        }
             $content.=" <div>
+                        <h2 id='TituloProyectos'>".$local."</h2>
                         <div class='Linea1Proyecto'>
                         <div class='Linea2'>
                         <div class='Linea3'>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -45,7 +44,9 @@
         <div class="Linea3">
             <div class="blancCntnt">
                 <div class="aprobTable">
+                <input type='text' id='elInput' onkeyup='myFunction()' placeholder="Buscar"/>
                     <table id="profTabl">
+                    <thead>
                     <tr>
                         <th>ID</th>
                         <th>Rango</th>
@@ -54,9 +55,10 @@
                         <th>Mail</th>
                         <th>Telefono</th>
                         <th>Usuario</th>
-                    </tr> 
+                        </tr>
+                    </thead> 
                     <?php
-                        include "conexion.php";
+                        include "../Form/conexion.php";
 
                         $sql = "SELECT * FROM usuario";
                         $resultado = mysqli_query($mysqli,$sql);
@@ -80,7 +82,9 @@
                           $tipoUsuario='Alumno';
                         }
             
-                        echo "<tr>
+                        echo "
+                        <tbody id='elTablon'>
+                        <tr>
                           <td>$id</td>
                             <td>$tipoUsuario</td>
                             <td>$nombre</td>
@@ -88,11 +92,41 @@
                             <td>$mail</td>
                             <td>$telefono</td>
                             <td>$usuario</td>     
-                        </tr>"; 
+                        </tr>
+                        </tbody>"; 
                     } 
                 }           
                 ?>
                 </table>
+                <br>
+                <table id="proyTabl">
+                <tr>
+                        <th>ID</th>
+                        <th>Alumno Responsable</th>
+                        <th>Titulo</th>
+                    </tr> 
+                    <?php
+                        $alumno = "SELECT * FROM datosProyecto";
+                        $resultado = mysqli_query($mysqli,$alumno);
+
+
+                        if($resultado){
+                            while($row = $resultado->fetch_array()){
+
+                            $idp=$row['idProyecto'];
+                            $idusuario=$row['Alumno_Responsable'];
+                            $titulo=$row['Titulo'];
+            
+                        echo "<tr>
+                            <td>$idp</td>
+                            <td>$idusuario</td>
+                            <td>$titulo</td>    
+                        </tr>"; 
+                    } 
+                }
+                ?>
+                </table>
+                <br>
                 </div>
             </div>
         </div>
@@ -100,5 +134,17 @@
 </div>
 
 <div id="footer"></div>
+
+
+             <script>
+$(document).ready(function(){
+  $("#elInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#elTablon tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
   </body>
 </html>
