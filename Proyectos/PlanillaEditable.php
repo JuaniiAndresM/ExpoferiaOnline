@@ -261,6 +261,23 @@
                   </button></a
                 >";
                 }
+
+                $sql = "SELECT EstadoAdelanto FROM expoeduc_expoeduca.datosProyecto where idProyecto='".$idproyecto."';";
+                $result = $mysqli -> query($sql);
+                $aprobado = mysqli_fetch_array($result, MYSQLI_ASSOC);
+                if($aprobado["EstadoAdelanto"]==0){
+                echo "<a class='BotonLogin2'  style='".$aprobar."'
+                  ><button style='margin-top: 5%;margin-left: 1%;' onclick='aprobarAdelanto(".$idproyecto.")'>
+                    <i class='fa'>&#xf14a;</i> Aprobar adelanto
+                  </button></a
+                >";
+                }else{
+                  echo "<a class='BotonLogin2'  style='".$aprobar."'
+                  ><button style='margin-top: 5%;margin-left: 1%;' onclick='desaprobarAdelanto(".$idproyecto.")'>
+                    <i class='fa'>&#xf14a;</i> Desaprobar adelanto
+                  </button></a
+                >";
+                }
                 ?>
 
                 <button onclick="ActualizoPlanilla()" style="margin-top: 5%; color: white">

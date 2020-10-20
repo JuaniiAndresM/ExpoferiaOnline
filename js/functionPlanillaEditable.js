@@ -65,20 +65,45 @@ function aprobar(id){
       data: {idproyecto: id},
       type: "post", 
       success:function(content){
-        window.location.href="../HeaderFooter/index.html";
+        location.reload();
     }
        });
 };
+
+function aprobarAdelanto(id){
+  $.ajax({
+    url:"../Proyectos/aprobarAdelanto.php",
+    data: {idproyecto: id},
+    type: "post", 
+    success:function(content){
+      alert(content);
+      location.reload();
+  }
+     });
+};
+
 function desaprobar(id){
   $.ajax({
     url:"../Proyectos/desaprobar.php",
     data: {idproyecto: id},
     type: "post", 
     success:function(content){
-      window.location.href="../HeaderFooter/index.html";
+      location.reload();
   }
      });
 };
+
+function desaprobarAdelanto(id){
+  $.ajax({
+    url:"../Proyectos/desaprobarAdelanto.php",
+    data: {idproyecto: id},
+    type: "post", 
+    success:function(content){
+      location.reload();
+  }
+     });
+};
+
 
 
 

@@ -2,7 +2,7 @@
 include '../Form/conexion.php';
 
 $content="";
-$sql = "SELECT * FROM datosProyecto where Estado = '1'";
+$sql = "SELECT * FROM datosProyecto where EstadoAdelanto = '1'";
 $result = $mysqli -> query($sql);
 $array=array();
 
