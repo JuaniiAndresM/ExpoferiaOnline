@@ -14,6 +14,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.943/pdf.min.js">
+</script>
     <script src="../js/function.js"></script>
     <script src="../js/functionPlanillaEditable.js"></script>
    
@@ -26,6 +29,7 @@
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="styles2.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
       rel="stylesheet"
@@ -69,6 +73,7 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
       rel="stylesheet"
     />
+    
   </head>
 
   <?php
@@ -159,7 +164,12 @@
                   </textarea>
                 </div>
                 
-                    <div id = 'misurls' class='form-group'><h4>Pega la url del video de youtube</h4>
+                    <div id = 'misurls' class='form-group'><h4>Pega la url del video de youtube</h4> 
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ayuda3">
+                    Ayuda videos
+                    </button><br><br>
+                    <p>En youtube, busca el botón compartir, y copia el enlace o url del video. Lo pegas aquí debajo</p>
+                    <p>Puedes agregar más url aprentando el botón +, que aparece abajo.</p>
                  <?php
                  $videos = "";
                  $cont = 1;
@@ -200,6 +210,12 @@
                 <hr />
                 <br><br>La medida en pixeles base es 700 ancho x 400 alto (proporcionales a estas medidas)
                 <br>
+                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ayuda1">
+                Ayuda imagen
+                </button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ayuda2">
+                Ayuda diseño
+                </button>
                 <div class="Foto">
                 <div id="drop_file_zone" ondrop="upload_file(event,1)" ondragover="return false">
                       <div id="drag_upload_file">
@@ -264,6 +280,23 @@
                   echo "<a class='BotonLogin2'  style='".$aprobar."'
                   ><button style='margin-top: 5%;' onclick='desaprobar(".$idproyecto.")'>
                     <i class='fa'>&#xf14a;</i> Desaprobar Proyecto
+                  </button></a
+                >";
+                }
+
+                $sql = "SELECT EstadoAdelanto FROM expoeduc_expoeduca.datosProyecto where idProyecto='".$idproyecto."';";
+                $result = $mysqli -> query($sql);
+                $aprobado = mysqli_fetch_array($result, MYSQLI_ASSOC);
+                if($aprobado["EstadoAdelanto"]==0){
+                echo "<a class='BotonLogin2'  style='".$aprobar."'
+                  ><button style='margin-top: 5%;margin-left: 1%;' onclick='aprobarAdelanto(".$idproyecto.")'>
+                    <i class='fa'>&#xf14a;</i> Aprobar adelanto
+                  </button></a
+                >";
+                }else{
+                  echo "<a class='BotonLogin2'  style='".$aprobar."'
+                  ><button style='margin-top: 5%;margin-left: 1%;' onclick='desaprobarAdelanto(".$idproyecto.")'>
+                    <i class='fa'>&#xf14a;</i> Desaprobar adelanto
                   </button></a
                 >";
                 }
@@ -333,6 +366,86 @@
       </div>
     </div>
     <p id="msg"></p>
+    
+    <!-- Modales  -->
+<div id="ayuda1" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+       
+      </div><h4 class="modal-title">Ayuda para subir imagen.</h4>
+        <div class="modal-body">
+            La imagen puede ser del tamaño que prefieras pero siempre respetando una proporción de 700 px de ancho por 400 alto. Por ejemplo, puedes tener una imagen de 1400 por 800, 
+            sería correcto, porque está en proporción.
+            <br>
+            Cómo modificar tu imagen a la proporción?<br>
+            Para ello debes valerte de un programa de edición gráfica, uno sencillo de manejar es el paint de windows.<br>
+            Abres tu imagen con Paint, allí puedes usar la herramienta "Seleccionar" para seleccionar un area que tenga un tamaño de 700x400 o proporcional (a medida que
+            vas seleccionando un área, en la parte inferior te indica el tamaño en pixeles). Una vez que tienes el área seleccionado, copias con ctrl-c, y abres un nuevo 
+            documento indicando 700x400, y pegas lo que copiaste.<br>
+            También hay una opción de cambiar tamaño, y destildas la opción de mantener proporción. Escribes 700 en el ancho y 400 en el alto. El problema es que si hay mucha diferencia,
+            tu imagen quedará deforme (porque le cambiaste su proporción entre ancho y alto). Esto lo puedes usar solo cuando el cambio no es muy grande.
+         
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+    <!-- Modal content-->
+    
+ <div id="ayuda2" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+       
+      </div><h4 class="modal-title">Manual de diseño gráfico.</h4>
+        <div class="modal-body">
+            <object class="PDFdoc" width="100%" height="500px" type="application/pdf" data="../Info/disenio.pdf"></object>
+         
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal content-->
+    
+ <div id="ayuda3" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+       
+      </div><h4 class="modal-title">Instrucciones para crear videos.</h4>
+        <div class="modal-body">
+            <object class="PDFdoc" width="100%" height="500px" type="application/pdf" data="../Info/ayuda_videos.pdf"></object>
+         
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+    
+
+    
     <div id="footer"></div>
   </body>
 </html>
