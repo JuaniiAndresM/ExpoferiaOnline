@@ -182,7 +182,9 @@
                   </div>
                    <button onclick="NuevoVideo()" style="margin-top: 5%; color: white">
                     <i class="fa"></i>+</button>
-                 
+                    <br><br>
+                <h3>Descripción larga:</h3>
+                <br> Utiliza negritas, títulos centrados y otras técnicas de edición para que tu trabajo se luzca más.<br>
                 <div>
                   <textarea
                     class="form-control"
@@ -196,6 +198,8 @@
                 <hr />
                 <h3>Foto Principal (solo 1):</h3>
                 <hr />
+                <br><br>La medida en pixeles base es 700 ancho x 400 alto (proporcionales a estas medidas)
+                <br>
                 <div class="Foto">
                 <div id="drop_file_zone" ondrop="upload_file(event,1)" ondragover="return false">
                       <div id="drag_upload_file">
@@ -212,6 +216,8 @@
                 <hr />
                 <h3>Fotos secundarias:</h3>
                 <hr />
+                <br><br>La medida en pixeles base es 700 ancho x 400 alto (proporcionales a estas medidas)
+                <br>
                 <div class="Foto">
                
                   <div id="drop_file_zone" ondrop="upload_file(event,3)" ondragover="return false">

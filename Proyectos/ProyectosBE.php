@@ -1,7 +1,7 @@
 <?php
 include '../Form/conexion.php';
 
-    $sql = "SELECT idProyecto, Titulo, Introduccion, Orientacion, ImagenPrincipal, ndolocal FROM datosProyecto WHERE Estado = 1 order by ndolocal";
+    $sql = "SELECT idProyecto, Titulo, Introduccion, Orientacion, ImagenPrincipal, ndolocal FROM datosProyecto WHERE EstadoAdelanto = 1 order by ndolocal";
     $results = $mysqli->query($sql);
     $content = '';
     $numerolocal = 0;
