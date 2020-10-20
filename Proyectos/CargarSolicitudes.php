@@ -138,3 +138,11 @@ if(mysqli_num_rows($result) !== 0){
 echo $content;
 
 ?>
+
+<script type="text/javascript"> 
+    var timeout = setTimeout("location.reload(true);",30000); 
+    function resetTimeout() { 
+    clearTimeout(timeout); 
+    timeout = setTimeout("location.reload(true);",30000); 
+    } 
+</script> 
