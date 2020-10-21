@@ -25,7 +25,7 @@ while ($sqlarray = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
           $x++;
         }else{
           //va creandpo los proyectos
-          if(isset($ss['Titulo'],$ss['Introduccion'],$ss['ImagenPrincipal']) && $ss['Estado'] == '1'){
+          if($ss['EstadoAdelanto'] == '1'){
                 if($y == 2){
                     $y ++;
                    
@@ -75,19 +75,21 @@ while ($sqlarray = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                         </div>
                     </div>";
                 }//si el if da falso no se puede mostrar el proyecto asi que no se crea nada
-
+                
+            
           }
 
           $x++;
           $i++;
+            
 
             
         }
+       
         
-        
-      }while($i < 3 || count($array)>3);
+      }while($i < 4);
       
-    
+
     echo $content;
 
 ?>

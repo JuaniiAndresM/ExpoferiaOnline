@@ -30,8 +30,7 @@ if (file_exists($target_file)) {
 
 // Check file size
 if ($_FILES["file"]["size"] > 1500000) {
-  echo '<script language="javascript"> alert("La imagen supera el peso maximo (1MB).")</script>';
-  $uploadOk = 0;
+  echo '7';return;
 }
 
 
@@ -85,7 +84,7 @@ $file_extension = pathinfo($target_file, PATHINFO_EXTENSION);
     if($proporcion >= 1.70 && $proporcion <= 1.84){
       $uploadOk = 1;
     }else{
-      echo $proporcion; return;
+      echo 4; return;
      
     };
     }
