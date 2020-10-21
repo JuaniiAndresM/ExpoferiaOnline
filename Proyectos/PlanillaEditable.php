@@ -208,7 +208,7 @@
                 <hr />
                 <h3>Foto Principal (solo 1):</h3>
                 <hr />
-                <br><br>La medida en pixeles base es 700 ancho x 400 alto (proporcionales a estas medidas)
+                <br><br>El formato de la foto debe ser 16:9 
                 <br>
                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ayuda1">
                 Ayuda imagen
