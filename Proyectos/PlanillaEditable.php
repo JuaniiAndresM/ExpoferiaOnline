@@ -232,7 +232,7 @@
                 <hr />
                 <h3>Fotos secundarias:</h3>
                 <hr />
-                <br><br>La medida en pixeles base es 700 ancho x 400 alto (proporcionales a estas medidas)
+                <br><br>El formato de la foto debe ser 16:9 
                 <br>
                 <div class="Foto">
                
@@ -380,16 +380,12 @@
        
       </div><h4 class="modal-title">Ayuda para subir imagen.</h4>
         <div class="modal-body">
-            La imagen puede ser del tamaño que prefieras pero siempre respetando una proporción de 700 px de ancho por 400 alto. Por ejemplo, puedes tener una imagen de 1400 por 800, 
-            sería correcto, porque está en proporción.
+            La imagen puede ser del tamaño que prefieras pero debe ser del formato 16:9 (apaisado). Ese formato lo seleccionas en tu cámara o celular.  
+            Busca en tu dispositivo la herramienta "Tamaño imagen", verás que hay opciones del tipo 13M (4:3), 9.6M (16:9)... selecciona 16:9 y la calidad más alta.
             <br>
-            Cómo modificar tu imagen a la proporción?<br>
-            Para ello debes valerte de un programa de edición gráfica, uno sencillo de manejar es el paint de windows.<br>
-            Abres tu imagen con Paint, allí puedes usar la herramienta "Seleccionar" para seleccionar un area que tenga un tamaño de 700x400 o proporcional (a medida que
-            vas seleccionando un área, en la parte inferior te indica el tamaño en pixeles). Una vez que tienes el área seleccionado, copias con ctrl-c, y abres un nuevo 
-            documento indicando 700x400, y pegas lo que copiaste.<br>
-            También hay una opción de cambiar tamaño, y destildas la opción de mantener proporción. Escribes 700 en el ancho y 400 en el alto. El problema es que si hay mucha diferencia,
-            tu imagen quedará deforme (porque le cambiaste su proporción entre ancho y alto). Esto lo puedes usar solo cuando el cambio no es muy grande.
+            Luego que tengas tu imagen en ese formato, la bajas a una pc y mediante Paint de windows o cualquier otro editor sencillo, le bajas el tamaño a por ejemplo 
+            1500 px de ancho (manteniendo la proporción).
+            De esta manera tendrás una imagen no demasiado pesada y que puedas subir.
          
         </div>
       <div class="modal-footer">
