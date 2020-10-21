@@ -77,6 +77,25 @@
                 >
               </form>
               <br>
+              <button data-toggle='collapse' data-target='#rechazar'>Me olvide de la contraseña</button>                     
+              <br>
+              <form action="../Proyectos/Contraseña.php" method="POST">
+                <div id='rechazar' class='collapse form-group'>
+                  <div class="form-group">
+                    <label for="mail">Gmail:</label>
+                    <input
+                      type="Text"
+                      class="form-control"
+                      id="mail"
+                      placeholder="Ingrese Email"
+                      name="mail"
+                      required
+                    />
+                  </div>
+                  <button class="button">Envíar</button>
+                </div>
+              </form>
+              <br>
               <p>
                 Solo deben crear una cuenta: <br>- Un alumno por proyecto.<br>- Todos los profesores lideres de proyecto.
                 <br>Si aún no tienes tu cuenta, solícitala mediante los enlaces de abajo.
