@@ -22,8 +22,16 @@ if(mysqli_num_rows($result) !== 0){
       $Year = "Primero";
     }elseif($sqlsolicitudes['Year'] == 2){
       $Year = "Segundo";
-    }else{
+    }elseif($sqlsolicitudes['Year'] == 3){
       $Year = "Tercero";
+    }elseif($sqlsolicitudes['Year'] == 4){
+      $Year = "Cuarto";
+    }elseif($sqlsolicitudes['Year'] == 5){
+      $Year = "Quinto";
+    }elseif($sqlsolicitudes['Year'] == 6){
+      $Year = "Sexto";
+    }else{
+      $Year = "Institucional";
     }
   $content.=" 
                 
