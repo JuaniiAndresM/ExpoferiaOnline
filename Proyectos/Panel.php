@@ -102,6 +102,13 @@
                   >
                 </li>
                 <li>
+                  <a href="../Info/registroUsuarios.php" style="<?php echo $admin ?>"
+                    ><button class="botonPanel">
+                      <i class="fa">&#xf0c0;</i> Registro Usuarios
+                    </button></a
+                  >
+                </li>
+                <li>
                   <a href="../Form/CerrarSesion.php"
                     ><button class="botonPanel">
                       <i class="fa">&#xf08b;</i> Cerrar Sesión
