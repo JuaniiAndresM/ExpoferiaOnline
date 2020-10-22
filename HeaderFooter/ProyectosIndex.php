@@ -14,7 +14,11 @@ while ($sqlarray = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
         $y = 1;
         shuffle($array);
         $x = 0;
-
+        $content.="<div>
+          <h3><p style='padding-top: 3%'>
+            Avance de proyectos:
+          </p></h3>
+        </div>";
       do{
         $random = $array[$x];
         $sql = "SELECT * FROM datosProyecto WHERE idProyecto = '".$random."'";
@@ -30,6 +34,7 @@ while ($sqlarray = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                     $y ++;
                    
                     $content.="
+                    
                     <div
                         class='Seccion2'
                         id ='Seccion2'
