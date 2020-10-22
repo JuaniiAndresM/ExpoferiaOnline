@@ -169,7 +169,7 @@
                     Ayuda videos
                     </button><br><br>
                     <p>En youtube, busca el botón compartir, y copia el enlace o url del video. Lo pegas aquí debajo</p>
-                    <p>Puedes agregar más url aprentando el botón +, que aparece abajo.</p>
+                    <p>Puedes agregar más url apretando el botón +, que aparece abajo.</p>
                  <?php
                  $videos = "";
                  $cont = 1;
@@ -311,7 +311,7 @@
                   <div class="modal-content">
                   <span class="close" style="color: red;">&times;</span>
                     <br>
-                    <p style="padding: 20px">            Los cambios se han guardado correctamente!</p>
+                    <p style="padding: 20px">¡Los cambios se han guardado correctamente!</p>
                     <br>
                   </div>
                   </div>
