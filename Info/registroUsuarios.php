@@ -30,24 +30,19 @@
   </head>
   <body onload="hfindex()">
     <div id="header"></div>
-
-                <style>
-                table,td,th {
-                    border: 1px solid black;
-                }
-                table {
-                    padding-bottom: 5%;
-                }
-                </style>
 <div class="Linea1Aprob">
     <div class="Linea2">
         <div class="Linea3">
             <div class="blancCntnt">
+            <div class="filtroTabla">
+              <h3>Registro de Usuarios:</h3>
+              <label><i class="fa">&#xf002;</i> Buscar:</label>
+              <input type='text' id='elInput' onkeyup='myFunction()'/>
+            </div>
                 <div class="aprobTable">
-                <input type='text' id='elInput' onkeyup='myFunction()' placeholder="Buscar"/>
-                    <table id="profTabl">
+                    <table class="table-alumnos">
                     <thead>
-                    <tr>
+                      <tr class="table-head">
                         <th>ID</th>
                         <th>Rango</th>
                         <th>Nombre</th>
@@ -55,12 +50,13 @@
                         <th>Mail</th>
                         <th>Telefono</th>
                         <th>Usuario</th>
-                        </tr>
+                        <th>Título</th>
+                      </tr>
                     </thead> 
                     <?php
                         include "../Form/conexion.php";
 
-                        $sql = "SELECT * FROM usuario";
+                        $sql = "SELECT * FROM expoeduc_expoeduca.usuario left join datosProyecto on  Alumno_Responsable=idUsuario;";
                         $resultado = mysqli_query($mysqli,$sql);
 
                         if($resultado){
@@ -73,6 +69,7 @@
                             $mail=$row['Email'];
                             $telefono=$row['Telefono'];
                             $usuario=$row['Usuario'];
+                             $titulo=$row['Titulo'];
 
                         if($tipoUsuario=='0'){
                           $tipoUsuario='Admin';
@@ -91,42 +88,15 @@
                             <td>$apellido</td>
                             <td>$mail</td>
                             <td>$telefono</td>
-                            <td>$usuario</td>     
+                            <td>$usuario</td>   
+                            <td>$titulo</td>    
                         </tr>
                         </tbody>"; 
                     } 
                 }           
                 ?>
                 </table>
-                <br>
-                <table id="proyTabl">
-                <tr>
-                        <th>ID</th>
-                        <th>Alumno Responsable</th>
-                        <th>Titulo</th>
-                    </tr> 
-                    <?php
-                        $alumno = "SELECT * FROM datosProyecto";
-                        $resultado = mysqli_query($mysqli,$alumno);
-
-
-                        if($resultado){
-                            while($row = $resultado->fetch_array()){
-
-                            $idp=$row['idProyecto'];
-                            $idusuario=$row['Alumno_Responsable'];
-                            $titulo=$row['Titulo'];
-            
-                        echo "<tr>
-                            <td>$idp</td>
-                            <td>$idusuario</td>
-                            <td>$titulo</td>    
-                        </tr>"; 
-                    } 
-                }
-                ?>
-                </table>
-                <br>
+               
                 </div>
             </div>
         </div>
