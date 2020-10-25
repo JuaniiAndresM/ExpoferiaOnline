@@ -968,6 +968,7 @@ BotonProyecto :hover {
 }
 
 
+
 #caption {
   margin: auto;
   display: block;
@@ -1891,6 +1892,14 @@ input[type=submit] {
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
+}
+
+.modal-content2 {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 100%;
 }
 
 .close {
