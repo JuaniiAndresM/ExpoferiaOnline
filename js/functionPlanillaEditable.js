@@ -244,16 +244,19 @@ function ajax_file_upload(file_obj,tipo) {
             data: form_data,
             success:function(msg) {
                 if(msg=='2'){
-                  alert('Disculpa amigo!. ocurrió un error inesperado al intentar subir la imagen, comunícate con soporte.');
+                  alert('Error 2. Disculpa amigo!. ocurrió un error inesperado al intentar subir la imagen, comunícate con soporte.');
                 }else if(msg=='3'){
-                  alert('Disculpa amigo!. No se pudo subir imagen, comunícate con soporte, gracias.');
+                  alert('Error 3. Disculpa amigo!. No se pudo subir imagen, comunícate con soporte, gracias.');
                 }else if(msg=='4'){
-                  alert('Disculpa amigo!. La imagen no se pudo guardar porque no cumple los requerimientos de medidas, consulta el manual o pide ayuda a los administradores.');
+                  alert('Error 4. Disculpa amigo!. La imagen no se pudo guardar porque no está en formato 16:9, consulta el manual o pide ayuda al email de soporte (info@expoeduca.liceoiep.edu.uy).');
                 }else if(msg=='5'){
-                  alert('Disculpa amigo!. La imagen del Banner no se pudo guardar porque no cumple los requerimientos de medidas, consulta el manual o pide ayuda a los administradores.');
+                  alert('Error 5. Disculpa amigo!. La imagen del Banner no se pudo guardar porque no tiene las medidas de 1200 x 200, consulta el manual o pide ayuda a los administradores.');
                 }else if(msg==6){
-                  alert('Disculpa amigo!. No se pudo subir imagen, comunícate con soporte, gracias.');
+                  alert('Error 6. Disculpa amigo!. No se pudo subir imagen, comunícate con soporte, gracias.');
+                }else if(msg==7){
+                  alert('Error 6. Disculpa amigo!. No se pudo subir imagen porque excede el tamaño en bytes (no más de 1.5mb), comunícate con soporte si tienes dudas, gracias.');
                 }
+                
                 $('#selectfile').val('');
                
                 TraigoFoto(idp,tipo);

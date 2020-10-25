@@ -14,7 +14,11 @@ while ($sqlarray = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
         $y = 1;
         shuffle($array);
         $x = 0;
-
+        $content.="<div>
+          <h3><p style='padding-top: 3%'>
+            Avance de proyectos:
+          </p></h3>
+        </div>";
       do{
         $random = $array[$x];
         $sql = "SELECT * FROM datosProyecto WHERE idProyecto = '".$random."'";
@@ -25,11 +29,12 @@ while ($sqlarray = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
           $x++;
         }else{
           //va creandpo los proyectos
-          if(isset($ss['Titulo'],$ss['Introduccion'],$ss['ImagenPrincipal']) && $ss['Estado'] == '1'){
+          if($ss['EstadoAdelanto'] == '1'){
                 if($y == 2){
                     $y ++;
                    
                     $content.="
+                    
                     <div
                         class='Seccion2'
                         id ='Seccion2'
@@ -75,19 +80,21 @@ while ($sqlarray = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                         </div>
                     </div>";
                 }//si el if da falso no se puede mostrar el proyecto asi que no se crea nada
-
+                
+            
           }
 
           $x++;
           $i++;
+            
 
             
         }
+       
         
-        
-      }while($i < 3 || count($array)>3);
+      }while($i < 4);
       
-    
+
     echo $content;
 
 ?>

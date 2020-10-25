@@ -40,7 +40,7 @@
 <!-- Modal content -->
 <div class="modal-content">
   <p>Unirse a proyectos:</p>
-  <p>Todo funciono correctamente y te uniste a los proyectos seleccioandos.</p>
+  <p>Todo funciono correctamente y te uniste a los proyectos seleccionados.</p>
   <span class="close" style="color: red;" onclick="cerrar();">&times;</span>
 </div>
 </div>
