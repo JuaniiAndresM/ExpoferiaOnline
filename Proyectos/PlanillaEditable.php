@@ -517,11 +517,6 @@
     $content.="<a class='prev' onclick='plusSlides(-1)' style='position: absolute;'>❮</a>
     <a class='next' onclick='plusSlides(1)' style='position: absolute;'>❯</a>
     </div> 
-    <div id='myModal' class='modal' >
-      <span class='close' onclick='cerrarModal()'>&times;</span>	              
-      <img class='modal-content' id='foto'>	            
-      <div id='caption'></div>	             
-    </div>
     <script>
     slides()
     </script>
