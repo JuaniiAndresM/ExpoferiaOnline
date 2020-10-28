@@ -269,10 +269,11 @@
                   </div>
                 </div>
                 <a class='BotonLogin2'>
-                   <button type="button" style= "margin-left: 5px;" class="btn btn-primary" data-toggle="modal" data-target="#ayuda4">
+                   <button type="button" style= "margin-left: 5px; margin-top:1%;" class="btn btn-primary" data-toggle="modal" data-target="#ayuda4">
                     Vista previa
                     </button>
-                    </a> <br>
+                    </a>
+                    <p style="margin-left: 5px;margin-top: 8px;">Guarde los cambios para la vista previa</p>
                 <?php
                 $sql = "SELECT Estado FROM expoeduc_expoeduca.datosProyecto where idProyecto='".$idproyecto."';";
                 $result = $mysqli -> query($sql);
@@ -439,7 +440,6 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-       
       </div><h4 class="modal-title">Instrucciones para crear videos.</h4>
         <div class="modal-body">
             <object class="PDFdoc" width="100%" height="500px" type="application/pdf" data="../Info/ayuda_videos.pdf"></object>
@@ -453,117 +453,123 @@
   </div>
 </div>
     
-       <!-- Modal content-->
+      <!-- Modal content-->
     
  <div id="ayuda4" class="modal fade" role="dialog">
-  <div class="modal-dialog modal-lg">
+  <div class="modal-dialog" style="max-width: 500% !important;">
 
     <!-- Modal content-->
-    <div class="modal-content2">
+    <div class="modal-content" style="max-width: 500% !important;">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-       
+  
       </div>
         <div class="modal-body">
         <?php
-    include '../Form/conexion.php';
-    $sql = "SELECT * FROM datosProyecto WHERE idProyecto = '$idproyecto'";
-    $result = $mysqli -> query($sql);
-    $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
-    $cont = 1;
-    
-    $content= "";
-    // DEL PROFESOR. 
-    $sql = "SELECT * FROM datosProyecto WHERE idProyecto = '$idproyecto'";
-    $result = $mysqli -> query($sql);
-    $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
-
-    if(isset($ss['Titulo'],$ss['Introduccion'],$ss['Descripcion'])){
-      $content.="
-              <div class='BannerPlanilla'>
-                <h2 id='titulo' style='word-wrap: break-word; font-weight: bolder;'>".$ss['Titulo']."</h2>
-                <hr />
-                  <div class='Banner'><img src='".$ss['Banner']."' id='banner' style='max-height:100%; max-width:100%;'></div>
-                <br></br>
-              </div>
-              <div class='CentralPlanilla'>
-                <div class='Descripcion'>
-                <h4 >Introducción:</h4>
-                <p id='intro' style='word-wrap: break-word;'>".$ss['Introduccion']."</p>
-                  
+      include '../Form/conexion.php';
+      $sql = "SELECT * FROM datosProyecto WHERE idProyecto = '$idproyecto'";
+      $result = $mysqli -> query($sql);
+      $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
+      $cont = 1;
+      
+      $content= "";
+      // DEL PROFESOR. 
+      $sql = "SELECT * FROM datosProyecto WHERE idProyecto = '$idproyecto'";
+      $result = $mysqli -> query($sql);
+      $ss = mysqli_fetch_array($result, MYSQLI_ASSOC);
+  
+      if(isset($ss['Titulo'], $ss['Introduccion'], $ss['Descripcion'])){
+        $content.="
+                <div class='BannerPlanilla'>
+                  <h2 id='titulo' style='word-wrap: break-word; font-weight: bolder;'>".$ss['Titulo']."</h2>
+                  <hr />
+                    <div class='Banner'><img src='".$ss['Banner']."' id='banner' style='max-height:100%; max-width:100%;'></div>
+                  <br></br>
                 </div>
-                ";
-        
-
-              
-            $content.="
-            <div class = 'imagenesSlide'>
-            <h2>Imagenes:</h2>";
-    }
-    $sqlimg = "SELECT * FROM expoeduc_expoeduca.imagenes WHERE idProyecto = '$idproyecto'";
-    $resultimg = $mysqli -> query($sqlimg);
-    while($ssimg = mysqli_fetch_array($resultimg, MYSQLI_ASSOC)){
-
-      $content.= "
-      <div class='mySlides'>
-          <img src='".$ssimg['url']."' id ='foto".$cont."' onclick='agrando(".$cont.")'  class='imagenPlanilla' style='width:100%'>
+                <div class='CentralPlanilla'>
+                  <div class='Descripcion'>
+                  <h4 >Introducción:</h4>
+                  <p id='intro' style='word-wrap: break-word;'>".$ss['Introduccion']."</p>
+                    
+                  </div>
+                  ";
           
-          <div class='numbertext'>".$cont."/".mysqli_num_rows($resultimg)."</div>
-      </div>";
-
-      $cont = $cont + 1;    
-    }  
-          
-    $content.="<a class='prev' onclick='plusSlides(-1)' style='position: absolute;'>❮</a>
-    <a class='next' onclick='plusSlides(1)' style='position: absolute;'>❯</a>
-    </div> 
-    <script>
-    slides()
-    </script>
-    </div>	";
-
-    $content.="
-    <div class='BannerPlanilla'>
-    <hr />
-    <h4>Descripcion:</h4>
-      <p id='desc' style='word-wrap: break-word;'>".$ss['Descripcion']."</p>
-    <hr />
-    </div>";
-
-    $sql = "SELECT url FROM expoeduc_expoeduca.videos WHERE idProyecto = '$idproyecto'";
-    $resultvid = $mysqli -> query($sql);
-    $rows = mysqli_num_rows($resultvid);
-    $cont = 1;
-    if($rows > 0){
-      $content.= "<div class='VideoPlanilla'>
-                  <h2>Video:</h2>
-                  <hr />";
-        while( $ssvid = mysqli_fetch_array($resultvid, MYSQLI_ASSOC)){
-          $content.= " 
-            <div class='VideoSlides' >
-                  <iframe
-                    id = 'video".$cont."'
-                    width='560'
-                    height='315'
-                    src='https://www.youtube.com/embed/'
-                    frameborder='0'
-                    allowfullscreen></iframe>
-                    <div class='numbertextVid'>".$cont."/".mysqli_num_rows($resultvid)."</div>
-              </div>
-            <script>
-              getVideo('".$ssvid['url']."', ".$cont.")
-            </script>";
-            $cont = $cont + 1;
-            $rows = $rows - 1;
-        }
+  
+                
+              $content.="
+              <div class = 'imagenesSlide'>
+              <h2>Imagenes:</h2>";
+      }
+      $sqlimg = "SELECT * FROM expoeduc_expoeduca.imagenes WHERE idProyecto = '$idproyecto'";
+      $resultimg = $mysqli -> query($sqlimg);
+      while($ssimg = mysqli_fetch_array($resultimg, MYSQLI_ASSOC)){
+  
+        $content.= "
+        <div class='mySlides'>
+            <img src='".$ssimg['url']."' id ='foto".$cont."' onclick='agrando(".$cont.")'  class='imagenPlanilla' style='width:100%'>
+            
+            <div class='numbertext'>".$cont."/".mysqli_num_rows($resultimg)."</div>
+        </div>";
+  
+        $cont = $cont + 1;    
+      }  
+            
+      $content.="<a class='prev' onclick='plusSlides(-1)' style='position: absolute;'>❮</a>
+      <a class='next' onclick='plusSlides(1)' style='position: absolute;'>❯</a>
+      </div> 
+      <div id='myModal' class='modal' >
+        <span class='close' onclick='cerrarModal()'>&times;</span>	              
+        <img class='modal-content' id='foto'>	            
+        <div id='caption'></div>	             
+      </div>
+      <script>
+      slides()
+      </script>
+      </div>	";
+  
       $content.="
-      <a class='prev' onclick='plusSlidesVid(-1)'>❮</a>
-      <a class='next' onclick='plusSlidesVid(1)'>❯</a>
-      <script>slidesVid()</script>
+      <div class='BannerPlanilla'>
+      <hr />
+      <h4>Descripcion:</h4>
+        <p id='desc' style='word-wrap: break-word;'>".$ss['Descripcion']."</p>
+      <hr />
       </div>";
-    }
+  
+      $sql = "SELECT url FROM expoeduc_expoeduca.videos WHERE idProyecto = '$idproyecto'";
+      $resultvid = $mysqli -> query($sql);
+      $rows = mysqli_num_rows($resultvid);
+      $cont = 1;
+      if($rows > 0){
+        $content.= "<div class='VideoPlanilla'>
+                    <h2>Video:</h2>
+                    <hr />";
+          while( $ssvid = mysqli_fetch_array($resultvid, MYSQLI_ASSOC)){
+            $content.= " 
+              <div class='VideoSlides' >
+                    <iframe
+                      id = 'video".$cont."'
+                      width='560'
+                      height='315'
+                      src='https://www.youtube.com/embed/'
+                      frameborder='0'
+                      allowfullscreen></iframe>
+                      <div class='numbertextVid'>".$cont."/".mysqli_num_rows($resultvid)."</div>
+                </div>
+              <script>
+                getVideo('".$ssvid['url']."', ".$cont.")
+              </script>";
+              $cont = $cont + 1;
+              $rows = $rows - 1;
+          }
+        $content.="
+        <a class='prev' onclick='plusSlidesVid(-1)'>❮</a>
+        <a class='next' onclick='plusSlidesVid(1)'>❯</a>
+        <script>slidesVid()</script>
+        </div>";
+      }
+      
+      echo $content;
     
-    echo $content;
   ?>
          
         </div>
