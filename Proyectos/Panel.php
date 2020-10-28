@@ -87,6 +87,13 @@
                     </button></a
                   >
                 </li>
+                <li>
+                  <a href="ModificarUsuario.php"
+                    ><button class="botonPanel">
+                      <i class="fa">&#xf0c0;</i> Modificar Cuenta
+                    </button></a
+                  >
+                </li>
                 <li style="<?php echo $prof ?>">
                   <a href="UnirseProyectos.php" style="<?php echo $prof ?>"
                     ><button class="botonPanel">

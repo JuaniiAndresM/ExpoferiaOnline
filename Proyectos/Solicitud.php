@@ -67,11 +67,16 @@ if(isset($_POST['aprobar'])){
     $subject='Solicitud de proyecto rechazado';
     $body=$_POST['comentario'];
     // 
+    echo "llamo a enviaremail";
     include 'EnviarEmail.php';
+    echo "<br>vuelve";
 
-
-    $sql = "DELETE FROM solicitud_usuario WHERE idSoli_Usuario ='".$_POST['rechazado']."'";
-    $mysqli -> query($sql);
+   $sql = "DELETE FROM solicitud_usuario WHERE idSoli_Usuario ='".$_POST['rechazado']."'";
+   $mysqli -> query($sql);
+    echo "se envió el email y se borró la solicitud";
+    }else{
+        echo "salió por el else del rechazado del alumno, no debería";
+        
     }
 } 
 
@@ -120,7 +125,9 @@ if(isset($_POST['aprobadoPROF'])){
         $mysqli -> query($sql);
        
         }
+        
 
 }
+
 
 ?>
