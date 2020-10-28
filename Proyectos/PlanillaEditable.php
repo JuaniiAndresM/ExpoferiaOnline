@@ -489,7 +489,7 @@
                 <div class='CentralPlanilla'>
                   <div class='Descripcion'>
                   <h4 >Introducción:</h4>
-                  <p id='intro' style='word-wrap: break-word;'>".$ss['Introduccion']."</p>
+                  <p id='intro' style='word-wrap: break-word; margin-right: 5%;'>".$ss['Introduccion']."</p>
                     
                   </div>
                   ";
@@ -531,7 +531,7 @@
       <div class='BannerPlanilla'>
       <hr />
       <h4>Descripcion:</h4>
-        <p id='desc' style='word-wrap: break-word;'>".$ss['Descripcion']."</p>
+        <p id='desc' style='word-wrap: break-word; '>".$ss['Descripcion']."</p>
       <hr />
       </div>";
   
