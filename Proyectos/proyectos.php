@@ -37,9 +37,7 @@
     <div class="ProyectosDIV">
       <h2 id="TituloProyectos">Proyectos:</h2>
       <div class="gridProyectos">
-        
-      
-    </div>
+      </div>
     <div id="footer"></div>
   </body>
 </html>

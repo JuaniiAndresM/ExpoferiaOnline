@@ -694,7 +694,7 @@ BotonProyecto :hover {
 .SelectoresGrid .Selectores {
   margin: 2%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 2%;
 }
 .SelectoresGrid .Selectores select {

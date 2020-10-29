@@ -13,6 +13,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="../js/function.js"></script>
+    <script src="../js/jqredirect.js"></script>
+    <script src="../js/functionfiltros.js"></script>
 
     <link
       rel="stylesheet"
@@ -47,48 +49,45 @@
               <div class="Proyecto">
                 <div class="Tabla">
                   <div class="SelectoresGrid">
-                  
-                  <form method ="post">
-                  
                   <div class="Selectores">
-<!-- crear tablas de orientacion -->
-                      <select name="BachilleratoSelect" class="custom-select">
+                      <select name="BachilleratoSelect" class="custom-select" id= "1">
                         <option value="">Local</option>
-                        <option value="">Bachillerato Diversificado</option>
-                        <option value="">Bachillerato Tecnologico</option>
-                        <option value="">Ciclo Basico</option>
+                        <option value="1">Bachillerato Diversificado</option>
+                        <option value="2">Bachillerato Tecnologico</option>
+                        <option value="3">Ciclo Basico</option>
                       </select>
                       
 
-                      <select name="GradoSelect" class="custom-select">
-                      <option value="">Grado</option>
-                        <option value="">1º</option>
-                        <option value="">2º</option>
-                        <option value="">3º</option>
+                      <select name="GradoSelect" class="custom-select" id="2">
+                        <option value="" >Grado</option>
+                        <option value="1">1º</option>
+                        <option value="2">2º</option>
+                        <option value="3">3º</option>
+                        <option value="4">4º</option>
+                        <option value="5">5º</option>
+                        <option value="6">6º</option>
                       </select>
 
-                      <select name="OrientacionSelect" class="custom-select">
-                        <option value="">Orientacion</option>
-                        <?
-                          while($row = $orientacion->fetch_assoc()) {
-                            echo "<option>".$row["Orientacion"]."</option>"
-                          }
-                          
-                        ?>
+                      <select name="OrientacionSelect"  class="custom-select" id="3">
+                      <option value="">Orientacion</option>
+                      <?php 
+                      $sql = mysqli_query($mysqli, "SELECT * FROM orientaciones");
+                      while ($row = $sql->fetch_assoc()){
+                      echo "<option value='".$row['idOrientacion'] ."'>" .utf8_encode($row['Nombre']). "</option>";
+                      }
+                      ?>
                       </select>
-                      
-                      <button name="Filtro" typo="submit">Filtrar</button>
-                      </div>
-                      </form>
-                      <script src="../js/functionfiltros.js"></script>
+                    </div>
                   </div>
-                  <hr />
+                  aca van los proyectos
                 </div>
               </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
     <div id="footer"></div>
   </body>

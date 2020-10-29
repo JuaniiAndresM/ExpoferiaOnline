@@ -1,7 +1,7 @@
 <?php
 include '../Form/conexion.php';
 
-    $sql = "SELECT idProyecto, Titulo, Introduccion, Orientacion, ImagenPrincipal, ndolocal FROM datosProyecto WHERE Estado= 1 order by ndolocal";
+    $sql = "SELECT idProyecto, Titulo, Introduccion, Orientacion, ImagenPrincipal, Year, ndolocal FROM datosProyecto WHERE Estado= 1 order by ndolocal";
     $results = $mysqli->query($sql);
     $content = '';
     $numerolocal = 0;
@@ -43,6 +43,11 @@ include '../Form/conexion.php';
             $resultO = $mysqli->query($sql);
             $oo =mysqli_fetch_array($resultO, MYSQLI_ASSOC);
             $orientacion = $oo['Nombre'];
+            if($row['Year'] == 7){
+                $anio = $orientacion;
+            }else{
+                $anio = $row['Year']. "º ". $orientacion;
+            }
 
         $content.= "<div class='listProyectoLista'>
                     <div class='listGrid'>
@@ -53,7 +58,7 @@ include '../Form/conexion.php';
                     <div class='textoLista'>
                          <hr id='LineaMobileProyecto' />
                          <h2 style='word-wrap: break-word;'>".$row['Titulo']."</h2>
-                         <p style='word-wrap: break-word;'><b>Grupo:</b> ".$orientacion." </p>
+                         <p style='word-wrap: break-word;'><b>Grupo:</b> ".$anio." </p>
                          <p>
                            <b style='word-wrap: break-word;'>Introduccion:</b> ".$row['Introduccion']."</p>
                             </div>
