@@ -703,7 +703,9 @@ BotonProyecto :hover {
 
 .listGrid {
   margin: 2% 5%;
+  
 }
+
 .listGrid .textoLista {
   display: flex;
   justify-content: center;
@@ -2027,4 +2029,135 @@ input[type=submit] {
   border-radius: 30px;
   margin: 2%;
   color: #ffffff;
+}
+
+
+.Respuesta-wrapper{
+  display: grid;
+  grid-template-columns: 15% 85%;
+}
+.RespuestaText-wrapper{
+  display: flex;
+  align-items: center;
+}
+.Respuesta{
+  max-width: 400px;
+
+  padding: 2% 5%;
+  margin: 2% 2%;
+  border-radius: 50px 50px 50px 0;
+  background-color: rgba(0, 102, 255, 0.2);
+  color: white;
+}
+
+
+.Pregunta-wrapper{
+  display: grid;
+  grid-template-columns: 85% 15%;
+}
+.PreguntaText-wrapper{
+  align-items: center;
+  justify-content: right;
+}
+.Pregunta{
+  max-width: 400px;
+
+  padding: 2% 5%;
+  margin: 2% 2%;
+  border-radius: 50px 50px 0 50px;
+  background-color: rgba(0, 102, 255, 0.2);
+  color: white;
+  float: right;
+}
+
+
+.AlphiWrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.Chat{
+  color: white;
+  width: 600px;
+  margin-top: 10vh;
+  height: 80vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  overflow: scroll;
+  overflow-x: hidden;
+}
+.Chat .cerrar{
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 100%;
+  padding: 0;
+  margin: 2% 2%;
+}
+.Chat .input-wrapper{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  bottom: 0px;
+  margin: 0;
+
+  width: 600px;
+  height: 10vh;
+
+  background-color: rgba(0, 102, 255, 0.2);
+}
+.PreguntaInput{
+  width: 450px;
+  height: 50px;
+  border-radius: 25px;
+  border: 1px solid white;
+  background: none;
+  color: white;
+  outline: none;
+  padding: 0 2%;
+}
+
+.PreguntaSubmit{
+  outline: none;
+  border-radius: 25px !important;
+  width: 90px;
+  height: 50px;
+}
+.PreguntaInput::placeholder{
+  color: white;
+}
+.Chat-Header{
+  position: absolute;
+  top: 0;
+
+  width: 600px;
+  height: 10vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  color: white;
+
+  background-color: rgba(0, 102, 255, 0.2);
+}
+.Chat .cerrar{
+  position: absolute;
+  left: 0;
+}
+.Alphi-img{
+  background-color: rgba(0, 102, 255, 0.2);
+  width: 60px;
+  height: 60px;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 100%;
+  text-align: center;
+}
+.AlphiNick{
+  font-size: 12px;
 }

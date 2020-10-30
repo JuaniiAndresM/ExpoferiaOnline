@@ -50,16 +50,16 @@
                 <div class="Tabla">
                   <div class="SelectoresGrid">
                   <div class="Selectores">
-                      <select name="BachilleratoSelect" class="custom-select" id= "1">
-                        <option value="">Local</option>
+                      <select id="1" onchange="mandoDatos()" name="BachilleratoSelect" class="custom-select">
+                        <option value="0">Local</option>
                         <option value="1">Bachillerato Diversificado</option>
-                        <option value="2">Bachillerato Tecnologico</option>
-                        <option value="3">Ciclo Basico</option>
+                        <option value="3">Bachillerato Tecnologico</option>
+                        <option value="2">Ciclo Basico</option>
                       </select>
                       
 
-                      <select name="GradoSelect" class="custom-select" id="2">
-                        <option value="" >Grado</option>
+                      <select id="2" onchange="mandoDatos()" name="GradoSelect" class="custom-select">
+                        <option value="0" >Grado</option>
                         <option value="1">1º</option>
                         <option value="2">2º</option>
                         <option value="3">3º</option>
@@ -68,10 +68,10 @@
                         <option value="6">6º</option>
                       </select>
 
-                      <select name="OrientacionSelect"  class="custom-select" id="3">
-                      <option value="">Orientacion</option>
+                      <select id="3" onchange="mandoDatos()" name="OrientacionSelect"  class="custom-select">
+                      <option value="0">Orientacion</option>
                       <?php 
-                      $sql = mysqli_query($mysqli, "SELECT * FROM orientaciones");
+                      $sql = mysqli_query($mysqli, "SELECT * FROM orientaciones order by Nombre");
                       while ($row = $sql->fetch_assoc()){
                       echo "<option value='".$row['idOrientacion'] ."'>" .utf8_encode($row['Nombre']). "</option>";
                       }
@@ -79,7 +79,9 @@
                       </select>
                     </div>
                   </div>
+                  <div class ='Tabla2'>
                   aca van los proyectos
+                  </div>
                 </div>
               </div>
             </div>

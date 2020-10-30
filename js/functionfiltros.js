@@ -1,26 +1,29 @@
-$( "#1" ).change(function() {
- mandoDatos();
-});
-
-$( "#2" ).change(function() {
-  mandoDatos();
-});
-
-$( "#3" ).change(function() {
-  mandoDatos();
-});
-
-function mandoDatos(local, grado, orientacion){
-  var local = document.getElementByName('BachilleratoSelect').value;
-  var grado = document.getElementByName('GradoSelect').value;
-  var orientacion = document.getElementByName('OrientacionSelect').value;
-
+$( document ).ready(function() {
+  var local = "0";
+  var grado = "0";
+  var orientacion = "0";
   $.ajax({
     url:"MenuFiltros.php", 
     type: "post", 
     data: {local : local, grado : grado, orientacion : orientacion},
     success:function(content){
-      $('.Tabla').html(content);
+      $('.Tabla2').html(content);
+  }
+     });
+});
+
+
+function mandoDatos(){
+  var local = document.getElementById('1').value;
+  var grado = document.getElementById('2').value;
+  var orientacion = document.getElementById('3').value;
+ 
+  $.ajax({
+    url:"MenuFiltros.php", 
+    type: "post", 
+    data: {local : local, grado : grado, orientacion : orientacion},
+    success:function(content){
+      $('.Tabla2').html(content);
   }
      });
   
