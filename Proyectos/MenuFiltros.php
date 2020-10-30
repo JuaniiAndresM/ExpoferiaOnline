@@ -1,33 +1,46 @@
 <?php
     include '../Form/conexion.php';
-
+     
     $local = $_POST['local'];
     $grado = $_POST['grado'];
     $orientacion = $_POST['orientacion'];
+    
+    /*
+    echo $local;
+    echo $grado;
+    echo $orientacion;
+    */
 
     $dondeL = "";
     $dondeG = "";
     $dondeO = "";
-    if(isset($local)){
+    if($local != 0){
         $dondeL = " AND ndolocal ='".$local."'";
+       
     }
-    if(isset($grado)){
+    if($grado !=0){
         $dondeG = " AND  Year ='".$grado."'";
+        
     }
-    if(isset($orientacion)){
+    if($orientacion !=0){
         $dondeO = " AND  Orientacion ='".$orientacion."'";
+       
     }
-    
+    /*
+    echo $dondeL;
+    echo $dondeG;
+    echo $dondeO;
+    */
 
-    $sql = "SELECT idProyecto, Titulo, Introduccion, Orientacion, ImagenPrincipal, Year, ndolocal FROM datosProyecto WHERE Estado= '1'" .$dondeL.$dondeG.$dondeO. "order by ndolocal";
+    $sql = "SELECT idProyecto, Titulo, Introduccion, Orientacion, ImagenPrincipal, Year, ndolocal FROM datosProyecto WHERE EstadoAdelanto= '1'" .$dondeL.$dondeG.$dondeO. "order by ndolocal";
     $results = $mysqli->query($sql);
     $content = '';
     $numerolocal = 0;
+
     while($row = $results->fetch_array()){
         if( $numerolocal!= $row['ndolocal']){
             if($numerolocal>0){
-                $content.=" </div>
-                            </div>";
+                $content.=" </div>";
                         }
         if ( $row['ndolocal'] == 1){
             $local = "Diversificado";
