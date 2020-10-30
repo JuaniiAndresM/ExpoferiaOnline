@@ -128,6 +128,18 @@ if(isset($_POST['aprobadoPROF'])){
         
 
 }
+/*if(isset($_POST['EnviarConsulta'])){
+
+    $address=$_POST['EnviarConsulta'];         
+    $subject='Respuesta a su consulta';
+    $body=$_POST['Comentarios'];
+    // 
+    include 'EnviarEmail.php';
 
 
+    $sql = "DELETE FROM solicitud_mensaje WHERE Email ='".$_POST['EnviarConsulta']."'";
+    $mysqli -> query($sql);
+   
+    }
+*/
 ?>

@@ -75,5 +75,21 @@ $(':button').prop('disabled', true);
     }
   })
 }
+/*function EnviarConsulta(Email){
+  alert("hola");
+  $(':button').prop('disabled', true);
+    sessionStorage.setItem("EnviarConsulta", Email);
+    var Comentarios = document.getElementById("comentarioConsulta").value;
+    sessionStorage.setItem("Comentarios", Comentarios);
+    $.ajax({
+      url:"Solicitud.php", 
+      data: {EnviarConsulta: sessionStorage.getItem("EnviarConsulta"), Comentarios: Comentarios},
+      type: "post", 
+      success:function(data){
+        alert(data);
+        cargosolicitudes();
+      }
+    })
+  }*/
           
                   
