@@ -75,10 +75,9 @@ $(':button').prop('disabled', true);
     }
   })
 }
-function responderConsulta(Email){
-  alert('hola');
+function responderConsulta(id){
   $(':button').prop('disabled', true);
-    sessionStorage.setItem("responderConsulta", Email);
+    sessionStorage.setItem("responderConsulta", id);
     var Comentarios = document.getElementById("comentarioConsulta").value;
     sessionStorage.setItem("Comentarios", Comentarios);
     $.ajax({
@@ -91,5 +90,5 @@ function responderConsulta(Email){
       }
     })
   }
-          
+
                   

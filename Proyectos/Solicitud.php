@@ -130,14 +130,19 @@ if(isset($_POST['aprobadoPROF'])){
 }
 if(isset($_POST['responderConsulta'])){
 
-    $address=$_POST['responderConsulta'];         
+    $sql = "SELECT * FROM solicitud_mensajes WHERE idMensajes = '".$_POST['responderConsulta']."'";
+    $result = $mysqli -> query($sql);
+    $sqlsolicitudes = mysqli_fetch_array($result, MYSQLI_ASSOC);   
+
+
+    $address=$sqlsolicitudes['Email'];          
     $subject='Respuesta a su consulta';
     $body=$_POST['Comentarios'];
     // 
     include 'EnviarEmail.php';
 
 
-    $sql = "DELETE FROM solicitud_mensajes WHERE Email ='".$_POST['responderConsulta']."'";
+    $sql = "DELETE FROM solicitud_mensajes WHERE idMensajes ='".$_POST['responderConsulta']."'";
     $mysqli -> query($sql);
    
     }
