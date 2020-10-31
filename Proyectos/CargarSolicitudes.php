@@ -164,17 +164,18 @@ if(mysqli_num_rows($result) !== 0){
                 </div>
                 <div class='BotonesAdmin'>                     
                     </div>
+                    <button data-toggle='collapse' data-target='#rechazar'><i class='fa'>&#xf00d;</i>Responder</button> 
                     <div id='rechazar' class='collapse form-group'>
                       <label for='com'><i class='fa'>&#xf27a;</i> Comentario:</label>
                       <textarea
-                        input type='text' name='comentarioConsulta'
+                        input type='text'
+                        name='comentarioConsulta'
                         class='form-control'
                         rows='5'
                         placeholder='Ingrese Comentario'
                         id='comentarioConsulta'
                       ></textarea>
-                      
-                      <button class='Enviar' onclick='EnviarConsulta(".$sqlsolicitudes['Email'].")'><i class='fa'>&#xf1d8;</i> Enviar</button>
+                      <button class='Enviar' onclick='responderConsulta(".$sqlsolicitudes['Email'].")'><i class='fa'>&#xf1d8;</i> Enviar</button>
                     </div>
               </div>
               <hr>

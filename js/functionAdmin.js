@@ -75,21 +75,21 @@ $(':button').prop('disabled', true);
     }
   })
 }
-/*function EnviarConsulta(Email){
-  alert("hola");
+function responderConsulta(Email){
+  alert('hola');
   $(':button').prop('disabled', true);
-    sessionStorage.setItem("EnviarConsulta", Email);
+    sessionStorage.setItem("responderConsulta", Email);
     var Comentarios = document.getElementById("comentarioConsulta").value;
     sessionStorage.setItem("Comentarios", Comentarios);
     $.ajax({
       url:"Solicitud.php", 
-      data: {EnviarConsulta: sessionStorage.getItem("EnviarConsulta"), Comentarios: Comentarios},
+      data: {responderConsulta: sessionStorage.getItem("responderConsulta"), Comentarios: Comentarios},
       type: "post", 
       success:function(data){
         alert(data);
         cargosolicitudes();
       }
     })
-  }*/
+  }
           
                   
