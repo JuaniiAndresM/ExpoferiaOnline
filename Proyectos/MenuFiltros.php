@@ -16,16 +16,14 @@
     $dondeO = "";
     if($local != 0){
         $dondeL = " AND ndolocal ='".$local."'";
-       
     }
     if($grado !=0){
         $dondeG = " AND  Year ='".$grado."'";
-        
     }
     if($orientacion !=0){
         $dondeO = " AND  Orientacion ='".$orientacion."'";
-       
     }
+
     /*
     echo $dondeL;
     echo $dondeG;
