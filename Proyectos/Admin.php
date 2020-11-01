@@ -42,7 +42,7 @@
         <div class="Linea2">
           <div class="Linea3">
             <div class="Admin">
-                <a id="TituloTablaProyectos">Nuevas Solicitudes Proyectos:</a>
+                <a id="TituloTablaProyectos">Solicitudes Usuarios:</a>
                 <br>
                 <a>NO APRETAR MAS DE UNA VEZ, TENGA PACIENCIA</a>
                 <hr />

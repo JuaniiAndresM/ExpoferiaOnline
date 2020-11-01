@@ -90,7 +90,7 @@
                 <li>
                   <a href="ModificarUsuario.php"
                     ><button class="botonPanel">
-                      <i class="fa">&#xf0c0;</i> Modificar Cuenta
+                      <i class="fa">&#xf2b9;</i> Modificar Cuenta
                     </button></a
                   >
                 </li>
@@ -104,7 +104,7 @@
                 <li>
                   <a href="Admin.php" style="<?php echo $admin ?>"
                     ><button class="botonPanel">
-                      <i class="fa">&#xf0c0;</i> Administrar Usuarios
+                      <i class="fa">&#xf0f3;</i> Usuarios y Consultas
                     </button></a
                   >
                 </li>
