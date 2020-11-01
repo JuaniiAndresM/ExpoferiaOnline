@@ -137,18 +137,22 @@ if(mysqli_num_rows($result) !== 0){
   <br><br>
   <a style='word-wrap: break-word;'>No hay ninguna solicitud de profesores.</a>
   <br><br>
-  </div>";
+  </div>
+  <hr>
+  ";
   
   }
   
+  $content.="
+  <div>
+    <a id='TituloTablaProyectos'>Consultas:</a>
+  </div>
+  <hr>";
 $sql = "SELECT * FROM solicitud_mensajes";
 $result = $mysqli -> query($sql);
 
 if(mysqli_num_rows($result) !== 0){
-  $content.="
-  <div>
-    <a style='text-align: center; font-size: 200%;'>Consultas:</a>
-  </div>";
+  
   while($sqlsolicitudes = mysqli_fetch_array($result, MYSQLI_ASSOC)){
 
   $content.=" 
@@ -190,7 +194,8 @@ if(mysqli_num_rows($result) !== 0){
   <a style='word-wrap: break-word;'>No hay ninguna consulta.</a>
   <br><br>
   </div>
-  <hr>";
+  <hr>
+  ";
   
   }
   
