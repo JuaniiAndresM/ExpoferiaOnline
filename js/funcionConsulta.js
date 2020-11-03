@@ -8,5 +8,8 @@ function EnviarConsulta(){
         url:"../Proyectos/EnviarConsulta.php", 
         data: { Consultas: Consultas, Email: Email},
         type: "post", 
+        success:function(data){
+          alert("se mando correctamente");
+        }
       })
     }
