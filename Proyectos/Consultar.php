@@ -55,7 +55,7 @@
                   <div class="form-group">
                     <label for="mil">Mail:</label>
                     <input
-                      type="text"
+                      type="email"
                       class="form-control"
                       id="mail"
                       placeholder="Ingrese mail"
@@ -63,7 +63,7 @@
                       required
                     />
                   </div>
-                <a class="buttonLogin" onclick="hola2();"
+                <a class="buttonLogin"
                   ><button>Enviar consulta</button></a>
               </form>
               </div>

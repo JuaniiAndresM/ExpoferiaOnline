@@ -16,16 +16,14 @@
     $dondeO = "";
     if($local != 0){
         $dondeL = " AND ndolocal ='".$local."'";
-       
     }
     if($grado !=0){
         $dondeG = " AND  Year ='".$grado."'";
-        
     }
     if($orientacion !=0){
         $dondeO = " AND  Orientacion ='".$orientacion."'";
-       
     }
+
     /*
     echo $dondeL;
     echo $dondeG;
@@ -37,7 +35,13 @@
     $content = '';
     $numerolocal = 0;
 
-    while($row = $results->fetch_array()){
+    if(mysqli_num_rows($results) == 0){
+        echo "<br>";
+        echo "<h2>¡No se han encontrado resultados!</h2>";
+        echo "<hr>";
+        echo "<h5>De momento no contamos con proyectos con esas caracteristicas.</h5>";
+    }else{
+        while($row = $results->fetch_array()){
         if( $numerolocal!= $row['ndolocal']){
             if($numerolocal>0){
                 $content.=" </div>";
@@ -83,6 +87,8 @@
                             <a><button class='BotonProyecto' onclick=window.location.href='proximamente.html'>Ver más</button></a>
                         </div>";
                         }
+                    }
+
     //<button class='BotonProyecto' onclick='mandarID(".$row['idProyecto'].")'>Ver más</button> los jajas
     echo $content;
     ?>
