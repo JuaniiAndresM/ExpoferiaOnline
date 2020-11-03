@@ -1930,13 +1930,11 @@ input[type=submit] {
 }
 .wrapper-grid2{
   width: 100%;
-
   display: grid;
   grid-template-columns: 66% 1fr;
 }
 .wrapper-grid3{
   width: 100%;
-
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
@@ -1948,7 +1946,7 @@ input[type=submit] {
 }
 .wave-card{
   position: relative;
-  z-index: 0;
+  z-index: 5;
   top: 80px;
   border-radius: 0 0 25px 25px;
 }
@@ -1991,10 +1989,10 @@ input[type=submit] {
 }
 .foto-acerca{
   position: relative;
-  top: 82px;
+  
   left: -65px;
   width: 280px;
-  height: 280px;
+  
   border-radius: 25px 25px 0 0;
 }
 .modal-backdrop {
