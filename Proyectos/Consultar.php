@@ -64,7 +64,7 @@
                     />
                   </div>
                 <a class="buttonLogin"
-                  ><button>Enviar consulta</button></a>
+                  ><input type="submit" value="Enviar consulta"></a>
               </form>
               </div>
               
