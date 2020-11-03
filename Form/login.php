@@ -77,7 +77,7 @@
                 >
               </form>
               <br>
-              <button data-toggle='collapse' data-target='#rechazar'>Me olvide de la contraseña</button>                     
+              <button data-toggle='collapse' data-target='#rechazar' style="visibility: hidden">Me olvide de la contraseña</button>                     
               <br>
               <form action="../Proyectos/Contraseña.php" method="POST">
                 <div id='rechazar' class='collapse form-group'>
