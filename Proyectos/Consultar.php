@@ -14,6 +14,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="../js/function.js"></script>
     <script src="../js/registerAlumnos.js"></script>
+    <script src="../js/funcionConsulta.js"></script>
 
     <link
       rel="stylesheet"
@@ -41,7 +42,6 @@
               <hr />
               <br><p>Bienvenido: recuerda que no hay una respuesta automatica asi que va a tener que esperar</p>
               <br>
-               <form action="EnviarConsulta.php" method="POST">
                 <div class="form-group">
                   <label for="con">Consulta:</label>
                   <input
@@ -64,10 +64,8 @@
                     />
                   </div>
                 <a class="buttonLogin"
-                  ><button>Enviar consulta</button></a>
-              </form>
-              </div>
-              
+                  ><button onclick='EnviarConsulta()'>Enviar consulta</button></a>
+              </div> 
             </div>
           </div>
         </div>
