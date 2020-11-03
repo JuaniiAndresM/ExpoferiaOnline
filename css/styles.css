@@ -1953,6 +1953,7 @@ input[type=submit] {
   border-radius: 0 0 25px 25px;
 }
 .acerca-card{
+  overflow: hidden;
   width: 280px;
   height: 400px;
   box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.5);
@@ -1991,10 +1992,9 @@ input[type=submit] {
 }
 .foto-acerca{
   position: relative;
-  top: 82px;
+  top: -10px;
   left: -65px;
   width: 280px;
-  height: 280px;
   border-radius: 25px 25px 0 0;
 }
 .modal-backdrop {
