@@ -5,7 +5,7 @@ function EnviarConsulta(){
       var Email = document.getElementById("mail").value;
       sessionStorage.setItem("Email", Email);
       $.ajax({
-        url:"../Proyectos/EnviarConsulta.php", 
+        url:"EnviarConsulta.php", 
         data: { Consultas: Consultas, Email: Email},
         type: "post", 
         success:function(data){
