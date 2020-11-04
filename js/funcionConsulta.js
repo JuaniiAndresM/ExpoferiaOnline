@@ -9,7 +9,7 @@ function EnviarConsulta(){
         data: { Consultas: Consultas, Email: Email},
         type: "post", 
         success:function(data){
-          alert("se mando correctamente");
+          alert('se mando correctamente');
         }
       })
     }

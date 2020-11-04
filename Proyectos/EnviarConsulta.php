@@ -4,4 +4,10 @@
     $email ='"' . $mysqli->real_escape_string($_POST['Email']) . '"';
     $consulta = '"' . $mysqli->real_escape_string($_POST['Consultas']) . '"';
     $insert_row = $mysqli->query("INSERT INTO solicitud_mensajes (Email, Mensaje) VALUES($email, $consulta)"); 
+    if ($insert_row == true) {
+        echo 'se mando correctamente';
+    } else {
+        echo 'hubo un error';
+    }
+    $mysqli->close();
 ?>
