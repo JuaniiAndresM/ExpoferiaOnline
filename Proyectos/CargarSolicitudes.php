@@ -163,6 +163,10 @@ if(mysqli_num_rows($result) !== 0){
       </div>
       <div>
         <hr id='LineaMobileProyecto' />
+        <a style='word-wrap: break-word;'><b><i class='fa'>&#xf0e0;</i> Usuario:</b> ".$sqlsolicitudes['Usuario']." </a><br>
+        <a style='word-wrap: break-word;'><b><i class='fa'>&#xf007;</i> Nombre:</b> ".$sqlsolicitudes['Nombre']." </a><br>
+        <a style='word-wrap: break-word;'><b><i class='fa'>&#xf0e0;</i> Apellido:</b> ".$sqlsolicitudes['Apellido']." </a><br>
+        <a style='word-wrap: break-word;'><b><i class='fa'>&#xf007;</i> Nombre Proyecto:</b> ".$sqlsolicitudes['NombreProy']." </a><br>
         <a style='word-wrap: break-word;'><b><i class='fa'>&#xf0e0;</i> Email:</b> ".$sqlsolicitudes['Email']." </a><br>
         <a style='word-wrap: break-word;'><b><i class='fa'>&#xf007;</i> Mensaje:</b> ".$sqlsolicitudes['Mensaje']." </a><br>
       </div>

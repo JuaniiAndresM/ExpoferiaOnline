@@ -43,13 +43,40 @@
               <br><p>Bienvenido: recuerda que no hay una respuesta automatica asi que va a tener que esperar</p>
               <br>
                 <div class="form-group">
-                  <label for="con">Consulta:</label>
+                  <label for="con">Usuario:</label>
                   <input
                     type="text"
                     class="form-control"
-                    id="consulta"
-                    placeholder="Ingrese su consulta"
-                    name="consulta"
+                    id="user"
+                    placeholder="Ingrese su usuario"
+                    name="user"
+                    required
+                  />
+                  <label for="con">Nombre:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nom"
+                    placeholder="Ingrese su nombre"
+                    name="nom"
+                    required
+                  />
+                  <label for="con">Apellido:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="apellido"
+                    placeholder="Ingrese su apellido"
+                    name="apellido"
+                    required
+                  />
+                  <label for="con">Nombre del proyecto:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nompro"
+                    placeholder="Ingrese el nombre de su proyecto"
+                    name="nompro"
                     required
                   />
                   <div class="form-group">
@@ -62,7 +89,16 @@
                       name="mail"
                       required
                     />
-                  </div>
+                  <label for="con">Consulta:</label>
+                  <textarea
+                    input type='text'
+                    name='consulta'
+                    class='form-control'
+                    rows='5'
+                    placeholder='Ingrese consulta'
+                    id='consulta'
+                  ></textarea>
+                </div>
                 <a class="buttonLogin"
                   ><button onclick='EnviarConsulta()'>Enviar consulta</button></a>
               </div> 
