@@ -84,7 +84,7 @@ $file_extension = pathinfo($target_file, PATHINFO_EXTENSION);
     if($proporcion >= 1.70 && $proporcion <= 1.84){
       $uploadOk = 1;
     }else{
-      echo 4; return;
+      echo '4'; return;
      
     };
     }

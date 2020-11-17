@@ -251,10 +251,10 @@ function ajax_file_upload(file_obj,tipo) {
                   alert('Error 4. Disculpa amigo!. La imagen no se pudo guardar porque no está en formato 16:9, consulta el manual o pide ayuda al email de soporte (info@expoeduca.liceoiep.edu.uy).');
                 }else if(msg=='5'){
                   alert('Error 5. Disculpa amigo!. La imagen del Banner no se pudo guardar porque no tiene las medidas de 1200 x 200, consulta el manual o pide ayuda a los administradores.');
-                }else if(msg==6){
+                }else if(msg=='6'){
                   alert('Error 6. Disculpa amigo!. No se pudo subir imagen, comunícate con soporte, gracias.');
-                }else if(msg==7){
-                  alert('Error 6. Disculpa amigo!. No se pudo subir imagen porque excede el tamaño en bytes (no más de 1.5mb), comunícate con soporte si tienes dudas, gracias.');
+                }else if(msg=='7'){
+                  alert('Error 7. Disculpa amigo!. No se pudo subir imagen porque excede el tamaño en bytes (no más de 1.5mb), comunícate con soporte si tienes dudas, gracias.');
                 }
                 
                 $('#selectfile').val('');
